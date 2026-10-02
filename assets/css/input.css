@@ -1,0 +1,331 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* ========================================
+       SPACING
+    ======================================== */
+
+  /* Base spacing unit */
+  --spacing: 1px;
+
+  /* Global container gutter */
+  --spacing-gutter: clamp(1rem, -0.5294rem + 6.2745vw, 7rem);
+
+  /* section spacing */
+  --spacing-sec: clamp(2.5rem, 1.5441rem + 3.9216vw, 6.25rem);
+
+  /* ========================================
+       RESET DEFAULT TAILWIND TOKENS
+    ======================================== */
+
+  --breakpoint-*: initial;
+  --container-*: initial;
+
+  /* ========================================
+       CUSTOM BREAKPOINTS
+    ======================================== */
+
+  /* Extra Small Devices */
+  --breakpoint-xsm: 450px;
+
+  /* Small Devices */
+  --breakpoint-sm: 576px;
+
+  /* Tablets */
+  --breakpoint-md: 768px;
+
+  /* Small Laptops */
+  --breakpoint-lg: 992px;
+
+  /* Desktops */
+  --breakpoint-xl: 1200px;
+
+  /* Large Desktops */
+  --breakpoint-2xl: 1400px;
+
+  /* Extra Large Screens */
+  --breakpoint-3xl: 1696px;
+
+  /* Ultra Wide Screens */
+  --breakpoint-4xl: 1920px;
+
+  /* Large Ultra Wide */
+  /* --breakpoint-5xl: 1800px; */
+
+  /* Design Max Width */
+  /* --breakpoint-6xl: 1940px; */
+
+  /* ========================================
+       CUSTOM container
+    ======================================== */
+
+  /* Extra Small Devices */
+  --container-xsm: 450px;
+
+  /* Small Devices */
+  --container-sm: 576px;
+
+  /* Tablets */
+  --container-md: 768px;
+
+  /* Small Laptops */
+  --container-lg: 992px;
+
+  /* Desktops */
+  --container-xl: 1200px;
+
+  /* Large Desktops */
+  --container-2xl: 1696px;
+
+  /* Extra Large Screens */
+  --container-3xl: 1696px;
+
+  /* Ultra Wide Screens */
+  --container-4xl: 1920px;
+
+  /* Large Ultra Wide */
+  /* --breakpoint-5xl: 1800px; */
+
+  /* Design Max Width */
+  /* --breakpoint-6xl: 1940px; */
+
+  /* ========================================
+       BRAND COLORS
+    ======================================== */
+
+  /* Primary blue */
+  --color-primary: #003e7c;
+
+  /* Accent Orange */
+  --color-orange: #ff6000;
+  --color-Backg: #F8FAFC;
+
+  --color-heading: #111111;
+
+  --color-txt-body: #4b4b4b;
+
+  --color-Invert: #ffffff;
+
+  --color-Invert-subheading: #ffffffcc;
+
+  --color-Invert-Caption: #666666;
+
+  --color-Invert-Disable: #6d6d6d;
+
+  /* ========================================
+       TYPOGRAPHY - FONT FAMILIES
+    ======================================== */
+
+  /* Primary Font */
+  --font-Manrope: "Manrope";
+
+  /* ========================================
+       BODY TEXT
+    ======================================== */
+
+  /* Responsive Body Font Size */
+  --text-body: clamp(1rem, 0.9681rem + 0.1307vw, 1.125rem);
+
+  /* Responsive Body Line Height */
+  --text-body--line-height: 1.5;
+
+  /* ========================================
+       HEADING H1
+    ======================================== */
+
+  /* Main Page Heading */
+  --text-h1: clamp(3rem, 2.7451rem + 1.0458vw, 4rem);
+
+  /* H1 Line Height */
+  --text-h1--line-height: 1.2;
+
+  /* H1 Font Weight */
+  --text-h1--font-weight: 700;
+
+  /* ========================================
+       HEADING H2 (STANDARD)
+    ======================================== */
+
+  /* Section Heading */
+  --text-h2: clamp(2.5rem, 2.2451rem + 1.0458vw, 3.5rem);
+
+  /* H2 Line Height */
+  --text-h2--line-height: 1.2;
+
+  /* H2 Font Weight */
+  --text-h2--font-weight: 700;
+
+  /* ========================================
+       HEADING H3
+    ======================================== */
+
+  /* Sub Section Heading */
+  --text-h3: clamp(2rem, 1.8725rem + 0.5229vw, 2.5rem);
+
+  /* H3 Line Height */
+  --text-h3--line-height: 1.2;
+
+  /* H3 Font Weight */
+  --text-h3--font-weight: 600;
+
+  /* ========================================
+       HEADING H4
+    ======================================== */
+
+  /* Card / Component Heading */
+  --text-h4: clamp(1.5rem, 1.4363rem + 0.2614vw, 1.75rem);
+
+  /* H4 Line Height */
+  --text-h4--line-height: 1.5;
+
+  /* H4 Font Weight */
+  --text-h4--font-weight: 500;
+
+  --text-16: 16px;
+  --text-28: 28px;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth min-h-2000;
+  }
+  * {
+    @apply scrollbar-thin scrollbar-thumb-white scrollbar-track-black;
+  }
+   body {
+    @apply font-Manrope text-body text-txt-body font-medium;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  :is(h1, h2, h3, h4, h5, h6) {
+    @apply font-Manrope! text-heading;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+  .container {
+    @apply mx-auto px-gutter;
+  }
+
+  .col {
+    @apply flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)];
+  }
+  .row {
+    @apply grid gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)];
+  }
+
+  .cols_1_1 {
+    @apply lg:grid-cols-2;
+  }
+
+  .cols_1_2,
+  .cols_2_1 {
+    @apply lg:grid-cols-3;
+  }
+
+  .cols_1_2 .col:last-child,
+  .cols_2_1 .col:first-child {
+    @apply lg:col-span-2;
+  }
+
+  .free_text {
+    @apply flex flex-col gap-24;
+  }
+  .free_text h1 {
+    @apply text-h1 text-heading;
+  }
+  .free_text h2 {
+    @apply text-h2 text-heading;
+  }
+  .free_text h3 {
+    @apply text-h3 text-heading;
+  }
+  .free_text h4 {
+    @apply text-h4 text-heading;
+  }
+  .heading_h1 {
+    @apply text-h1;
+  }
+  .heading_h2 {
+    @apply text-h2;
+  }
+  .heading_h3 {
+    @apply text-h3;
+  }
+  .heading_h4 {
+    @apply text-h4;
+  }
+  ul a {
+    @apply hover:underline;
+  }
+
+  .ctm_sec {
+    @apply relative z-1;
+  }
+  .border_rounded {
+    @apply rounded-[28px];
+  }
+  .border_rounded_lg {
+    @apply rounded-[64px];
+  }
+  .overlay-dark {
+    @apply absolute inset-0 h-full w-full bg-black/50;
+  }
+  .nav_link a {
+    @apply hover:text-orange transition-slow flex gap-8 items-center;
+  }
+  .clip-image {
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 18%,
+    100% 100%,
+    0% 100%,
+    0% 18%
+  );
+}
+}
+
+@utility transition-slow {
+  transition: all 0.3s ease;
+}
+@utility btn {
+  @apply py-12 px-20 xsm:px-24 rounded-full font-medium flex gap-8 items-center w-fit text-16;
+}
+@utility btn-primary {
+  @apply bg-primary text-white hover:bg-orange transition-slow;
+}
+@utility btn-secondary {
+  @apply text-white hover:text-primary border border-white hover:bg-white transition-slow;
+}
+@utility btn-link {
+  @apply inline-flex font-semibold items-center gap-8 py-12 text-primary hover:text-orange transition-slow;
+}
+
+@utility btn-link-arrow {
+  @apply after:content-['→'] after:text-current after:ml-8;
+}
+@utility badge {
+  @apply relative flex items-center w-fit rounded-full border-[1.5px] border-primary bg-Invert py-4 px-12 pl-32 text-primary;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: var(--color-orange-500);
+    transform: translateY(-50%);
+  }
+}
