@@ -129,9 +129,7 @@
         <div class="container">
           <div class="col">
             <div class="grid xl:grid-cols-[1fr_35%] gap-40 md:gap-80">
-              <div
-                class=" flex flex-col gap-40 justify-center free_text"
-              >
+              <div class="flex flex-col gap-40 justify-center free_text">
                 <span class="badge">Über uns</span>
                 <div class="space-y-16">
                   <h3>
@@ -150,7 +148,7 @@
                 <div class="flex flex-col lg:flex-row gap-40">
                   <!-- Video -->
                   <div
-                    class="border_rounded overflow-hidden relative w-full lg:max-w-480 min-h-280 "
+                    class="border_rounded overflow-hidden relative w-full lg:max-w-480 min-h-280"
                   >
                     <video
                       autoplay
@@ -237,32 +235,37 @@
                         </svg>
                       </a>
                     </div>
+                    <ul class="flex -space-x-12">
+                      <li class="rounded-full overflow-hidden border-2 border-white"><img src="assets/icons/Person2.svg" alt="" /></li>
+                      <li class="rounded-full overflow-hidden border-2 border-white"><img src="assets/icons/Person.svg" alt="" /></li>
+                      <li class="rounded-full overflow-hidden border-2 border-white"><img src="assets/icons/Person3.svg" alt="" /></li>
+                      <li class="rounded-full overflow-hidden border-2 border-white"><img src="assets/icons/Person4.svg" alt="" /></li>
+                    </ul>
                   </div>
                 </div>
               </div>
-              <div class="relative ">
-                  <img
-                    src="assets/icons/Home_about.svg"
-                    alt=""
-                    class="block w-full h-full"
-                  />
- 
-                  <img
-                    src="assets/images/about.webp"
-                    alt=""
-                    class="absolute inset-0 w-full h-full object-cover"
-                    style="
-                      mask-image: url(&quot;assets/icons/Home_about.svg&quot;);
-                      mask-size: 100% 100%;
-                      mask-repeat: no-repeat;
- 
-                      -webkit-mask-image: url(&quot;assets/icons/Home_about.svg&quot;);
-                      -webkit-mask-size: 100% 100%;
-                      -webkit-mask-repeat: no-repeat;
-                    "
-                  />
-                </div>
- 
+              <div class="relative">
+                <img
+                  src="assets/icons/Home_about.svg"
+                  alt=""
+                  class="block w-full h-full"
+                />
+
+                <img
+                  src="assets/images/about.webp"
+                  alt=""
+                  class="absolute inset-0 w-full h-full object-cover"
+                  style="
+                    mask-image: url(&quot;assets/icons/Home_about.svg&quot;);
+                    mask-size: 100% 100%;
+                    mask-repeat: no-repeat;
+
+                    -webkit-mask-image: url(&quot;assets/icons/Home_about.svg&quot;);
+                    -webkit-mask-size: 100% 100%;
+                    -webkit-mask-repeat: no-repeat;
+                  "
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -704,7 +707,7 @@
               </div>
               <div class="grid md:grid-cols-2 gap-40">
                 <div
-                  class=" bg-white border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-24 items-start"
+                  class="bg-white border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-24 items-start"
                 >
                   <img src="assets/icons/Children.svg" alt="" class="h-32" />
                   <div class="free_text">
@@ -716,7 +719,7 @@
                   </div>
                 </div>
                 <div
-                  class=" bg-white border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-24 items-start"
+                  class="bg-white border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-24 items-start"
                 >
                   <img src="assets/icons/Children.svg" alt="" class="h-32" />
                   <div class="free_text">
@@ -801,7 +804,7 @@
                 <button
                   @click="active='Küche'"
                   aria-label="Küche"
-                  class="absolute top-[30%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[34%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Küche' ? 'bg-orange' : 'bg-primary'"
@@ -821,7 +824,7 @@
                 <button
                   @click="active='Schlafzimmer'"
                   aria-label="Schlafzimmer"
-                  class="absolute top-[28%] left-[67%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[30%] left-[67%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Schlafzimmer' ? 'bg-orange' : 'bg-primary'"
@@ -861,7 +864,7 @@
                 <button
                   @click="active='Badezimmer'"
                   aria-label="Badezimmer"
-                  class="absolute top-[51.5%] left-[65%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[56%] left-[64.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Badezimmer' ? 'bg-orange' : 'bg-primary'"
@@ -881,7 +884,7 @@
                 <button
                   @click="active='Keller'"
                   aria-label="Keller"
-                  class="absolute bottom-[15%] left-[50%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[85%] left-[50%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Keller' ? 'bg-orange' : 'bg-primary'"
@@ -901,7 +904,7 @@
                 <button
                   @click="active='Garten'"
                   aria-label="Garten"
-                  class="absolute bottom-[18%] right-[6%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[80%] left-[83%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Garten' ? 'bg-orange' : 'bg-primary'"
@@ -919,12 +922,12 @@
                   </div>
                 </button>
                 <button
-                  @click="active='Gartenn'"
-                  aria-label="Gartenn"
-                  class="absolute bottom-[47%] right-[2%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  @click="active='Garten1'"
+                  aria-label="Garten"
+                  class="absolute top-[48%] left-[84%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
-                    :class="active==='Gartenn' ? 'bg-orange' : 'bg-primary'"
+                    :class="active==='Garten1' ? 'bg-orange' : 'bg-primary'"
                     class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                   >
                     <img
@@ -935,13 +938,13 @@
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base">Garten</span>
-                    <span class="text-xs">Wespen</span>
+                    <span class="text-xs">Wespen/Hornissen</span>
                   </div>
                 </button>
                 <button
                   @click="active='Kanalisation'"
                   aria-label="Kanalisation"
-                  class="absolute bottom-[16.5%] left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[80%] left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Kanalisation' ? 'bg-orange' : 'bg-primary'"
@@ -961,7 +964,7 @@
                 <button
                   @click="active='Entsorgungsbereich'"
                   aria-label="Entsorgungsbereich"
-                  class="absolute bottom-[29%] left-[15.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[70%] left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Entsorgungsbereich' ? 'bg-orange' : 'bg-primary'"
@@ -979,25 +982,23 @@
                   </div>
                 </button>
                 <button
-                  @click="active='arten – Eichenprozessionsspinner'"
-                  aria-label="arten – Eichenprozessionsspinner"
-                  class="absolute bottom-[52%] left-[13%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  @click="active='Garten2'"
+                  aria-label="Garten"
+                  class="absolute top-[44%] left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
-                    :class="active==='arten – Eichenprozessionsspinner' ? 'bg-orange' : 'bg-primary'"
+                    :class="active==='Garten2' ? 'bg-orange' : 'bg-primary'"
                     class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                   >
                     <img
-                      src="assets/icons/fly.svg"
+                      src="assets/icons/caterpillar.svg"
                       alt=""
                       class="w-20 md:w-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">
-                      arten – Eichenprozessionsspinner</span
-                    >
-                    <span class="text-xs">Motte</span>
+                    <span class="text-black text-base"> Garten</span>
+                    <span class="text-xs">Eichenprozessionsspinner</span>
                   </div>
                 </button>
               </div>
@@ -1016,7 +1017,8 @@
                         'Badezimmer': 'assets/icons/silverfish.svg',
                         'Keller': 'assets/icons/undar.svg',
                         'Garten': 'assets/icons/ant.svg',
-                        'Gartenn': 'assets/icons/wasp.svg',
+                        'Garten1': 'assets/icons/wasp.svg',
+                        'Garten2': 'assets/icons/caterpillar.svg',
                         'Kanalisation': 'assets/icons/undar.svg',
                         'Entsorgungsbereich': 'assets/icons/undar.svg',
                         'arten – Eichenprozessionsspinner': 'assets/icons/fly.svg',
@@ -1032,40 +1034,40 @@
                   für Außenbereiche.
                 </p>
               </div>
-             <a href="" class="btn-link">
-                    Inspektion anfordern
+              <a href="" class="btn-link">
+                Inspektion anfordern
 
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="transition-all duration-200"
-                    >
-                      <path
-                        d="M19 12H5"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M14 17L19 12"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M14 7L19 12"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </a>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="transition-all duration-200"
+                >
+                  <path
+                    d="M19 12H5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14 17L19 12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14 7L19 12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -1324,7 +1326,7 @@
 
       <section class="py-sec bg-[#F8FAFC]">
         <div class="container">
-          <div class="row cols_1">
+          <div class="col">
             <div class="free_text text-center">
               <h3>Kunden in ganz Deutschland vertrauen uns.</h3>
             </div>
@@ -1332,7 +1334,13 @@
               class="max-w-1200 text-center mx-auto free_text flex flex-col gap-40 items-center justify-center"
             >
               <h4 class="text-heading! not-md:text-base">
-                Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt. Ihr Programm zur vorbeugenden Überwachung hat uns dabei geholfen, höchste Hygienestandards zu wahren und gleichzeitig die HACCP-Anforderungen zu erfüllen. Wir sehen in ihnen mehr als nur einen Dienstleister – wir schätzen sie als langfristigen Partner..
+                Leeser & Will haben uns durch schnelle Reaktionszeiten, klare
+                Kommunikation und eine sorgfältige Dokumentation überzeugt. Ihr
+                Programm zur vorbeugenden Überwachung hat uns dabei geholfen,
+                höchste Hygienestandards zu wahren und gleichzeitig die
+                HACCP-Anforderungen zu erfüllen. Wir sehen in ihnen mehr als nur
+                einen Dienstleister – wir schätzen sie als langfristigen
+                Partner..
               </h4>
               <ul
                 x-data="{ active: 1 }"
@@ -1344,18 +1352,17 @@
                     @mouseleave="active = 1"
                     class="size-50 border-2 border-orange rounded-full overflow-hidden"
                   >
-                    <img src="assets/images/Person.png" alt="" />
+                    <img src="assets/icons/Person.svg" alt="" />
                   </button>
-
                   <div
                     x-show="active === 1"
                     x-transition:enter="transition-all duration-500 ease-out"
-                    x-transition:enter-start="opacity-0 translate-y-4"
-                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 max-w-0"
+                    x-transition:enter-end="opacity-100 max-w-[200px]"
                     x-transition:leave="transition-all duration-300 ease-in"
-                    x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 -translate-y-4"
-                    class="mx-8 flex flex-col"
+                    x-transition:leave-start="opacity-100 max-w-[200px]"
+                    x-transition:leave-end="opacity-0 max-w-0"
+                    class="mx-8 flex flex-col overflow-hidden whitespace-nowrap"
                   >
                     <span class="text-primary text-lg">Thomas Becker</span>
                     <span class="text-xs">Homeowner</span>
@@ -1367,18 +1374,18 @@
                     @mouseleave="active = 2"
                     class="size-50 border-2 border-orange rounded-full overflow-hidden"
                   >
-                    <img src="assets/images/Person.png" alt="" />
+                    <img src="assets/icons/Person2.svg" alt="" />
                   </button>
 
                   <div
                     x-show="active === 2"
                     x-transition:enter="transition-all duration-500 ease-out"
-                    x-transition:enter-start="opacity-0 translate-y-4"
-                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 max-w-0"
+                    x-transition:enter-end="opacity-100 max-w-[200px]"
                     x-transition:leave="transition-all duration-300 ease-in"
-                    x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 -translate-y-4"
-                    class="mx-8 flex flex-col"
+                    x-transition:leave-start="opacity-100 max-w-[200px]"
+                    x-transition:leave-end="opacity-0 max-w-0"
+                    class="mx-8 flex flex-col overflow-hidden whitespace-nowrap"
                   >
                     <span class="text-primary text-lg">Thomas Becker</span>
                     <span class="text-xs">Homeowner</span>
@@ -1390,18 +1397,18 @@
                     @mouseleave="active = 3"
                     class="size-50 border-2 border-orange rounded-full overflow-hidden"
                   >
-                    <img src="assets/images/Person.png" alt="" />
+                    <img src="assets/icons/Person3.svg" alt="" />
                   </button>
 
                   <div
                     x-show="active === 3"
                     x-transition:enter="transition-all duration-500 ease-out"
-                    x-transition:enter-start="opacity-0 translate-y-4"
-                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 max-w-0"
+                    x-transition:enter-end="opacity-100 max-w-[200px]"
                     x-transition:leave="transition-all duration-300 ease-in"
-                    x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 -translate-y-4"
-                    class="mx-8 flex flex-col"
+                    x-transition:leave-start="opacity-100 max-w-[200px]"
+                    x-transition:leave-end="opacity-0 max-w-0"
+                    class="mx-8 flex flex-col overflow-hidden whitespace-nowrap"
                   >
                     <span class="text-primary text-lg">Thomas Becker</span>
                     <span class="text-xs">Homeowner</span>
@@ -1413,18 +1420,18 @@
                     @mouseleave="active = 4"
                     class="size-50 border-2 border-orange rounded-full overflow-hidden"
                   >
-                    <img src="assets/images/Person.png" alt="" />
+                    <img src="assets/icons/Person4.svg" alt="" />
                   </button>
 
                   <div
                     x-show="active === 4"
                     x-transition:enter="transition-all duration-500 ease-out"
-                    x-transition:enter-start="opacity-0 translate-y-4"
-                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 max-w-0"
+                    x-transition:enter-end="opacity-100 max-w-[200px]"
                     x-transition:leave="transition-all duration-300 ease-in"
-                    x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 -translate-y-4"
-                    class="mx-8 flex flex-col"
+                    x-transition:leave-start="opacity-100 max-w-[200px]"
+                    x-transition:leave-end="opacity-0 max-w-0"
+                    class="mx-8 flex flex-col overflow-hidden whitespace-nowrap"
                   >
                     <span class="text-primary text-lg">Thomas Becker</span>
                     <span class="text-xs">Homeowner</span>
@@ -1438,7 +1445,7 @@
 
       <section class="py-sec">
         <div class="container">
-          <div class="row-sec">
+          <div class="col">
             <div class="free_text text-center">
               <h3>Zertifizierte Expertise. Anerkannte Qualität.</h3>
               <p class="max-w-1200 mx-auto">
@@ -1448,7 +1455,7 @@
                 Branchenstandards.
               </p>
             </div>
-            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-40 mt-80">
+            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-40 ">
               <div
                 class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-48"
               >
@@ -1513,7 +1520,7 @@
 
       <section class="py-sec">
         <div class="container">
-          <div class="row cols_1_1">
+          <div class="row grid lg:grid-cols-2">
             <div class="flex flex-col gap-40">
               <div class="free_text gap-24">
                 <h3>Häufige Fragen zur Schädlingsbekämpfung</h3>
@@ -1799,7 +1806,7 @@
 
       <section class="py-sec">
         <div class="container">
-          <div class="row cols_1">
+          <div class="col">
             <div class="free_text text-center">
               <h3>Über 10.000 zufriedene Kunden.</h3>
               <p>
@@ -2169,6 +2176,7 @@
           <div class="overlay-dark"></div>
         </div>
       </section>
+      
     </main>
     <div class="sticky bottom-16 z-40 w-full px-24 my-40">
       <div class="flex justify-center">

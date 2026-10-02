@@ -325,7 +325,7 @@
     width: 12px;
     height: 12px;
     border-radius: 9999px;
-    background: var(--color-orange-500);
+    background: var(--color-orange);
     transform: translateY(-50%);
   }
 }
