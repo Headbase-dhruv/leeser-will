@@ -23,7 +23,7 @@
     <title>Document 1</title>
   </head>
   <body>
-    <header class="sticky top-0 z-50 bg-white">
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -31,31 +31,66 @@
             <img
               src="assets/icons/HeadLogo.svg"
               alt="TENSORIS"
-              class="h-40 md:h-48 lg:h-auto w-auto"
+              class="h-35 md:h-48 lg:h-auto w-auto"
             />
           </a>
 
           <!-- Desktop Navigation -->
           <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
-            <a href="" class="flex items-center gap-4">
-              Schädlingsbekämpfung
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="shrink-0"
+            <div
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+              class="relative"
+            >
+              <a href="#" class="flex items-center gap-4">
+                Schädlingsbekämpfung
+
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="shrink-0 transition duration-300"
+                  :class="{ 'rotate-180': open }"
+                >
+                  <path
+                    d="M8 10L12 14L16 10"
+                    stroke="#111"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <!-- Dropdown -->
+              <div
+                x-show="open"
+                x-transition
+                class="absolute top-full left-0 pt-12 min-w-[220px]"
+                x-cloak
               >
-                <path
-                  d="M8 10L12 14L16 10"
-                  stroke="#111"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
+                <div
+                  class="bg-white rounded-2xl overflow-hidden shadow-lg border border-black/10"
+                >
+                  <a
+                    href="private_customers.html"
+                    class="block px-16 py-12 hover:bg-Backg"
+                  >
+                    Privatkunden
+                  </a>
+
+                  <a
+                    href="forBusinesses.html"
+                    class="block px-16 py-12 hover:bg-Backg"
+                  >
+                    Geschäftskunden
+                  </a>
+                </div>
+              </div>
+            </div>
 
             <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
@@ -74,7 +109,8 @@
             <!-- Mobile Menu Button -->
             <button
               type="button"
-              class="xl:hidden flex items-center justify-center size-44"
+              @click="mobileMenu = true"
+              class="xl:hidden flex items-center justify-center size-24"
               aria-label="Open Menu"
             >
               <svg
@@ -95,6 +131,111 @@
           </div>
         </div>
       </div>
+      <!-- Overlay -->
+      <div
+        x-show="mobileMenu"
+        x-transition.opacity
+        @click="mobileMenu = false"
+        class="fixed inset-0 bg-black/50 z-50 xl:hidden"
+      ></div>
+
+      <!-- Mobile Menu -->
+      <div
+        x-show="mobileMenu"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[42%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 relative"
+      >
+        <!-- Header -->
+        <div class="flex items-center justify-between py-16">
+          <div class="free_text">
+            <h3>Speisekarte</h3>
+          </div>
+
+          <button
+            @click="mobileMenu = false"
+            class="size-40 flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex flex-col gap-40 mt-40 relative z-10">
+          <div x-data="{ open: false }" class="xl:hidden">
+            <button
+              type="button"
+              @click="open = !open"
+              class="w-full flex items-center justify-between text-left"
+            >
+              <span>Schädlingsbekämpfung</span>
+
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0 transition-transform duration-300"
+                :class="open ? 'rotate-180' : ''"
+              >
+                <path
+                  d="M8 10L12 14L16 10"
+                  stroke="#111"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <!-- Mobile Dropdown Links -->
+            <div
+              x-show="open"
+              x-collapse
+              class="pl-16 flex flex-col gap-16 pt-16"
+            >
+              <a href="private-customers.html" class="block"> Privatkunden </a>
+
+              <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
+            </div>
+          </div>
+          <a href="service.html">Service</a>
+          <a href="Prevention.html">Prävention</a>
+          <a href="#">Über uns</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Karriere</a>
+
+          <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
+        </nav>
+        <img
+          src="assets/icons/HamburgerIcon.svg"
+          alt=""
+          class="absolute right-0 top-[22%]"
+        />
+        <img
+          src="assets/icons/HamburgerIcon2.svg"
+          alt=""
+          class="absolute left-0 bottom-0 z-0"
+        />
+      </div>
     </header>
     <main>
       <section>
@@ -105,7 +246,7 @@
               background-image: url(&quot;assets/images/HeaderImg.webp&quot;);
             "
           >
-            <div class="free_text max-w-700 gap-24">
+            <div class="free_text max-w-700 gap-18 lg:gap-24">
               <h2 class="text-white!">
                 Schädlingsfrei. <br />
                 Sicher. Entspannt.
@@ -116,7 +257,7 @@
                 Unternehmen.
               </p>
             </div>
-            <div class="free_text max-w-340">
+            <div class="free_text gap-18! lg:gap-24 max-w-340">
               <span class="badge">Schnelle Hilfe in ganz Deutschland</span>
               <h1 class="text-white!">70+ Jahre</h1>
               <a href="" class="btn btn-primary">Jetzt Kontaktieren</a>
@@ -125,10 +266,12 @@
         </div>
       </section>
 
-      <section class="my-sec">
+      <section class="py-sec ctm_sec">
         <div class="container">
           <div class="col">
-            <div class="grid xl:grid-cols-[1fr_35%] gap-40 md:gap-80">
+            <div
+              class="grid xl:grid-cols-[1fr_35%] gap-40 md:gap-80 relative z-1"
+            >
               <div class="flex flex-col gap-40 justify-center free_text">
                 <span class="badge">Über uns</span>
                 <div class="space-y-16">
@@ -236,10 +379,26 @@
                       </a>
                     </div>
                     <ul class="flex -space-x-12">
-                      <li class="rounded-full overflow-hidden border-2 border-white"><img src="assets/icons/Person2.svg" alt="" /></li>
-                      <li class="rounded-full overflow-hidden border-2 border-white"><img src="assets/icons/Person.svg" alt="" /></li>
-                      <li class="rounded-full overflow-hidden border-2 border-white"><img src="assets/icons/Person3.svg" alt="" /></li>
-                      <li class="rounded-full overflow-hidden border-2 border-white"><img src="assets/icons/Person4.svg" alt="" /></li>
+                      <li
+                        class="rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img src="assets/icons/Person2.svg" alt="" />
+                      </li>
+                      <li
+                        class="rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img src="assets/icons/Person.svg" alt="" />
+                      </li>
+                      <li
+                        class="rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img src="assets/icons/Person3.svg" alt="" />
+                      </li>
+                      <li
+                        class="rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img src="assets/icons/Person4.svg" alt="" />
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -268,6 +427,15 @@
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="absolute top-0 xl:-top-[2%] not-xl:right-0 xl:left-[12%] -rotate-[34.5deg] h-[clamp(10rem,8.2475rem+7.1895vw,16.875rem)] "
+        >
+          <img
+            src="assets/icons/HomeSpiderr.svg"
+            alt=""
+            class="w-full h-full object-contain"
+          />
         </div>
       </section>
 
@@ -688,9 +856,9 @@
         </div>
       </section>
 
-      <section class="py-sec bg-Backg">
+      <section class="py-sec bg-Backg ctm_sec">
         <div class="container">
-          <div class="row grid lg:grid-cols-2">
+          <div class="row grid xl:grid-cols-2">
             <div class="flex flex-col justify-center gap-40">
               <span class="badge"
                 >Warum Sie sich für uns entscheiden sollten</span
@@ -739,6 +907,15 @@
             </div>
           </div>
         </div>
+        <div
+          class="absolute rotate-17 h-[clamp(6.0625rem,3.864rem+9.0196vw,14.6875rem)] not-lg:top-[26.8%] md:top-[15%] xl:top-[7.5%] not-md:right-[4%] md:right-0 xl:left-[52%] xl:-translate-x-1/2 -z-1 overflow-hidden"
+        >
+          <img
+            src="assets/icons/Homesvg2.svg"
+            alt=""
+            class="w-full h-full object-contain"
+          />
+        </div>
       </section>
 
       <section x-data="{ active: 'Kanalisation' }" class="py-sec">
@@ -747,7 +924,7 @@
             <span class="badge">Interaktiver Immobilienratgeber</span>
             <div class="free_text max-w-800">
               <h3>Schützen Sie jeden Bereich Ihres Grundstücks.</h3>
-              <p class="max-w-520">
+              <p class="not-md:hidden max-w-520">
                 Verschiedene Bereiche ziehen unterschiedliche Schädlinge an.
                 Klicken Sie auf einen beliebigen Bereich des Grundstücks, um
                 mehr über häufige Risiken und unsere professionellen Lösungen zu
@@ -1073,8 +1250,8 @@
         </div>
       </section>
 
-      <section class="py-sec">
-        <div class="container">
+      <section class="my-sec ctm_sec">
+        <div class="container ">
           <div class="flex flex-col gap-40 mt-30 xl:absolute relative z-10">
             <div class="free_text">
               <span class="badge">So funktioniert es</span>
@@ -1321,6 +1498,15 @@
               </div>
             </article>
           </div>
+           <div
+          class="absolute h-[clamp(6.375rem,3.826rem+10.4575vw,16.375rem)] not-xl:top-[16%] xl:bottom-0 right-[4%] md:right-[8%] -z-1"
+        >
+          <img
+            src="assets/icons/Homesvg3.svg"
+            alt=""
+            class="w-full h-full object-contain"
+          />
+        </div>
         </div>
       </section>
 
@@ -1350,7 +1536,7 @@
                   <button
                     @mouseenter="active = 1"
                     @mouseleave="active = 1"
-                    class="size-50 border-2 border-orange rounded-full overflow-hidden"
+                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden"
                   >
                     <img src="assets/icons/Person.svg" alt="" />
                   </button>
@@ -1372,7 +1558,7 @@
                   <button
                     @mouseenter="active = 2"
                     @mouseleave="active = 2"
-                    class="size-50 border-2 border-orange rounded-full overflow-hidden"
+                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden"
                   >
                     <img src="assets/icons/Person2.svg" alt="" />
                   </button>
@@ -1395,7 +1581,7 @@
                   <button
                     @mouseenter="active = 3"
                     @mouseleave="active = 3"
-                    class="size-50 border-2 border-orange rounded-full overflow-hidden"
+                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden"
                   >
                     <img src="assets/icons/Person3.svg" alt="" />
                   </button>
@@ -1418,7 +1604,7 @@
                   <button
                     @mouseenter="active = 4"
                     @mouseleave="active = 4"
-                    class="size-50 border-2 border-orange rounded-full overflow-hidden"
+                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden"
                   >
                     <img src="assets/icons/Person4.svg" alt="" />
                   </button>
@@ -1446,7 +1632,7 @@
       <section class="py-sec">
         <div class="container">
           <div class="col">
-            <div class="free_text text-center">
+            <div class="free_text gap-16! text-center">
               <h3>Zertifizierte Expertise. Anerkannte Qualität.</h3>
               <p class="max-w-1200 mx-auto">
                 Professionelle Schädlingsbekämpfung erfordert mehr als nur
@@ -1455,9 +1641,9 @@
                 Branchenstandards.
               </p>
             </div>
-            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-40 ">
+            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-40">
               <div
-                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-48"
+                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
               >
                 <div>
                   <img src="assets/icons/Certified1.svg" alt="" />
@@ -1471,7 +1657,7 @@
                 </div>
               </div>
               <div
-                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-48"
+                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
               >
                 <div>
                   <img src="assets/icons/Certified2.svg" alt="" />
@@ -1485,7 +1671,7 @@
                 </div>
               </div>
               <div
-                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-48"
+                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
               >
                 <div>
                   <img src="assets/icons/Certified4.svg" alt="" />
@@ -1500,7 +1686,7 @@
                 </div>
               </div>
               <div
-                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-48"
+                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
               >
                 <div>
                   <img src="assets/icons/Certified3.svg" alt="" />
@@ -1522,7 +1708,7 @@
         <div class="container">
           <div class="row grid lg:grid-cols-2">
             <div class="flex flex-col gap-40">
-              <div class="free_text gap-24">
+              <div class="free_text">
                 <h3>Häufige Fragen zur Schädlingsbekämpfung</h3>
                 <p>
                   Haben Sie Fragen, bevor Sie einen Schädlingsbekämpfungsdienst
@@ -1533,7 +1719,7 @@
                 </p>
               </div>
               <div
-                class="relative h-280 md:min-h-620 border_rounded overflow-hidden"
+                class="relative h-280 md:min-h-620 border_rounded_sm overflow-hidden"
               >
                 <img
                   src="assets/images/Questions.webp"
@@ -1756,7 +1942,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="border-b pb-24">
+                <li class="pb-24">
                   <button
                     @click="active = active === 6 ? 0 : 6"
                     class="w-full flex items-center justify-between gap-16 text-left"
@@ -1817,7 +2003,7 @@
             <!-- swiper -->
             <div class="grid xl:grid-cols-3 gap-40">
               <div
-                class="shadow-2xl shadow-o border_rounded p-24 flex flex-col gap-40"
+                class="shadow-2xl shadow-o border_rounded p-24 flex flex-col gap-24 md:gap-40"
               >
                 <div class="flex gap-24 justify-between">
                   <div class="free_text gap-0!">
@@ -2176,16 +2362,15 @@
           <div class="overlay-dark"></div>
         </div>
       </section>
-      
     </main>
-    <div class="sticky bottom-16 z-40 w-full px-24 my-40">
+    <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
       <div class="flex justify-center">
         <div
-          class="p-24 flex gap-20 md:gap-40 bg-Invert rounded-full shadow-2xl"
+          class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 bg-Invert rounded-full shadow-lg"
         >
           <a href="" class="btn btn-primary"
-            ><span class="hidden md:block">Telefon</span>
-            <span class="md:hidden"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
               ><svg
                 width="24"
                 height="24"
@@ -2205,8 +2390,8 @@
               </svg> </span
           ></a>
           <a href="" class="btn btn-primary"
-            ><span class="hidden md:block">Telefon</span>
-            <span class="md:hidden"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
               ><svg
                 width="24"
                 height="24"
@@ -2261,8 +2446,8 @@
               </svg> </span
           ></a>
           <a href="" class="btn btn-primary"
-            ><span class="hidden md:block">Telefon</span>
-            <span class="md:hidden"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
               ><svg
                 width="24"
                 height="24"
@@ -2320,10 +2505,10 @@
         <div class="flex flex-col gap-30 md:gap-40 container px-0">
           <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-x-24 xl:gap-x-40">
             <div
-              class="not-xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-orange not-lg:pb-24 md:pr-40"
+              class="md:col-span-2 xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-orange not-lg:pb-24 md:pr-40"
             >
-              <a class="p-24 bg-white border_rounded w-fit">
-                <img src="assets/icons/HeadLogo.svg" alt="" class="w-fit" />
+              <a class="p-24 bg-white border_rounded md:not-xl:w-1/2">
+                <img src="assets/icons/HeadLogo.svg" alt="" class="w-full" />
               </a>
               <p>
                 Die Dienstleistungen von Insectra sind darauf ausgerichtet,
@@ -2335,7 +2520,7 @@
               >
             </div>
             <div
-              class="py-24 not-md:border-b md:border-r border-orange free_text font-medium"
+              class="py-24 not-md:border-b md:border-r border-orange flex flex-col gap-40 font-medium"
             >
               <span class="text-28 text-Invert">Company</span>
               <ul class="ps-16 space-y-8">
@@ -2347,7 +2532,7 @@
               </ul>
             </div>
             <div
-              class="py-20 not-md:border-b md:border-r border-orange free_text font-medium"
+              class="py-20 not-md:border-b xl:border-r border-orange flex flex-col gap-40 font-medium"
             >
               <span class="text-28 text-Invert">Services</span>
               <ul class="ps-16 space-y-8">
@@ -2441,7 +2626,7 @@
 
           <div class="flex flex-col xl:flex-row gap-30 md:gap-40">
             <div
-              class="xl:w-3/4 border_rounded not-xl:h-180 border_rounded relative object-cover object-center"
+              class="xl:w-3/4 border_rounded not-xl:h-180 border_rounded relative object-cover object-center overflow-hidden"
             >
               <img
                 src="assets/images/Map.webp"
@@ -2453,39 +2638,39 @@
               class="xl:w-1/4 border_rounded grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-2 gap-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]"
             >
               <div
-                class="relative aspect-square border_rounded overflow-hidden"
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
               >
                 <img
                   src="assets/icons/Certified1.svg"
                   alt=""
-                  class="absolute inset-0 w-full h-full object-cover"
+                  class="w-fit h-fit object-contain"
                 />
               </div>
               <div
-                class="relative aspect-square border_rounded overflow-hidden"
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
               >
                 <img
                   src="assets/icons/Certified2.svg"
                   alt=""
-                  class="h-full object-cover"
+                  class="w-fit h-fit object-contain"
                 />
               </div>
               <div
-                class="relative aspect-square border_rounded overflow-hidden"
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
               >
                 <img
                   src="assets/icons/Certified3.svg"
                   alt=""
-                  class="h-full object-cover"
+                  class="w-fit h-fit object-contain"
                 />
               </div>
               <div
-                class="relative aspect-square border_rounded overflow-hidden"
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
               >
                 <img
                   src="assets/icons/Certified4.svg"
                   alt=""
-                  class="h-full object-cover"
+                  class="w-fit h-fit object-contain"
                 />
               </div>
             </div>

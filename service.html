@@ -23,7 +23,7 @@
     <title>Document 1</title>
   </head>
   <body>
-    <header class="sticky top-0 z-50 bg-white">
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -31,33 +31,68 @@
             <img
               src="assets/icons/HeadLogo.svg"
               alt="TENSORIS"
-              class="h-40 md:h-48 lg:h-auto w-auto"
+              class="h-35 md:h-48 lg:h-auto w-auto"
             />
           </a>
 
           <!-- Desktop Navigation -->
           <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
-            <a href="Private_Customers.html" class="flex items-center gap-4">
-              Schädlingsbekämpfung
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="shrink-0"
-              >
-                <path
-                  d="M8 10L12 14L16 10"
-                  stroke="#111"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
+            <div
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+              class="relative"
+            >
+              <a href="#" class="flex items-center gap-4">
+                Schädlingsbekämpfung
 
-            <a href="service.html">Service</a>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="shrink-0 transition duration-300"
+                  :class="{ 'rotate-180': open }"
+                >
+                  <path
+                    d="M8 10L12 14L16 10"
+                    stroke="#111"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <!-- Dropdown -->
+              <div
+                x-show="open"
+                x-transition
+                class="absolute top-full left-0 pt-12 min-w-[220px]"
+                x-cloak
+              >
+                <div
+                  class="bg-white rounded-2xl overflow-hidden shadow-lg border border-black/10"
+                >
+                  <a
+                    href="private_customers.html"
+                    class="block px-16 py-12 hover:bg-Backg"
+                  >
+                    Privatkunden
+                  </a>
+
+                  <a
+                    href="forBusinesses.html"
+                    class="block px-16 py-12 hover:bg-Backg"
+                  >
+                    Geschäftskunden
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
             <a href="">Über uns</a>
             <a href="">Kontakt</a>
@@ -74,7 +109,8 @@
             <!-- Mobile Menu Button -->
             <button
               type="button"
-              class="xl:hidden flex items-center justify-center size-44"
+              @click="mobileMenu = true"
+              class="xl:hidden flex items-center justify-center size-24"
               aria-label="Open Menu"
             >
               <svg
@@ -94,6 +130,111 @@
             </button>
           </div>
         </div>
+      </div>
+      <!-- Overlay -->
+      <div
+        x-show="mobileMenu"
+        x-transition.opacity
+        @click="mobileMenu = false"
+        class="fixed inset-0 bg-black/50 z-50 xl:hidden"
+      ></div>
+
+      <!-- Mobile Menu -->
+      <div
+        x-show="mobileMenu"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[42%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 relative"
+      >
+        <!-- Header -->
+        <div class="flex items-center justify-between py-16">
+          <div class="free_text">
+            <h3>Speisekarte</h3>
+          </div>
+
+          <button
+            @click="mobileMenu = false"
+            class="size-40 flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex flex-col gap-40 mt-40 relative z-10">
+          <div x-data="{ open: false }" class="xl:hidden">
+            <button
+              type="button"
+              @click="open = !open"
+              class="w-full flex items-center justify-between text-left"
+            >
+              <span>Schädlingsbekämpfung</span>
+
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0 transition-transform duration-300"
+                :class="open ? 'rotate-180' : ''"
+              >
+                <path
+                  d="M8 10L12 14L16 10"
+                  stroke="#111"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <!-- Mobile Dropdown Links -->
+            <div
+              x-show="open"
+              x-collapse
+              class="pl-16 flex flex-col gap-16 pt-16"
+            >
+              <a href="private-customers.html" class="block"> Privatkunden </a>
+
+              <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
+            </div>
+          </div>
+          <a href="service.html">Service</a>
+          <a href="Prevention.html">Prävention</a>
+          <a href="#">Über uns</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Karriere</a>
+
+          <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
+        </nav>
+        <img
+          src="assets/icons/HamburgerIcon.svg"
+          alt=""
+          class="absolute right-0 top-[22%]"
+        />
+        <img
+          src="assets/icons/HamburgerIcon2.svg"
+          alt=""
+          class="absolute left-0 bottom-0 z-0"
+        />
       </div>
     </header>
 
@@ -1252,14 +1393,14 @@
         </div>
       </section>
     </main>
-    <div class="sticky bottom-16 z-40 w-full px-24 my-40">
+     <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
       <div class="flex justify-center">
         <div
-          class="p-24 flex gap-20 md:gap-40 bg-Invert rounded-full shadow-2xl"
+          class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 bg-Invert rounded-full shadow-lg"
         >
           <a href="" class="btn btn-primary"
-            ><span class="hidden md:block">Telefon</span>
-            <span class="md:hidden"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
               ><svg
                 width="24"
                 height="24"
@@ -1279,8 +1420,8 @@
               </svg> </span
           ></a>
           <a href="" class="btn btn-primary"
-            ><span class="hidden md:block">Telefon</span>
-            <span class="md:hidden"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
               ><svg
                 width="24"
                 height="24"
@@ -1335,8 +1476,8 @@
               </svg> </span
           ></a>
           <a href="" class="btn btn-primary"
-            ><span class="hidden md:block">Telefon</span>
-            <span class="md:hidden"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
               ><svg
                 width="24"
                 height="24"
@@ -1394,10 +1535,10 @@
         <div class="flex flex-col gap-30 md:gap-40 container px-0">
           <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-x-24 xl:gap-x-40">
             <div
-              class="not-xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-orange not-lg:pb-24 md:pr-40"
+              class="md:col-span-2 xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-orange not-lg:pb-24 md:pr-40"
             >
-              <a class="p-24 bg-white border_rounded w-fit">
-                <img src="assets/icons/HeadLogo.svg" alt="" class="w-fit" />
+              <a class="p-24 bg-white border_rounded md:not-xl:w-1/2">
+                <img src="assets/icons/HeadLogo.svg" alt="" class="w-full" />
               </a>
               <p>
                 Die Dienstleistungen von Insectra sind darauf ausgerichtet,
@@ -1409,7 +1550,7 @@
               >
             </div>
             <div
-              class="py-24 not-md:border-b md:border-r border-orange free_text font-medium"
+              class="py-24 not-md:border-b md:border-r border-orange flex flex-col gap-40 font-medium"
             >
               <span class="text-28 text-Invert">Company</span>
               <ul class="ps-16 space-y-8">
@@ -1421,7 +1562,7 @@
               </ul>
             </div>
             <div
-              class="py-20 not-md:border-b md:border-r border-orange free_text font-medium"
+              class="py-20 not-md:border-b xl:border-r border-orange flex flex-col gap-40 font-medium"
             >
               <span class="text-28 text-Invert">Services</span>
               <ul class="ps-16 space-y-8">
@@ -1515,7 +1656,7 @@
 
           <div class="flex flex-col xl:flex-row gap-30 md:gap-40">
             <div
-              class="xl:w-3/4 border_rounded not-xl:h-180 border_rounded relative object-cover object-center"
+              class="xl:w-3/4 border_rounded not-xl:h-180 border_rounded relative object-cover object-center overflow-hidden"
             >
               <img
                 src="assets/images/Map.webp"
@@ -1527,41 +1668,42 @@
               class="xl:w-1/4 border_rounded grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-2 gap-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]"
             >
               <div
-                class="relative aspect-square border_rounded overflow-hidden"
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
               >
                 <img
                   src="assets/icons/Certified1.svg"
                   alt=""
-                  class="absolute inset-0 w-full h-full object-cover"
+                  class="w-fit h-fit object-contain"
                 />
               </div>
               <div
-                class="relative aspect-square border_rounded overflow-hidden"
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
               >
                 <img
                   src="assets/icons/Certified2.svg"
                   alt=""
-                  class="h-full object-cover"
+                  class="w-fit h-fit object-contain"
                 />
               </div>
               <div
-                class="relative aspect-square border_rounded overflow-hidden"
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
               >
                 <img
                   src="assets/icons/Certified3.svg"
                   alt=""
-                  class="h-full object-cover"
+                  class="w-fit h-fit object-contain"
                 />
               </div>
               <div
-                class="relative aspect-square border_rounded overflow-hidden"
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
               >
                 <img
                   src="assets/icons/Certified4.svg"
                   alt=""
-                  class="h-full object-cover"
+                  class="w-fit h-fit object-contain"
                 />
               </div>
+             
             </div>
           </div>
 

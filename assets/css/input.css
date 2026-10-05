@@ -137,6 +137,9 @@
   /* Responsive Body Line Height */
   --text-body--line-height: 1.5;
 
+  --text-body--font-weight: 500;
+
+
   /* ========================================
        HEADING H1
     ======================================== */
@@ -205,6 +208,7 @@
     -webkit-hyphens: auto;
     hyphens: auto;
   }
+  
   :is(h1, h2, h3, h4, h5, h6) {
     @apply font-Manrope! text-heading;
   }
@@ -238,7 +242,7 @@
   }
 
   .free_text {
-    @apply flex flex-col gap-24;
+    @apply flex flex-col gap-16;
   }
   .free_text h1 {
     @apply text-h1 text-heading;
@@ -269,10 +273,13 @@
   }
 
   .ctm_sec {
-    @apply relative z-1;
+    @apply relative z-1 overflow-hidden;
+  }
+  .border_rounded_sm {
+    @apply rounded-[16px];
   }
   .border_rounded {
-    @apply rounded-[28px];
+    @apply rounded-[24px];
   }
   .border_rounded_lg {
     @apply rounded-[64px];
@@ -292,6 +299,9 @@
     0% 100%,
     0% 18%
   );
+}
+[x-cloak] {
+  display: none !important;
 }
 }
 
