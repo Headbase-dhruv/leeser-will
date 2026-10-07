@@ -23,7 +23,7 @@
     <title>Document 1</title>
   </head>
   <body>
-  <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -95,8 +95,8 @@
             <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
             <a href="">Über uns</a>
-            <a href="">Kontakt</a>
-            <a href="">Karriere</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="karriere.html">Karriere</a>
           </nav>
 
           <!-- Right Side -->
@@ -178,7 +178,7 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="flex flex-col gap-40 mt-40 relative z-10">
+        <nav class="flex flex-col gap-24 mt-40 relative z-10">
           <div x-data="{ open: false }" class="xl:hidden">
             <button
               type="button"
@@ -212,7 +212,7 @@
               x-collapse
               class="pl-16 flex flex-col gap-16 pt-16"
             >
-              <a href="private-customers.html" class="block"> Privatkunden </a>
+              <a href="private_customers.html" class="block"> Privatkunden </a>
 
               <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
             </div>
@@ -220,8 +220,8 @@
           <a href="service.html">Service</a>
           <a href="Prevention.html">Prävention</a>
           <a href="#">Über uns</a>
-          <a href="#">Kontakt</a>
-          <a href="#">Karriere</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="karriere.html">Karriere</a>
 
           <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
         </nav>
@@ -243,12 +243,15 @@
       <section>
         <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
           <div
-             class="border_rounded_lg overflow-hidden not-sm:min-h-550 h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] bg-cover bg-center"
-            style="
-              background-image: url(&quot;assets/images/CustomersHeader.webp&quot;);
-            "
+            class="relative border_rounded_lg overflow-hidden h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)]"
           >
-            <div class="free_text text-center   ">
+            <img
+              src="assets/images/CustomersHeader.webp"
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-primary/30"></div>
+            <div class="relative z-10 free_text text-center">
               <h2 class="text-white">Für Privatkunden</h2>
 
               <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
@@ -315,13 +318,13 @@
       </section>
 
       <!-- sec-2 -->
-      <section x-data="{ active: 'Kanalisation' }" class="py-sec ">
+      <section x-data="{ active: 'Kanalisation' }" class="py-sec">
         <div class="container xl:pr-0 relative">
           <div class="flex flex-col gap-40">
             <span class="badge">Interaktiver Immobilienratgeber</span>
             <div class="free_text max-w-800">
               <h3>Schützen Sie jeden Bereich Ihres Grundstücks.</h3>
-              <p class="max-w-520">
+              <p class="not-md:hidden max-w-520">
                 Verschiedene Bereiche ziehen unterschiedliche Schädlinge an.
                 Klicken Sie auf einen beliebigen Bereich des Grundstücks, um
                 mehr über häufige Risiken und unsere professionellen Lösungen zu
@@ -329,7 +332,7 @@
               </p>
             </div>
             <div class="not-xl:relative">
-              <div class="xl:absolute top-50 right-20 h-fit w-fit">
+              <div class="xl:absolute top-0 right-20 h-fit w-fit">
                 <img
                   src="assets/images/HomeLayout.png"
                   alt=""
@@ -378,7 +381,7 @@
                 <button
                   @click="active='Küche'"
                   aria-label="Küche"
-                  class="absolute top-[30%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[34%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Küche' ? 'bg-orange' : 'bg-primary'"
@@ -398,7 +401,7 @@
                 <button
                   @click="active='Schlafzimmer'"
                   aria-label="Schlafzimmer"
-                  class="absolute top-[28%] left-[67%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[30%] left-[67%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Schlafzimmer' ? 'bg-orange' : 'bg-primary'"
@@ -438,7 +441,7 @@
                 <button
                   @click="active='Badezimmer'"
                   aria-label="Badezimmer"
-                  class="absolute top-[51.5%] left-[65%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[56%] left-[64.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Badezimmer' ? 'bg-orange' : 'bg-primary'"
@@ -458,7 +461,7 @@
                 <button
                   @click="active='Keller'"
                   aria-label="Keller"
-                  class="absolute bottom-[15%] left-[50%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[85%] left-[50%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Keller' ? 'bg-orange' : 'bg-primary'"
@@ -478,7 +481,7 @@
                 <button
                   @click="active='Garten'"
                   aria-label="Garten"
-                  class="absolute bottom-[18%] right-[6%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[80%] left-[83%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Garten' ? 'bg-orange' : 'bg-primary'"
@@ -496,12 +499,12 @@
                   </div>
                 </button>
                 <button
-                  @click="active='Gartenn'"
-                  aria-label="Gartenn"
-                  class="absolute bottom-[47%] right-[2%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  @click="active='Garten1'"
+                  aria-label="Garten"
+                  class="absolute top-[48%] left-[84%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
-                    :class="active==='Gartenn' ? 'bg-orange' : 'bg-primary'"
+                    :class="active==='Garten1' ? 'bg-orange' : 'bg-primary'"
                     class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                   >
                     <img
@@ -512,13 +515,13 @@
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base">Garten</span>
-                    <span class="text-xs">Wespen</span>
+                    <span class="text-xs">Wespen/Hornissen</span>
                   </div>
                 </button>
                 <button
                   @click="active='Kanalisation'"
                   aria-label="Kanalisation"
-                  class="absolute bottom-[16.5%] left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[80%] left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Kanalisation' ? 'bg-orange' : 'bg-primary'"
@@ -538,7 +541,7 @@
                 <button
                   @click="active='Entsorgungsbereich'"
                   aria-label="Entsorgungsbereich"
-                  class="absolute bottom-[29%] left-[15.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[70%] left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Entsorgungsbereich' ? 'bg-orange' : 'bg-primary'"
@@ -556,25 +559,23 @@
                   </div>
                 </button>
                 <button
-                  @click="active='arten – Eichenprozessionsspinner'"
-                  aria-label="arten – Eichenprozessionsspinner"
-                  class="absolute bottom-[52%] left-[13%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  @click="active='Garten2'"
+                  aria-label="Garten"
+                  class="absolute top-[44%] left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
-                    :class="active==='arten – Eichenprozessionsspinner' ? 'bg-orange' : 'bg-primary'"
+                    :class="active==='Garten2' ? 'bg-orange' : 'bg-primary'"
                     class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                   >
                     <img
-                      src="assets/icons/fly.svg"
+                      src="assets/icons/caterpillar.svg"
                       alt=""
                       class="w-20 md:w-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">
-                      arten – Eichenprozessionsspinner</span
-                    >
-                    <span class="text-xs">Motte</span>
+                    <span class="text-black text-base"> Garten</span>
+                    <span class="text-xs">Eichenprozessionsspinner</span>
                   </div>
                 </button>
               </div>
@@ -593,7 +594,8 @@
                         'Badezimmer': 'assets/icons/silverfish.svg',
                         'Keller': 'assets/icons/undar.svg',
                         'Garten': 'assets/icons/ant.svg',
-                        'Gartenn': 'assets/icons/wasp.svg',
+                        'Garten1': 'assets/icons/wasp.svg',
+                        'Garten2': 'assets/icons/caterpillar.svg',
                         'Kanalisation': 'assets/icons/undar.svg',
                         'Entsorgungsbereich': 'assets/icons/undar.svg',
                         'arten – Eichenprozessionsspinner': 'assets/icons/fly.svg',
@@ -609,40 +611,40 @@
                   für Außenbereiche.
                 </p>
               </div>
-               <a href="" class="btn-link">
-                    Inspektion anfordern
+              <a href="" class="btn-link">
+                Inspektion anfordern
 
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="transition-all duration-200"
-                    >
-                      <path
-                        d="M19 12H5"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M14 17L19 12"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M14 7L19 12"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </a>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="transition-all duration-200"
+                >
+                  <path
+                    d="M19 12H5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14 17L19 12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14 7L19 12"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -691,10 +693,105 @@
                   >Fordern Sie ein unverbindliches Angebot an</a
                 >
               </div>
-              <div
-                class="lg:col-span-5 flex flex-col items-center justify-center gap-40"
-              >
-                <img src="assets/images/Customer1.webp" alt="" class="w-full" />
+              <div class="lg:col-span-5 flex items-center gap-16">
+                <div class="w-1/3 h-fit border_rounded">
+                  <div class="relative h-full">
+                    <img
+                      src="assets/icons/Rectangle_lg.svg"
+                      alt=""
+                      class="block w-full h-auto"
+                    />
+
+                    <img
+                      src="assets/images/Customer11.webp"
+                      alt=""
+                      class="absolute inset-0 w-full h-full object-cover"
+                      style="
+                        mask-image: url(&quot;assets/icons/Shape.svg&quot;);
+                        mask-size: 100% 100%;
+                        mask-repeat: no-repeat;
+
+                        -webkit-mask-image: url(&quot;assets/icons/Rectangle_lg.svg&quot;);
+                        -webkit-mask-size: 100% 100%;
+                        -webkit-mask-repeat: no-repeat;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="w-1/3 flex flex-col gap-16">
+                  <div class="border_rounded">
+                    <div class="relative h-full">
+                      <img
+                        src="assets/icons/Rectangle_sm.svg"
+                        alt=""
+                        class="block w-full h-auto"
+                      />
+
+                      <img
+                        src="assets/images/Customer12.webp"
+                        alt=""
+                        class="absolute inset-0 w-full h-full object-cover"
+                        style="
+                          mask-image: url(&quot;assets/icons/Rectangle_sm.svg&quot;);
+                          mask-size: 100% 100%;
+                          mask-repeat: no-repeat;
+
+                          -webkit-mask-image: url(&quot;assets/icons/Rectangle_sm.svg&quot;);
+                          -webkit-mask-size: 100% 100%;
+                          -webkit-mask-repeat: no-repeat;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="border_rounded">
+                    <div class="relative h-full">
+                      <img
+                        src="assets/icons/Rectangle_sm.svg"
+                        alt=""
+                        class="block w-full h-auto"
+                      />
+
+                      <img
+                        src="assets/images/Customer13.webp"
+                        alt=""
+                        class="absolute inset-0 w-full h-full object-cover"
+                        style="
+                          mask-image: url(&quot;assets/icons/Rectangle_sm.svg&quot;);
+                          mask-size: 100% 100%;
+                          mask-repeat: no-repeat;
+
+                          -webkit-mask-image: url(&quot;assets/icons/Rectangle_sm.svg&quot;);
+                          -webkit-mask-size: 100% 100%;
+                          -webkit-mask-repeat: no-repeat;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="w-1/3 h-fit border_rounded">
+                  <div class="relative h-full">
+                    <img
+                      src="assets/icons/Rectangle_lg.svg"
+                      alt=""
+                      class="block w-full h-auto"
+                    />
+
+                    <img
+                      src="assets/images/Customer14.webp"
+                      alt=""
+                      class="absolute inset-0 w-full h-full object-cover"
+                      style="
+                        mask-image: url(&quot;assets/icons/Shape.svg&quot;);
+                        mask-size: 100% 100%;
+                        mask-repeat: no-repeat;
+
+                        -webkit-mask-image: url(&quot;assets/icons/Rectangle_lg.svg&quot;);
+                        -webkit-mask-size: 100% 100%;
+                        -webkit-mask-repeat: no-repeat;
+                      "
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -710,7 +807,7 @@
             >
               <div class="lg:col-span-8 free_text gap-0! justify-center">
                 <h3>Insekten & Gliederfüßer</h3>
-                <div class="free_text mt-40 lg:mt-80 ">
+                <div class="free_text mt-40 lg:mt-80">
                   <p>
                     Sie krabbeln und kriechen, kreuchen und fleuchen.
                     Gliederfüßer sind der größte Stamm im gesamten Tierreich:
@@ -751,16 +848,16 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-80"
-            >
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-80">
               <div class="free_text gap-0!">
                 <h3>Schadnager, Ratte & Maus</h3>
-                <div class="free_text mt-40 lg:mt-80 gap-16!">
+                <div
+                  class="mt-40 lg:mt-80 h-350 w-full xsm:w-385 rounded-r-full shrink-0 overflow-hidden"
+                >
                   <img
                     src="assets/images/Customer3.webp"
                     alt=""
-                    class="w-fit"
+                    class="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -795,9 +892,7 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-12 gap-80"
-            >
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-80">
               <div class="lg:col-span-8 free_text gap-0! justify-center">
                 <h3>Würmer & Larven</h3>
                 <div class="free_text mt-40 lg:mt-80">
@@ -828,7 +923,19 @@
               <div
                 class="lg:col-span-4 flex flex-col items-center justify-center gap-40"
               >
-                <img src="assets/images/Customer4.webp" alt="" class="w-full" />
+                <div class="relative h-full w-full">
+                  <img
+                    src="assets/images/Customer4.webp"
+                    alt=""
+                    class="w-full h-full object-cover object-center"
+                    style="
+                      mask: url(&quot;assets/icons/Shape4.svg&quot;) center /
+                        100% 100% no-repeat;
+                      -webkit-mask: url(&quot;assets/icons/Shape4.svg&quot;)
+                        center / 100% 100% no-repeat;
+                    "
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -956,11 +1063,42 @@
       <section class="py-sec bg-Backg">
         <div class="container">
           <div class="component">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
-            >
-              <div>
-                <img src="assets/images/Customer5.webp" alt="" />
+            <div class="grid grid-cols-1 lg:grid-cols-2 row">
+              <div
+                class="relative w-full max-w-[900px] mx-auto shrink-0 h-[420px] xsm:h-[480px] sm:h-[540px] md:h-[600px] lg:h-[650px] xl:h-[690px] 2xl:h-[clamp(42rem,38rem+5vw,45.5rem)] 2xl:mr-50"
+              >
+                <!-- Top Image -->
+                <div
+                  class="absolute top-0 left-1/2 -translate-x-1/2 sm:left-[42%] sm:-translate-x-1/2 lg:left-[35%] xl:left-[30%] 2xl:left-[25%] h-[200px] xsm:h-[230px] sm:h-[270px] md:h-[320px] lg:h-[360px] xl:h-[400px] 2xl:h-[clamp(24rem,20rem+5vw,27.625rem)] border_rounded overflow-hidden"
+                >
+                  <img
+                    src="assets/images/Customer5.2.webp"
+                    alt=""
+                    class="h-full w-auto max-w-none object-cover"
+                  />
+                </div>
+
+                <!-- Left Image -->
+                <div
+                  class="absolute left-0 sm:left-[2%] md:left-[4%] lg:left-[2%] xl:left-0 top-[48%] -translate-y-1/2 h-[150px] xsm:h-[175px] sm:h-[210px] md:h-[240px] lg:h-[270px] xl:h-[300px] 2xl:h-[clamp(18rem,15rem+4vw,20.8125rem)] border_rounded overflow-hidden z-10"
+                >
+                  <img
+                    src="assets/images/Customer5.1.webp"
+                    alt=""
+                    class="h-full w-auto max-w-none object-cover"
+                  />
+                </div>
+
+                <!-- Bottom Right Image -->
+                <div
+                  class="absolute right-0 sm:right-[2%] md:right-[3%] lg:right-0 bottom-0 h-[250px] xsm:h-[285px] sm:h-[330px] md:h-[380px] lg:h-[430px] xl:h-[490px] 2xl:h-[clamp(31rem,27rem+5vw,35.75rem)] border_rounded overflow-hidden"
+                >
+                  <img
+                    src="assets/images/Customer5.3.webp"
+                    alt=""
+                    class="h-full w-auto max-w-none object-cover"
+                  />
+                </div>
               </div>
 
               <div class="free_text gap-16! mt-auto">
@@ -995,11 +1133,11 @@
         <div class="container">
           <div class="component">
             <div
-              class="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              class="grid lg:grid-cols-3 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
             >
-              <div class="lg:col-span-8 free_text gap-0! justify-center">
+              <div class="lg:col-span-2 free_text gap-0! justify-center">
                 <h3>Holz & Bautenschutz</h3>
-                <div class="free_text pt-40 md:pt-60 lg:pt-80 ">
+                <div class="free_text pt-40 md:pt-60 lg:pt-80">
                   <p>
                     Holz ist ein beliebtes Material für alle Arten von Bauten in
                     und um Ihr Haus. Es ist natürlich, hat eine besonders
@@ -1029,10 +1167,36 @@
                   </p>
                 </div>
               </div>
-              <div
-                class="lg:col-span-4 flex flex-col items-center justify-center gap-40"
-              >
-                <img src="assets/images/Customer6.webp" alt="" class="w-full" />
+              <div class="flex flex-col w-fit mx-auto items-center justify-center gap-40">
+                <div class="flex gap-28 sm:gap-40 not-sm:h-280 h-full sm:not-lg:h-400 shrink-0 ">
+                  <div class="relative h-full w-full">
+                  <img
+                    src="assets/images/Customer6.1.webp"
+                    alt=""
+                    class="xl:w-full h-full object-cover object-center"
+                    style="
+                      mask: url(&quot;assets/icons/Shape5.svg&quot;) center /
+                        100% 100% no-repeat;
+                      -webkit-mask: url(&quot;assets/icons/Shape5.svg&quot;)
+                        center / 100% 100% no-repeat;
+                    "
+                  />
+                </div>
+
+                  <div class="relative h-full w-full">
+                  <img
+                    src="assets/images/Customer6.2.webp"
+                    alt=""
+                    class="w-full h-full object-cover object-center"
+                    style="
+                      mask: url(&quot;assets/icons/Shape5.svg&quot;) center /
+                        100% 100% no-repeat;
+                      -webkit-mask: url(&quot;assets/icons/Shape5.svg&quot;)
+                        center / 100% 100% no-repeat;
+                    "
+                  />
+                </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1411,7 +1575,7 @@
         </div>
       </section>
     </main>
-     <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
+    <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
       <div class="flex justify-center">
         <div
           class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 bg-Invert rounded-full shadow-lg"
@@ -1721,7 +1885,6 @@
                   class="w-fit h-fit object-contain"
                 />
               </div>
-             
             </div>
           </div>
 

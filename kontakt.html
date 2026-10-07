@@ -1,0 +1,1261 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <title>leeser-will</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <script defer src="assets/js/alpine.js"></script>
+    <script defer src="assets/js/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <title>Document 1</title>
+  </head>
+  <body>
+     <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+      <div class="container">
+        <div class="flex items-center justify-between py-16 lg:py-24">
+          <!-- Logo -->
+          <a href="/" aria-label="TENSORIS" class="shrink-0">
+            <img
+              src="assets/icons/HeadLogo.svg"
+              alt="TENSORIS"
+              class="h-35 md:h-48 lg:h-auto w-auto"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
+            <div
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+              class="relative"
+            >
+              <a href="#" class="flex items-center gap-4">
+                Schädlingsbekämpfung
+
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="shrink-0 transition duration-300"
+                  :class="{ 'rotate-180': open }"
+                >
+                  <path
+                    d="M8 10L12 14L16 10"
+                    stroke="#111"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <!-- Dropdown -->
+              <div
+                x-show="open"
+                x-transition
+                class="absolute top-full left-0 pt-12 min-w-[220px]"
+                x-cloak
+              >
+                <div
+                  class="bg-white rounded-2xl overflow-hidden shadow-lg border border-black/10"
+                >
+                  <a
+                    href="private_customers.html"
+                    class="block px-16 py-12 hover:bg-Backg"
+                  >
+                    Privatkunden
+                  </a>
+
+                  <a
+                    href="forBusinesses.html"
+                    class="block px-16 py-12 hover:bg-Backg"
+                  >
+                    Geschäftskunden
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <a href="service.html" class="active:text-orange">Service</a>
+            <a href="Prevention.html">Prävention</a>
+            <a href="">Über uns</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="karriere.html">Karriere</a>
+          </nav>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-12">
+            <!-- Desktop Button -->
+            <a href="" class="hidden sm:inline-flex btn btn-primary">
+              Kunden-Login
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button
+              type="button"
+              @click="mobileMenu = true"
+              class="xl:hidden flex items-center justify-center size-24"
+              aria-label="Open Menu"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2 5.36667C2 5.0042 2.14399 4.65659 2.40029 4.40029C2.65659 4.14399 3.0042 4 3.36667 4H19.7667C20.1291 4 20.4767 4.14399 20.733 4.40029C20.9893 4.65659 21.1333 5.0042 21.1333 5.36667C21.1333 5.72913 20.9893 6.07675 20.733 6.33305C20.4767 6.58935 20.1291 6.73333 19.7667 6.73333H3.36667C3.0042 6.73333 2.65659 6.58935 2.40029 6.33305C2.14399 6.07675 2 5.72913 2 5.36667ZM2 12.2C2 11.8375 2.14399 11.4899 2.40029 11.2336C2.65659 10.9773 3.0042 10.8333 3.36667 10.8333H11.5667C11.9291 10.8333 12.2767 10.9773 12.533 11.2336C12.7893 11.4899 12.9333 11.8375 12.9333 12.2C12.9333 12.5625 12.7893 12.9101 12.533 13.1664C12.2767 13.4227 11.9291 13.5667 11.5667 13.5667H3.36667C3.0042 13.5667 2.65659 13.4227 2.40029 13.1664C2.14399 12.9101 2 12.5625 2 12.2ZM2 19.0333C2 18.6709 2.14399 18.3233 2.40029 18.067C2.65659 17.8107 3.0042 17.6667 3.36667 17.6667H19.7667C20.1291 17.6667 20.4767 17.8107 20.733 18.067C20.9893 18.3233 21.1333 18.6709 21.1333 19.0333C21.1333 19.3958 20.9893 19.7434 20.733 19.9997C20.4767 20.256 20.1291 20.4 19.7667 20.4H3.36667C3.0042 20.4 2.65659 20.256 2.40029 19.9997C2.14399 19.7434 2 19.3958 2 19.0333Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Overlay -->
+      <div
+        x-show="mobileMenu"
+        x-transition.opacity
+        @click="mobileMenu = false"
+        class="fixed inset-0 bg-black/50 z-50 xl:hidden"
+      ></div>
+
+      <!-- Mobile Menu -->
+      <div
+        x-show="mobileMenu"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[42%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 relative"
+      >
+        <!-- Header -->
+        <div class="flex items-center justify-between py-16">
+          <div class="free_text">
+            <h3>Speisekarte</h3>
+          </div>
+
+          <button
+            @click="mobileMenu = false"
+            class="size-40 flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex flex-col gap-24 mt-40 relative z-10">
+          <div x-data="{ open: false }" class="xl:hidden">
+            <button
+              type="button"
+              @click="open = !open"
+              class="w-full flex items-center justify-between text-left"
+            >
+              <span>Schädlingsbekämpfung</span>
+
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0 transition-transform duration-300"
+                :class="open ? 'rotate-180' : ''"
+              >
+                <path
+                  d="M8 10L12 14L16 10"
+                  stroke="#111"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <!-- Mobile Dropdown Links -->
+            <div
+              x-show="open"
+              x-collapse
+              class="pl-16 flex flex-col gap-16 pt-16"
+            >
+              <a href="private_customers.html" class="block"> Privatkunden </a>
+
+              <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
+            </div>
+          </div>
+          <a href="service.html">Service</a>
+          <a href="Prevention.html">Prävention</a>
+          <a href="#">Über uns</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="karriere.html">Karriere</a>
+
+          <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
+        </nav>
+        <img
+          src="assets/icons/HamburgerIcon.svg"
+          alt=""
+          class="absolute right-0 top-[22%]"
+        />
+        <img
+          src="assets/icons/HamburgerIcon2.svg"
+          alt=""
+          class="absolute left-0 bottom-0 z-0"
+        />
+      </div>
+    </header>
+    <main>
+      <!-- Sec-1 -->
+      <section>
+        <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
+          <div
+            class="relative border_rounded_lg overflow-hidden h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)]"
+          >
+            <img
+              src="assets/images/karrieredetailHeader.webp"
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-primary/30"></div>
+            <div class="relative z-10 free_text text-center">
+              <h2 class="text-white">Kontakt</h2>
+
+              <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
+                <ol class="flex flex-wrap items-center gap-8 text-white">
+                  <li>
+                    <a href="/" class="transition-opacity hover:underline">
+                      Home
+                    </a>
+                  </li>
+
+                  <li aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="shrink-0"
+                    >
+                      <path
+                        d="M10 16L14 12L10 8"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </li>
+
+                  <li class="font-medium text-white">Kontakt</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-2 -->
+      <section class="my-sec">
+        <div class="container">
+          <div class="col row grid xl:grid-cols-2">
+            <div class=" relative order-2 xl:order-1 min-h-440">
+                <img src="assets/images/Map2.webp" alt="" class="absolute inset-0 h-full w-full object-center object-cover">
+            </div>
+            <div class="free_text gap-40 order-1 xl:order-2">
+              <h4>Ihre individuelle Lösung beginnt hier</h4>
+              <form class="space-y-24 sm:space-y-30">
+                <!-- Name -->
+                <div class="flex flex-col gap-8">
+                  <label for="name">
+                    Ihr Name <span class="text-[#BE2F33]">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Jon Snow"
+                    class="w-full px-14 py-12 rounded-xl border border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
+                  />
+                </div>
+
+                <!-- Phone -->
+                <div class="flex flex-col gap-8">
+                  <label for="phone">
+                    Telefonnummer <span class="text-[#BE2F33]">*</span>
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="1234 – 567890"
+                    class="w-full px-14 py-12 rounded-xl border border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
+                  />
+                </div>
+
+                <!-- Email -->
+                <div class="flex flex-col gap-8">
+                  <label
+                    for="email"
+                    class="block text-base text-neutral-900 mb-2"
+                  >
+                    E-Mail-Adresse
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="johndoe@gmail.com"
+                    class="w-full px-14 py-12 rounded-xl border border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
+                  />
+                </div>
+
+                <!-- Message -->
+                <div class="flex flex-col gap-8">
+                  <label for="message">
+                    Beschreiben Sie kurz Ihre Anforderungen
+                  </label>
+
+                  <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Beschreiben Sie kurz Ihre Anforderungen"
+                    class="w-full px-14 py-12 rounded-xl border border-[#C9D5E6] bg-white resize-none outline-none focus:border-primary focus:ring-0 transition"
+                  ></textarea>
+                </div>
+
+                <!-- Checkbox -->
+                <label class="flex items-center gap-8 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="size-24 rounded border border-neutral-300 accent-[#0B4A8B]"
+                  />
+
+                  Ich stimme der Datenverarbeitung zu.
+                </label>
+
+                <!-- Button -->
+                <button
+                  type="submit"
+                  class="btn btn-primary flex w-full justify-center"
+                >
+                  Nachricht senden
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M5 12H19M19 12L13 6M19 12L13 18"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Features -->
+                <div
+                  class="flex flex-col sm:flex-row items-center justify-center gap-16 sm:gap-28 pt-2 text-neutral-600"
+                >
+                  <div class="flex items-center gap-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20 6.5L9 17.5L4 12.5"
+                        stroke="#323232"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <span>Antwort innerhalb von 24h</span>
+                  </div>
+
+                  <div class="flex items-center gap-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20 6.5L9 17.5L4 12.5"
+                        stroke="#323232"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <span>Vor-Ort-Beratung möglich</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="free_text gap-40 order-3">
+              <div class="free_text">
+                <span class="badge">Karriere</span>
+                <h3>Leeser & Will Mönchengladbach</h3>
+              </div>
+              <h4>Deutschlandweiter Service aus Mönchengladbach</h4>
+              <div class="space-y-8">
+                <p>
+                  Seit nunmehr 75 Jahren lehrt Leeser & Will Mäusen, Ratten,
+                  Schaben und allen anderen Schädlingen das Fürchten.
+                </p>
+                <p>
+                  Vom Stammsitz in Mönchengladbach aus koordinieren wir
+                  bundesweit unsere Einsätze mit modernster IT und
+                  Fuhrparkmanagement.
+                </p>
+              </div>
+              <div>
+                <h4>kostenlose, zentrale Service-Nummer:</h4>
+                <h4 class="text-txt-body">0800.33 04 286</h4>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-40 order-4">
+              <div
+                class="md:col-span-2 text-white! bg-primary p-24 border_rounded"
+              >
+                <div class="grid md:grid-cols-2 gap-40">
+                  <div class="free_text gap-8!">
+                    <h4 class="text-white!">Stammsitz & Verwaltung</h4>
+                    <div class="space-y-3">
+                      <p>Konstantinstraße 351</p>
+                      <p>41238 Mönchengladbach</p>
+                    </div>
+                  </div>
+                  <div class="free_text gap-8!">
+                    <p class="flex gap-x-8">
+                      <span
+                        ><svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M10.8542 13.144C9.68419 11.974 8.80219 10.664 8.21619 9.33499C8.09219 9.05399 8.16519 8.72499 8.38219 8.50799L9.20119 7.68999C9.87219 7.01899 9.87219 6.06999 9.28619 5.48399L8.11219 4.30999C7.33119 3.52899 6.06519 3.52899 5.28419 4.30999L4.63219 4.96199C3.89119 5.70299 3.58219 6.77199 3.78219 7.83199C4.27619 10.445 5.79419 13.306 8.24319 15.755C10.6922 18.204 13.5532 19.722 16.1662 20.216C17.2262 20.416 18.2952 20.107 19.0362 19.366L19.6872 18.715C20.4682 17.934 20.4682 16.668 19.6872 15.887L18.5142 14.714C17.9282 14.128 16.9782 14.128 16.3932 14.714L15.4902 15.618C15.2732 15.835 14.9442 15.908 14.6632 15.784C13.3342 15.197 12.0242 14.314 10.8542 13.144Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg> </span
+                      >0 21 66.67 000 60
+                    </p>
+                    <p class="flex gap-x-8">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M4 9H20C21.1046 9 22 9.89543 22 11V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11C2 9.89543 2.89543 9 4 9Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M8.5 3H15.5C16.0523 3 16.5 3.44772 16.5 4V9H7.5V4C7.5 3.44772 7.94772 3 8.5 3Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M20 9V7C20 6.44772 19.5523 6 19 6H16.5"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M4 9V7C4 6.44772 4.44772 6 5 6H7.5"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M19 21V16C19 15.4477 18.5523 15 18 15H6C5.44772 15 5 15.4477 5 16V21"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M16.5 15V16.875C16.5 17.4963 15.9963 18 15.375 18H8.625C8.00368 18 7.5 17.4963 7.5 16.875V15"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      0 21 66.67 000 61
+                    </p>
+                    <p class="flex gap-x-8">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M15.3746 12.718L19.8806 9.663C20.5816 9.189 21.0006 8.398 21.0006 7.552V7.552C21.0006 6.142 19.8586 5 18.4496 5H5.56663C4.15763 5 3.01562 6.142 3.01562 7.551V7.551C3.01562 8.397 3.43463 9.188 4.13563 9.663L8.64162 12.718C10.6746 14.096 13.3416 14.096 15.3746 12.718V12.718Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M3 7.55103V17C3 18.657 4.343 20 6 20H18C19.657 20 21 18.657 21 17V7.55203"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+
+                      buero@leeser-will.de
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded free_text gap-16!"
+              >
+                <h4>Leeser & Will München</h4>
+                <div class="flex flex-wrap gap-8 xl:justify-between">
+                  <p class="flex gap-x-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M10.8542 13.144C9.68419 11.974 8.80219 10.664 8.21619 9.33499C8.09219 9.05399 8.16519 8.72499 8.38219 8.50799L9.20119 7.68999C9.87219 7.01899 9.87219 6.06999 9.28619 5.48399L8.11219 4.30999C7.33119 3.52899 6.06519 3.52899 5.28419 4.30999L4.63219 4.96199C3.89119 5.70299 3.58219 6.77199 3.78219 7.83199C4.27619 10.445 5.79419 13.306 8.24319 15.755C10.6922 18.204 13.5532 19.722 16.1662 20.216C17.2262 20.416 18.2952 20.107 19.0362 19.366L19.6872 18.715C20.4682 17.934 20.4682 16.668 19.6872 15.887L18.5142 14.714C17.9282 14.128 16.9782 14.128 16.3932 14.714L15.4902 15.618C15.2732 15.835 14.9442 15.908 14.6632 15.784C13.3342 15.197 12.0242 14.314 10.8542 13.144Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    0172-5607683
+                  </p>
+                  <p class="flex gap-x-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4 9H20C21.1046 9 22 9.89543 22 11V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11C2 9.89543 2.89543 9 4 9Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.5 3H15.5C16.0523 3 16.5 3.44772 16.5 4V9H7.5V4C7.5 3.44772 7.94772 3 8.5 3Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20 9V7C20 6.44772 19.5523 6 19 6H16.5"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M4 9V7C4 6.44772 4.44772 6 5 6H7.5"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19 21V16C19 15.4477 18.5523 15 18 15H6C5.44772 15 5 15.4477 5 16V21"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.5 15V16.875C16.5 17.4963 15.9963 18 15.375 18H8.625C8.00368 18 7.5 17.4963 7.5 16.875V15"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    089.43 777 253
+                  </p>
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded free_text gap-16!"
+              >
+                <h4>Leeser & Will München</h4>
+                <div class="flex flex-wrap gap-8 xl:justify-between">
+                  <p class="flex gap-x-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M10.8542 13.144C9.68419 11.974 8.80219 10.664 8.21619 9.33499C8.09219 9.05399 8.16519 8.72499 8.38219 8.50799L9.20119 7.68999C9.87219 7.01899 9.87219 6.06999 9.28619 5.48399L8.11219 4.30999C7.33119 3.52899 6.06519 3.52899 5.28419 4.30999L4.63219 4.96199C3.89119 5.70299 3.58219 6.77199 3.78219 7.83199C4.27619 10.445 5.79419 13.306 8.24319 15.755C10.6922 18.204 13.5532 19.722 16.1662 20.216C17.2262 20.416 18.2952 20.107 19.0362 19.366L19.6872 18.715C20.4682 17.934 20.4682 16.668 19.6872 15.887L18.5142 14.714C17.9282 14.128 16.9782 14.128 16.3932 14.714L15.4902 15.618C15.2732 15.835 14.9442 15.908 14.6632 15.784C13.3342 15.197 12.0242 14.314 10.8542 13.144Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    0172-5607683
+                  </p>
+                  <p class="flex gap-x-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4 9H20C21.1046 9 22 9.89543 22 11V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11C2 9.89543 2.89543 9 4 9Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.5 3H15.5C16.0523 3 16.5 3.44772 16.5 4V9H7.5V4C7.5 3.44772 7.94772 3 8.5 3Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20 9V7C20 6.44772 19.5523 6 19 6H16.5"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M4 9V7C4 6.44772 4.44772 6 5 6H7.5"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19 21V16C19 15.4477 18.5523 15 18 15H6C5.44772 15 5 15.4477 5 16V21"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.5 15V16.875C16.5 17.4963 15.9963 18 15.375 18H8.625C8.00368 18 7.5 17.4963 7.5 16.875V15"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    089.43 777 253
+                  </p>
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded free_text gap-16!"
+              >
+                <h4>Leeser & Will München</h4>
+                <div class="flex flex-wrap gap-8 xl:justify-between">
+                  <p class="flex gap-x-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M10.8542 13.144C9.68419 11.974 8.80219 10.664 8.21619 9.33499C8.09219 9.05399 8.16519 8.72499 8.38219 8.50799L9.20119 7.68999C9.87219 7.01899 9.87219 6.06999 9.28619 5.48399L8.11219 4.30999C7.33119 3.52899 6.06519 3.52899 5.28419 4.30999L4.63219 4.96199C3.89119 5.70299 3.58219 6.77199 3.78219 7.83199C4.27619 10.445 5.79419 13.306 8.24319 15.755C10.6922 18.204 13.5532 19.722 16.1662 20.216C17.2262 20.416 18.2952 20.107 19.0362 19.366L19.6872 18.715C20.4682 17.934 20.4682 16.668 19.6872 15.887L18.5142 14.714C17.9282 14.128 16.9782 14.128 16.3932 14.714L15.4902 15.618C15.2732 15.835 14.9442 15.908 14.6632 15.784C13.3342 15.197 12.0242 14.314 10.8542 13.144Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    0172-5607683
+                  </p>
+                  <p class="flex gap-x-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4 9H20C21.1046 9 22 9.89543 22 11V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11C2 9.89543 2.89543 9 4 9Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.5 3H15.5C16.0523 3 16.5 3.44772 16.5 4V9H7.5V4C7.5 3.44772 7.94772 3 8.5 3Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20 9V7C20 6.44772 19.5523 6 19 6H16.5"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M4 9V7C4 6.44772 4.44772 6 5 6H7.5"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19 21V16C19 15.4477 18.5523 15 18 15H6C5.44772 15 5 15.4477 5 16V21"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.5 15V16.875C16.5 17.4963 15.9963 18 15.375 18H8.625C8.00368 18 7.5 17.4963 7.5 16.875V15"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    089.43 777 253
+                  </p>
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded free_text gap-16!"
+              >
+                <h4>Leeser & Will München</h4>
+                <div class="flex flex-wrap gap-8 xl:justify-between">
+                  <p class="flex gap-x-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M10.8542 13.144C9.68419 11.974 8.80219 10.664 8.21619 9.33499C8.09219 9.05399 8.16519 8.72499 8.38219 8.50799L9.20119 7.68999C9.87219 7.01899 9.87219 6.06999 9.28619 5.48399L8.11219 4.30999C7.33119 3.52899 6.06519 3.52899 5.28419 4.30999L4.63219 4.96199C3.89119 5.70299 3.58219 6.77199 3.78219 7.83199C4.27619 10.445 5.79419 13.306 8.24319 15.755C10.6922 18.204 13.5532 19.722 16.1662 20.216C17.2262 20.416 18.2952 20.107 19.0362 19.366L19.6872 18.715C20.4682 17.934 20.4682 16.668 19.6872 15.887L18.5142 14.714C17.9282 14.128 16.9782 14.128 16.3932 14.714L15.4902 15.618C15.2732 15.835 14.9442 15.908 14.6632 15.784C13.3342 15.197 12.0242 14.314 10.8542 13.144Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    0172-5607683
+                  </p>
+                  <p class="flex gap-x-8">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4 9H20C21.1046 9 22 9.89543 22 11V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11C2 9.89543 2.89543 9 4 9Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.5 3H15.5C16.0523 3 16.5 3.44772 16.5 4V9H7.5V4C7.5 3.44772 7.94772 3 8.5 3Z"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20 9V7C20 6.44772 19.5523 6 19 6H16.5"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M4 9V7C4 6.44772 4.44772 6 5 6H7.5"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19 21V16C19 15.4477 18.5523 15 18 15H6C5.44772 15 5 15.4477 5 16V21"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.5 15V16.875C16.5 17.4963 15.9963 18 15.375 18H8.625C8.00368 18 7.5 17.4963 7.5 16.875V15"
+                        stroke="#4A5565"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    089.43 777 253
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
+      <div class="flex justify-center">
+        <div
+          class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 bg-Invert rounded-full shadow-lg"
+        >
+          <a href="" class="btn btn-primary"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.8559 13.1444C9.6859 11.9744 8.8039 10.6644 8.2179 9.33536C8.0939 9.05436 8.1669 8.72536 8.3839 8.50836L9.2029 7.69036C9.8739 7.01936 9.8739 6.07036 9.2879 5.48436L8.1139 4.31036C7.3329 3.52936 6.0669 3.52936 5.2859 4.31036L4.6339 4.96236C3.8929 5.70336 3.5839 6.77236 3.7839 7.83236C4.2779 10.4454 5.7959 13.3064 8.2449 15.7554C10.6939 18.2044 13.5549 19.7224 16.1679 20.2164C17.2279 20.4164 18.2969 20.1074 19.0379 19.3664L19.6889 18.7154C20.4699 17.9344 20.4699 16.6684 19.6889 15.8874L18.5159 14.7144C17.9299 14.1284 16.9799 14.1284 16.3949 14.7144L15.4919 15.6184C15.2749 15.8354 14.9459 15.9084 14.6649 15.7844C13.3359 15.1974 12.0259 14.3144 10.8559 13.1444Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg> </span
+          ></a>
+          <a href="" class="btn btn-primary"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="md:hidden"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.99805 16.5022H10.9997"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5025 15.5635L15.6261 17.4399L14.5012 16.314"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <rect
+                  x="2.99634"
+                  y="2.99609"
+                  width="18.0075"
+                  height="18.0075"
+                  rx="3"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15.0014 13.0002H6.99805"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <rect
+                  x="6.99805"
+                  y="6.99805"
+                  width="3.50146"
+                  height="3.00125"
+                  rx="0.5"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg> </span
+          ></a>
+          <a href="" class="btn btn-primary"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="md:hidden"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.99749 13.8391C7.95466 13.839 7.91358 13.8561 7.88348 13.8866C7.85339 13.9171 7.83679 13.9584 7.83743 14.0012C7.83776 14.0906 7.91013 14.1629 7.9995 14.1633C8.0574 14.1629 8.11071 14.1317 8.13935 14.0814C8.16799 14.031 8.16761 13.9693 8.13835 13.9193C8.10909 13.8693 8.0554 13.8388 7.99749 13.8391"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.99798 8.83717C8.95515 8.83706 8.91407 8.85417 8.88397 8.88464C8.85387 8.91512 8.83728 8.95641 8.83792 8.99923C8.83825 9.0886 8.91061 9.16097 8.99998 9.1613C9.08949 9.16075 9.1616 9.08774 9.16105 8.99823C9.1605 8.90873 9.08749 8.83661 8.99798 8.83717"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.9994 15.8401C12.9566 15.84 12.9155 15.8571 12.8854 15.8876C12.8553 15.918 12.8387 15.9593 12.8394 16.0022C12.8397 16.0915 12.9121 16.1639 13.0014 16.1642C13.091 16.1637 13.1631 16.0907 13.1625 16.0012C13.162 15.9117 13.089 15.8395 12.9994 15.8401"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.9992 11.8381C11.9564 11.838 11.9153 11.8551 11.8852 11.8856C11.8551 11.9161 11.8385 11.9574 11.8391 12.0002C11.8395 12.0896 11.9118 12.1619 12.0012 12.1623C12.0591 12.1619 12.1124 12.1307 12.1411 12.0804C12.1697 12.0301 12.1693 11.9683 12.1401 11.9183C12.1108 11.8683 12.0571 11.8378 11.9992 11.8381"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.0001 2.99609C12.0001 7.96873 16.0312 11.9998 21.0038 11.9998C21.0038 16.9725 16.9727 21.0036 12.0001 21.0036C7.02745 21.0036 2.99634 16.9725 2.99634 11.9998C2.99634 7.02721 7.02745 2.99609 12.0001 2.99609Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg> </span
+          ></a>
+        </div>
+      </div>
+    </div>
+    <footer class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
+      <div
+        class="bg-primary text-Invert-subheading p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] border_rounded"
+      >
+        <div class="flex flex-col gap-30 md:gap-40 container px-0">
+          <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-x-24 xl:gap-x-40">
+            <div
+              class="md:col-span-2 xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-orange not-lg:pb-24 md:pr-40"
+            >
+              <a class="p-24 bg-white border_rounded md:not-xl:w-1/2">
+                <img src="assets/icons/HeadLogo.svg" alt="" class="w-full" />
+              </a>
+              <p>
+                Die Dienstleistungen von Insectra sind darauf ausgerichtet,
+                qualitativ hochwertige, individuelle und einfühlsame Betreuung
+                zu bieten.
+              </p>
+              <a href="" class="btn btn-primary bg-orange!"
+                >Termin vereinbaren</a
+              >
+            </div>
+            <div
+              class="py-24 not-md:border-b md:border-r border-orange flex flex-col gap-40 font-medium"
+            >
+              <span class="text-28 text-Invert">Company</span>
+              <ul class="ps-16 space-y-8">
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+              </ul>
+            </div>
+            <div
+              class="py-20 not-md:border-b xl:border-r border-orange flex flex-col gap-40 font-medium"
+            >
+              <span class="text-28 text-Invert">Services</span>
+              <ul class="ps-16 space-y-8">
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+              </ul>
+            </div>
+            <div class="py-24 flex flex-col gap-40 free_text">
+              <div class="flex flex-col gap-40">
+                <span class="text-28 font-medium text-Invert">Address</span>
+                <p>
+                  Lorem ipsum gravida massa nunc accumsan gravida gravida sapien
+                  in eu nec
+                </p>
+              </div>
+              <div class="flex flex-col gap-40">
+                <span class="text-28 font-medium text-Invert"
+                  >Phone & Email</span
+                >
+                <div class="space-y-4">
+                  <p class="flex gap-8">
+                    <span
+                      ><svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M10.8559 13.1444C9.6859 11.9744 8.8039 10.6644 8.2179 9.33536C8.0939 9.05436 8.1669 8.72536 8.3839 8.50836L9.2029 7.69036C9.8739 7.01936 9.8739 6.07036 9.2879 5.48436L8.1139 4.31036C7.3329 3.52936 6.0669 3.52936 5.2859 4.31036L4.6339 4.96236C3.8929 5.70336 3.5839 6.77236 3.7839 7.83236C4.2779 10.4454 5.7959 13.3064 8.2449 15.7554C10.6939 18.2044 13.5549 19.7224 16.1679 20.2164C17.2279 20.4164 18.2969 20.1074 19.0379 19.3664L19.6889 18.7154C20.4699 17.9344 20.4699 16.6684 19.6889 15.8874L18.5159 14.7144C17.9299 14.1284 16.9799 14.1284 16.3949 14.7144L15.4919 15.6184C15.2749 15.8354 14.9459 15.9084 14.6649 15.7844C13.3359 15.1974 12.0259 14.3144 10.8559 13.1444Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg> </span
+                    >+00 1234567890
+                  </p>
+                  <p class="flex gap-8">
+                    <span
+                      ><svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M3 6.8V6.8C3 7.4 3.3 7.9 3.8 8.3L9.8 12.4C11.2 13.3 12.9 13.3 14.3 12.4L20.3 8.4C20.7 7.9 21 7.4 21 6.8V6.8C21 5.8 20.2 5 19.2 5H4.8C3.8 5 3 5.8 3 6.8Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M3 7V17C3 18.1 3.9 19 5 19H19C20.1 19 21 18.1 21 17V7"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M3.58789 18.4124L9.68189 12.3184"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M14.3601 12.3604L20.4121 18.4124"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg> </span
+                    >company@abc.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col xl:flex-row gap-30 md:gap-40">
+            <div
+              class="xl:w-3/4 border_rounded not-xl:h-180 border_rounded relative object-cover object-center overflow-hidden"
+            >
+              <img
+                src="assets/images/Map.webp"
+                alt=""
+                class="absolute inset-0 h-full w-full"
+              />
+            </div>
+            <div
+              class="xl:w-1/4 border_rounded grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-2 gap-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]"
+            >
+              <div
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
+              >
+                <img
+                  src="assets/icons/Certified1.svg"
+                  alt=""
+                  class="w-fit h-fit object-contain"
+                />
+              </div>
+              <div
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
+              >
+                <img
+                  src="assets/icons/Certified2.svg"
+                  alt=""
+                  class="w-fit h-fit object-contain"
+                />
+              </div>
+              <div
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
+              >
+                <img
+                  src="assets/icons/Certified3.svg"
+                  alt=""
+                  class="w-fit h-fit object-contain"
+                />
+              </div>
+              <div
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
+              >
+                <img
+                  src="assets/icons/Certified4.svg"
+                  alt=""
+                  class="w-fit h-fit object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex not-lg:flex-col-reverse flex-wrap gap-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)] justify-between w-full border-t border-orange pt-24"
+          >
+            <p>© Copyright 2026 by Leeser und Will</p>
+            <ul
+              class="flex flex-wrap gap-y-8 gap-x-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]"
+            >
+              <a href="">Impressum</a>
+              <a href="">AGB</a>
+              <a href="">Datenschutz</a>
+              <a href="">Cookie-Richtlinie (EU)</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

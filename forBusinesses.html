@@ -23,7 +23,7 @@
     <title>Document 1</title>
   </head>
   <body>
-    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+     <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -95,8 +95,8 @@
             <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
             <a href="">Über uns</a>
-            <a href="">Kontakt</a>
-            <a href="">Karriere</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="karriere.html">Karriere</a>
           </nav>
 
           <!-- Right Side -->
@@ -178,7 +178,7 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="flex flex-col gap-40 mt-40 relative z-10">
+        <nav class="flex flex-col gap-24 mt-40 relative z-10">
           <div x-data="{ open: false }" class="xl:hidden">
             <button
               type="button"
@@ -212,7 +212,7 @@
               x-collapse
               class="pl-16 flex flex-col gap-16 pt-16"
             >
-              <a href="private-customers.html" class="block"> Privatkunden </a>
+              <a href="private_customers.html" class="block"> Privatkunden </a>
 
               <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
             </div>
@@ -220,8 +220,8 @@
           <a href="service.html">Service</a>
           <a href="Prevention.html">Prävention</a>
           <a href="#">Über uns</a>
-          <a href="#">Kontakt</a>
-          <a href="#">Karriere</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="karriere.html">Karriere</a>
 
           <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
         </nav>
@@ -238,16 +238,20 @@
       </div>
     </header>
     <main>
+
       <!-- Sec-1 -->
       <section>
         <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
           <div
-            class="border_rounded_lg overflow-hidden not-sm:min-h-550 h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] bg-cover bg-center"
-            style="
-              background-image: url(&quot;assets/images/BusinessHeader.webp&quot;);
-            "
+            class="relative border_rounded_lg overflow-hidden  h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)]"
           >
-            <div class="free_text text-center">
+            <img
+              src="assets/images/BusinessHeader.webp"
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-primary/30"></div>
+            <div class="relative z-10 free_text text-center">
               <h2 class="text-white">Für Unternehmen</h2>
 
               <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
@@ -447,7 +451,7 @@
       </section>
 
       <!-- sec-3 -->
-      <section class="bg-Backg py-sec">
+      <section class="bg-Backg py-sec ctm_sec">
         <div class="container">
           <div class="component">
             <div
@@ -516,10 +520,19 @@
             </div>
           </div>
         </div>
+        <div
+          class="absolute h-[clamp(7.1875rem,5.7537rem+5.8824vw,12.8125rem)] not-lg:top-[2%] not-lg:right-0 lg:bottom-[2%] lg:right-[30%]"
+        >
+          <img
+            src="assets/icons/businessimgsvg1.svg"
+            alt=""
+            class="w-full h-full object-contain"
+          />
+        </div>
       </section>
 
       <!-- sec-4 -->
-      <section x-data="{ active: 'Gästezimmer' }" class="py-sec ">
+      <section x-data="{ active: 'Gästezimmer' }" class="py-sec ctm_sec z-10">
         <div class="container xl:pr-0 relative">
           <div class="flex flex-col gap-40">
             <span class="badge">Interaktiver Immobilienratgeber</span>
@@ -532,7 +545,7 @@
               </p>
             </div>
             <div class="not-xl:relative">
-              <div class="xl:absolute top-90 right-20 w-fit h-fit">
+              <div class="xl:absolute top-0 right-20 w-fit h-fit">
                 <img
                   src="assets/images/HotelLayout.webp"
                   alt=""
@@ -812,13 +825,13 @@
       </section>
 
       <!-- sec-5 -->
-      <section class="py-sec">
+      <section class="py-sec ctm_sec lg:overflow-visible!">
         <div class="container">
           <div class="component">
             <div
               class="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
             >
-              <div class="free_text gap-0!">
+              <div class="free_text justify-center gap-0! ">
                 <h3>
                   Sicherheit für Kraftwerke, Produktions- und Förderungsanlagen
                 </h3>
@@ -903,6 +916,15 @@
             </div>
           </div>
         </div>
+        <div
+          class="absolute -z-10 -rotate-37 h-[clamp(8.125rem,5.576rem+10.4575vw,18.125rem)] -top-[2%] lg:-translate-y-1/2 right-0 lg:right-1/2 lg:translate-x-1/2"
+        >
+          <img
+            src="assets/icons/businessimgsvg2.svg"
+            alt=""
+            class="w-full h-full object-contain scale-90"
+          />
+        </div>
       </section>
 
       <!-- sec-6 -->
@@ -939,11 +961,11 @@
       </section>
 
       <!-- sec-7 -->
-      <section class="py-sec">
+      <section class="py-sec ctm_sec">
         <div class="container">
           <div class="component">
             <div
-              class="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              class="grid grid-cols-1 lg:grid-cols-12 gap-80"
             >
               <div
                 class="lg:col-span-5 free_text flex flex-col gap-24 md:gap-60 lg:gap-80"
@@ -1000,6 +1022,15 @@
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="absolute -z-10  h-[clamp(3.75rem,2.7941rem+3.9216vw,7.5rem)] lg:top-[26%] lg:left-[55%] top-[38%] left-1/2 -translate-x-1/2"
+        >
+          <img
+            src="assets/icons/businessimgsvg3.svg"
+            alt=""
+            class="w-full h-full object-contain scale-90"
+          />
         </div>
       </section>
 
@@ -1443,8 +1474,8 @@
           <div class="component">
             <div class="flex flex-col lg:flex-row gap-40">
               <div class="lg:w-[37.5%]">
-                <div class="flex flex-wrap items-end gap-24">
-                  <a href="" class="btn btn-primary h-fit order-2 lg:order-1">
+                <div class="flex not-lg:flex-col items-end gap-24 relative">
+                  <a href="" class="btn btn-primary h-fit order-2 lg:order-1 block shrink-0">
                     Sprechen Sie uns an!
                   </a>
 
@@ -1470,8 +1501,17 @@
                     "
                   />
                 </div>
+                <div
+          class="absolute -z-10 h-[clamp(5.625rem,3.2353rem+9.8039vw,15rem)] -bottom-[5%] lg:-translate-y-1/2 right-0 lg:right-2/3 lg:translate-x-1/2"
+        >
+          <img
+            src="assets/icons/businessimgsvg5.svg"
+            alt=""
+            class="w-full h-full object-contain "
+          />
+        </div>
                 </div>
-                <div class="mt-24 md:mt-60 lg:mt-80">
+                <div class="mt-40">
                   <div class="free_text">
                     <h3>Lager & Logistik</h3>
                   </div>
@@ -1551,7 +1591,7 @@
                     Wissen.
                   </p>
                 </div>
-                <div class="flex flex-col gap-24 mt-24 md:mt-60 lg:mt-80">
+                <div class="flex flex-col gap-40 mt-40">
                   <a href="" class="btn btn-primary h-fit"
                     >Sprechen Sie uns an!</a
                   >
@@ -1602,7 +1642,7 @@
               </p>
             </div>
             <div class="not-xl:relative">
-              <div class="xl:absolute top-90 right-20 w-fit h-fit">
+              <div class="xl:absolute top-90 right-0 w-fit h-fit">
                 <img
                   src="assets/images/businessimg1.webp"
                   alt=""

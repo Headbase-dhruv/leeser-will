@@ -95,8 +95,8 @@
             <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
             <a href="">Über uns</a>
-            <a href="">Kontakt</a>
-            <a href="">Karriere</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="karriere.html">Karriere</a>
           </nav>
 
           <!-- Right Side -->
@@ -178,7 +178,7 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="flex flex-col gap-40 mt-40 relative z-10">
+        <nav class="flex flex-col gap-24 mt-40 relative z-10">
           <div x-data="{ open: false }" class="xl:hidden">
             <button
               type="button"
@@ -212,7 +212,7 @@
               x-collapse
               class="pl-16 flex flex-col gap-16 pt-16"
             >
-              <a href="private-customers.html" class="block"> Privatkunden </a>
+              <a href="private_customers.html" class="block"> Privatkunden </a>
 
               <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
             </div>
@@ -220,8 +220,8 @@
           <a href="service.html">Service</a>
           <a href="Prevention.html">Prävention</a>
           <a href="#">Über uns</a>
-          <a href="#">Kontakt</a>
-          <a href="#">Karriere</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="karriere.html">Karriere</a>
 
           <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
         </nav>
@@ -239,16 +239,20 @@
     </header>
 
     <main>
+
       <!-- Sec-1 -->
       <section>
         <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
           <div
-            class="border_rounded_lg overflow-hidden not-sm:min-h-550 h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] bg-cover bg-center"
-            style="
-              background-image: url(&quot;assets/images/PreventionHeader.webp&quot;);
-            "
+            class="relative border_rounded_lg overflow-hidden h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)]"
           >
-            <div class="free_text text-center">
+            <img
+              src="assets/images/PreventionHeader.webp"
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-primary/30"></div>
+            <div class="relative z-10 free_text text-center">
               <h2 class="text-white">Schützen und Vorbeugen</h2>
 
               <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
@@ -285,6 +289,7 @@
           </div>
         </div>
       </section>
+      
 
       <!-- Sec-2 -->
       <section class="py-sec ctm_sec overflow-x-hidden">

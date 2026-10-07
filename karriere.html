@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Project description" />
-
+    <meta name="description" content="" />
     <meta name="theme-color" content="#000000" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta
@@ -12,15 +11,17 @@
       content="black-translucent"
     />
 
-    <title>Project name</title>
+    <title>leeser-will</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <script defer src="assets/js/alpine.js"></script>
+    <script defer src="assets/js/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <title>Document 1</title>
   </head>
-
   <body>
      <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
@@ -237,184 +238,248 @@
       </div>
     </header>
     <main>
-      <section class="ctm_sec py-sec bg-[#F8FAFC]">
-        <div class="container">
-          <div class="row cols_1">
-            <div class="col">
-              <h1 class="heading_1">Lorem ipsum dolor sit amet.</h1>
-              <p class="ctm_paragraph">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aliquam soluta sed harum quae ratione veniam adipisci, delectus
-                tenetur maiores natus minus nisi quo maxime, esse accusamus!
-                Recusandae eum itaque commodi!
-              </p>
-              <ul class="ctm_list">
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-              </ul>
-              <blockquote class="ctm_blockquote">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                atque velit, expedita porro soluta hic sint, nisi eum, rerum
-                omnis aut vitae facilis assumenda deserunt veritatis sapiente
-                facere laudantium. Placeat.
-                <footer>- Vinit Viradiya</footer>
-              </blockquote>
-              <div class="ctm_divider">
-                <hr />
-              </div>
-              <div class="ctm_code">
-                <pre><code>.ctm_code{
-    @apply bg-black/90 text-white p-16
-}</code></pre>
-              </div>
-              <div class="ctm_image">
-                <img
-                  src="assets/images/HeaderImg.webp"
-                  alt=""
-                  class="border_rounded"
-                />
-              </div>
-              <div class="ctm_video" hidden>
-                <video
-                  src="assets/videos/hero-bg.mp4"
-                  autoplay
-                  muted
-                  loop
-                ></video>
-              </div>
-              <a href="/" class="btn btn-primary">
-                <span>Jetzt Tickets sichern</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="ctm_sec my-sec text-Invert-subheading">
-        <div class="row cols_1">
-          <div class="h-600 overflow-hidden">
-            <img
-              src="assets/images/BgImg.webp"
-              alt=""
-              class="absolute inset-0 h-full w-full object-cover items-center"
-            />
-            <div class="overlay-dark"></div>
-          </div>
+      <!-- Sec-1 -->
+      <section>
+        <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
           <div
-            class="container absolute inset-0 w-full z-10 flex flex-col gap-80 items-center justify-center"
+            class="relative border_rounded_lg overflow-hidden h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)]"
           >
-            <div class="free_text text-center">
-              <h3 class="text-white!">
-                Lassen Sie nicht zu, dass Schädlinge Ihr Grundstück übernehmen.
-              </h3>
-              <p class="max-w-1200">
-                Ganz gleich, ob Sie mit einem akuten Schädlingsbefall zu kämpfen
-                haben oder einen zuverlässigen Partner für die langfristige
-                Schädlingsbekämpfung suchen – unsere zertifizierten Experten
-                stehen Ihnen zur Seite. Kontaktieren Sie Leeser & Will noch
-                heute und erhalten Sie eine professionelle, auf Ihre Bedürfnisse
-                zugeschnittene Beratung.
-              </p>
+            <img
+              src="assets/images/KarriereHeader.webp"
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-primary/30"></div>
+            <div class="relative z-10 free_text text-center">
+              <h2 class="text-white">Karriere & Ausbildung</h2>
+
+              <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
+                <ol class="flex flex-wrap items-center gap-8 text-white">
+                  <li>
+                    <a href="/" class="transition-opacity hover:underline">
+                      Home
+                    </a>
+                  </li>
+
+                  <li aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="shrink-0"
+                    >
+                      <path
+                        d="M10 16L14 12L10 8"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </li>
+
+                  <li class="font-medium text-white">Karriere</li>
+                </ol>
+              </nav>
             </div>
-            <div class="flex flex-row gap-40">
-              <a href="" class="btn btn-secondary"
-                >Sprechen Sie mit einem Experten</a
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-2 -->
+      <section class="my-sec">
+        <div class="container">
+          <div class="col">
+            <div class="free_text">
+              <span class="badge">Karriere</span>
+              <h3>Erfahrung, die wir gerne weitergeben</h3>
+            </div>
+            <div class="free_text gap-40">
+              <h4>Unsere kaufmännische und gewerbliche Ausbildung</h4>
+              <div class="free_text">
+                <p>
+                  Bei Leeser & Will sind wir besonders stolz auf den Nachwuchs,
+                  den wir seit 2004 sowohl im kaufmännischen als auch im
+                  gewerblichen Bereich ausbilden. Zum einen haben junge,
+                  engagierte Menschen bei uns die Möglichkeit, eine Ausbildung
+                  zum Bürokaufmann/zur Bürokauffrau zu machen. Zum anderen kann
+                  man sich bei uns natürlich zum IHK-geprüften
+                  Schädlingsbekämpfer ausbilden lassen.
+                </p>
+                <p>
+                  Ein Ausbildungsberuf, der erst seit 2004 existiert, der aber
+                  gerade dadurch, dass er relativ jung ist, ein äußerst modernes
+                  Berufsbild bietet:
+                </p>
+                <p>
+                  Schädlingsbekämpfer schützen Menschen, Tiere, Pflanzen,
+                  Vorräte, Materialien, Bauten und Umwelt durch präventive
+                  Maßnahmen und – wenn erforderlich – durch Bekämpfungsmaßnahmen
+                  vor negativer Beeinflussung durch Schädlinge. Als
+                  Dienstleister lernen Schädlingsbekämpfer kundenorientiert zu
+                  handeln und berücksichtigen dabei Rechtsvorschriften,
+                  technische und organisatorische Vorgaben, Regelwerke sowie
+                  spezifische Arbeits- und Betriebsanweisungen.
+                </p>
+                <p>
+                  In drei Jahren lernen unsere Lehrlinge, Befall und Lösungswege
+                  einzuschätzen und selbstständige Lösungen zum Besten von
+                  Mensch, Besitz und Umwelt zu erarbeiten.
+                </p>
+                <p>
+                  Schädlingsbekämpfer: Ein hochspezialisierter Beruf mit
+                  hervorragenden Zukunftsaussichten.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-3 -->
+      <section class="my-sec">
+        <div class="container">
+          <div class="col">
+            <div class="free_text">
+              <h3>Aktuelle Stellenangebote:</h3>
+            </div>
+            <div class="grid xl:grid-cols-2 gap-40">
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded flex flex-col"
               >
-              <a href="" class="btn btn-primary"
-                >Vereinbaren Sie einen Inspektionstermin</a
+                <div class="free_text gap-24 flex-1">
+                  <h4>Köln/Bonn: IHK-geprüfter Schädlingsbekämpfer (m/w/d)</h4>
+                  <p>
+                    Kurzfristiger Wechsel gewünscht? Ab sofort suchen wir einen
+                    erfahrenen Schädlingsbekämpfer für den Großraum Köln/Bonn!
+                  </p>
+                </div>
+                <div class="mt-40">
+                  <a href="karriere_detail.html" class="btn btn-primary"
+                    >Zum Stellenangebot</a
+                  >
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded flex flex-col"
               >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="ctm_sec my-sec">
-        <div class="container">
-          <div class="row cols_1_1">
-            <div class="col">
-              <h2 class="heading_2">Lorem ipsum dolor sit amet.</h2>
-              <p class="paragraph">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aliquam soluta sed harum quae ratione veniam adipisci, delectus
-                tenetur maiores natus minus nisi quo maxime, esse accusamus!
-                Recusandae eum itaque commodi!
-              </p>
-              <a href="/" class="btn btn-primary">
-                <span>Jetzt Kontaktieren</span>
-              </a>
-            </div>
-            <div class="col">
-              <h2 class="heading_2">Lorem ipsum dolor sit amet.</h2>
-              <p class="paragraph">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aliquam soluta sed harum quae ratione veniam adipisci, delectus
-                tenetur maiores natus minus nisi quo maxime, esse accusamus!
-                Recusandae eum itaque commodi!
-              </p>
-              <a href="/" class="btn btn-primary">
-                <span>Jetzt Kontaktieren</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="ctm_sec my-sec">
-        <div class="container">
-          <div class="row cols_1_2">
-            <div class="col">
-              <img
-                src="assets/images/HeaderImg.webp"
-                alt=""
-                class="border_rounded"
-              />
-            </div>
-            <div class="col">
-              <h2 class="heading_2">Lorem ipsum dolor sit amet.</h2>
-              <p class="paragraph">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aliquam soluta sed harum quae ratione veniam adipisci, delectus
-                tenetur maiores natus minus nisi quo maxime, esse accusamus!
-                Recusandae eum itaque commodi!
-              </p>
-              <a href="/" class="btn btn-primary">
-                <span>Jetzt Kontaktieren</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="ctm_sec my-sec">
-        <div class="container">
-          <div class="row cols_2_1">
-            <div class="col">
-              <h2 class="heading_2">Lorem ipsum dolor sit amet.</h2>
-              <p class="paragraph">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aliquam soluta sed harum quae ratione veniam adipisci, delectus
-                tenetur maiores natus minus nisi quo maxime, esse accusamus!
-                Recusandae eum itaque commodi!
-              </p>
-              <a href="/" class="btn btn-primary">
-                <span>Jetzt Kontaktieren</span>
-              </a>
-            </div>
-            <div class="col">
-              <img
-                src="assets/images/HeaderImg.webp"
-                alt=""
-                class="border_rounded"
-              />
+                <div class="free_text gap-24 flex-1">
+                  <h4>Köln/Bonn: IHK-geprüfter Schädlingsbekämpfer (m/w/d)</h4>
+                  <p>
+                    Kurzfristiger Wechsel gewünscht? Ab sofort suchen wir einen
+                    erfahrenen Schädlingsbekämpfer für den Großraum Köln/Bonn!
+                  </p>
+                </div>
+                <div class="mt-40">
+                  <a href="karriere_detail.html" class="btn btn-primary"
+                    >Zum Stellenangebot</a
+                  >
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded flex flex-col"
+              >
+                <div class="free_text gap-24 flex-1">
+                  <h4>Köln/Bonn: IHK-geprüfter Schädlingsbekämpfer (m/w/d)</h4>
+                  <p>
+                    Kurzfristiger Wechsel gewünscht? Ab sofort suchen wir einen
+                    erfahrenen Schädlingsbekämpfer für den Großraum Köln/Bonn!
+                  </p>
+                </div>
+                <div class="mt-40">
+                  <a href="karriere_detail.html" class="btn btn-primary"
+                    >Zum Stellenangebot</a
+                  >
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded flex flex-col"
+              >
+                <div class="free_text gap-24 flex-1">
+                  <h4>Köln/Bonn: IHK-geprüfter Schädlingsbekämpfer (m/w/d)</h4>
+                  <p>
+                    Kurzfristiger Wechsel gewünscht? Ab sofort suchen wir einen
+                    erfahrenen Schädlingsbekämpfer für den Großraum Köln/Bonn!
+                  </p>
+                </div>
+                <div class="mt-40">
+                  <a href="karriere_detail.html" class="btn btn-primary"
+                    >Zum Stellenangebot</a
+                  >
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded flex flex-col"
+              >
+                <div class="free_text gap-24 flex-1">
+                  <h4>Köln/Bonn: IHK-geprüfter Schädlingsbekämpfer (m/w/d)</h4>
+                  <p>
+                    Kurzfristiger Wechsel gewünscht? Ab sofort suchen wir einen
+                    erfahrenen Schädlingsbekämpfer für den Großraum Köln/Bonn!
+                  </p>
+                </div>
+                <div class="mt-40">
+                  <a href="karriere_detail.html" class="btn btn-primary"
+                    >Zum Stellenangebot</a
+                  >
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded flex flex-col"
+              >
+                <div class="free_text gap-24 flex-1">
+                  <h4>Köln/Bonn: IHK-geprüfter Schädlingsbekämpfer (m/w/d)</h4>
+                  <p>
+                    Kurzfristiger Wechsel gewünscht? Ab sofort suchen wir einen
+                    erfahrenen Schädlingsbekämpfer für den Großraum Köln/Bonn!
+                  </p>
+                </div>
+                <div class="mt-40">
+                  <a href="karriere_detail.html" class="btn btn-primary"
+                    >Zum Stellenangebot</a
+                  >
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded flex flex-col"
+              >
+                <div class="free_text gap-24 flex-1">
+                  <h4>Köln/Bonn: IHK-geprüfter Schädlingsbekämpfer (m/w/d)</h4>
+                  <p>
+                    Kurzfristiger Wechsel gewünscht? Ab sofort suchen wir einen
+                    erfahrenen Schädlingsbekämpfer für den Großraum Köln/Bonn!
+                  </p>
+                </div>
+                <div class="mt-40">
+                  <a href="karriere_detail.html" class="btn btn-primary"
+                    >Zum Stellenangebot</a
+                  >
+                </div>
+              </div>
+              <div
+                class="p-24 bg-Backg border border-bordercolor border_rounded flex flex-col"
+              >
+                <div class="free_text gap-24 flex-1">
+                  <h4>Köln/Bonn: IHK-geprüfter Schädlingsbekämpfer (m/w/d)</h4>
+                  <p>
+                    Kurzfristiger Wechsel gewünscht? Ab sofort suchen wir einen
+                    erfahrenen Schädlingsbekämpfer für den Großraum Köln/Bonn!
+                  </p>
+                </div>
+                <div class="mt-40">
+                  <a href="karriere_detail.html" class="btn btn-primary"
+                    >Zum Stellenangebot</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-
-     <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
+    <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
       <div class="flex justify-center">
         <div
           class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 bg-Invert rounded-full shadow-lg"
@@ -724,7 +789,6 @@
                   class="w-fit h-fit object-contain"
                 />
               </div>
-             
             </div>
           </div>
 
