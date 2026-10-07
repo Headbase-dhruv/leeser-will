@@ -30,6 +30,7 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-black: 900;
+    --radius-sm: 0.25rem;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
@@ -826,6 +827,30 @@
     width: calc(var(--spacing) * 44);
     height: calc(var(--spacing) * 44);
   }
+  .size-54 {
+    width: calc(var(--spacing) * 54);
+    height: calc(var(--spacing) * 54);
+  }
+  .size-56 {
+    width: calc(var(--spacing) * 56);
+    height: calc(var(--spacing) * 56);
+  }
+  .size-60 {
+    width: calc(var(--spacing) * 60);
+    height: calc(var(--spacing) * 60);
+  }
+  .size-80 {
+    width: calc(var(--spacing) * 80);
+    height: calc(var(--spacing) * 80);
+  }
+  .size-120 {
+    width: calc(var(--spacing) * 120);
+    height: calc(var(--spacing) * 120);
+  }
+  .size-150 {
+    width: calc(var(--spacing) * 150);
+    height: calc(var(--spacing) * 150);
+  }
   .size-fit {
     width: fit-content;
     height: fit-content;
@@ -901,6 +926,9 @@
   }
   .h-\[clamp\(6\.875rem\,4\.7243rem\+8\.8235vw\,15\.3125rem\)\] {
     height: clamp(6.875rem, 4.7243rem + 8.8235vw, 15.3125rem);
+  }
+  .h-\[clamp\(7\.5rem\,7\.0221rem\+1\.9608vw\,9\.375rem\)\] {
+    height: clamp(7.5rem, 7.0221rem + 1.9608vw, 9.375rem);
   }
   .h-\[clamp\(7\.1875rem\,5\.7537rem\+5\.8824vw\,12\.8125rem\)\] {
     height: clamp(7.1875rem, 5.7537rem + 5.8824vw, 12.8125rem);
@@ -1237,8 +1265,14 @@
   .gap-80 {
     gap: calc(var(--spacing) * 80);
   }
+  .gap-\[clamp\(1\.5rem\,1\.1176rem\+1\.5686vw\,3rem\)\] {
+    gap: clamp(1.5rem, 1.1176rem + 1.5686vw, 3rem);
+  }
   .gap-\[clamp\(1rem\,0\.6176rem\+1\.5686vw\,2\.5rem\)\] {
     gap: clamp(1rem, 0.6176rem + 1.5686vw, 2.5rem);
+  }
+  .gap-\[clamp\(1rem\,0\.6814rem\+1\.3072vw\,2\.25rem\)\] {
+    gap: clamp(1rem, 0.6814rem + 1.3072vw, 2.25rem);
   }
   .gap-\[clamp\(2\.5rem\,1\.8627rem\+2\.6144vw\,5rem\)\] {
     gap: clamp(2.5rem, 1.8627rem + 2.6144vw, 5rem);
@@ -1318,6 +1352,9 @@
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
+  }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
@@ -1947,6 +1984,10 @@
     .sm\:size-50 {
       width: calc(var(--spacing) * 50);
       height: calc(var(--spacing) * 50);
+    }
+    .sm\:size-150 {
+      width: calc(var(--spacing) * 150);
+      height: calc(var(--spacing) * 150);
     }
     .sm\:h-\[210px\] {
       height: 210px;
