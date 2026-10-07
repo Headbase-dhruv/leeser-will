@@ -95,8 +95,8 @@
             <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
             <a href="">Über uns</a>
-            <a href="">Kontakt</a>
-            <a href="">Karriere</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="karriere.html">Karriere</a>
           </nav>
 
           <!-- Right Side -->
@@ -148,7 +148,7 @@
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
-        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[42%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 relative"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[65%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 sm:p-24 relative"
       >
         <!-- Header -->
         <div class="flex items-center justify-between py-16">
@@ -178,12 +178,13 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="flex flex-col gap-40 mt-40 relative z-10">
+        <nav class="flex flex-col gap-24 mt-40 relative z-10">
           <div x-data="{ open: false }" class="xl:hidden">
             <button
               type="button"
               @click="open = !open"
-              class="w-full flex items-center justify-between text-left"
+              :class="{ 'text-orange': open }"
+              class="flex w-full items-center gap-8 text-left"
             >
               <span>Schädlingsbekämpfung</span>
 
@@ -192,13 +193,12 @@
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
                 class="shrink-0 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
+                :class="{ 'rotate-180 text-orange': open }"
               >
                 <path
                   d="M8 10L12 14L16 10"
-                  stroke="#111"
+                  stroke="currentColor"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -206,22 +206,23 @@
               </svg>
             </button>
 
-            <!-- Mobile Dropdown Links -->
             <div
-              x-show="open"
-              x-collapse
-              class="pl-16 flex flex-col gap-16 pt-16"
+              x-ref="content"
+              x-init="$el.style.height = '0px'"
+              x-effect="$el.style.height = open ? $refs.content.scrollHeight + 'px' : '0px'"
+              class="overflow-hidden transition-all duration-300"
             >
-              <a href="private-customers.html" class="block"> Privatkunden </a>
-
-              <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
+              <div class="pl-16 pt-16 flex flex-col gap-16">
+                <a href="private_customers.html">Privatkunden</a>
+                <a href="forBusinesses.html">Geschäftskunden</a>
+              </div>
             </div>
           </div>
           <a href="service.html">Service</a>
           <a href="Prevention.html">Prävention</a>
           <a href="#">Über uns</a>
-          <a href="#">Kontakt</a>
-          <a href="#">Karriere</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="karriere.html">Karriere</a>
 
           <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
         </nav>
@@ -401,7 +402,9 @@
                           </li>
                         </ul>
                         <div class="space-y-5">
-                          <div class="flex flex-wrap items-center gap-10 shrink-0">
+                          <div
+                            class="flex flex-wrap items-center gap-10 shrink-0"
+                          >
                             <div class="flex gap-4 text-[#EFB100]">
                               <svg
                                 width="17"
@@ -1000,7 +1003,9 @@
       <section x-data="{ active: 'Kanalisation' }" class="py-sec">
         <div class="container xl:pr-0 relative">
           <div class="flex flex-col gap-40">
-            <span class="badge">Interaktiver Immobilienratgeber</span>
+            <span class="badge not-sm:-mb-16"
+              >Interaktiver Immobilienratgeber</span
+            >
             <div class="free_text max-w-800">
               <h3>Schützen Sie jeden Bereich Ihres Grundstücks.</h3>
               <p class="not-md:hidden max-w-520">
@@ -1260,7 +1265,7 @@
               </div>
             </div>
             <div
-              class="lg:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-40 items-start"
+              class="lg:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-24 sm:gap-40 items-start"
             >
               <div class="bg-orange p-8 rounded-lg">
                 <img
@@ -1280,7 +1285,7 @@
                         'arten – Eichenprozessionsspinner': 'assets/icons/fly.svg',
                         }[active]"
                   alt=""
-                  class="shrink-0"
+                  class="shrink-0 not-sm:size-28"
                 />
               </div>
               <div class="free_text gap-8">
@@ -1720,7 +1725,7 @@
                 Branchenstandards.
               </p>
             </div>
-            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-40">
+            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-24 lg:gap-40">
               <div
                 class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
               >
