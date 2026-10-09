@@ -246,13 +246,15 @@
             class="relative border_rounded_lg overflow-hidden h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)]"
           >
             <img
-              src="assets/images/CustomersHeader.webp"
+              src="assets/images/über_unsHeader.webp"
               alt=""
               class="absolute inset-0 w-full h-full object-cover"
             />
             <div class="absolute inset-0 bg-primary/30"></div>
             <div class="relative z-10 free_text text-center">
-              <h2 class="text-white">Für Privatkunden</h2>
+              <h2 class="text-white">
+                Schädlingsbekämpfung für jede Immobilie.
+              </h2>
 
               <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
                 <ol class="flex flex-wrap items-center gap-8 text-white">
@@ -281,35 +283,7 @@
                     </svg>
                   </li>
 
-                  <li>
-                    <a
-                      href="/schaedlingsbekaempfung"
-                      class="transition-opacity hover:underline"
-                    >
-                      Schädlingsbekämpfung
-                    </a>
-                  </li>
-
-                  <li aria-hidden="true">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="shrink-0"
-                    >
-                      <path
-                        d="M10 16L14 12L10 8"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </li>
-
-                  <li class="font-medium text-white">Für Privatkunden</li>
+                  <li class="font-medium text-white">uber uns</li>
                 </ol>
               </nav>
             </div>
@@ -318,355 +292,59 @@
       </section>
 
       <!-- sec-2 -->
-      <section x-data="{ active: 'Kanalisation' }" class="py-sec">
-        <div class="container xl:pr-0 relative">
-          <div class="flex flex-col gap-40">
-            <span class="badge">Interaktiver Immobilienratgeber</span>
-            <div class="free_text max-w-800">
-              <h3>Schützen Sie jeden Bereich Ihres Grundstücks.</h3>
-              <p class="not-md:hidden max-w-520">
-                Verschiedene Bereiche ziehen unterschiedliche Schädlinge an.
-                Klicken Sie auf einen beliebigen Bereich des Grundstücks, um
-                mehr über häufige Risiken und unsere professionellen Lösungen zu
-                erfahren.
-              </p>
-            </div>
-            <div class="not-xl:relative">
-              <div class="xl:absolute top-0 right-20 h-fit w-fit">
-                <img
-                  src="assets/images/HomeLayout.png"
-                  alt=""
-                  class="size-fit relative"
-                />
-                <button
-                  @click="active='Dach'"
-                  aria-label="Dach"
-                  class="absolute top-[3.8%] left-[46%] lg:top-[6.2%] lg:left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
+      <section class="my-sec">
+        <div class="container">
+          <div class="component">
+            <div class="grid lg:grid-cols-2 row">
+              <div></div>
+              <div class="free_text gap-40!">
+                <div class="free_text">
+                  <span class="badge">uber uns</span>
+                  <h3>75 Jahre Erfahrung</h3>
+                </div>
+                <h4>Als Kammerjäger der ersten Stunde</h4>
+                <div class="free_text">
+                  <p>
+                    Als am 2. Januar 1948 der Grundstein der heutigen Leeser &
+                    Will GmbH gelegt wurde, bestand das Unternehmen aus nicht
+                    viel mehr als einem engagierten Gründer und seinem Fahrrad:
+                    Willi Leeser fuhr Tag für Tag Firmen in Mönchengladbach ab,
+                    um diese als Kunden für sein junges Unternehmen zu gewinnen.
+                  </p>
+                  <p>
+                    Nachdem er kurz nach dem zweiten Weltkrieg wie so viele
+                    keine Arbeit in seinem erlernten Beruf gefunden hatte,
+                    nutzte er die allgemeine Aufbruchstimmung, ergriff die
+                    Initiative und absolvierte erfolgreich einen
+                    Desinfektoren-Lehrgang in Düsseldorf.
+                  </p>
+                </div>
+                <h4>Der Erfolg gab ihm Recht</h4>
+                <div class="flex flex-col md:flex-row gap-80">
+                  <div class="w-auto free_text">
+                    <p>Aus dem Fahrrad wurde erst ein Mofa und dann ein Auto. Firmen aus Frankfurt am Main, dem gesamten Ruhrgebiet bis an die niederländische Grenze zählten bald zu seinen Kunden.</p>
+                    <p>Wenn Geschäftsführer Volker Guske heute vor dem Stammsitz seines Unternehmens für Schädlingsbekämpfung in Mönchengladbach steht, wo das Fahrrad des Gründers inzwischen ehrenvoll eingemottet wurde, blickt er zurück auf 75 Jahre bewegte Geschichte. Und in eine vielversprechende Zukunft.</p>
+                  </div>
                   <div
-                    :class="active==='Dach' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    class="relative aspect-[327/369]  py-sec shrink-0 border_rounded overflow-hidden"
                   >
-                    <img
-                      src="assets/icons/bird.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold">Dach</span>
-                    <span class="text-xs">Vogelschutz</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Dachboden'"
-                  aria-label="Dachboden"
-                  class="absolute top-[12.8%] left-[23.8%] lg:top-[18%] lg:left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Dachboden' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/rodent.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="xl:flex flex-col gap-2 text-start hidden">
-                    <span class="text-black text-base font-semibold"
-                      >Dachboden</span
+                    <video
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="absolute inset-0 h-full w-full object-cover"
                     >
-                    <span class="text-xs">Vorbeugung gegen Nagetiere</span>
+                      <source src="assets/videos/videos.mp4" type="video/mp4" />
+                      <source
+                        src="assets/videos/videos.webm"
+                        type="video/webm"
+                      />
+                      Ihr Browser unterstützt keine Videos.
+                    </video>
                   </div>
-                </button>
-                <button
-                  @click="active='Küche'"
-                  aria-label="Küche"
-                  class="absolute top-[26%] left-[43.5%] lg:top-[34%] lg:left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Küche' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/cockroach.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Küche</span
-                    >
-                    <span class="text-xs">Schabenbekämpfung</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Schlafzimmer'"
-                  aria-label="Schlafzimmer"
-                  class="absolute top-[24%] lg:top-[30%] left-[67%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Schlafzimmer' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/bug.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Schlafzimmer</span
-                    >
-                    <span class="text-xs">Wanzenbekämpfung</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Ess-/Wohnbereich'"
-                  aria-label="Ess-/Wohnbereich"
-                  class="absolute top-[49%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Ess-/Wohnbereich' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/ant.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Ess-/Wohnbereich</span
-                    >
-                    <span class="text-xs">Ameisenbekämpfung</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Badezimmer'"
-                  aria-label="Badezimmer"
-                  class="absolute top-[61%] left-[70.5%] lg:top-[56%] lg:left-[64.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Badezimmer' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/silverfish.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Badezimmer</span
-                    >
-                    <span class="text-xs">Silberfischchen-Bekämpfung</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Keller'"
-                  aria-label="Keller"
-                  class="absolute top-[78%] left-[48.5%] lg:top-[85%] lg:left-[50%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Keller' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/undar.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Keller</span
-                    >
-                    <span class="text-xs">Nagetierschutz</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Garten'"
-                  aria-label="Garten"
-                  class="absolute top-[80%] left-[83%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Garten' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/ant.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Garten</span
-                    >
-                    <span class="text-xs">Ameisen</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Garten1'"
-                  aria-label="Garten"
-                  class="absolute top-[40%] left-[88%] lg:top-[48%] lg:left-[84%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Garten1' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/wasp.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Garten</span
-                    >
-                    <span class="text-xs">Wespen/Hornissen</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Kanalisation'"
-                  aria-label="Kanalisation"
-                  class="absolute top-[80%] left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Kanalisation' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/undar.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Kanalisation</span
-                    >
-                    <span class="text-xs">Ratten</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Entsorgungsbereich'"
-                  aria-label="Entsorgungsbereich"
-                  class="absolute top-[70%] left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Entsorgungsbereich' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/undar.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold"
-                      >Entsorgungsbereich</span
-                    >
-                    <span class="text-xs">Schadnager</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Garten2'"
-                  aria-label="Garten"
-                  class="absolute top-[53%] left-[10%] lg:top-[44%] lg:left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Garten2' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
-                  >
-                    <img
-                      src="assets/icons/caterpillar.svg"
-                      alt=""
-                      class="size-20 md:size-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base font-semibold">
-                      Garten</span
-                    >
-                    <span class="text-xs">Eichenprozessionsspinner</span>
-                  </div>
-                </button>
+                </div>
               </div>
-            </div>
-            <div
-              class="lg:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-40 items-start"
-            >
-              <div class="bg-orange p-8 rounded-lg">
-                <img
-                  :src="{
-                        'Dach': 'assets/icons/bird.svg',
-                        'Dachboden': 'assets/icons/rodent.svg',
-                        'Küche': 'assets/icons/cockroach.svg',
-                        'Schlafzimmer': 'assets/icons/bug.svg',
-                        'Ess-/Wohnbereich': 'assets/icons/ant.svg',
-                        'Badezimmer': 'assets/icons/silverfish.svg',
-                        'Keller': 'assets/icons/undar.svg',
-                        'Garten': 'assets/icons/ant.svg',
-                        'Garten1': 'assets/icons/wasp.svg',
-                        'Garten2': 'assets/icons/caterpillar.svg',
-                        'Kanalisation': 'assets/icons/undar.svg',
-                        'Entsorgungsbereich': 'assets/icons/undar.svg',
-                        'arten – Eichenprozessionsspinner': 'assets/icons/fly.svg',
-                        }[active]"
-                  alt=""
-                  class="shrink-0"
-                />
-              </div>
-              <div class="free_text gap-8">
-                <h4 x-text="active"></h4>
-                <p>
-                  Professionelle Wespennestentfernung und vorbeugender Schutz
-                  für Außenbereiche.
-                </p>
-              </div>
-              <a href="" class="btn-link">
-                Inspektion anfordern
-
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="transition-all duration-200"
-                >
-                  <path
-                    d="M19 12H5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M14 17L19 12"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M14 7L19 12"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
             </div>
           </div>
         </div>
@@ -676,192 +354,283 @@
       <section class="bg-Backg py-sec">
         <div class="container">
           <div class="component">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
-            >
-              <div class="lg:col-span-7 free_text gap-40 justify-center">
-                <div class="free_text">
-                  <span class="badge">Privatkunden</span>
-                  <h3>Schädlingsbekämpfung für private Haushalte</h3>
-                </div>
-
-                <div class="free_text">
-                  <p>Das Wichtigste vorweg:</p>
-                  <p>
-                    Wer weiß, was er macht, muss keine astronomischen Kosten
-                    verursachen. Deshalb ist unsere Dienstleistung absolut
-                    bezahlbar!
-                  </p>
-                  <p>
-                    Bei Leeser & Will dürfen Sie grundsätzlich mit einer
-                    schnellen Bearbeitung Ihrer Anfrage rechnen. Unsere diskret
-                    auftretenden Mitarbeiter schützen Ihre Privatsphäre und
-                    erarbeiten, wenn sie sich ein Bild von den ungeliebten
-                    Mitbewohnern gemacht haben, eine schnelle, präzise und
-                    schonende Lösung mit nachhaltiger Wirksamkeit.
-                  </p>
-                  <p>
-                    Es sind unsere umfassenden Kenntnisse, die die unschlagbare
-                    Erfolgsquote von Leeser & Will bei der Schädlingsbekämpfung
-                    möglich macht:
-                  </p>
-                  <p>
-                    Die wichtigste Waffe des Schädlingsbekämpfers ist sein
-                    Wissen.
-                  </p>
-                </div>
-
-                <a href="" class="btn btn-primary"
-                  >Fordern Sie ein unverbindliches Angebot an</a
-                >
-              </div>
-              <div class="lg:col-span-5 flex items-center gap-16">
-                <div class="w-1/3 h-fit border_rounded">
-                  <div class="relative h-full">
-                    <img
-                      src="assets/icons/Rectangle_lg.svg"
-                      alt=""
-                      class="block w-full h-auto"
-                    />
-
-                    <img
-                      src="assets/images/Customer11.webp"
-                      alt=""
-                      class="absolute inset-0 size-full object-cover"
-                      style="
-                        mask-image: url(&quot;assets/icons/Shape.svg&quot;);
-                        mask-size: 100% 100%;
-                        mask-repeat: no-repeat;
-
-                        -webkit-mask-image: url(&quot;assets/icons/Rectangle_lg.svg&quot;);
-                        -webkit-mask-size: 100% 100%;
-                        -webkit-mask-repeat: no-repeat;
-                      "
-                    />
-                  </div>
-                </div>
-                <div class="w-1/3 flex flex-col gap-16">
-                  <div class="border_rounded">
-                    <div class="relative h-full">
-                      <img
-                        src="assets/icons/Rectangle_sm.svg"
-                        alt=""
-                        class="block w-full h-auto"
-                      />
-
-                      <img
-                        src="assets/images/Customer12.webp"
-                        alt=""
-                        class="absolute inset-0 size-full object-cover"
-                        style="
-                          mask-image: url(&quot;assets/icons/Rectangle_sm.svg&quot;);
-                          mask-size: 100% 100%;
-                          mask-repeat: no-repeat;
-
-                          -webkit-mask-image: url(&quot;assets/icons/Rectangle_sm.svg&quot;);
-                          -webkit-mask-size: 100% 100%;
-                          -webkit-mask-repeat: no-repeat;
-                        "
-                      />
-                    </div>
-                  </div>
-                  <div class="border_rounded">
-                    <div class="relative h-full">
-                      <img
-                        src="assets/icons/Rectangle_sm.svg"
-                        alt=""
-                        class="block w-full h-auto"
-                      />
-
-                      <img
-                        src="assets/images/Customer13.webp"
-                        alt=""
-                        class="absolute inset-0 size-full object-cover"
-                        style="
-                          mask-image: url(&quot;assets/icons/Rectangle_sm.svg&quot;);
-                          mask-size: 100% 100%;
-                          mask-repeat: no-repeat;
-
-                          -webkit-mask-image: url(&quot;assets/icons/Rectangle_sm.svg&quot;);
-                          -webkit-mask-size: 100% 100%;
-                          -webkit-mask-repeat: no-repeat;
-                        "
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="w-1/3 h-fit border_rounded">
-                  <div class="relative h-full">
-                    <img
-                      src="assets/icons/Rectangle_lg.svg"
-                      alt=""
-                      class="block w-full h-auto"
-                    />
-
-                    <img
-                      src="assets/images/Customer14.webp"
-                      alt=""
-                      class="absolute inset-0 size-full object-cover"
-                      style="
-                        mask-image: url(&quot;assets/icons/Shape.svg&quot;);
-                        mask-size: 100% 100%;
-                        mask-repeat: no-repeat;
-
-                        -webkit-mask-image: url(&quot;assets/icons/Rectangle_lg.svg&quot;);
-                        -webkit-mask-size: 100% 100%;
-                        -webkit-mask-repeat: no-repeat;
-                      "
-                    />
-                  </div>
-                </div>
-              </div>
+            <div class="free_text">
+              <h3>Philosophie</h3>
             </div>
           </div>
         </div>
       </section>
 
       <!-- sec-4 -->
-      <section class="py-sec">
+      <section class="py-sec ctm_sec">
         <div class="container">
           <div class="component">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
-            >
-              <div class="lg:col-span-8 free_text gap-0! justify-center">
-                <h3>Insekten & Gliederfüßer</h3>
-                <div class="free_text mt-40 lg:mt-80">
-                  <p>
-                    Sie krabbeln und kriechen, kreuchen und fleuchen.
-                    Gliederfüßer sind der größte Stamm im gesamten Tierreich:
-                    Insekten, Tausendfüßer, Krebs- und Spinnentiere zählen zu
-                    diesem Bereich.
-                  </p>
-                  <p>
-                    Es sind Tiere wie Spinnen, Läuse, Flöhe, Schaben, Wanzen
-                    oder Milben, die besonders häufig aus der Gruppe der
-                    Gliederfüßer im Haushalt anzutreffen sind.
-                  </p>
-                  <p>
-                    Einige der Gliederfüßer sind Nützlinge, doch viele sind
-                    einfach lästig (z.B. Silberfische oder Kellerasseln) oder
-                    gar schädlich (wie zum Beispiel Bettwanzen, Flöhe oder
-                    Schaben), weil sie Keime mit sich tragen, die auf den
-                    Menschen gesundheitsschädlich wirken können.
-                  </p>
-                  <p>
-                    Um welche Art von Schädlingen es sich genau handelt, ob man
-                    sie vertreiben kann oder vernichten muss – all das klären
-                    unsere Experten bei Leeser & Will mit Ihnen vor Ort in der
-                    persönlichen Beratung.
+            <div class="flex flex-col gap-40 mt-30 xl:absolute relative z-10">
+              <div class="free_text max-w-500">
+                <span class="badge">So funktioniert es</span>
+                <h3>
+                  Unser konzipiertes Schritt-für-Schritt-Verfahren zur
+                  Insektenbekämpfung
+                </h3>
+              </div>
+              <a href="" class="btn btn-primary">Loslegen</a>
+            </div>
+            <!-- desktop view -->
+            <div class="relative min-h-800 not-xl:hidden">
+              <!-- Timeline SVG -->
+              <svg
+                width="1348"
+                height="611"
+                viewBox="0 0 1348 611"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_d_3006_2232)">
+                  <path
+                    d="M50.7754 455.922C168.275 526.997 228.977 570.158 331.275 493.422C471.275 388.405 528.275 348.864 686.775 348.864C945.511 348.864 945.775 -17.5779 1297.28 30.9221"
+                    stroke-width="3"
+                    stroke="#FF6000"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_d_3006_2232"
+                    x="0"
+                    y="0"
+                    width="1347.48"
+                    height="610.52"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dy="25" />
+                    <feGaussianBlur stdDeviation="25" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_3006_2232"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_3006_2232"
+                      result="shape"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+
+              <article class="absolute left-[5%] top-[54%] z-20 w-330">
+                <div
+                  class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                >
+                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                </div>
+
+                <span
+                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                >
+                  1
+                </span>
+                <div class="free_text gap-16">
+                  <h4>Standortbesichtigung</h4>
+
+                  <p class="mt-4">
+                    Lorem ipsum blandit blandit odio tellus fringilla eget
+                    elementum sollicitudin tortor est libero nec suspendisse
+                    purus est malesuada quam faucibus.
                   </p>
                 </div>
-              </div>
-              <div
-                class="lg:col-span-4 flex flex-col items-center justify-center gap-40"
-              >
-                <img src="assets/images/Customer2.webp" alt="" class="w-full" />
-              </div>
+              </article>
+              <article class="absolute left-[40%] top-[35%] z-20 w-330">
+                <div
+                  class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                >
+                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                </div>
+
+                <span
+                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                >
+                  2
+                </span>
+                <div class="free_text gap-16">
+                  <h4>Standortbesichtigung</h4>
+
+                  <p class="mt-4">
+                    Lorem ipsum blandit blandit odio tellus fringilla eget
+                    elementum sollicitudin tortor est libero nec suspendisse
+                    purus est malesuada quam faucibus.
+                  </p>
+                </div>
+              </article>
+              <article class="absolute left-[70.5%] -top-[4.5%] z-20 w-330">
+                <div
+                  class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                >
+                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                </div>
+
+                <span
+                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                >
+                  3
+                </span>
+                <div class="free_text gap-16">
+                  <h4>Standortbesichtigung</h4>
+
+                  <p class="mt-4">
+                    Lorem ipsum blandit blandit odio tellus fringilla eget
+                    elementum sollicitudin tortor est libero nec suspendisse
+                    purus est malesuada quam faucibus.
+                  </p>
+                </div>
+              </article>
             </div>
+            <!-- MObaile View -->
+            <div class="xl:hidden grid md:grid-cols-2 gap-40 mt-50">
+              <article class="relative">
+                <div
+                  class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                >
+                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                </div>
+
+                <span
+                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                >
+                  1
+                </span>
+                <div class="free_text gap-16">
+                  <h4>Standortbesichtigung</h4>
+
+                  <p class="mt-4">
+                    Lorem ipsum blandit blandit odio tellus fringilla eget
+                    elementum sollicitudin tortor est libero nec suspendisse
+                    purus est malesuada quam faucibus.
+                  </p>
+                </div>
+              </article>
+              <article class="relative">
+                <div
+                  class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                >
+                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                </div>
+
+                <span
+                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                >
+                  2
+                </span>
+                <div class="free_text gap-16">
+                  <h4>Standortbesichtigung</h4>
+
+                  <p class="mt-4">
+                    Lorem ipsum blandit blandit odio tellus fringilla eget
+                    elementum sollicitudin tortor est libero nec suspendisse
+                    purus est malesuada quam faucibus.
+                  </p>
+                </div>
+              </article>
+              <article
+                class="relative sm:col-span-2 sm:justify-self-center sm:w-1/2"
+              >
+                <div
+                  class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                >
+                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                </div>
+
+                <span
+                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                >
+                  3
+                </span>
+                <div class="free_text gap-16">
+                  <h4>Standortbesichtigung</h4>
+
+                  <p class="mt-4 text-[18px] leading-[1.6] text-[#666666]">
+                    Lorem ipsum blandit blandit odio tellus fringilla eget
+                    elementum sollicitudin tortor est libero nec suspendisse
+                    purus est malesuada quam faucibus.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div
+              class="absolute h-[clamp(6.375rem,3.826rem+10.4575vw,16.375rem)] not-xl:top-[16%] xl:bottom-0 right-[4%] md:right-[8%] -z-1"
+            >
+              <img
+                src="assets/icons/Homesvg3.svg"
+                alt=""
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <!-- <div class="max-w-fit">
+              <svg
+                width="1348"
+                height="611"
+                viewBox="0 0 1348 611"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-fit"
+              >
+                <g filter="url(#filter0_d_1233_2811)">
+                  <path
+                    d="M50.7754 455.922C168.275 526.997 228.977 570.158 331.275 493.422C471.275 388.405 528.275 348.864 686.775 348.864C945.511 348.864 945.775 -17.5779 1297.28 30.9221"
+                    stroke-width="3"
+                    stroke="#FF6000"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_d_1233_2811"
+                    x="0"
+                    y="0"
+                    width="1347.48"
+                    height="610.52"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dy="25" />
+                    <feGaussianBlur stdDeviation="25" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_1233_2811"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_1233_2811"
+                      result="shape"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+            </div> -->
           </div>
         </div>
       </section>
@@ -870,40 +639,171 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-80">
-              <div class="free_text gap-0!">
-                <h3>Schadnager, Ratte & Maus</h3>
-                <div
-                  class="mt-40 lg:mt-80 h-350 w-full xsm:w-385 rounded-r-full shrink-0 overflow-hidden"
-                >
-                  <img
-                    src="assets/images/Customer3.webp"
-                    alt=""
-                    class="w-full h-full object-cover"
-                  />
+            <div class="col">
+              <div class="free_text items-center">
+                <h3>Wissen</h3>
+                <p>Unsere wichtigste Waffe gegen Schädlinge</p>
+              </div>
+
+              <!--  -->
+              <div>
+                <div class="w-full swiper advantages-swiper overflow-visible">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide h-auto!">
+                      <div
+                        class="bg-Backg p-40 col text-center items-center border_rounded h-full"
+                      >
+                        <div class="free_text flex-1">
+                          <h4>Über 75 Jahre Erfahrung</h4>
+                        </div>
+                        <div class="relative inline-block">
+                          <img
+                            src="assets/icons/Shape6.svg"
+                            alt=""
+                            class="block w-full h-auto"
+                          />
+
+                          <img
+                            src="assets/images/uber2.1.webp"
+                            alt=""
+                            class="absolute inset-0 w-full h-full object-cover"
+                            style="
+                              mask-image: url(&quot;assets/icons/Shape6.svg&quot;);
+                              mask-size: 100% 100%;
+                              mask-repeat: no-repeat;
+
+                              -webkit-mask-image: url(&quot;assets/icons/Shape6.svg&quot;);
+                              -webkit-mask-size: 100% 100%;
+                              -webkit-mask-repeat: no-repeat;
+                            "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide h-auto!">
+                      <div
+                        class="bg-Backg p-40 col text-center items-center border_rounded h-full"
+                      >
+                        <div class="free_text flex-1">
+                          <h4>100 % Zertifizierte Techniker</h4>
+                        </div>
+                        <div class="relative inline-block">
+                          <img
+                            src="assets/icons/Shape6.svg"
+                            alt=""
+                            class="block w-full h-auto"
+                          />
+
+                          <img
+                            src="assets/images/uber2.2.webp"
+                            alt=""
+                            class="absolute inset-0 w-full h-full object-cover"
+                            style="
+                              mask-image: url(&quot;assets/icons/Shape6.svg&quot;);
+                              mask-size: 100% 100%;
+                              mask-repeat: no-repeat;
+
+                              -webkit-mask-image: url(&quot;assets/icons/Shape6.svg&quot;);
+                              -webkit-mask-size: 100% 100%;
+                              -webkit-mask-repeat: no-repeat;
+                            "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide h-auto!">
+                      <div
+                        class="bg-Backg h-full p-40 col text-center items-center border_rounded"
+                      >
+                        <div class="free_text flex-1">
+                          <h4>Kontinuierliche Weiterbildung & Innovation</h4>
+                        </div>
+                        <div class="relative inline-block">
+                          <img
+                            src="assets/icons/Shape6.svg"
+                            alt=""
+                            class="block w-full h-auto"
+                          />
+
+                          <img
+                            src="assets/images/uber2.3.webp"
+                            alt=""
+                            class="absolute inset-0 w-full h-full object-cover"
+                            style="
+                              mask-image: url(&quot;assets/icons/Shape6.svg&quot;);
+                              mask-size: 100% 100%;
+                              mask-repeat: no-repeat;
+
+                              -webkit-mask-image: url(&quot;assets/icons/Shape6.svg&quot;);
+                              -webkit-mask-size: 100% 100%;
+                              -webkit-mask-repeat: no-repeat;
+                            "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Pagination container -->
+                  <div
+                    class="advantages-pagination mt-40 flex items-center justify-center gap-8"
+                  ></div>
                 </div>
               </div>
 
-              <div class="free_text gap-16! mt-auto">
-                <p>
-                  Sie haben es sich in unserer Nähe sichtlich bequem gemacht.
-                  Nager wie Ratten, Mäuse und Marder haben sich mit uns neue
-                  Lebensräume erschlossen, wo andere Arten weichen mussten.
-                </p>
-                <p>
-                  Dabei können sie nicht nur im öffentlichen Raum, sondern auch
-                  in Heim und Garten große Schäden anrichten und gesundheitliche
-                  Schäden mit sich bringen.
-                </p>
-                <p>
-                  Ob Ratten im öffentlichen Raum oder Mäuse und Marder im
-                  eigenen Haus:
-                </p>
-                <p>
-                  Wir ermitteln fachkundig, wie der Befall entstehen konnte, wie
-                  man ihn beseitigt und vor allem, wie man ihn für die Zukunft
-                  ausschließt.
-                </p>
+              <!--  -->
+              <div class="grid grid-cols-1 lg:grid-cols-2 row">
+                <div class="free_text">
+                  <p>
+                    Seit ihrer Gründung vor 75 Jahren hat sich die Leeser & Will
+                    GmbH entwickelt. Unter der Leitung von Helmut Will wuchs der
+                    Betrieb weiter, 1996 wurden vier weitere Mitarbeiter
+                    eingestellt.
+                  </p>
+                  <p>
+                    Seit 1989 im Betrieb: Volker Guske, der die Firma erst 1997
+                    mit Helmuts Frau Ursula führte, bevor er sie dann im
+                    gleichen Jahr aufkaufte und die Leeser & Will
+                    Schädlingsbekämpfung GmbH gründete.
+                  </p>
+                  <p>
+                    Heute arbeiten hier an seiner Seite Schädlingsbekämpfer,
+                    kaufmännische Angestellte sowie eine Biologin und mehrere
+                    Auszubildende.
+                  </p>
+                </div>
+
+                <div class="free_text mt-auto">
+                  <h4>
+                    Schädlingsbekämpfung, das ist heute vor allem modernste
+                    Technik und Erfahrung.
+                  </h4>
+                  <p>
+                    Deshalb sind alle unsere Schädlingsbekämpfer IHK-geprüft.
+                    Sie kennen jede gängige Schädlings- und Lästlingsart sowie
+                    ihre Eigenschaften. Außerdem können Sie auf 75 Jahre
+                    praktische Unternehmenserfahrung zugreifen, die wir an
+                    unsere Mitarbeiter weitergeben.
+                  </p>
+                  <p>
+                    Darüber hinaus ist der Betrieb in verschiedenen Bereichen
+                    zertifiziert
+                  </p>
+                  <p>
+                    Leeser & Will ist stolz darauf, als eines der ersten
+                    deutschen Unternehmen nach DIN EN 16636 zertifiziert worden
+                    zu sein. Diese Zertifizierung weist uns als „zertifiziertes
+                    Unternehmen in der Schädlingsbekämpfung“ aus. Neben dieser
+                    Zertifizierung sind wir zusätzlich nach ISO 9001, ISO 14001
+                    sowie DIN EN 45001 zertifiziert.
+                  </p>
+                  <p>
+                    Unser Ziel ist es, den Einsatz von Chemikalien so gering wie
+                    möglich zu halten. Die positive Entwicklung in Forschung und
+                    Technik wird stets in aktuellen Schulungen an unsere
+                    Mitarbeiter vermittelt. Dieses Wissen setzen wir im Alltag
+                    aktiv um.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -914,49 +814,138 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-80">
-              <div class="lg:col-span-8 free_text gap-0! justify-center">
-                <h3>Würmer & Larven</h3>
-                <div class="free_text mt-40 lg:mt-80">
-                  <p>
-                    Bei Würmern und Larven weiß man nicht, was schwerer wiegt:
-                    Der Ekelfaktor, der sie zum absoluten Lästling macht. Oder
-                    die Materialschäden, die sie an Nahrung und Kleidung
-                    verursachen können.
-                  </p>
-                  <p>
-                    Als Weichtiere oder Frühstadien von Gliedertieren wächst
-                    ihre Population sprunghaft an, wenn die Behandlung durch
-                    einen professionellen Schädlingsbekämpfer ausbleibt.
-                  </p>
-                  <p>
-                    Aus der Arbeit mit gewerblichen Hygienekonzepten in ganz NRW
-                    sind wir bei Leeser & Will vertraut mit den
-                    Verbreitungsorten und Eigenheiten der heimischen Spezies und
-                    eingewanderter Gäste.
-                  </p>
-                  <p>
-                    Wir helfen im Falle eines Befalls schnell und effektiv und
-                    erklären Ihnen im Rahmen einer umfassenden Hygiene-Beratung,
-                    wie sie einen weiteren Befall ausschließen können.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="lg:col-span-4 flex flex-col items-center justify-center gap-40"
-              >
-                <div class="relative h-full w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 row">
+              <div>
+                <div class="relative inline-block">
                   <img
-                    src="assets/images/Customer4.webp"
+                    src="assets/icons/Shape7.svg"
                     alt=""
-                    class="w-full h-full object-cover object-center"
+                    class="block w-full h-auto"
+                  />
+
+                  <img
+                    src="assets/images/uber3.webp"
+                    alt=""
+                    class="absolute inset-0 w-full h-full object-cover object-top"
                     style="
-                      mask: url(&quot;assets/icons/Shape4.svg&quot;) center /
-                        100% 100% no-repeat;
-                      -webkit-mask: url(&quot;assets/icons/Shape4.svg&quot;)
-                        center / 100% 100% no-repeat;
+                      mask-image: url(&quot;assets/icons/Shape7.svg&quot;);
+                      mask-size: 100% 100%;
+                      mask-repeat: no-repeat;
+
+                      -webkit-mask-image: url(&quot;assets/icons/Shape7.svg&quot;);
+                      -webkit-mask-size: 100% 100%;
+                      -webkit-mask-repeat: no-repeat;
                     "
                   />
+                </div>
+                <div class="mt-40 free_text gap-24!">
+                  <h4>Am Arbeitsplatz und auch Zuhause!</h4>
+                  <p class="text-[#4A5565]">
+                    Es gibt viele gute Gründe, weshalb Sie sich für Leeser &
+                    Will entscheiden sollten:
+                  </p>
+                  <ul class="grid md:grid-cols-2 gap-16 md:gap-24">
+                    <li class="list-disc ml-34">
+                      Individuelle Lösungen, ausgerichtet auf Ihre Bedürfnisse
+                    </li>
+                    <li class="list-disc ml-34">Vorsorge und Prävention</li>
+                    <li class="list-disc ml-34">Flexible Arbeitszeiten</li>
+                    <li class="list-disc ml-34">
+                      Schnelle Hilfe beim akuten Befall
+                    </li>
+                    <li class="list-disc ml-34">
+                      Hervorragendes Qualitätsmanagement nach ISO 9001
+                    </li>
+                    <li class="list-disc ml-34">
+                      Nachhaltige Lösungen & Konzepte für alle Branchen
+                    </li>
+                    <li class="list-disc ml-34">
+                      Zertifiziertes Unternehmen in der Schädlingsbekämpfung
+                      nach DIN EN 16636
+                    </li>
+                    <li class="list-disc ml-34">
+                      Auf Wunsch erfolgt eine diskrete Betreuung
+                    </li>
+                    <li class="list-disc ml-34">
+                      Zertifiziertes Unternehmen in der Schädlingsbekämpfung
+                      nach DIN EN 16636
+                    </li>
+                    <li class="list-disc ml-34">
+                      Unsere störungsfreie Abwicklung minimiert
+                      Produktionsausfälle
+                    </li>
+                    <li class="list-disc ml-34">
+                      Arbeits- und Gesundheitsschutzmanagement nach DIN EN 45001
+                    </li>
+                    <li class="list-disc ml-34">Konsequente HACCP-Konzepte</li>
+                    <li class="list-disc ml-34">
+                      Umweltzertifizierung nach ISO 14001
+                    </li>
+                    <li class="list-disc ml-34">
+                      Effektive Bekämpfungs-Konzepte
+                    </li>
+                    <li class="list-disc ml-34">
+                      Bestens geschulte und IHK-geprüfte Schädlingsbekämpfer
+                    </li>
+                    <li class="list-disc ml-34">
+                      Regelmäßige Schulungen unserer Mitarbeiter
+                    </li>
+                    <li class="list-disc ml-34">
+                      Staatlich geprüfte Desinfektoren
+                    </li>
+                    <li class="list-disc ml-34">
+                      Bedarfsgerechte Serviceverträge
+                    </li>
+                    <li class="list-disc ml-34">
+                      Über 70-jährige Erfahrung und Wissen
+                    </li>
+                    <li class="list-disc ml-34">Monitoring & Dokumentation</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="free_text gap-40!">
+                <h3>Unternehmen & Privatkunden</h3>
+                <div class="free_text gap-24!">
+                  <h4>Was kümmert es die Maus?</h4>
+                  <div class="free_text">
+                    <p>
+                      Schädlinge unterscheiden nicht zwischen privat und
+                      geschäftlich. Das tun wir von Leeser & Will auch nicht.
+                    </p>
+                    <p>
+                      Egal, ob im privaten Bereich oder für Unternehmen, wir
+                      rücken Ihren Schädlingen auf die Pelle
+                    </p>
+                  </div>
+                </div>
+                <div class="free_text gap-24!">
+                  <h4>
+                    Schnell – kompetent – nachhaltig! Und das deutschlandweit!
+                  </h4>
+                  <div class="free_text">
+                    <p>
+                      Mit 75 Jahren Erfahrungen, können Sie von uns einen
+                      erstklassigen Service, kompetente Ursachenforschung und
+                      professionelle Lösungen erwarten.
+                    </p>
+                    <p>
+                      Machen Sie Ihr Problem zu unserer Aufgabe. Wir kümmern uns
+                      um alles.
+                    </p>
+                    <p>
+                      Ob im Keller, Garten, Restaurant, in der Lagerhalle oder
+                      in einem großen Industriekomplex.
+                    </p>
+                    <p>
+                      Leeser & Will findet die Ursache, löst das Problem und
+                      schlägt präventive Maßnahmen vor.
+                    </p>
+                    <p>
+                      Mit unserer mehr als 70-jährigen Erfahrung und unseren top
+                      ausgebildeten IHK-geprüften Schädlingsbekämpfern fühlen
+                      Sie sich schon bald wieder wohl.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -965,6 +954,326 @@
       </section>
 
       <!-- sec-7 -->
+      <section class="py-sec">
+        <div class="container">
+          <div class="component">
+            <div class="grid grid-cols-1 lg:grid-cols-2 row">
+              <div class="free_text gap-80">
+                <h3>Deutschlandweit für Sie da</h3>
+                <div class="free_text gap-40!">
+                  <h4>
+                    Leeser & Will steht für schnellen und kompetenten Service
+                  </h4>
+                  <div class="free_text">
+                    <p>
+                      Wenn wir bei Leeser & Will sagen, wir sind innerhalb von
+                      24 Stunden bei Ihnen vor Ort, dann meinen wir das auch so.
+                      Für unsere Kunden bieten wir nach Absprache ein
+                      entsprechendes Servicepaket an.
+                    </p>
+                    <p>
+                      Neben dem Stammsitz in Mönchengladbach, gewährleisten
+                      unsere mobilen Service-Techniker nach vorheriger Absprache
+                      einen flächendeckenden und schnellen Vor-Ort-Service.
+                    </p>
+                    <p>
+                      So ist ein flächendeckender Service garantiert: auch dank
+                      gut ausgestattetem Fuhrpark, moderner IT und
+                      Routenplanung.
+                    </p>
+                    <p>Das bedeutet für Sie:</p>
+                  </div>
+                  <h4>
+                    Schnell – kompetent – nachhaltig! Und das deutschlandweit!
+                  </h4>
+                </div>
+              </div>
+              <div class="min-h-440">
+                <img
+                  src="assets/images/Map2.webp"
+                  alt=""
+                  class="size-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-sec">
+        <div class="container">
+          <div class="component">
+            <div class="col">
+              <div class="grid lg:grid-cols-2 row">
+                <div class="flex flex-col gap-40 order-2 lg:order-1">
+                  <div class="free_text">
+                    <h4>Geschäftsführung</h4>
+                  </div>
+                  <div class="grid md:grid-cols-2 gap-40">
+                    <div class="free_text gap-24!">
+                      <div
+                        class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                      >
+                        <img src="assets/images/Dummy_Person.png" alt="" />
+                      </div>
+                      <div class="free_text">
+                        <h4>
+                          Volker Guske, Geschäftsführer Leeser & Will GmbH
+                        </h4>
+                        <p>Betriebsleitung</p>
+                      </div>
+                    </div>
+                    <div class="free_text gap-24!">
+                      <div
+                        class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                      >
+                        <img src="assets/images/uberpro1.webp" alt="" />
+                      </div>
+                      <div class="free_text">
+                        <h4>Bernd Dapper</h4>
+                        <p>Betriebsleitung</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                  <div class="free_text"><h3>Das Team</h3></div>
+                  <div
+                    class="free_twxt gap-40! mt-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                  >
+                    <h4>Ein Team für alle Fälle: Ihr Team von Leeser & Will</h4>
+                    <div class="free_text">
+                      <p>
+                        Schädlinge sind so vielfältig wie die Gegebenheiten, an
+                        denen sie auftauchen.
+                      </p>
+                      <p>
+                        Ihre Experten von Leeser & Will sind deshalb alle
+                        IHK-geprüft und kennen jede gängige Schädlings- und
+                        Lästlingsart sowie ihre Eigenschaften.
+                      </p>
+                      <p>
+                        Sie behalten das Zusammenspiel von Wetter, Jahreszeiten
+                        und Schädlings-Populationen im Auge und begegnen jeder
+                        Herausforderung mit der Besonnenheit und Fachkompetenz
+                        absoluter Profis auf ihrem Gebiet.
+                      </p>
+                      <p>
+                        Anspruchsvolle Problemstellungen verlangen nach
+                        maßgeschneiderten und zuverlässigen Lösungen – von Ihren
+                        Leeser & Will Experten.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="border">
+                <div class="free_text">
+                  <h4>Innendienst</h4>
+                </div>
+              </div>
+              <div class="space-y-40">
+                <div class="free_text">
+                  <h4>Servicetechniker</h4>
+                </div>
+                <div
+                  class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-40"
+                >
+                  <div class="free_text gap-24!">
+                    <div
+                      class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                    >
+                      <img src="assets/images/Dummy_Person.png" alt="" />
+                    </div>
+                    <div class="free_text">
+                      <h4>Volker Guske, Geschäftsführer Leeser & Will GmbH</h4>
+                      <p>Servicetechniker</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-8 -->
+      <section class="py-sec">
+        <div class="container">
+          <div class="col">
+            <div class="free_text gap-16! items-center text-center">
+              <span class="badge">Zertifizierungen</span>
+              <h3>
+                Zertifizierte Expertise. <br />
+                Anerkannte Qualität.
+              </h3>
+            </div>
+            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-24 lg:gap-40">
+              <div
+                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
+              >
+                <div
+                  class="relative rounded-xl overflow-hidden size-120 sm:size-150"
+                >
+                  <img
+                    src="assets/icons/Certified1.svg"
+                    alt=""
+                    class="absolute w-full h-full object-center object-cover"
+                  />
+                </div>
+                <div class="free_text">
+                  <h4>DIN EN 16636</h4>
+                  <p>
+                    Norm für Schädlings- bekämpfer für die Bereiche Gesundheits-
+                    & Vorratsschutz sowie Holz- & Bautenschutz
+                  </p>
+                </div>
+              </div>
+              <div
+                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
+              >
+                <div
+                  class="relative rounded-xl overflow-hidden size-120 sm:size-150"
+                >
+                  <img
+                    src="assets/icons/Certified2.svg"
+                    alt=""
+                    class="absolute w-full h-full object-center object-cover"
+                  />
+                </div>
+                <div class="free_text">
+                  <h4>ISO 9001</h4>
+                  <p>
+                    Norm für das Qualitätsmanagement. Sie regelt u.a. die
+                    Qualitätspolitik und die Kundenorientierung.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
+              >
+                <div
+                  class="relative rounded-xl overflow-hidden size-120 sm:size-150"
+                >
+                  <img
+                    src="assets/icons/Certified3.svg"
+                    alt=""
+                    class="absolute w-full h-full object-center object-cover"
+                  />
+                </div>
+                <div class="free_text">
+                  <h4>DIN EN 45001</h4>
+                  <p>
+                    Zertifizierung für Arbeits- und Gesundheits-
+                    schutzmanagement. Zur Sicherheit Ihrer & unserer
+                    Mitarbeiter.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="border border-[#CAD5E2] border_rounded p-24 flex flex-col not-sm:items-center not-sm:text-center gap-40"
+              >
+                <div
+                  class="relative rounded-xl overflow-hidden size-120 sm:size-150"
+                >
+                  <img
+                    src="assets/icons/Certified4.svg"
+                    alt=""
+                    class="absolute w-full h-full object-center object-cover"
+                  />
+                </div>
+                <div class="free_text">
+                  <h4>ISO 14001</h4>
+                  <p>
+                    Internationale Umwelt- managementnorm. Unser betriebliches
+                    Umweltmanagement für eine saubere Zukunft.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-9 -->
+      <section class="py-sec">
+        <div class="container">
+          <div class="component">
+            <div class="grid grid-cols-1 lg:grid-cols-2 row">
+              <div class="free_text gap-80">
+                <h3>Verbände</h3>
+                <div class="free_text gap-40!">
+                  <h4>
+                    Verbandsarbeit ist für Leeser & Will selbstverständlich!
+                  </h4>
+                  <div class="free_text">
+                    <p>
+                      Die Wichtigkeit dieser Arbeit wird uns nicht nur bei den
+                      Verbandstreffen immer wieder bewusst.
+                    </p>
+                    <p>
+                      So ist es gerade im Bereich der Schädlingsbekämpfung stets
+                      wichtig, aktuelle Informationen zeitnah zu erhalten. Die
+                      Natur war immer schneller als der Mensch. So wird es auch
+                      bleiben.
+                    </p>
+                    <p>
+                      Aktuelle Informationen, hochwertige Schulungen und nicht
+                      zuletzt der Austausch mit den Kollegen gewährleisten den
+                      extrem hohen Qualitätsanspruch, den wir an uns selbst
+                      haben und den Sie vonuns erwarten können.
+                    </p>
+                    <p>
+                      Deshalb sind wir froh darüber, in einer großen und
+                      namhaften Organisationen vertreten zu sein:
+                    </p>
+                  </div>
+                  <h4>Leeser & Will ist eingetragenes Mitglied</h4>
+                  <p>
+                    im Verein zur Förderung ökologischer Schädlingsbekämpfung
+                    e.V.
+                  </p>
+                </div>
+              </div>
+              <div class="free_text gap-80">
+                <h3>Zertifizierungen</h3>
+                <div class="free_text gap-40!">
+                  <div class="free_text">
+                    <p>
+                      Sie zeigen nicht nur Ihnen die hohe Qualität unserer
+                      Dienstleistungen.
+                    </p>
+                    <p>
+                      Auch wir messen unsere hohen Qualitätsansprüche an uns
+                      selbst daran!
+                    </p>
+                  </div>
+                  <h4>
+                    Unsere hohen Qualitätsansprüche allein nützen nichts, wenn
+                    wir sie nicht leben und dokumentieren können.
+                  </h4>
+                  <div class="free_text">
+                    <p>
+                      Aus diesem Grund ist Leeser & Will gleich vierfach
+                      Zertifiziert.
+                    </p>
+                    <p>
+                      Besonders stolz sind wir darauf, als eines der ersten
+                      deutschen Unternehmen aus der Schädlingsbekämpfung das
+                      Zertifikat DIN EN 16636 erhalten zu haben. Dies zeigt
+                      einmal mehr, dass Sie als Privatperson und vor allem Sie
+                      als Unternehmensverantwortlicher für den Bereich Hygiene
+                      bei uns in den allerbesten Händen sind.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-10 -->
       <section class="py-sec">
         <div class="container">
           <div class="component">
@@ -978,7 +1287,7 @@
                     alt=""
                     class="block w-full h-auto"
                   />
- 
+
                   <img
                     src="assets/images/VerfahrenImg.webp"
                     alt=""
@@ -987,7 +1296,7 @@
                       mask-image: url(&quot;assets/icons/Verfahren_shape.svg&quot;);
                       mask-size: 100% 100%;
                       mask-repeat: no-repeat;
- 
+
                       -webkit-mask-image: url(&quot;assets/icons/Verfahren_shape.svg&quot;);
                       -webkit-mask-size: 100% 100%;
                       -webkit-mask-repeat: no-repeat;
@@ -1069,203 +1378,7 @@
         </div>
       </section>
 
-      <!-- sec-8 -->
-      <section>
-        <div
-          class="min-h-600 py-sec bg-cover bg-center relative flex flex-col items-center justify-center gap-40 md:gap-80 text-Invert-subheading"
-          style="background-image: url(&quot;assets/images/BgImg.webp&quot;)"
-        >
-          <div class="free_text text-center relative z-20 container">
-            <h3 class="text-white!">
-              Lassen Sie nicht zu, dass Schädlinge Ihr Grundstück übernehmen.
-            </h3>
-            <p class="max-w-1200 mx-auto">
-              Ganz gleich, ob Sie mit einem akuten Schädlingsbefall zu kämpfen
-              haben oder einen zuverlässigen Partner für die langfristige
-              Schädlingsbekämpfung suchen – unsere zertifizierten Experten
-              stehen Ihnen zur Seite. Kontaktieren Sie Leeser & Will noch heute
-              und erhalten Sie eine professionelle, auf Ihre Bedürfnisse
-              zugeschnittene Beratung.
-            </p>
-          </div>
-          <div
-            class="flex flex-col lg:flex-row gap-24 lg:gap-40 relative z-20 items-center"
-          >
-            <a href="" class="btn btn-secondary"
-              >Sprechen Sie mit einem Experten</a
-            >
-            <a href="" class="btn btn-primary"
-              >Vereinbaren Sie einen Inspektionstermin</a
-            >
-          </div>
-          <div class="overlay-dark"></div>
-        </div>
-      </section>
-
-      <!-- sec-9 -->
-      <section class="py-sec bg-Backg">
-        <div class="container">
-          <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 row">
-              <div
-                class="relative w-full max-w-[900px] mx-auto shrink-0 h-[420px] xsm:h-[480px] sm:h-[540px] md:h-[600px] lg:h-[650px] xl:h-[690px] 2xl:h-[clamp(42rem,38rem+5vw,45.5rem)] 2xl:mr-50"
-              >
-                <!-- Top Image -->
-                <div
-                  class="absolute top-0 left-1/2 -translate-x-1/2 sm:left-[42%] sm:-translate-x-1/2 lg:left-[35%] xl:left-[30%] 2xl:left-[25%] h-[200px] xsm:h-[230px] sm:h-[270px] md:h-[320px] lg:h-[360px] xl:h-[400px] 2xl:h-[clamp(24rem,20rem+5vw,27.625rem)] border_rounded overflow-hidden"
-                >
-                  <img
-                    src="assets/images/Customer5.2.webp"
-                    alt=""
-                    class="h-full w-auto max-w-none object-cover"
-                  />
-                </div>
-
-                <!-- Left Image -->
-                <div
-                  class="absolute left-0 sm:left-[2%] md:left-[4%] lg:left-[2%] xl:left-0 top-[48%] -translate-y-1/2 h-[150px] xsm:h-[175px] sm:h-[210px] md:h-[240px] lg:h-[270px] xl:h-[300px] 2xl:h-[clamp(18rem,15rem+4vw,20.8125rem)] border_rounded overflow-hidden z-10"
-                >
-                  <img
-                    src="assets/images/Customer5.1.webp"
-                    alt=""
-                    class="h-full w-auto max-w-none object-cover"
-                  />
-                </div>
-
-                <!-- Bottom Right Image -->
-                <div
-                  class="absolute right-0 sm:right-[2%] md:right-[3%] lg:right-0 bottom-0 h-[250px] xsm:h-[285px] sm:h-[330px] md:h-[380px] lg:h-[430px] xl:h-[490px] 2xl:h-[clamp(31rem,27rem+5vw,35.75rem)] border_rounded overflow-hidden"
-                >
-                  <img
-                    src="assets/images/Customer5.3.webp"
-                    alt=""
-                    class="h-full w-auto max-w-none object-cover"
-                  />
-                </div>
-              </div>
-
-              <div class="free_text gap-16! mt-auto">
-                <h3 class="mb-80">Pilze</h3>
-                <p>
-                  Sie haben es sich in unserer Nähe sichtlich bequem gemacht.
-                  Nager wie Ratten, Mäuse und Marder haben sich mit uns neue
-                  Lebensräume erschlossen, wo andere Arten weichen mussten.
-                </p>
-                <p>
-                  Dabei können sie nicht nur im öffentlichen Raum, sondern auch
-                  in Heim und Garten große Schäden anrichten und gesundheitliche
-                  Schäden mit sich bringen.
-                </p>
-                <p>
-                  Ob Ratten im öffentlichen Raum oder Mäuse und Marder im
-                  eigenen Haus:
-                </p>
-                <p>
-                  Wir ermitteln fachkundig, wie der Befall entstehen konnte, wie
-                  man ihn beseitigt und vor allem, wie man ihn für die Zukunft
-                  ausschließt.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- sec-10 -->
-      <section class="py-sec">
-        <div class="container">
-          <div class="component">
-            <div
-              class="grid lg:grid-cols-3 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
-            >
-              <div class="lg:col-span-2 free_text gap-0! justify-center">
-                <h3>Holz & Bautenschutz</h3>
-                <div class="free_text pt-40 md:pt-60 lg:pt-80">
-                  <p>
-                    Holz ist ein beliebtes Material für alle Arten von Bauten in
-                    und um Ihr Haus. Es ist natürlich, hat eine besonders
-                    wohnliche Ausstrahlung und bietet leider genau deshalb
-                    zahlreichen Organismen ein heimeliges Plätzchen, um sich
-                    niederzulassen.
-                  </p>
-                  <p>
-                    Von der Holzwespe oder Holznagekäfern (z.B. Hausbock,
-                    Holzwurm) bis zum Pilz (z. B. Hausschwamm) fühlen sich viele
-                    Schädlinge in dem traditionellen Bau- und
-                    Konstruktionsmaterial wohl und richten dadurch Schäden an
-                    Böden, Treppen, Terrassen oder anderen Alltags- und
-                    Wertgegenständen an. Der Holzschutz und darüber hinaus der
-                    Bautenschutz sollte deshalb einen hohen Stellenwert
-                    einnehmen.
-                  </p>
-                  <p>
-                    Das ist der Moment für unsere professionellen Kammerjäger,
-                    die stets unter Berücksichtigung von Denkmalschutz- und
-                    Naturschutz-Vorschriften die Kontamination einschränken und
-                    einen Prophylaxe-Plan entwickeln.
-                  </p>
-                  <p>
-                    Ob Ausräuchern oder die Errichtung eines Ausweichquartiers:
-                    Ziel ist immer der nachhaltige Erfolg jeder Maßnahme.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col w-full h-full mx-auto items-center justify-center gap-40"
-              >
-                <div class="flex gap-24">
-                    <div class="w-1/2 rounded-full h-full overflow-hidden min-h-400 lg:max-h-470 shrink">
-                      <img
-                        src="assets/images/Customer6.1.webp"
-                        alt=""
-                        class="size-full object-cover"
-                      />
-                    </div>
-                    <div class="w-1/2 rounded-full h-full overflow-hidden min-h-400 lg:max-h-470 shrink">
-                      <img
-                        src="assets/images/Customer6.2.webp"
-                        alt=""
-                        class="size-full object-cover"
-                      />
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- sec-11 -->
-      <section class="py-sec">
-        <div class="container">
-          <div class="component">
-            <div class="free_text gap-0! justify-center">
-              <h3>Desinfektion & Geruchsbeseitigung</h3>
-              <div class="free_text pt-40 md:pt-60 lg:pt-80">
-                <p>Schimmel, Unrat, Bakterien oder Verwesungsgeruch</p>
-                <p>
-                  Die Desinfektion und Geruchsbekämpfung stellt neben der
-                  Schädlingsbekämpfung und Prävention ein weiteres großes
-                  Tätigkeitsfeld von Leeser & Will dar.
-                </p>
-                <p>
-                  Als professioneller Spezialist für Desinfektionen bietet
-                  Leeser & Will Ihnen eine breite Palette anerkannter
-                  Möglichkeiten zur Desinfektion. Hier können je nach
-                  Einsatzgebiet und Anforderung sowohl chemische aber auch
-                  physikalische Verfahren zum Einsatz kommen.
-                </p>
-                <p>
-                  Für die Geruchsbeseitigung setzen wir Ozongeräte oder moderne
-                  Plasma-Kaltverbennungsgeräte ein.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- sec-12 -->
       <section class="py-sec">
         <div class="container">
           <div class="row cols_1">
@@ -1606,7 +1719,41 @@
           </div>
         </div>
       </section>
+
+      <!-- sec-12 -->
+      <section>
+        <div
+          class="min-h-600 py-sec bg-cover bg-center relative flex flex-col items-center justify-center gap-40 md:gap-80 text-Invert-subheading"
+          style="background-image: url(&quot;assets/images/BgImg.webp&quot;)"
+        >
+          <div class="free_text text-center relative z-20 container">
+            <h3 class="text-white!">
+              Lassen Sie nicht zu, dass Schädlinge Ihr Grundstück übernehmen.
+            </h3>
+            <p class="max-w-1200 mx-auto">
+              Ganz gleich, ob Sie mit einem akuten Schädlingsbefall zu kämpfen
+              haben oder einen zuverlässigen Partner für die langfristige
+              Schädlingsbekämpfung suchen – unsere zertifizierten Experten
+              stehen Ihnen zur Seite. Kontaktieren Sie Leeser & Will noch heute
+              und erhalten Sie eine professionelle, auf Ihre Bedürfnisse
+              zugeschnittene Beratung.
+            </p>
+          </div>
+          <div
+            class="flex flex-col lg:flex-row gap-24 lg:gap-40 relative z-20 items-center"
+          >
+            <a href="" class="btn btn-secondary"
+              >Sprechen Sie mit einem Experten</a
+            >
+            <a href="" class="btn btn-primary"
+              >Vereinbaren Sie einen Inspektionstermin</a
+            >
+          </div>
+          <div class="overlay-dark"></div>
+        </div>
+      </section>
     </main>
+
     <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
       <div class="flex justify-center">
         <div

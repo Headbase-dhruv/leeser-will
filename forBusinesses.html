@@ -426,20 +426,23 @@
               </div>
               
 
-              <div class="lg:col-span-7 flex flex-col justify-center free_text">
+              <div class="lg:col-span-7 flex flex-col justify-center free_text gap-24!">
                 <span class="badge">Unternehmen</span>
                 <h3>Schädlingsbekämpfung, Monitoring & Prävention.</h3>
-                <p>
-                  Unsere Erfahrung schützt Sie, Ihre Mitarbeiter & Kollegen,
-                  Ihre Ware & Produkte sowie Ihr Inventar.
-                </p>
-                <p>
-                  Die Grundlagen der Schädlingsbekämpfung umfassen heute, so wie
-                  auch schon vor 3.000 Jahren, das Vorbeugen, Abwehren, Abfangen
-                  und Abtöten von Schädlingen. Dabei gewinnt eine tiefere
-                  Einsicht in die ökologischen Zusammenhänge für moderne
-                  Bekämpfungsstrategien zunehmend an Bedeutung.
-                </p>
+                <div class="free_text">
+
+                  <p>
+                    Unsere Erfahrung schützt Sie, Ihre Mitarbeiter & Kollegen,
+                    Ihre Ware & Produkte sowie Ihr Inventar.
+                  </p>
+                  <p>
+                    Die Grundlagen der Schädlingsbekämpfung umfassen heute, so wie
+                    auch schon vor 3.000 Jahren, das Vorbeugen, Abwehren, Abfangen
+                    und Abtöten von Schädlingen. Dabei gewinnt eine tiefere
+                    Einsicht in die ökologischen Zusammenhänge für moderne
+                    Bekämpfungsstrategien zunehmend an Bedeutung.
+                  </p>
+                </div>
                 <a href="" class="btn btn-primary"
                   >Jetzt mehr Infos anfordern!</a
                 >
@@ -538,7 +541,7 @@
             <span class="badge">Interaktiver Immobilienratgeber</span>
             <div class="free_text max-w-800">
               <h3>Schützen Sie jeden Bereich Ihres Hotels.</h3>
-              <p class="max-w-580">
+              <p class="max-w-580 not-sm:hidden">
                 Von Gästezimmern und Küche bis zu Lager- und Außenbereichen:
                 Entdecken Sie typische Schädlingsrisiken und erfahren Sie, wie
                 wir Ihr Hotel diskret und zuverlässig schützen.
@@ -1075,7 +1078,7 @@
                 Schützen Sie jeden Bereich <br />
                 Ihres Betriebs.
               </h3>
-              <p class="max-w-630">
+              <p class="max-w-630 not-sm:hidden">
                 Jeder Bereich eines Unternehmens stellt unterschiedliche
                 Anforderungen an den Schädlingsschutz. Entdecken Sie typische
                 Risiken und erfahren Sie, wie unsere Experten Ihr Unternehmen
@@ -1085,9 +1088,9 @@
             <div class="not-xl:relative">
               <div class="xl:absolute top-90 right-20 w-fit h-fit">
                 <img
-                  src="assets/images/MallLayout.webp"
+                  src="assets/images/MallLayout3.webp"
                   alt=""
-                  class="size-fit relative"
+                  class="size-fit relative xl:max-w-1170"
                 />
                 <button
                   @click="active='Lager & Waren'"
@@ -1101,15 +1104,14 @@
                     <img
                       src="assets/icons/undar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="xl:flex flex-col gap-2 text-start hidden">
-                    <span class="text-black text-base">Lager & Waren</span>
+                    <span class="text-black text-base font-semibold">Lager & Waren</span>
                     <span class="text-xs">Schadnagerschutz</span>
                   </div>
                 </button>
-
                 <button
                   @click="active='Verkaufsfläche'"
                   aria-label="Verkaufsfläche"
@@ -1122,18 +1124,18 @@
                     <img
                       src="assets/icons/bug.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Verkaufsfläche</span>
+                    <span class="text-black text-base font-semibold">Verkaufsfläche</span>
                     <span class="text-xs">HACCP</span>
                   </div>
                 </button>
                 <button
                   @click="active='Begrünung'"
                   aria-label="Begrünung"
-                  class="absolute top-[38%] left-[5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[38%] left-[6%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Begrünung' ? 'bg-orange' : 'bg-primary'"
@@ -1142,153 +1144,154 @@
                     <img
                       src="assets/icons/wasp.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base"> Begrünung</span>
-                    <span class="text-xs">Wespen</span>
+                    <span class="text-black text-base font-semibold">Begrünung</span>
+                    <span class="text-xs">Wespen/Hornissen</span>
                   </div>
                 </button>
-                <button
-                  @click="active='Parkplatz & Zufahrt'"
-                  aria-label="Parkplatz & Zufahrt"
-                  class="absolute top-[66%] left-[9.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Parkplatz & Zufahrt' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                  <button
+                    @click="active='Parkplatz & Zufahrt'"
+                    aria-label="Parkplatz & Zufahrt"
+                    class="absolute top-[60%] left-[8.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                   >
-                    <img
-                      src="assets/icons/bird.svg"
-                      alt=""
-                      class="w-20 md:w-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base"
-                      >Parkplatz & Zufahrt</span
+                    <div
+                      :class="active==='Parkplatz & Zufahrt' ? 'bg-orange' : 'bg-primary'"
+                      class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                     >
-                    <span class="text-xs">Eichenprozessionsspinner</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Kanalisation'"
-                  aria-label="Kanalisation"
-                  class="absolute top-[87%] left-[56%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Kanalisation' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                      <img
+                        src="assets/icons/caterpillar.svg"
+                        alt=""
+                        class="size-20 md:size-32"
+                      />
+                    </div>
+                    <div class="hidden xl:flex flex-col gap-2 text-start">
+                      <span class="text-black text-base font-semibold"
+                        >Parkplatz & Zufahrt</span
+                      >
+                      <span class="text-xs">Eichenprozessionsspinner</span>
+                    </div>
+                  </button>
+                  <button
+                    @click="active='Kanalisation'"
+                    aria-label="Kanalisation"
+                    class="absolute top-[83%] left-[41.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                   >
-                    <img
-                      src="assets/icons/undar.svg"
-                      alt=""
-                      class="w-20 md:w-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Kanalisation</span>
-                    <span class="text-xs">Raten</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Küche & Kantine'"
-                  aria-label="Küche & Kantine"
-                  class="absolute top-[65%] left-[56%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Küche & Kantine' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    <div
+                      :class="active==='Kanalisation' ? 'bg-orange' : 'bg-primary'"
+                      class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    >
+                      <img
+                        src="assets/icons/undar.svg"
+                        alt=""
+                        class="size-20 md:size-32"
+                      />
+                    </div>
+                    <div class="hidden xl:flex flex-col gap-2 text-start">
+                      <span class="text-black text-base font-semibold">Kanalisation</span>
+                      <span class="text-xs">Raten</span>
+                    </div>
+                  </button>
+                  <button
+                    @click="active='Küche & Kantine'"
+                    aria-label="Küche & Kantine"
+                    class="absolute top-[66%] left-[56%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                   >
-                    <img
-                      src="assets/icons/cockroach.svg"
-                      alt=""
-                      class="w-20 md:w-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Küche & Kantine</span>
-                    <span class="text-xs">Schabenbekämpfung</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Lagerbereich'"
-                  aria-label="Lagerbereich"
-                  class="absolute top-[19%] left-[78.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Lagerbereich' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    <div
+                      :class="active==='Küche & Kantine' ? 'bg-orange' : 'bg-primary'"
+                      class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    >
+                      <img
+                        src="assets/icons/cockroach.svg"
+                        alt=""
+                        class="size-20 md:size-32"
+                      />
+                    </div>
+                    <div class="hidden xl:flex flex-col gap-2 text-start">
+                      <span class="text-black text-base font-semibold">Küche & Kantine</span>
+                      <span class="text-xs">Schabenbekämpfung</span>
+                    </div>
+                  </button>
+                  <button
+                    @click="active='Anlieferung'"
+                    aria-label="Anlieferung"
+                    class="absolute top-[22%] left-[77%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                   >
-                    <img
-                      src="assets/icons/bug.svg"
-                      alt=""
-                      class="w-20 md:w-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Lagerbereich</span>
-                    <span class="text-xs">Wanzenbekämpfung</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Verkaufsfläche1'"
-                  aria-label="Verkaufsfläche"
-                  class="absolute top-[42%] left-[45%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Verkaufsfläche1' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    <div
+                      :class="active==='Anlieferung' ? 'bg-orange' : 'bg-primary'"
+                      class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    >
+                      <img
+                        src="assets/icons/undar.svg"
+                        alt=""
+                        class="size-20 md:size-32"
+                      />
+                    </div>
+                    <div class="hidden xl:flex flex-col gap-2 text-start">
+                      <span class="text-black text-base font-semibold">Anlieferung</span>
+                      <span class="text-xs">Schadnager</span>
+                    </div>
+                  </button>
+                  <button
+                    @click="active='Verkaufsfläche1'"
+                    aria-label="Verkaufsfläche"
+                    class="absolute top-[44%] left-[40%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                   >
-                    <img
-                      src="assets/icons/undar.svg"
-                      alt=""
-                      class="w-20 md:w-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Verkaufsfläche</span>
-                    <span class="text-xs">Silberfischchen-Bekämpfung</span>
-                  </div>
-                </button>
-                <button
-                  @click="active='Büro & Innenräume'"
-                  aria-label="Büro & Innenräume"
-                  class="absolute top-[34%] left-[67.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
-                >
-                  <div
-                    :class="active==='Büro & Innenräume' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    <div
+                      :class="active==='Verkaufsfläche1' ? 'bg-orange' : 'bg-primary'"
+                      class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    >
+                      <img
+                        src="assets/icons/undar.svg"
+                        alt=""
+                        class="size-20 md:size-32"
+                      />
+                    </div>
+                    <div class="hidden xl:flex flex-col gap-2 text-start">
+                      <span class="text-black text-base font-semibold">Verkaufsfläche</span>
+                      <span class="text-xs">Mäuse</span>
+                    </div>
+                  </button>
+                  <button
+                    @click="active='Büro & Innenräume'"
+                    aria-label="Büro & Innenräume"
+                    class="absolute top-[42%] left-[63%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                   >
-                    <img
-                      src="assets/icons/Insect.svg"
-                      alt=""
-                      class="w-20 md:w-32"
-                    />
-                  </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Büro & Innenräume</span>
-                    <span class="text-xs">Eichenprozessionsspinner</span>
-                  </div>
-                </button>
+                    <div
+                      :class="active==='Büro & Innenräume' ? 'bg-orange' : 'bg-primary'"
+                      class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    >
+                      <img
+                        src="assets/icons/Insect.svg"
+                        alt=""
+                        class="size-20 md:size-32"
+                      />
+                    </div>
+                    <div class="hidden xl:flex flex-col gap-2 text-start">
+                      <span class="text-black text-base font-semibold">Büro & Innenräume</span>
+                      <span class="text-xs">Insektenschutz</span>
+                    </div>
+                  </button>
+
                 <button
-                  @click="active='Kanalisation1'"
+                  @click="active='Entsorgungsbereich'"
                   aria-label="Entsorgungsbereich"
-                  class="absolute top-[60%] left-[81%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[62%] left-[77.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
-                    :class="active==='Kanalisation1' ? 'bg-orange' : 'bg-primary'"
+                    :class="active==='Entsorgungsbereich' ? 'bg-orange' : 'bg-primary'"
                     class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                   >
                     <img
                       src="assets/icons/undar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Kanalisation</span>
+                    <span class="text-black text-base font-semibold">Entsorgungsbereich</span>
                     <span class="text-xs">Schadnager</span>
                   </div>
                 </button>
@@ -1301,16 +1304,16 @@
                 <img
                   :src="{
                     'Lager & Waren': 'assets/icons/undar.svg',
-                        'Parkplatz & Zufahrt': 'assets/icons/bird.svg',
+                        'Parkplatz & Zufahrt': 'assets/icons/caterpillar.svg',
                         'Verkaufsfläche': 'assets/icons/bug.svg',
                         'Begrünung': 'assets/icons/wasp.svg',
                         'Kanalisation': 'assets/icons/undar.svg',
                         'Küche & Kantine': 'assets/icons/cockroach.svg',
                         'Küche': 'assets/icons/cockroach.svg',
-                        'Lagerbereich': 'assets/icons/bug.svg',
+                        'Anlieferung': 'assets/icons/undar.svg',
                         'Verkaufsfläche1': 'assets/icons/undar.svg',
                         'Büro & Innenräume': 'assets/icons/Insect.svg',
-                        'Kanalisation1': 'assets/icons/undar.svg',
+                        'Entsorgungsbereich': 'assets/icons/undar.svg',
                         }[active]"
                   alt=""
                   class="shrink-0"
@@ -1651,7 +1654,7 @@
                 <button
                   @click="active='Produktionsbereich Fliegenkontrolle'"
                   aria-label="Produktionsbereich Fliegenkontrolle"
-                  class="absolute top-[19%] left-[44%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[18%] lg:top-[18%] left-[40%] lg:left-[29%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Produktionsbereich Fliegenkontrolle' ? 'bg-orange' : 'bg-primary'"
@@ -1660,18 +1663,18 @@
                     <img
                       src="assets/icons/Fly.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="xl:flex flex-col gap-2 text-start hidden">
-                    <span class="text-black text-base">Produktionsbereich</span>
+                    <span class="text-black text-base font-semibold">Produktionsbereich</span>
                     <span class="text-xs">Fliegenkontrolle</span>
                   </div>
                 </button>
                 <button
                   @click="active='Außenbereich'"
                   aria-label="Außenbereich"
-                  class="absolute top-[10%] left-[11%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[2%] lg:top-[9.8%] left-[7%] lg:left-[11%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Außenbereich' ? 'bg-orange' : 'bg-primary'"
@@ -1680,18 +1683,18 @@
                     <img
                       src="assets/icons/bird.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Außenbereich</span>
+                    <span class="text-black text-base font-semibold">Außenbereich</span>
                     <span class="text-xs">Taubenabwehr</span>
                   </div>
                 </button>
                 <button
                   @click="active='Büro & Innenräume'"
                   aria-label="Büro & Innenräume"
-                  class="absolute top-[31%] left-[24%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[28%] left-[28%] lg:top-[31%] lg:left-[24%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Büro & Innenräume' ? 'bg-orange' : 'bg-primary'"
@@ -1700,18 +1703,18 @@
                     <img
                       src="assets/icons/Insect.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Büro & Innenräume</span>
+                    <span class="text-black text-base font-semibold">Büro & Innenräume</span>
                     <span class="text-xs">Insektenschutz</span>
                   </div>
                 </button>
                 <button
                   @click="active='Begrünung'"
                   aria-label="Begrünung"
-                  class="absolute top-[47%] left-[7%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[41%] left-[7%] lg:top-[47%] lg:left-[7%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Begrünung' ? 'bg-orange' : 'bg-primary'"
@@ -1720,18 +1723,18 @@
                     <img
                       src="assets/icons/wasp.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base"> Begrünung</span>
-                    <span class="text-xs">Wespen</span>
+                    <span class="text-black text-base font-semibold"> Begrünung</span>
+                    <span class="text-xs">Wespen/Hornissen </span>
                   </div>
                 </button>
                 <button
                   @click="active='Kanalisation'"
                   aria-label="Kanalisation"
-                  class="absolute top-[66%] left-[15.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[66%] left-[15.5%]  bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Kanalisation' ? 'bg-orange' : 'bg-primary'"
@@ -1740,18 +1743,18 @@
                     <img
                       src="assets/icons/undar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Kanalisation</span>
-                    <span class="text-xs">Schadnager</span>
+                    <span class="text-black text-base font-semibold">Kanalisation</span>
+                    <span class="text-xs">Ratten</span>
                   </div>
                 </button>
                 <button
                   @click="active='Küche & Kantine'"
                   aria-label="Küche & Kantine"
-                  class="absolute top-[50%] left-[32%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[46%] left-[36%] lg:top-[50%] lg:left-[32%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Küche & Kantine' ? 'bg-orange' : 'bg-primary'"
@@ -1760,32 +1763,32 @@
                     <img
                       src="assets/icons/cockroach.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Küche & Kantine</span>
+                    <span class="text-black text-base font-semibold">Küche & Kantine</span>
                     <span class="text-xs">Ameisenbekämpfung</span>
                   </div>
                 </button>
                 <button
-                  @click="active='Lagerbereich'"
-                  aria-label="Lagerbereich"
-                  class="absolute top-[30%] left-[82%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  @click="active='Anlieferung'"
+                  aria-label="Anlieferung"
+                  class="absolute top-[30%] left-[88%] lg:left-[82%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
-                    :class="active==='Lagerbereich' ? 'bg-orange' : 'bg-primary'"
+                    :class="active==='Anlieferung' ? 'bg-orange' : 'bg-primary'"
                     class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                   >
                     <img
-                      src="assets/icons/bug.svg"
+                      src="assets/icons/undar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Lagerbereich</span>
-                    <span class="text-xs">Wanzenbekämpfung</span>
+                    <span class="text-black text-base font-semibold">Anlieferung</span>
+                    <span class="text-xs">Schadnager</span>
                   </div>
                 </button>
                 <button
@@ -1800,38 +1803,38 @@
                     <img
                       src="assets/icons/cockroach.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Toilette</span>
-                    <span class="text-xs">Silberfischchen-Bekämpfung</span>
+                    <span class="text-black text-base font-semibold">Toilette</span>
+                    <span class="text-xs">Schabenbekämpfung</span>
                   </div>
                 </button>
                 <button
                   @click="active='Bauminsel'"
                   aria-label="Bauminsel"
-                  class="absolute top-[72%] left-[51%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[72%] left-[52%] lg:top-[75%] lg:left-[40%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Bauminsel' ? 'bg-orange' : 'bg-primary'"
                     class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                   >
                     <img
-                      src="assets/icons/fly.svg"
+                      src="assets/icons/caterpillar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Bauminsel</span>
+                    <span class="text-black text-base font-semibold">Bauminsel</span>
                     <span class="text-xs">Eichenprozessionsspinner</span>
                   </div>
                 </button>
                 <button
                   @click="active='Entsorgungsbereich'"
                   aria-label="Entsorgungsbereich"
-                  class="absolute top-[83%] left-[71.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[83.5%] left-[73%] lg:left-[75%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Entsorgungsbereich' ? 'bg-orange' : 'bg-primary'"
@@ -1840,11 +1843,11 @@
                     <img
                       src="assets/icons/undar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Entsorgungsbereich</span>
+                    <span class="text-black text-base font-semibold">Entsorgungsbereich</span>
                     <span class="text-xs">Schadnager</span>
                   </div>
                 </button>
@@ -1863,9 +1866,9 @@
                         'Kanalisation': 'assets/icons/undar.svg',
                         'Küche & Kantine': 'assets/icons/cockroach.svg',
                         'Küche': 'assets/icons/cockroach.svg',
-                        'Lagerbereich': 'assets/icons/bug.svg',
+                        'Anlieferung': 'assets/icons/undar.svg',
                         'Toilette': 'assets/icons/cockroach.svg',
-                        'Bauminsel': 'assets/icons/fly.svg',
+                        'Bauminsel': 'assets/icons/caterpillar.svg',
                         'Entsorgungsbereich': 'assets/icons/undar.svg',
                         }[active]"
                   alt=""

@@ -239,7 +239,6 @@
     </header>
 
     <main>
-
       <!-- Sec-1 -->
       <section>
         <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
@@ -289,21 +288,19 @@
           </div>
         </div>
       </section>
-      
 
       <!-- Sec-2 -->
       <section class="py-sec ctm_sec overflow-x-hidden">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-80 relative z-10 ">
-              <div class="w-full h-fit ">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-80 relative z-10">
+              <div class="w-full h-fit">
                 <img
                   src="assets/images/Prevention1.webp"
                   alt=""
                   class="h-fit mx-auto relative z-10"
                 />
                 <!-- <img src="assets/icons/Prevention1.1.svg" alt="" class="absolute lg:bottom-[-11%] lg:left-[-1%] h-fit"> -->
-               
               </div>
               <div
                 class="flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
@@ -559,10 +556,10 @@
             <div
               class="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
             >
-              <div class="h-fit w-full border_rounded overflow-hidden ">
-                <img src="assets/images/Prevention3.webp" alt=""  />
+              <div class="h-fit w-full border_rounded overflow-hidden">
+                <img src="assets/images/Prevention3.webp" alt="" />
               </div>
-              
+
               <div
                 class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
               >
@@ -705,7 +702,7 @@
       <section class="py-sec ctm_sec overflow-x-hidden">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-80">
+            <div class="grid grid-cols-1 lg:grid-cols-2 row">
               <div
                 class="flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-end"
               >
@@ -760,22 +757,65 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="flex flex-col justify-center items-center gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] h-fit w-full"
-              >
-              <div class="lg:ml-auto relative">
+              
+<div
+  class="flex flex-col items-center justify-center
+         gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]
+         w-full h-full"
+>
+  <!-- Image composition wrapper -->
+  <div class="relative w-full max-w-[650px] lg:ml-auto">
 
-                <img
-                src="assets/images/Prevention4.webp"
-                alt=""
-                class="relative z-10"
-                />
-                <img src="assets/icons/Prevention4.1.svg" alt="" class="absolute not-md:h-160 left-[-5%] bottom-[6%]">
-              </div>
-                <a href="" class="btn btn-primary"
-                  >Zur Architekten-/Planer-Anfrage</a
-                >
-              </div>
+    <!-- Two overlapping images -->
+    <div class="relative w-full aspect-[825/730]">
+
+      <!-- Back image -->
+      <div
+        class="absolute top-0 left-0
+               w-[65%] h-[62%]
+               overflow-hidden
+               rounded-[clamp(1rem,3vw,2rem)]"
+      >
+        <img
+          src="assets/images/Home11.webp"
+          alt="Architects working together"
+          class="block w-full h-full object-cover object-center"
+        />
+      </div>
+
+      <!-- Front image -->
+      <div
+        class="absolute bottom-0 right-0 z-10
+               w-[70%] h-[78%]
+               overflow-hidden
+               rounded-[clamp(1rem,3vw,2rem)]"
+      >
+        <img
+          src="assets/images/Home12.webp"
+          alt="Architects reviewing building plans"
+          class="block w-full h-full object-cover object-center"
+        />
+      </div>
+
+      <!-- SVG decoration above both images -->
+      <img
+        src="assets/icons/Prevention4.1.svg"
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute z-20
+               left-0 bottom-[6%]
+               w-[clamp(5rem,15vw,10rem)]
+               h-auto"
+      />
+
+    </div>
+  </div>
+
+  <!-- CTA button -->
+  <a href="" class="btn btn-primary">
+    Zur Architekten-/Planer-Anfrage
+  </a>
+</div>
             </div>
           </div>
         </div>
@@ -1648,7 +1688,6 @@
                   class="w-fit h-fit object-contain"
                 />
               </div>
-             
             </div>
           </div>
 

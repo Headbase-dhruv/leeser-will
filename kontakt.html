@@ -23,7 +23,7 @@
     <title>Document 1</title>
   </head>
   <body>
-     <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -292,8 +292,12 @@
       <section class="my-sec">
         <div class="container">
           <div class="col row grid xl:grid-cols-2">
-            <div class=" relative order-2 xl:order-1 min-h-440">
-                <img src="assets/images/Map2.webp" alt="" class="absolute inset-0 h-full w-full object-center object-cover">
+            <div class="relative order-2 xl:order-1 min-h-440">
+              <img
+                src="assets/images/Map2.webp"
+                alt=""
+                class="absolute inset-0 h-full w-full object-center object-cover"
+              />
             </div>
             <div class="free_text gap-40 order-1 xl:order-2">
               <h4>Ihre individuelle Lösung beginnt hier</h4>
@@ -308,7 +312,7 @@
                     type="text"
                     id="name"
                     placeholder="Jon Snow"
-                    class="w-full px-14 py-12 rounded-xl border border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
+                    class="w-full px-14 py-12 rounded-xl border-[1.5px] border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
                   />
                 </div>
 
@@ -322,16 +326,13 @@
                     type="tel"
                     id="phone"
                     placeholder="1234 – 567890"
-                    class="w-full px-14 py-12 rounded-xl border border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
+                    class="w-full px-14 py-12 rounded-xl border-[1.5px] border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
                   />
                 </div>
 
                 <!-- Email -->
                 <div class="flex flex-col gap-8">
-                  <label
-                    for="email"
-                    class="block text-base text-neutral-900 mb-2"
-                  >
+                  <label for="email" class="block text-base text-neutral-900">
                     E-Mail-Adresse
                   </label>
 
@@ -339,7 +340,7 @@
                     type="email"
                     id="email"
                     placeholder="johndoe@gmail.com"
-                    class="w-full px-14 py-12 rounded-xl border border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
+                    class="w-full px-14 py-12 rounded-xl border-[1.5px] border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
                   />
                 </div>
 
@@ -353,7 +354,7 @@
                     id="message"
                     rows="5"
                     placeholder="Beschreiben Sie kurz Ihre Anforderungen"
-                    class="w-full px-14 py-12 rounded-xl border border-[#C9D5E6] bg-white resize-none outline-none focus:border-primary focus:ring-0 transition"
+                    class="w-full px-14 py-12 rounded-xl border-[1.5px] border-[#C9D5E6] bg-white resize-none outline-none focus:border-primary focus:ring-0 transition"
                   ></textarea>
                 </div>
 
@@ -361,7 +362,7 @@
                 <label class="flex items-center gap-8 cursor-pointer">
                   <input
                     type="checkbox"
-                    class="size-24 rounded border border-neutral-300 accent-[#0B4A8B]"
+                    class="size-18 rounded border border-bordercolor accent-primary"
                   />
 
                   Ich stimme der Datenverarbeitung zu.
@@ -375,18 +376,32 @@
                   Nachricht senden
 
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
                     fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5 12H19M19 12L13 6M19 12L13 18"
-                      stroke="currentColor"
-                      stroke-width="1.8"
+                      d="M19 12H5"
+                      stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
+                      stroke="white"
+                    />
+                    <path
+                      d="M14 17L19 12"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="white"
+                    />
+                    <path
+                      d="M14 7L19 12"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="white"
                     />
                   </svg>
                 </button>
@@ -438,7 +453,7 @@
               </form>
             </div>
             <div class="free_text gap-40 order-3">
-              <div class="free_text">
+              <div class="free_text gap-24!">
                 <span class="badge">Karriere</span>
                 <h3>Leeser & Will Mönchengladbach</h3>
               </div>
@@ -454,7 +469,7 @@
                   Fuhrparkmanagement.
                 </p>
               </div>
-              <div>
+              <div class="space-y-8">
                 <h4>kostenlose, zentrale Service-Nummer:</h4>
                 <h4 class="text-txt-body">0800.33 04 286</h4>
               </div>

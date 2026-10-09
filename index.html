@@ -242,12 +242,15 @@
       <section>
         <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
           <div
-            class="border_rounded overflow-hidden h-700 lg:min-h-840 flex flex-col lg:flex-row gap-40 lg:items-end justify-end lg:justify-between p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] bg-cover bg-center"
-            style="
-              background-image: url(&quot;assets/images/HeaderImg.webp&quot;);
-            "
+            class="relative isolate border_rounded overflow-hidden h-700 lg:min-h-840 flex flex-col lg:flex-row gap-40 lg:items-end justify-end lg:justify-between p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] bg-cover bg-center"
           >
-            <div class="free_text max-w-700 gap-18 lg:gap-24">
+            <img
+              src="assets/images/HeaderImg.webp"
+              alt=""
+              class="absolute inset-0 size-full object-cover"
+            />
+
+            <div class="relative z-10 free_text max-w-700 gap-18 lg:gap-24">
               <h2 class="text-white!">
                 Schädlingsfrei. <br />
                 Sicher. Entspannt.
@@ -258,7 +261,7 @@
                 Unternehmen.
               </p>
             </div>
-            <div class="free_text gap-18! lg:gap-24 max-w-340">
+            <div class="relative z-10 free_text gap-18! lg:gap-24 max-w-340">
               <span class="badge">Schnelle Hilfe in ganz Deutschland</span>
               <h1 class="text-white!">70+ Jahre</h1>
               <a href="" class="btn btn-primary">Jetzt Kontaktieren</a>
@@ -1000,8 +1003,33 @@
                 </div>
               </div>
             </div>
-            <div>
-              <img src="assets/images/chooseus.webp" alt="" />
+            <!-- New 2 fram -->
+            <div class="w-full px-4 py-10 sm:px-6 lg:px-10">
+              <div
+                class="relative mx-auto w-full max-w-[1100px] aspect-[820/740]"
+              >
+                <!-- Top-right image box -->
+                <div
+                  class="absolute right-0 top-0 w-[70%] h-[79%] overflow-hidden rounded-[clamp(1rem,3vw,2rem)]"
+                >
+                  <img
+                    src="assets/images/Home12.webp"
+                    alt="Cockroaches in a wooden corner"
+                    class="block h-full w-full object-cover"
+                  />
+                </div>
+
+                <!-- Bottom-left image box -->
+                <div
+                  class="absolute bottom-0 left-0 z-10 w-[65%] h-[73%] overflow-hidden rounded-[clamp(1rem,3vw,2rem)]"
+                >
+                  <img
+                    src="assets/images/Home11.webp"
+                    alt="Pest control professional"
+                    class="block h-full w-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1019,9 +1047,7 @@
       <section x-data="{ active: 'Kanalisation' }" class="py-sec">
         <div class="container xl:pr-0 relative">
           <div class="flex flex-col gap-40">
-            <span class="badge not-sm:-mb-16"
-              >Interaktiver Immobilienratgeber</span
-            >
+            <span class="badge">Interaktiver Immobilienratgeber</span>
             <div class="free_text max-w-800">
               <h3>Schützen Sie jeden Bereich Ihres Grundstücks.</h3>
               <p class="not-md:hidden max-w-520">
@@ -1032,7 +1058,7 @@
               </p>
             </div>
             <div class="not-xl:relative">
-              <div class="xl:absolute top-50 right-20 h-full w-fit">
+              <div class="xl:absolute top-0 right-20 h-fit w-fit">
                 <img
                   src="assets/images/HomeLayout.png"
                   alt=""
@@ -1041,7 +1067,7 @@
                 <button
                   @click="active='Dach'"
                   aria-label="Dach"
-                  class="absolute top-[6.2%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[3.8%] left-[46%] lg:top-[6.2%] lg:left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Dach' ? 'bg-orange' : 'bg-primary'"
@@ -1050,18 +1076,18 @@
                     <img
                       src="assets/icons/bird.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Dach</span>
+                    <span class="text-black text-base font-semibold">Dach</span>
                     <span class="text-xs">Vogelschutz</span>
                   </div>
                 </button>
                 <button
                   @click="active='Dachboden'"
                   aria-label="Dachboden"
-                  class="absolute top-[18%] left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[12.8%] left-[23.8%] lg:top-[18%] lg:left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Dachboden' ? 'bg-orange' : 'bg-primary'"
@@ -1070,18 +1096,20 @@
                     <img
                       src="assets/icons/rodent.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="xl:flex flex-col gap-2 text-start hidden">
-                    <span class="text-black text-base">Dachboden</span>
+                    <span class="text-black text-base font-semibold"
+                      >Dachboden</span
+                    >
                     <span class="text-xs">Vorbeugung gegen Nagetiere</span>
                   </div>
                 </button>
                 <button
                   @click="active='Küche'"
                   aria-label="Küche"
-                  class="absolute top-[34%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[26%] left-[43.5%] lg:top-[34%] lg:left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Küche' ? 'bg-orange' : 'bg-primary'"
@@ -1090,18 +1118,20 @@
                     <img
                       src="assets/icons/cockroach.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Küche</span>
+                    <span class="text-black text-base font-semibold"
+                      >Küche</span
+                    >
                     <span class="text-xs">Schabenbekämpfung</span>
                   </div>
                 </button>
                 <button
                   @click="active='Schlafzimmer'"
                   aria-label="Schlafzimmer"
-                  class="absolute top-[30%] left-[67%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[24%] lg:top-[30%] left-[67%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Schlafzimmer' ? 'bg-orange' : 'bg-primary'"
@@ -1110,38 +1140,42 @@
                     <img
                       src="assets/icons/bug.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Schlafzimmer</span>
+                    <span class="text-black text-base font-semibold"
+                      >Schlafzimmer</span
+                    >
                     <span class="text-xs">Wanzenbekämpfung</span>
                   </div>
                 </button>
                 <button
-                  @click="active='Essbereich'"
-                  aria-label="Essbereich"
+                  @click="active='Ess-/Wohnbereich'"
+                  aria-label="Ess-/Wohnbereich"
                   class="absolute top-[49%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
-                    :class="active==='Essbereich' ? 'bg-orange' : 'bg-primary'"
+                    :class="active==='Ess-/Wohnbereich' ? 'bg-orange' : 'bg-primary'"
                     class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
                   >
                     <img
                       src="assets/icons/ant.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Essbereich</span>
+                    <span class="text-black text-base font-semibold"
+                      >Ess-/Wohnbereich</span
+                    >
                     <span class="text-xs">Ameisenbekämpfung</span>
                   </div>
                 </button>
                 <button
                   @click="active='Badezimmer'"
                   aria-label="Badezimmer"
-                  class="absolute top-[56%] left-[64.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[61%] left-[70.5%] lg:top-[56%] lg:left-[64.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Badezimmer' ? 'bg-orange' : 'bg-primary'"
@@ -1150,18 +1184,20 @@
                     <img
                       src="assets/icons/silverfish.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Badezimmer</span>
+                    <span class="text-black text-base font-semibold"
+                      >Badezimmer</span
+                    >
                     <span class="text-xs">Silberfischchen-Bekämpfung</span>
                   </div>
                 </button>
                 <button
                   @click="active='Keller'"
                   aria-label="Keller"
-                  class="absolute top-[85%] left-[50%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[78%] left-[48.5%] lg:top-[85%] lg:left-[50%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Keller' ? 'bg-orange' : 'bg-primary'"
@@ -1170,11 +1206,13 @@
                     <img
                       src="assets/icons/undar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Keller</span>
+                    <span class="text-black text-base font-semibold"
+                      >Keller</span
+                    >
                     <span class="text-xs">Nagetierschutz</span>
                   </div>
                 </button>
@@ -1190,18 +1228,20 @@
                     <img
                       src="assets/icons/ant.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Garten</span>
+                    <span class="text-black text-base font-semibold"
+                      >Garten</span
+                    >
                     <span class="text-xs">Ameisen</span>
                   </div>
                 </button>
                 <button
                   @click="active='Garten1'"
                   aria-label="Garten"
-                  class="absolute top-[48%] left-[84%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[40%] left-[88%] lg:top-[48%] lg:left-[84%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Garten1' ? 'bg-orange' : 'bg-primary'"
@@ -1210,11 +1250,13 @@
                     <img
                       src="assets/icons/wasp.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Garten</span>
+                    <span class="text-black text-base font-semibold"
+                      >Garten</span
+                    >
                     <span class="text-xs">Wespen/Hornissen</span>
                   </div>
                 </button>
@@ -1230,11 +1272,13 @@
                     <img
                       src="assets/icons/undar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Kanalisation</span>
+                    <span class="text-black text-base font-semibold"
+                      >Kanalisation</span
+                    >
                     <span class="text-xs">Ratten</span>
                   </div>
                 </button>
@@ -1250,18 +1294,20 @@
                     <img
                       src="assets/icons/undar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base">Entsorgungsbereich</span>
+                    <span class="text-black text-base font-semibold"
+                      >Entsorgungsbereich</span
+                    >
                     <span class="text-xs">Schadnager</span>
                   </div>
                 </button>
                 <button
                   @click="active='Garten2'"
                   aria-label="Garten"
-                  class="absolute top-[44%] left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[53%] left-[10%] lg:top-[44%] lg:left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Garten2' ? 'bg-orange' : 'bg-primary'"
@@ -1270,18 +1316,20 @@
                     <img
                       src="assets/icons/caterpillar.svg"
                       alt=""
-                      class="w-20 md:w-32"
+                      class="size-20 md:size-32"
                     />
                   </div>
                   <div class="hidden xl:flex flex-col gap-2 text-start">
-                    <span class="text-black text-base"> Garten</span>
+                    <span class="text-black text-base font-semibold">
+                      Garten</span
+                    >
                     <span class="text-xs">Eichenprozessionsspinner</span>
                   </div>
                 </button>
               </div>
             </div>
             <div
-              class="lg:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-24 sm:gap-40 items-start"
+              class="lg:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-40 items-start"
             >
               <div class="bg-orange p-8 rounded-lg">
                 <img
@@ -1290,7 +1338,7 @@
                         'Dachboden': 'assets/icons/rodent.svg',
                         'Küche': 'assets/icons/cockroach.svg',
                         'Schlafzimmer': 'assets/icons/bug.svg',
-                        'Essbereich': 'assets/icons/ant.svg',
+                        'Ess-/Wohnbereich': 'assets/icons/ant.svg',
                         'Badezimmer': 'assets/icons/silverfish.svg',
                         'Keller': 'assets/icons/undar.svg',
                         'Garten': 'assets/icons/ant.svg',
@@ -1301,7 +1349,7 @@
                         'arten – Eichenprozessionsspinner': 'assets/icons/fly.svg',
                         }[active]"
                   alt=""
-                  class="shrink-0 not-sm:size-28"
+                  class="shrink-0"
                 />
               </div>
               <div class="free_text gap-8">
@@ -1732,7 +1780,7 @@
       <section class="py-sec">
         <div class="container">
           <div class="col">
-            <div class="free_text gap-16! text-center">
+            <div class="free_text gap-16! items-center text-center">
               <h3>Zertifizierte Expertise. Anerkannte Qualität.</h3>
               <p class="max-w-1200 mx-auto">
                 Professionelle Schädlingsbekämpfung erfordert mehr als nur
@@ -1848,7 +1896,7 @@
                 <img
                   src="assets/images/Questions.webp"
                   alt=""
-                  class="absolute inset-0 h-full w-full object-cover"
+                  class="absolute inset-0 h-full w-full object-cover scale-105"
                 />
               </div>
             </div>
@@ -2487,12 +2535,12 @@
         </div>
       </section>
     </main>
-    <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
+    <div class="sticky bottom-16 z-40 w-fit mx-auto px-24 my-40 w">
       <div class="flex justify-center">
         <div
-        class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+          class="p-24 not-sm:w-full flex justify-around gap-40 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
         >
-        <!-- <div class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 bg-Invert/50 rounded-full shadow-lg"> -->
+          <!-- <div class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 bg-Invert/50 rounded-full shadow-lg"> -->
           <a href="" class="btn btn-primary"
             ><span class="hidden sm:block">Telefon</span>
             <span class="sm:hidden"

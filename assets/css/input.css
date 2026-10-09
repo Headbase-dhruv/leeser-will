@@ -106,12 +106,11 @@
 
   /* Accent Orange */
   --color-orange: #ff6000;
-  --color-Backg: #F8FAFC;
+  --color-Backg: #f8fafc;
 
   --color-heading: #111111;
-  
-  --color-bordercolor: #CAD5E2;
 
+  --color-bordercolor: #cad5e2;
 
   --color-txt-body: #4b4b4b;
 
@@ -141,7 +140,6 @@
   --text-body--line-height: 1.5;
 
   --text-body--font-weight: 500;
-
 
   /* ========================================
        HEADING H1
@@ -206,12 +204,12 @@
   * {
     @apply scrollbar-thin scrollbar-thumb-white scrollbar-track-black;
   }
-   body {
+  body {
     @apply font-Manrope text-body text-txt-body font-medium;
     -webkit-hyphens: auto;
     hyphens: auto;
   }
-  
+
   :is(h1, h2, h3, h4, h5, h6) {
     @apply font-Manrope! text-heading;
   }
@@ -282,7 +280,7 @@
     @apply rounded-[16px];
   }
   .border_rounded {
-    @apply rounded-[24px];
+    @apply rounded-[28px];
   }
   .border_rounded_lg {
     @apply rounded-[64px];
@@ -294,18 +292,13 @@
     @apply hover:text-orange transition-slow flex gap-8 items-center;
   }
   .clip-image {
-  clip-path: polygon(
-    30% 0%,
-    70% 0%,
-    100% 18%,
-    100% 100%,
-    0% 100%,
-    0% 18%
-  );
-}
-[x-cloak] {
-  display: none !important;
-}
+    clip-path: polygon(30% 0%, 70% 0%, 100% 18%, 100% 100%, 0% 100%, 0% 18%);
+
+   
+  }
+  [x-cloak] {
+    display: none !important;
+  }
 }
 
 @utility transition-slow {
