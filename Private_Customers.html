@@ -94,7 +94,7 @@
 
             <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
-            <a href="">Über uns</a>
+            <a href="über_uns.html">Über uns</a>
             <a href="kontakt.html">Kontakt</a>
             <a href="karriere.html">Karriere</a>
           </nav>
@@ -148,7 +148,7 @@
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
-        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[42%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 relative"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[65%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 sm:p-24 relative"
       >
         <!-- Header -->
         <div class="flex items-center justify-between py-16">
@@ -183,7 +183,8 @@
             <button
               type="button"
               @click="open = !open"
-              class="w-full flex items-center justify-between text-left"
+              :class="{ 'text-orange': open }"
+              class="flex w-full items-center gap-8 text-left"
             >
               <span>Schädlingsbekämpfung</span>
 
@@ -192,13 +193,12 @@
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
                 class="shrink-0 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
+                :class="{ 'rotate-180 text-orange': open }"
               >
                 <path
                   d="M8 10L12 14L16 10"
-                  stroke="#111"
+                  stroke="currentColor"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -206,20 +206,21 @@
               </svg>
             </button>
 
-            <!-- Mobile Dropdown Links -->
             <div
-              x-show="open"
-              x-collapse
-              class="pl-16 flex flex-col gap-16 pt-16"
+              x-ref="content"
+              x-init="$el.style.height = '0px'"
+              x-effect="$el.style.height = open ? $refs.content.scrollHeight + 'px' : '0px'"
+              class="overflow-hidden transition-all duration-300"
             >
-              <a href="private_customers.html" class="block"> Privatkunden </a>
-
-              <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
+              <div class="pl-16 pt-16 flex flex-col gap-16">
+                <a href="private_customers.html">Privatkunden</a>
+                <a href="forBusinesses.html">Geschäftskunden</a>
+              </div>
             </div>
           </div>
           <a href="service.html">Service</a>
           <a href="Prevention.html">Prävention</a>
-          <a href="#">Über uns</a>
+          <a href="über_uns.html">Über uns</a>
           <a href="kontakt.html">Kontakt</a>
           <a href="karriere.html">Karriere</a>
 
@@ -825,9 +826,9 @@
         <div class="container">
           <div class="component">
             <div
-              class="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              class="grid grid-cols-1 lg:grid-cols-3 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
             >
-              <div class="lg:col-span-8 free_text gap-0! justify-center">
+              <div class="lg:col-span-2 free_text gap-0! justify-center">
                 <h3>Insekten & Gliederfüßer</h3>
                 <div class="free_text mt-40 lg:mt-80">
                   <p>
@@ -857,10 +858,43 @@
                 </div>
               </div>
               <div
-                class="lg:col-span-4 flex flex-col items-center justify-center gap-40"
+                class=" flex flex-col items-center justify-center gap-40 ctm_sec overflow-visible"
               >
-                <img src="assets/images/Customer2.webp" alt="" class="w-full" />
+              
+                <div class="relative inline-block">
+                  <img
+                    src="assets/icons/shape8.svg"
+                    alt=""
+                    class="block size-full object-cover"
+                  />
+
+                  <img
+                    src="assets/images/Customer2.webp"
+                    alt=""
+                    class="absolute inset-0 w-full h-full object-cover [object-position:80%_85%]"
+                    style="
+                      mask-image: url(&quot;assets/icons/Shape8.svg&quot;);
+                      mask-size: 100% 100%;
+                      mask-repeat: no-repeat;
+
+                      -webkit-mask-image: url(&quot;assets/icons/Shape8.svg&quot;);
+                      -webkit-mask-size: 100% 100%;
+                      -webkit-mask-repeat: no-repeat;
+                    "
+                  />
+                </div>
+                <img
+                src="assets/icons/Customer2.1.svg"
+                alt=""
+                class="absolute -rotate-38 h-[clamp(1.8125rem,1.6373rem+0.719vw,2.5rem)] top-[15%] -left-[4%] size-fit"
+              />
+              <img
+                src="assets/icons/Customer2.2.svg"
+                alt=""
+                class="absolute not-sm:h-84 size-fit -bottom-[20%] lg:-right-[5%] right-1/2 translate-x-1/2"
+              />
               </div>
+              
             </div>
           </div>
         </div>
@@ -868,7 +902,7 @@
 
       <!-- sec-5 -->
       <section class="py-sec">
-        <div class="container">
+        <div class="container ctm_sec">
           <div class="component">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-80">
               <div class="free_text gap-0!">
@@ -884,7 +918,7 @@
                 </div>
               </div>
 
-              <div class="free_text gap-16! mt-auto">
+              <div class="free_text gap-16! mt-auto ctm_sec overflow-visible">
                 <p>
                   Sie haben es sich in unserer Nähe sichtlich bequem gemacht.
                   Nager wie Ratten, Mäuse und Marder haben sich mit uns neue
@@ -904,9 +938,19 @@
                   man ihn beseitigt und vor allem, wie man ihn für die Zukunft
                   ausschließt.
                 </p>
+                <img
+                  src="assets/icons/mouse.svg"
+                  alt=""
+                  class="lg:hidden h-[clamp(4.5625rem,3.0172rem+6.3399vw,10.625rem)] absolute -top-70 md:-top-[46%] left-1/2 not-md:-translate-x-1/2"
+                />
               </div>
             </div>
           </div>
+          <img
+            src="assets/icons/mouse.svg"
+            alt=""
+            class="not-lg:hidden h-[clamp(4.5625rem,3.0172rem+6.3399vw,10.625rem)] absolute top-0 left-3/5"
+          />
         </div>
       </section>
 
@@ -914,8 +958,8 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-80">
-              <div class="lg:col-span-8 free_text gap-0! justify-center">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-80">
+              <div class="lg:col-span-2 free_text gap-0! justify-center">
                 <h3>Würmer & Larven</h3>
                 <div class="free_text mt-40 lg:mt-80">
                   <p>
@@ -943,9 +987,9 @@
                 </div>
               </div>
               <div
-                class="lg:col-span-4 flex flex-col items-center justify-center gap-40"
+                class="flex flex-col items-center justify-center gap-40 "
               >
-                <div class="relative h-full w-full">
+                <div class="relative h-fit w-full">
                   <img
                     src="assets/images/Customer4.webp"
                     alt=""
@@ -957,6 +1001,11 @@
                         center / 100% 100% no-repeat;
                     "
                   />
+                  <img
+                 src="assets/icons/Customer2.1.svg"
+                 alt=""
+                 class="absolute h-[clamp(3.3125rem,3.1691rem+0.5882vw,3.875rem)] -top-60 -left-[4%] size-fit"
+               />
                 </div>
               </div>
             </div>
@@ -965,11 +1014,11 @@
       </section>
 
       <!-- sec-7 -->
-      <section class="py-sec">
+      <section class="py-sec ctm_sec">
         <div class="container">
           <div class="component">
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] lg:-mb-250 mb-40"
+              class="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] lg:-mb-[16.5%] mb-40"
             >
               <div class="order-2 lg:order-1">
                 <div class="relative inline-block -z-10">
@@ -978,7 +1027,7 @@
                     alt=""
                     class="block w-full h-auto"
                   />
- 
+
                   <img
                     src="assets/images/VerfahrenImg.webp"
                     alt=""
@@ -987,7 +1036,7 @@
                       mask-image: url(&quot;assets/icons/Verfahren_shape.svg&quot;);
                       mask-size: 100% 100%;
                       mask-repeat: no-repeat;
- 
+
                       -webkit-mask-image: url(&quot;assets/icons/Verfahren_shape.svg&quot;);
                       -webkit-mask-size: 100% 100%;
                       -webkit-mask-repeat: no-repeat;
@@ -1067,6 +1116,7 @@
             </div>
           </div>
         </div>
+        <img src="assets/icons/bg_cockroach.svg" alt="" class="absolute -rotate-42 top-0 right-[4%]">
       </section>
 
       <!-- sec-8 -->
@@ -1103,44 +1153,46 @@
       </section>
 
       <!-- sec-9 -->
-      <section class="py-sec bg-Backg">
+      <section class="py-sec bg-Backg ctm_sec">
         <div class="container">
           <div class="component">
             <div class="grid grid-cols-1 lg:grid-cols-2 row">
-              <div
-                class="relative w-full max-w-[900px] mx-auto shrink-0 h-[420px] xsm:h-[480px] sm:h-[540px] md:h-[600px] lg:h-[650px] xl:h-[690px] 2xl:h-[clamp(42rem,38rem+5vw,45.5rem)] 2xl:mr-50"
-              >
-                <!-- Top Image -->
+              <div class="w-full overflow-hidden sm:not-lg:px-24 xl:pr-48">
                 <div
-                  class="absolute top-0 left-1/2 -translate-x-1/2 sm:left-[42%] sm:-translate-x-1/2 lg:left-[35%] xl:left-[30%] 2xl:left-[25%] h-[200px] xsm:h-[230px] sm:h-[270px] md:h-[320px] lg:h-[360px] xl:h-[400px] 2xl:h-[clamp(24rem,20rem+5vw,27.625rem)] border_rounded overflow-hidden"
+                  class="relative mx-auto aspect-[820/735] w-full max-w-[820px]"
                 >
-                  <img
-                    src="assets/images/Customer5.2.webp"
-                    alt=""
-                    class="h-full w-auto max-w-none object-cover"
-                  />
-                </div>
+                  <!-- Image 1: Top -->
+                  <div
+                    class="absolute left-[18%] top-0 z-10 w-[42%] overflow-hidden border_rounded"
+                  >
+                    <img
+                      src="assets/images/Customer5.2.webp"
+                      alt="Brown mushrooms growing on a tree"
+                      class="block aspect-[332/442] w-full object-cover"
+                    />
+                  </div>
 
-                <!-- Left Image -->
-                <div
-                  class="absolute left-0 sm:left-[2%] md:left-[4%] lg:left-[2%] xl:left-0 top-[48%] -translate-y-1/2 h-[150px] xsm:h-[175px] sm:h-[210px] md:h-[240px] lg:h-[270px] xl:h-[300px] 2xl:h-[clamp(18rem,15rem+4vw,20.8125rem)] border_rounded overflow-hidden z-10"
-                >
-                  <img
-                    src="assets/images/Customer5.1.webp"
-                    alt=""
-                    class="h-full w-auto max-w-none object-cover"
-                  />
-                </div>
+                  <!-- Image 2: Left -->
+                  <div
+                    class="absolute left-0 top-[28%] z-20 w-[30.5%] overflow-hidden border_rounded"
+                  >
+                    <img
+                      src="assets/images/Customer5.1.webp"
+                      alt="Oyster mushrooms growing on a tree trunk"
+                      class="block aspect-[250/333] w-full object-cover"
+                    />
+                  </div>
 
-                <!-- Bottom Right Image -->
-                <div
-                  class="absolute right-0 sm:right-[2%] md:right-[3%] lg:right-0 bottom-0 h-[250px] xsm:h-[285px] sm:h-[330px] md:h-[380px] lg:h-[430px] xl:h-[490px] 2xl:h-[clamp(31rem,27rem+5vw,35.75rem)] border_rounded overflow-hidden"
-                >
-                  <img
-                    src="assets/images/Customer5.3.webp"
-                    alt=""
-                    class="h-full w-auto max-w-none object-cover"
-                  />
+                  <!-- Image 3: Right foreground -->
+                  <div
+                    class="absolute right-0 top-[20%] z-30 w-[48%] overflow-hidden border_rounded"
+                  >
+                    <img
+                      src="assets/images/Customer5.3.webp"
+                      alt="White mushrooms growing on a tree"
+                      class="block aspect-[393/572] w-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -1169,6 +1221,7 @@
             </div>
           </div>
         </div>
+        <img src="assets/icons/mushroom.svg" alt="" class=" absolute h-[clamp(8.125rem,4.1422rem+16.3399vw,23.75rem)] right-0 lg:top-[10%] bottom-2/5 md:top-3/5">
       </section>
 
       <!-- sec-10 -->
@@ -1214,21 +1267,25 @@
                 class="flex flex-col w-full h-full mx-auto items-center justify-center gap-40"
               >
                 <div class="flex gap-24">
-                    <div class="w-1/2 rounded-full h-full overflow-hidden min-h-400 lg:max-h-470 shrink">
-                      <img
-                        src="assets/images/Customer6.1.webp"
-                        alt=""
-                        class="size-full object-cover"
-                      />
-                    </div>
-                    <div class="w-1/2 rounded-full h-full overflow-hidden min-h-400 lg:max-h-470 shrink">
-                      <img
-                        src="assets/images/Customer6.2.webp"
-                        alt=""
-                        class="size-full object-cover"
-                      />
-                    </div>
+                  <div
+                    class="w-1/2 rounded-full h-full overflow-hidden min-h-400 lg:max-h-470 shrink"
+                  >
+                    <img
+                      src="assets/images/Customer6.1.webp"
+                      alt=""
+                      class="size-full object-cover"
+                    />
                   </div>
+                  <div
+                    class="w-1/2 rounded-full h-full overflow-hidden min-h-400 lg:max-h-470 shrink"
+                  >
+                    <img
+                      src="assets/images/Customer6.2.webp"
+                      alt=""
+                      class="size-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

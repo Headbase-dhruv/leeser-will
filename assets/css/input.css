@@ -193,16 +193,21 @@
   /* H4 Font Weight */
   --text-h4--font-weight: 500;
 
+  --text-32: clamp(1.75rem, 1.6863rem + 0.2614vw, 2rem);
+  --text-32--font-weight: 600;
+  --text-h4--line-height: 1.3;
+  
   --text-16: 16px;
   --text-28: 28px;
+
 }
 
 @layer base {
-  html {
-    @apply scroll-smooth min-h-2000;
-  }
   * {
-    @apply scrollbar-thin scrollbar-thumb-white scrollbar-track-black;
+    @apply scrollbar-thin ;
+  }
+  html {
+    @apply scroll-smooth ;
   }
   body {
     @apply font-Manrope text-body text-txt-body font-medium;
@@ -280,10 +285,10 @@
     @apply rounded-[16px];
   }
   .border_rounded {
-    @apply rounded-[28px];
+    @apply rounded-[clamp(1rem,0.8088rem+0.7843vw,1.75rem)];
   }
   .border_rounded_lg {
-    @apply rounded-[64px];
+    @apply rounded-[clamp(1.5rem,0.8627rem+2.6144vw,4rem)];
   }
   .overlay-dark {
     @apply absolute inset-0 h-full w-full bg-black/50;
@@ -334,4 +339,120 @@
     background: var(--color-orange);
     transform: translateY(-50%);
   }
+}
+
+
+/* Philosophy cards */
+.philosophie-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  padding: 24px;
+  border-radius: var(--);
+  background-color: #e4eaff;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Mobile / tablet layout */
+.philosophie-mobile {
+  align-items: stretch;
+  gap: 12px;
+}
+
+.philosophie-sidebar {
+  display: flex;
+  width: 178px;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.philosophie-swiper {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 0 20px;
+}
+
+.philosophie-swiper .swiper-slide {
+  height: auto;
+}
+
+.philosophie-mobile .philosophie-card {
+  height: 155px;
+  min-height: 155px;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 11px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 12%);
+}
+
+/* Pagination */
+.philosophie-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.philosophie-bullet {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: #cbd5ff;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.philosophie-bullet-active {
+  width: 17px;
+  background: #174c85;
+}
+
+/* Small mobile screens */
+@media (max-width: 479px) {
+  .philosophie-sidebar {
+    width: 178px;
+  }
+
+  .philosophie-mobile .philosophie-card {
+    height: 155px;
+    min-height: 155px;
+  }
+}
+
+
+.philosophie-mobile .philosophieSwiper {
+  width: 100%;
+  padding-bottom: 42px;
+}
+
+.philosophie-mobile .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.philosophie-mobile .swiper-slide > div {
+  width: 100%;
+  min-height: 220px;
+}
+
+.philosophie-mobile .philosophie-pagination {
+  bottom: 8px;
+}
+
+.philosophie-mobile .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  opacity: 0.45;
+}
+
+.philosophie-mobile .swiper-pagination-bullet-active {
+  opacity: 1;
 }

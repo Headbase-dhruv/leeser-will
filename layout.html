@@ -22,7 +22,7 @@
   </head>
 
   <body>
-     <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -93,7 +93,7 @@
 
             <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
-            <a href="">Über uns</a>
+            <a href="über_uns.html">Über uns</a>
             <a href="kontakt.html">Kontakt</a>
             <a href="karriere.html">Karriere</a>
           </nav>
@@ -147,7 +147,7 @@
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
-        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[42%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 relative"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[65%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 sm:p-24 relative"
       >
         <!-- Header -->
         <div class="flex items-center justify-between py-16">
@@ -182,7 +182,8 @@
             <button
               type="button"
               @click="open = !open"
-              class="w-full flex items-center justify-between text-left"
+              :class="{ 'text-orange': open }"
+              class="flex w-full items-center gap-8 text-left"
             >
               <span>Schädlingsbekämpfung</span>
 
@@ -191,13 +192,12 @@
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
                 class="shrink-0 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
+                :class="{ 'rotate-180 text-orange': open }"
               >
                 <path
                   d="M8 10L12 14L16 10"
-                  stroke="#111"
+                  stroke="currentColor"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -205,20 +205,21 @@
               </svg>
             </button>
 
-            <!-- Mobile Dropdown Links -->
             <div
-              x-show="open"
-              x-collapse
-              class="pl-16 flex flex-col gap-16 pt-16"
+              x-ref="content"
+              x-init="$el.style.height = '0px'"
+              x-effect="$el.style.height = open ? $refs.content.scrollHeight + 'px' : '0px'"
+              class="overflow-hidden transition-all duration-300"
             >
-              <a href="private_customers.html" class="block"> Privatkunden </a>
-
-              <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
+              <div class="pl-16 pt-16 flex flex-col gap-16">
+                <a href="private_customers.html">Privatkunden</a>
+                <a href="forBusinesses.html">Geschäftskunden</a>
+              </div>
             </div>
           </div>
           <a href="service.html">Service</a>
           <a href="Prevention.html">Prävention</a>
-          <a href="#">Über uns</a>
+          <a href="über_uns.html">Über uns</a>
           <a href="kontakt.html">Kontakt</a>
           <a href="karriere.html">Karriere</a>
 
@@ -744,6 +745,275 @@
         </div>
       </div>
     </footer>
+
+    <section
+        class=""
+        x-data="{
+    isOpen: false,
+    activeFolder: null,
+    folders: [
+      {
+        id: 1,
+        name: 'Informationsbroschüren',
+        count: 10,
+        files: [
+          { name: 'Alpharatan Frassgel', size: '100 KB', url: 'assets/pdfs/alpharatan-frassgel.pdf' },
+          { name: 'Alpharatan Rodentkiller', size: '100 KB', url: 'assets/pdfs/alpharatan-rodentkiller.pdf' },
+          { name: 'Bonirat Blöcke Bpd', size: '100 KB', url: 'assets/pdfs/bonirat.pdf' },
+          { name: 'Detex Blox With Biom...', size: '100 KB', url: 'assets/pdfs/detex-blox.pdf' },
+          { name: 'Dismate PE', size: '100 KB', url: 'assets/pdfs/dismate-pe.pdf' },
+          { name: 'Expert Monitoring', size: '100 KB', url: 'assets/pdfs/expert-monitoring.pdf' },
+          { name: 'Finicon Fruchtfliegen', size: '100 KB', url: 'assets/pdfs/finicon.pdf' },
+          { name: 'Mausex Duo', size: '100 KB', url: 'assets/pdfs/mausex-duo.pdf' },
+          { name: 'Murablock', size: '100 KB', url: 'assets/pdfs/murablock.pdf' },
+          { name: 'MusKil Block', size: '100 KB', url: 'assets/pdfs/muskil-block.pdf' },
+          { name: 'MusKil Paste', size: '100 KB', url: 'assets/pdfs/muskil-paste.pdf' },
+          { name: 'Nagtag Dife Bloc', size: '100 KB', url: 'assets/pdfs/nagtag-dife.pdf' },
+          { name: 'Nara Bloc', size: '100 KB', url: 'assets/pdfs/nara-bloc.pdf' },
+          { name: 'Nara Lebensmi...', size: '100 KB', url: 'assets/pdfs/nara-lebensmittel.pdf' },
+          { name: 'Nara Lure', size: '100 KB', url: 'assets/pdfs/nara-lure.pdf' },
+          { name: 'Notrac Blox', size: '100 KB', url: 'assets/pdfs/notrac-blox.pdf' },
+          { name: 'Rat imor Brodi Paste', size: '100 KB', url: 'assets/pdfs/ratimor-brodi.pdf' },
+          { name: 'Rat imor Broma Paste', size: '100 KB', url: 'assets/pdfs/ratimor-broma.pdf' },
+          { name: 'Rodoblock DC', size: '100 KB', url: 'assets/pdfs/rodoblock-dc.pdf' },
+          { name: 'SOLO BLOX 20g', size: '100 KB', url: 'assets/pdfs/solo-blox.pdf' },
+          { name: 'Sorexa Paste', size: '100 KB', url: 'assets/pdfs/sorexa-paste.pdf' },
+          { name: 'Vertox Brodiacou...', size: '100 KB', url: 'assets/pdfs/vertox.pdf' }
+        ]
+      },
+      {
+        id: 2,
+        name: 'Produktinformationen',
+        count: 8,
+        files: [
+          { name: 'Produktübersicht', size: '250 KB', url: 'assets/pdfs/produktuebersicht.pdf' },
+          { name: 'Produktdatenblatt', size: '180 KB', url: 'assets/pdfs/produktdatenblatt.pdf' },
+          { name: 'Anwendungsbereiche', size: '150 KB', url: 'assets/pdfs/anwendungsbereiche.pdf' }
+        ]
+      },
+      {
+        id: 3,
+        name: 'Sicherheitsdatenblätter',
+        count: 6,
+        files: [
+          { name: 'Sicherheitsdatenblatt A', size: '320 KB', url: 'assets/pdfs/sicherheit-a.pdf' },
+          { name: 'Sicherheitsdatenblatt B', size: '280 KB', url: 'assets/pdfs/sicherheit-b.pdf' }
+        ]
+      },
+      {
+        id: 4,
+        name: 'Anwendungsbereiche',
+        count: 5,
+        files: [
+          { name: 'Innenbereich', size: '120 KB', url: 'assets/pdfs/innenbereich.pdf' },
+          { name: 'Außenbereich', size: '140 KB', url: 'assets/pdfs/aussenbereich.pdf' }
+        ]
+      },
+      {
+        id: 5,
+        name: 'Technische Dokumente',
+        count: 7,
+        files: [
+          { name: 'Technisches Datenblatt', size: '200 KB', url: 'assets/pdfs/technisches-datenblatt.pdf' },
+          { name: 'Anleitung', size: '170 KB', url: 'assets/pdfs/anleitung.pdf' }
+        ]
+      },
+      {
+        id: 6,
+        name: 'Weitere Dokumente',
+        count: 4,
+        files: [
+          { name: 'Weitere Informationen', size: '100 KB', url: 'assets/pdfs/weitere-informationen.pdf' },
+          { name: 'Dokumentation', size: '150 KB', url: 'assets/pdfs/dokumentation.pdf' }
+        ]
+      }
+    ],
+    openFolder(folder) {
+      this.activeFolder = folder;
+      this.isOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+    closeFolder() {
+      this.isOpen = false;
+      this.activeFolder = null;
+      document.body.style.overflow = '';
+    }
+  }"
+        @keydown.escape.window="closeFolder()"
+      >
+        <!-- FOLDER GRID -->
+        <div
+          class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 md:grid-cols-4 md:gap-6 xl:grid-cols-5 xl:gap-8 2xl:grid-cols-6"
+        >
+          <template x-for="folder in folders" :key="folder.id">
+            <button
+              type="button"
+              @click="openFolder(folder)"
+              class="group relative w-full min-w-0 cursor-pointer text-left transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+            >
+              <div class="relative w-full overflow-hidden">
+                <img
+                  src="assets/icons/FolderShape.svg"
+                  :alt="folder.name"
+                  class="block h-auto w-full"
+                />
+
+                <div
+                  class="absolute inset-0 flex flex-col justify-end gap-1 p-3 sm:gap-2 sm:p-4 lg:p-5"
+                >
+                  <span
+                    class="text-[10px] leading-tight text-black/60 sm:text-xs"
+                    x-text="folder.count + ' Dateien'"
+                  ></span>
+
+                  <p
+                    class="line-clamp-2 text-sm font-medium leading-snug text-black sm:text-base lg:text-lg"
+                    x-text="folder.name"
+                  ></p>
+                </div>
+              </div>
+            </button>
+          </template>
+        </div>
+
+        <!-- PDF POPUP -->
+        <div
+          x-cloak
+          x-show="isOpen"
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          @click.self="closeFolder()"
+          class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-black/50 p-2 sm:p-4 lg:p-6"
+          role="dialog"
+          aria-modal="true"
+          :aria-label="activeFolder ? activeFolder.name : 'Dokumente'"
+        >
+          <div
+            x-show="isOpen"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="translate-y-4 scale-[0.98]"
+            x-transition:enter-end="translate-y-0 scale-100"
+            class="relative col py-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] px-[clamp(1rem,-0.0196rem+4.183vw,5rem)] flex h-full max-h-[95%] w-full max-w-[95%] flex-col overflow-hidden border_rounded bg-[#E4EBFF] sm:rounded-[32px] lg:rounded-[44px]"
+          >
+            <!-- POPUP HEADER -->
+            <div class="flex shrink-0 items-center justify-between gap-4">
+              <div class="min-w-0 free_text">
+                <h3
+                  class=""
+                  x-text="activeFolder ? activeFolder.name : ''"
+                ></h3>
+              </div>
+
+              <button
+                type="button"
+                @click="closeFolder()"
+                aria-label="Popup schließen"
+                class=""
+              >
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 16L32 32"
+                    stroke="#323232"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M32 16L16 32"
+                    stroke="#323232"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- SCROLLABLE PDF GRID -->
+            <div
+              class="min-h-0 flex-1 overflow-y-auto overscroll-contain"
+            >
+              <div
+                class="grid grid-cols-1 gap-x-3 gap-y-6 sm:grid-cols-3 sm:gap-x-5 sm:gap-y-8 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-6 xl:grid-cols-7 2xl:grid-cols-10"
+              >
+                <template
+                  x-for="(file, index) in (activeFolder ? activeFolder.files : [])"
+                  :key="file.url"
+                >
+                  <a
+                    :href="file.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    :aria-label="'PDF öffnen: ' + file.name"
+                    class="group flex min-w-0 md:flex-col items-center rounded-xl px-1 py-2 text-center transition-colors hover:bg-white/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+                  >
+                    <!-- PDF ICON -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 72 88"
+                      fill="none"
+                      class="mb-2 h-[76px] w-[62px] shrink-0 transition-transform duration-200 group-hover:-translate-y-1 sm:h-[92px] sm:w-[74px] lg:h-[100px] lg:w-[80px]"
+                    >
+                      <path
+                        d="M8 0H43L72 29V76C72 82.627 66.627 88 60 88H12C5.373 88 0 82.627 0 76V8C0 3.582 3.582 0 8 0Z"
+                        fill="#FF5A00"
+                      />
+                      <path d="M43 0V29H72L43 0Z" fill="#D94700" />
+                      <text
+                        x="36"
+                        y="63"
+                        fill="white"
+                        font-size="21"
+                        font-weight="700"
+                        text-anchor="middle"
+                        font-family="Arial, sans-serif"
+                      >
+                        PDF
+                      </text>
+                    </svg>
+
+                    <!-- PDF NAME -->
+                    <span
+                      class="line-clamp-2 w-full break-words text-sm font-medium leading-snug text-[#171717] sm:text-base"
+                      x-text="file.name"
+                    ></span>
+                    
+
+
+                    <!-- PDF SIZE -->
+                    <span
+                      class="mt-1 text-[10px] text-black/60 sm:text-xs"
+                      x-text="file.size"
+                    ></span>
+                  </a>
+                </template>
+              </div>
+
+              <!-- EMPTY STATE -->
+              <div
+                x-show="activeFolder && activeFolder.files.length === 0"
+                class="flex min-h-48 flex-col items-center justify-center text-center text-black/60"
+              >
+                <p class="text-lg font-medium">Keine Dokumente verfügbar</p>
+                <p class="mt-1 text-sm">
+                  In diesem Ordner sind keine PDFs vorhanden.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
     <script src="assets/js/script.js"></script>
   </body>

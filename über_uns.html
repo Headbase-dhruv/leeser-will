@@ -23,7 +23,7 @@
     <title>Document 1</title>
   </head>
   <body>
-    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+   <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -94,7 +94,7 @@
 
             <a href="service.html" class="active:text-orange">Service</a>
             <a href="Prevention.html">Prävention</a>
-            <a href="">Über uns</a>
+            <a href="über_uns.html">Über uns</a>
             <a href="kontakt.html">Kontakt</a>
             <a href="karriere.html">Karriere</a>
           </nav>
@@ -148,7 +148,7 @@
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
-        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[42%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 relative"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[65%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 sm:p-24 relative"
       >
         <!-- Header -->
         <div class="flex items-center justify-between py-16">
@@ -183,7 +183,8 @@
             <button
               type="button"
               @click="open = !open"
-              class="w-full flex items-center justify-between text-left"
+              :class="{ 'text-orange': open }"
+              class="flex w-full items-center gap-8 text-left"
             >
               <span>Schädlingsbekämpfung</span>
 
@@ -192,13 +193,12 @@
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
                 class="shrink-0 transition-transform duration-300"
-                :class="open ? 'rotate-180' : ''"
+                :class="{ 'rotate-180 text-orange': open }"
               >
                 <path
                   d="M8 10L12 14L16 10"
-                  stroke="#111"
+                  stroke="currentColor"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -206,20 +206,21 @@
               </svg>
             </button>
 
-            <!-- Mobile Dropdown Links -->
             <div
-              x-show="open"
-              x-collapse
-              class="pl-16 flex flex-col gap-16 pt-16"
+              x-ref="content"
+              x-init="$el.style.height = '0px'"
+              x-effect="$el.style.height = open ? $refs.content.scrollHeight + 'px' : '0px'"
+              class="overflow-hidden transition-all duration-300"
             >
-              <a href="private_customers.html" class="block"> Privatkunden </a>
-
-              <a href="forBusinesses.html" class="block"> Geschäftskunden </a>
+              <div class="pl-16 pt-16 flex flex-col gap-16">
+                <a href="private_customers.html">Privatkunden</a>
+                <a href="forBusinesses.html">Geschäftskunden</a>
+              </div>
             </div>
           </div>
           <a href="service.html">Service</a>
           <a href="Prevention.html">Prävention</a>
-          <a href="#">Über uns</a>
+          <a href="über_uns.html">Über uns</a>
           <a href="kontakt.html">Kontakt</a>
           <a href="karriere.html">Karriere</a>
 
@@ -243,7 +244,7 @@
       <section>
         <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
           <div
-            class="relative border_rounded_lg overflow-hidden h-500 flex flex-col justify-center p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)]"
+            class="relative border_rounded_lg overflow-hidden h-500 flex flex-col justify-center p-[clamp(1rem,-0.0196rem+4.183vw,5rem)]"
           >
             <img
               src="assets/images/über_unsHeader.webp"
@@ -292,48 +293,148 @@
       </section>
 
       <!-- sec-2 -->
-      <section class="my-sec">
+      <section class="py-sec overflow-hidden">
         <div class="container">
           <div class="component">
             <div class="grid lg:grid-cols-2 row">
-              <div></div>
+              <div class="relative">
+                <div class="relative inline-block">
+                  <img
+                    src="assets/icons/Shape11.svg"
+                    alt=""
+                    class="block not-sm:max-w-250 sm:w-full h-auto"
+                  />
+
+                  <img
+                    src="assets/images/Uber1.webp"
+                    alt=""
+                    class="absolute inset-0 w-full h-full object-cover"
+                    style="
+                      mask-image: url(&quot;assets/icons/Shape11.svg&quot;);
+                      mask-size: 100% 100%;
+                      mask-repeat: no-repeat;
+
+                      -webkit-mask-image: url(&quot;assets/icons/Shape11.svg&quot;);
+                      -webkit-mask-size: 100% 100%;
+                      -webkit-mask-repeat: no-repeat;
+                    "
+                  />
+                </div>
+                <img
+                  src="assets/images/uber1.1.webp"
+                  alt=""
+                  class="absolute -bottom-[15%] right-0 h-[clamp(14.6875rem,11.1667rem+14.4444vw,28.5rem)]"
+                />
+              </div>
               <div class="free_text gap-40!">
-                <div class="free_text">
-                  <span class="badge">uber uns</span>
-                  <h3>75 Jahre Erfahrung</h3>
-                </div>
-                <h4>Als Kammerjäger der ersten Stunde</h4>
-                <div class="free_text">
-                  <p>
-                    Als am 2. Januar 1948 der Grundstein der heutigen Leeser &
-                    Will GmbH gelegt wurde, bestand das Unternehmen aus nicht
-                    viel mehr als einem engagierten Gründer und seinem Fahrrad:
-                    Willi Leeser fuhr Tag für Tag Firmen in Mönchengladbach ab,
-                    um diese als Kunden für sein junges Unternehmen zu gewinnen.
-                  </p>
-                  <p>
-                    Nachdem er kurz nach dem zweiten Weltkrieg wie so viele
-                    keine Arbeit in seinem erlernten Beruf gefunden hatte,
-                    nutzte er die allgemeine Aufbruchstimmung, ergriff die
-                    Initiative und absolvierte erfolgreich einen
-                    Desinfektoren-Lehrgang in Düsseldorf.
-                  </p>
-                </div>
-                <h4>Der Erfolg gab ihm Recht</h4>
-                <div class="flex flex-col md:flex-row gap-80">
-                  <div class="w-auto free_text">
-                    <p>Aus dem Fahrrad wurde erst ein Mofa und dann ein Auto. Firmen aus Frankfurt am Main, dem gesamten Ruhrgebiet bis an die niederländische Grenze zählten bald zu seinen Kunden.</p>
-                    <p>Wenn Geschäftsführer Volker Guske heute vor dem Stammsitz seines Unternehmens für Schädlingsbekämpfung in Mönchengladbach steht, wo das Fahrrad des Gründers inzwischen ehrenvoll eingemottet wurde, blickt er zurück auf 75 Jahre bewegte Geschichte. Und in eine vielversprechende Zukunft.</p>
+                <div class="free_text gap-40!">
+                  <div class="free_text">
+                    <span class="badge">uber uns</span>
+                    <h3>75 Jahre Erfahrung</h3>
                   </div>
+                  <h4>Als Kammerjäger der ersten Stunde</h4>
+                  <div class="free_text">
+                    <p>
+                      Als am 2. Januar 1948 der Grundstein der heutigen Leeser &
+                      Will GmbH gelegt wurde, bestand das Unternehmen aus nicht
+                      viel mehr als einem engagierten Gründer und seinem
+                      Fahrrad: Willi Leeser fuhr Tag für Tag Firmen in
+                      Mönchengladbach ab, um diese als Kunden für sein junges
+                      Unternehmen zu gewinnen.
+                    </p>
+                    <p>
+                      Nachdem er kurz nach dem zweiten Weltkrieg wie so viele
+                      keine Arbeit in seinem erlernten Beruf gefunden hatte,
+                      nutzte er die allgemeine Aufbruchstimmung, ergriff die
+                      Initiative und absolvierte erfolgreich einen
+                      Desinfektoren-Lehrgang in Düsseldorf.
+                    </p>
+                  </div>
+                </div>
+                <div class="free_text gap-40!">
+                  <h4>Der Erfolg gab ihm Recht</h4>
+
                   <div
-                    class="relative aspect-[327/369]  py-sec shrink-0 border_rounded overflow-hidden"
+                    class="flex flex-col gap-8 md:flex-row md:items-start gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                  >
+                    <!-- Text Content -->
+                    <div class="w-full min-w-0 free_text md:flex-1 w-full">
+                      <p>
+                        Aus dem Fahrrad wurde erst ein Mofa und dann ein Auto.
+                        Firmen aus Frankfurt am Main, dem gesamten Ruhrgebiet
+                        bis an die niederländische Grenze zählten bald zu seinen
+                        Kunden.
+                      </p>
+
+                      <p>
+                        Wenn Geschäftsführer Volker Guske heute vor dem
+                        Stammsitz seines Unternehmens für Schädlingsbekämpfung
+                        in Mönchengladbach steht, wo das Fahrrad des Gründers
+                        inzwischen ehrenvoll eingemottet wurde, blickt er zurück
+                        auf 75 Jahre bewegte Geschichte. Und in eine
+                        vielversprechende Zukunft.
+                      </p>
+                    </div>
+
+                    <!-- Video -->
+                    <div
+                      class="relative h-369 w-full shrink-0 overflow-hidden border_rounded md:w-[42%] lg:w-[40%]"
+                    >
+                      <video
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        class="absolute inset-0 size-full object-cover"
+                      >
+                        <source
+                          src="assets/videos/videos.mp4"
+                          type="video/mp4"
+                        />
+                        <source
+                          src="assets/videos/videos.webm"
+                          type="video/webm"
+                        />
+                        Ihr Browser unterstützt keine Videos.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div
+                  class="flex flex-col md:flex-row gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                >
+                  <div class="free_text gap-40!">
+                    <h4>Der Erfolg gab ihm Recht</h4>
+                     Text Content
+                    <div class="w-full min-w-0 free_text md:flex-1">
+                      <p>
+                        Aus dem Fahrrad wurde erst ein Mofa und dann ein Auto.
+                        Firmen aus Frankfurt am Main, dem gesamten Ruhrgebiet
+                        bis an die niederländische Grenze zählten bald zu seinen
+                        Kunden.
+                      </p>
+
+                      <p>
+                        Wenn Geschäftsführer Volker Guske heute vor dem
+                        Stammsitz seines Unternehmens für Schädlingsbekämpfung
+                        in Mönchengladbach steht, wo das Fahrrad des Gründers
+                        inzwischen ehrenvoll eingemottet wurde, blickt er zurück
+                        auf 75 Jahre bewegte Geschichte. Und in eine
+                        vielversprechende Zukunft.
+                      </p>
+                    </div>
+                  </div>
+
+                  Video
+                  <div
+                    class="relative h-369 w-full shrink-0 overflow-hidden border_rounded md:w-[42%] lg:w-[40%]"
                   >
                     <video
                       autoplay
                       loop
                       muted
                       playsinline
-                      class="absolute inset-0 h-full w-full object-cover"
+                      class="absolute inset-0 size-full object-cover"
                     >
                       <source src="assets/videos/videos.mp4" type="video/mp4" />
                       <source
@@ -343,7 +444,7 @@
                       Ihr Browser unterstützt keine Videos.
                     </video>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -351,12 +452,169 @@
       </section>
 
       <!-- sec-3 -->
-      <section class="bg-Backg py-sec">
-        <div class="container">
+     <section class="bg-Backg py-sec">
+        <div class="container not-sm:px-0 ">
           <div class="component">
-            <div class="free_text">
-              <h3>Philosophie</h3>
+            <div class="not-sm:hidden space-y-24 sm:space-y-32 lg:space-y-40">
+              <!-- First Row -->
+              <div
+                class="grid grid-cols-1 gap-24 sm:gap-32 lg:grid-cols-[minmax(180px,260px)_minmax(0,1fr)] lg:gap-40"
+              >
+                <!-- Heading -->
+                <div class="free_text lg:pt-8 justify-center">
+                  <h3>Philosophie</h3>
+                </div>
+
+                <!-- First Three Cards -->
+                <div
+                  class="grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-24 xl:grid-cols-3 xl:gap-32"
+                >
+                  <div
+                    class="flex items-center justify-center rounded-[20px] border_rounded bg-[#E4EBFF] px-20 py-32 text-center sm:px-24 sm:py-40 lg:py-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                  >
+                    <p>So einfach ist unsere Philosophie.</p>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-center rounded-[20px] border_rounded bg-[#E4EBFF] px-20 py-32 text-center sm:px-24 sm:py-40 lg:py-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                  >
+                    <p>
+                      Denn so zufrieden unsere privaten und gewerblichen Kunden
+                      auch mit uns sind, ist es ihnen doch meist am liebsten,
+                      wenn Sie uns gar nicht erst groß bemerken.
+                    </p>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-center rounded-[20px] border_rounded bg-[#E4EBFF] px-20 py-32 text-center sm:col-span-2 xl:col-span-1 sm:py-40 lg:py-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                  >
+                    <p>
+                      Als Schädlingsbekämpfer rücken wir deshalb auf Wunsch
+                      gerne dann aus, wenn wir Ihre täglichen Abläufe nicht oder
+                      nur minimal stören. Dank unserer flexiblen Arbeitszeiten
+                      finden wir immer die für Sie passende Lösung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Second Row -->
+              <div
+                class="grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-24 lg:grid-cols-3 lg:gap-32 xl:gap-40"
+              >
+                <div
+                  class="flex items-center justify-center rounded-[20px] border_rounded bg-[#E4EBFF] px-20 py-32 text-center sm:px-24 sm:py-40 lg:py-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                >
+                  <p>
+                    Bevor wir kommen, besprechen wir gemeinsam, was wir genau
+                    tun und was Sie während oder nach unserem Einsatz beachten
+                    müssen.
+                  </p>
+                </div>
+
+                <div
+                  class="flex items-center justify-center rounded-[20px] border_rounded bg-[#E4EBFF] px-20 py-32 text-center sm:px-24 sm:py-40 lg:py-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                >
+                  <p>
+                    Wenn wir wieder weg sind, sollen Sie am besten gar nicht
+                    merken, dass wir da waren. Deshalb stimmen wir unsere
+                    Maßnahmen und die eingesetzten Mittel auf jeden Schädling
+                    und jede Situation individuell ab. So werden Sie so wenig
+                    belästigt, wie nur irgend möglich.
+                  </p>
+                </div>
+
+                <div
+                  class="flex items-center justify-center rounded-[20px] border_rounded bg-[#E4EBFF] px-20 py-32 text-center sm:col-span-2 lg:col-span-1 lg:px-24 lg:py-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                >
+                  <p>
+                    Transparent, diskret & stets zu Ihrer Zufriedenheit – so ist
+                    der Service von Leeser & Will.
+                  </p>
+                </div>
+              </div>
             </div>
+            
+<!-- Mobile Philosophy Swiper -->
+<div class="philosophie-mobile sm:hidden not-sm:flex flex-col">
+
+  <div class="free_text mb-24 px-gutter">
+    <h3>Philosophie</h3>
+  </div>
+
+  <div class="swiper philosophieSwiper overflow-hidden">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide h-auto">
+        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
+          <p>So einfach ist unsere Philosophie.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide h-auto">
+        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
+          <p>
+            Denn so zufrieden unsere privaten und gewerblichen Kunden
+            auch mit uns sind, ist es ihnen doch meist am liebsten,
+            wenn Sie uns gar nicht erst groß bemerken.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide h-auto">
+        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
+          <p>
+            Als Schädlingsbekämpfer rücken wir deshalb auf Wunsch
+            gerne dann aus, wenn wir Ihre täglichen Abläufe nicht oder
+            nur minimal stören. Dank unserer flexiblen Arbeitszeiten
+            finden wir immer die für Sie passende Lösung.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide h-auto">
+        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
+          <p>
+            Bevor wir kommen, besprechen wir gemeinsam, was wir genau tun
+            und was Sie während oder nach unserem Einsatz beachten müssen.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="swiper-slide h-auto">
+        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
+          <p>
+            Wenn wir wieder weg sind, sollen Sie am besten gar nicht merken,
+            dass wir da waren. Deshalb stimmen wir unsere Maßnahmen und
+            die eingesetzten Mittel auf jeden Schädling und jede Situation
+            individuell ab. So werden Sie so wenig belästigt, wie nur
+            irgend möglich.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="swiper-slide h-auto">
+        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
+          <p>
+            Transparent, diskret & stets zu Ihrer Zufriedenheit –
+            so ist der Service von Leeser & Will.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination philosophie-pagination"></div>
+  </div>
+
+</div>
           </div>
         </div>
       </section>
@@ -815,7 +1073,7 @@
         <div class="container">
           <div class="component">
             <div class="grid grid-cols-1 lg:grid-cols-2 row">
-              <div>
+              <div class="order-2 lg:order-1">
                 <div class="relative inline-block">
                   <img
                     src="assets/icons/Shape7.svg"
@@ -903,7 +1161,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="free_text gap-40!">
+              <div class="free_text gap-40! order-1 lg:order-2">
                 <h3>Unternehmen & Privatkunden</h3>
                 <div class="free_text gap-24!">
                   <h4>Was kümmert es die Maus?</h4>
@@ -958,10 +1216,12 @@
         <div class="container">
           <div class="component">
             <div class="grid grid-cols-1 lg:grid-cols-2 row">
-              <div class="free_text gap-80">
+              <div
+                class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              >
                 <h3>Deutschlandweit für Sie da</h3>
                 <div class="free_text gap-40!">
-                  <h4>
+                  <h4 class="text-28 leading-1.3">
                     Leeser & Will steht für schnellen und kompetenten Service
                   </h4>
                   <div class="free_text">
@@ -1014,9 +1274,13 @@
                       <div
                         class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
                       >
-                        <img src="assets/images/Dummy_Person.png" alt="" />
+                        <img
+                          src="assets/images/Dummy_Person.png"
+                          alt=""
+                          class="size-full object-cover"
+                        />
                       </div>
-                      <div class="free_text">
+                      <div class="free_text gap-8!">
                         <h4>
                           Volker Guske, Geschäftsführer Leeser & Will GmbH
                         </h4>
@@ -1027,9 +1291,13 @@
                       <div
                         class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
                       >
-                        <img src="assets/images/uberpro1.webp" alt="" />
+                        <img
+                          src="assets/images/uberpro1.webp"
+                          alt=""
+                          class="size-full object-cover"
+                        />
                       </div>
-                      <div class="free_text">
+                      <div class="free_text gap-8!">
                         <h4>Bernd Dapper</h4>
                         <p>Betriebsleitung</p>
                       </div>
@@ -1039,9 +1307,12 @@
                 <div class="order-1 lg:order-2">
                   <div class="free_text"><h3>Das Team</h3></div>
                   <div
-                    class="free_twxt gap-40! mt-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                    class="free_text gap-40! mt-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
                   >
-                    <h4>Ein Team für alle Fälle: Ihr Team von Leeser & Will</h4>
+                    <h4>
+                      Ein Team für alle Fälle: <br />
+                      Ihr Team von Leeser & Will
+                    </h4>
                     <div class="free_text">
                       <p>
                         Schädlinge sind so vielfältig wie die Gegebenheiten, an
@@ -1067,9 +1338,106 @@
                   </div>
                 </div>
               </div>
-              <div class="border">
-                <div class="free_text">
-                  <h4>Innendienst</h4>
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-40">
+                <div class="lg:col-span-9 lg:col-start-4">
+                  <div class="free_text">
+                    <h4 class="mb-5">Innendienst</h4>
+
+                    <div
+                      class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-40"
+                    >
+                      <div class="free_text gap-24!">
+                        <div
+                          class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                        >
+                          <img
+                            src="assets/images/Innendienst1.webp"
+                            alt=""
+                            class="size-full object-cover"
+                          />
+                        </div>
+                        <div class="free_text gap-8!">
+                          <h4>Sabine Kranz</h4>
+                          <p>Prokuristin, Leitung – Buchhaltung/Personal</p>
+                        </div>
+                      </div>
+                      <div class="free_text gap-24!">
+                        <div
+                          class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                        >
+                          <img
+                            src="assets/images/Innendienst2.webp"
+                            alt=""
+                            class="size-full object-cover"
+                          />
+                        </div>
+                        <div class="free_text gap-8!">
+                          <h4>Celina Kranz</h4>
+                          <p>Kundenbetreuung & Einsatzplanung</p>
+                        </div>
+                      </div>
+                      <div class="free_text gap-24!">
+                        <div
+                          class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                        >
+                          <img
+                            src="assets/images/Innendienst3.webp"
+                            alt=""
+                            class="size-full object-cover"
+                          />
+                        </div>
+                        <div class="free_text gap-8!">
+                          <h4>Doreen Kloße</h4>
+                          <p>Betriebsleitung</p>
+                        </div>
+                      </div>
+                      <div class="free_text gap-24!">
+                        <div
+                          class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                        >
+                          <img
+                            src="assets/images/Innendienst4.webp"
+                            alt=""
+                            class="size-full object-cover"
+                          />
+                        </div>
+                        <div class="free_text gap-8!">
+                          <h4>Marc Krahnen</h4>
+                          <p>Kundenbetreuung & Einsatzplanung</p>
+                        </div>
+                      </div>
+                      <div class="free_text gap-24!">
+                        <div
+                          class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                        >
+                          <img
+                            src="assets/images/Innendienst5.webp"
+                            alt=""
+                            class="size-full object-cover"
+                          />
+                        </div>
+                        <div class="free_text gap-8!">
+                          <h4>Anne Well</h4>
+                          <p>Rechnungsstellung & -kontrolle</p>
+                        </div>
+                      </div>
+                      <div class="free_text gap-24!">
+                        <div
+                          class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                        >
+                          <img
+                            src="assets/images/Innendienst6.webp"
+                            alt=""
+                            class="size-full object-cover"
+                          />
+                        </div>
+                        <div class="free_text gap-8!">
+                          <h4>Marcel Bollig</h4>
+                          <p>Kundenanbindung & Dokumentation</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="space-y-40">
@@ -1083,9 +1451,13 @@
                     <div
                       class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
                     >
-                      <img src="assets/images/Dummy_Person.png" alt="" />
+                      <img
+                        src="assets/images/Dummy_Person.png"
+                        alt=""
+                        class="size-full object-cover"
+                      />
                     </div>
-                    <div class="free_text">
+                    <div class="free_text gap-8!">
                       <h4>Volker Guske, Geschäftsführer Leeser & Will GmbH</h4>
                       <p>Servicetechniker</p>
                     </div>
@@ -1200,7 +1572,9 @@
         <div class="container">
           <div class="component">
             <div class="grid grid-cols-1 lg:grid-cols-2 row">
-              <div class="free_text gap-80">
+              <div
+                class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              >
                 <h3>Verbände</h3>
                 <div class="free_text gap-40!">
                   <h4>
@@ -1235,7 +1609,9 @@
                   </p>
                 </div>
               </div>
-              <div class="free_text gap-80">
+              <div
+                class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              >
                 <h3>Zertifizierungen</h3>
                 <div class="free_text gap-40!">
                   <div class="free_text">
@@ -1274,11 +1650,11 @@
       </section>
 
       <!-- sec-10 -->
-      <section class="py-sec">
+      <section class="py-sec ctm_sec">
         <div class="container">
           <div class="component">
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] lg:-mb-250 mb-40"
+              class="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] lg:-mb-[16.5%] mb-40"
             >
               <div class="order-2 lg:order-1">
                 <div class="relative inline-block -z-10">
@@ -1376,6 +1752,11 @@
             </div>
           </div>
         </div>
+        <img
+          src="assets/icons/bg_cockroach.svg"
+          alt=""
+          class="absolute -rotate-42 top-0 right-[4%]"
+        />
       </section>
 
       <!-- sec-11 -->
