@@ -1,0 +1,1965 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <title>leeser-will</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <script defer src="assets/js/alpine.js"></script>
+    <script defer src="assets/js/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <title>Document 1</title>
+  </head>
+  <body>
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+      <div class="container">
+        <div class="flex items-center justify-between py-16 lg:py-24">
+          <!-- Logo -->
+          <a href="/" aria-label="TENSORIS" class="shrink-0">
+            <img
+              src="assets/icons/HeadLogo.svg"
+              alt="TENSORIS"
+              class="h-35 md:h-48 lg:h-auto w-auto"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
+            <div
+              x-data="{ open: false }"
+              @mouseenter="open = true"
+              @mouseleave="open = false"
+              class="relative"
+            >
+              <a href="#" class="flex items-center gap-4">
+                Schädlingsbekämpfung
+
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="shrink-0 transition duration-300"
+                  :class="{ 'rotate-180': open }"
+                >
+                  <path
+                    d="M8 10L12 14L16 10"
+                    stroke="#111"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <!-- Dropdown -->
+              <div
+                x-show="open"
+                x-transition
+                class="absolute top-full left-0 pt-12 min-w-[220px]"
+                x-cloak
+              >
+                <div
+                  class="bg-white rounded-2xl overflow-hidden shadow-lg border border-black/10"
+                >
+                  <a
+                    href="private_customers.html"
+                    class="block px-16 py-12 hover:bg-Backg"
+                  >
+                    Privatkunden
+                  </a>
+
+                  <a
+                    href="forBusinesses.html"
+                    class="block px-16 py-12 hover:bg-Backg"
+                  >
+                    Geschäftskunden
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <a href="service.html" class="active:text-orange">Service</a>
+            <a href="Prevention.html">Prävention</a>
+            <a href="über_uns.html">Über uns</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="karriere.html">Karriere</a>
+          </nav>
+
+          <!-- Right Side -->
+          <div class="flex items-center gap-12">
+            <!-- Desktop Button -->
+            <a href="" class="hidden sm:inline-flex btn btn-primary">
+              Kunden-Login
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button
+              type="button"
+              @click="mobileMenu = true"
+              class="xl:hidden flex items-center justify-center size-24"
+              aria-label="Open Menu"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2 5.36667C2 5.0042 2.14399 4.65659 2.40029 4.40029C2.65659 4.14399 3.0042 4 3.36667 4H19.7667C20.1291 4 20.4767 4.14399 20.733 4.40029C20.9893 4.65659 21.1333 5.0042 21.1333 5.36667C21.1333 5.72913 20.9893 6.07675 20.733 6.33305C20.4767 6.58935 20.1291 6.73333 19.7667 6.73333H3.36667C3.0042 6.73333 2.65659 6.58935 2.40029 6.33305C2.14399 6.07675 2 5.72913 2 5.36667ZM2 12.2C2 11.8375 2.14399 11.4899 2.40029 11.2336C2.65659 10.9773 3.0042 10.8333 3.36667 10.8333H11.5667C11.9291 10.8333 12.2767 10.9773 12.533 11.2336C12.7893 11.4899 12.9333 11.8375 12.9333 12.2C12.9333 12.5625 12.7893 12.9101 12.533 13.1664C12.2767 13.4227 11.9291 13.5667 11.5667 13.5667H3.36667C3.0042 13.5667 2.65659 13.4227 2.40029 13.1664C2.14399 12.9101 2 12.5625 2 12.2ZM2 19.0333C2 18.6709 2.14399 18.3233 2.40029 18.067C2.65659 17.8107 3.0042 17.6667 3.36667 17.6667H19.7667C20.1291 17.6667 20.4767 17.8107 20.733 18.067C20.9893 18.3233 21.1333 18.6709 21.1333 19.0333C21.1333 19.3958 20.9893 19.7434 20.733 19.9997C20.4767 20.256 20.1291 20.4 19.7667 20.4H3.36667C3.0042 20.4 2.65659 20.256 2.40029 19.9997C2.14399 19.7434 2 19.3958 2 19.0333Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Overlay -->
+      <div
+        x-show="mobileMenu"
+        x-transition.opacity
+        @click="mobileMenu = false"
+        class="fixed inset-0 bg-black/50 z-50 xl:hidden"
+      ></div>
+
+      <!-- Mobile Menu -->
+      <div
+        x-show="mobileMenu"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[65%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 sm:p-24 relative"
+      >
+        <!-- Header -->
+        <div class="flex items-center justify-between py-16">
+          <div class="free_text">
+            <h3>Speisekarte</h3>
+          </div>
+
+          <button
+            @click="mobileMenu = false"
+            class="size-40 flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex flex-col gap-24 mt-40 relative z-10">
+          <div x-data="{ open: false }" class="xl:hidden">
+            <button
+              type="button"
+              @click="open = !open"
+              :class="{ 'text-orange': open }"
+              class="flex w-full items-center gap-8 text-left"
+            >
+              <span>Schädlingsbekämpfung</span>
+
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="shrink-0 transition-transform duration-300"
+                :class="{ 'rotate-180 text-orange': open }"
+              >
+                <path
+                  d="M8 10L12 14L16 10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div
+              x-ref="content"
+              x-init="$el.style.height = '0px'"
+              x-effect="$el.style.height = open ? $refs.content.scrollHeight + 'px' : '0px'"
+              class="overflow-hidden transition-all duration-300"
+            >
+              <div class="pl-16 pt-16 flex flex-col gap-16">
+                <a href="private_customers.html">Privatkunden</a>
+                <a href="forBusinesses.html">Geschäftskunden</a>
+              </div>
+            </div>
+          </div>
+          <a href="service.html">Service</a>
+          <a href="Prevention.html">Prävention</a>
+          <a href="über_uns.html">Über uns</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="karriere.html">Karriere</a>
+
+          <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
+        </nav>
+        <img
+          src="assets/icons/HamburgerIcon.svg"
+          alt=""
+          class="absolute right-0 top-[22%]"
+        />
+        <img
+          src="assets/icons/HamburgerIcon2.svg"
+          alt=""
+          class="absolute left-0 bottom-0 z-0"
+        />
+      </div>
+    </header>
+
+    <main>
+      <!-- Sec-1 -->
+      <section>
+        <div class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
+          <div
+            class="relative border_rounded_lg overflow-hidden h-500 flex flex-col justify-center p-[clamp(1rem,-0.0196rem+4.183vw,5rem)]"
+          >
+            <img
+              src="assets/images/DraftHeader.webp"
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-primary/30"></div>
+            <div class="relative z-10 free_text text-center">
+              <h2 class="text-white">Bettwanzen wieder</h2>
+
+              <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
+                <ol class="flex flex-wrap items-center gap-8 text-white">
+                  <li>
+                    <a href="/" class="transition-opacity hover:underline">
+                      Home
+                    </a>
+                  </li>
+
+                  <li aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="shrink-0"
+                    >
+                      <path
+                        d="M10 16L14 12L10 8"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </li>
+
+                  <li class="font-medium text-white">
+                    Bettwanzen wieder auf dem Vormarsch
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec-2 -->
+      <section class="py-sec">
+        <div class="container">
+          <div class="component">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-80 relative z-10">
+              <div
+                class="flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
+              >
+                <div class="free_text gap-0!">
+                  <h3>Bettwanzen sind wieder auf dem Vormarsch</h3>
+                </div>
+                <div class="flex flex-col gap-24">
+                  <div class="free_text gap-24">
+                    <p>
+                      Besondere Gefahr droht für Hotels, Krankenhäuser, Kinos,
+                      öffentliche Verkehrsmittel, …
+                    </p>
+                    <p>
+                      Bettwanzen sind klein und vor allem in der Anfangszeit
+                      eines Befalls schwer zu entdecken.
+                    </p>
+                    <p>
+                      Jetzt hängt alles von Ihrer Aufmerksamkeit ab. Je früher
+                      Sie mit der Bettwanzenbekämpfung beginnen, desto
+                      effektiver kann sie durchgeführt werden.
+                    </p>
+                    <p>
+                      Denn wenn es Ihnen gelingt, die ersten Anzeichen eines
+                      Bettwanzenbefalls frühzeitig wahrzunehmen und richtig zu
+                      deuten, dann stehen die Chancen gut, dass Sie schnell und
+                      relativ kostengünstig mit einer fachgerechten
+                      Wanzenbekämpfung eine weitere Ausweitung des Befalls
+                      verhindern können und der akute Befall schon bald
+                      erfolgreich bekämpft ist.
+                    </p>
+                    <p>
+                      Mit über 75-jähriger Erfahrung in der professionellen
+                      Schädlingsbekämpfung helfen wir bei der
+                      Bettwanzenbekämpfung
+                    </p>
+                    <ul class="flex gap-16 flex-wrap">
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span class="line-clamp-1"> schnell</span>
+                      </li>
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span>zuverlässig</span>
+                      </li>
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span>kompetent</span>
+                      </li>
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span>mit neutralen Fahrzeugen zu fairen Preisen!</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-center gap-16">
+                <div
+                  class="w-fit flex items-center justify-center gap-16 relative"
+                >
+                  <div class="relative inline-block">
+                    <img
+                      src="assets/icons/Shape13.svg"
+                      alt=""
+                      class="block w-full h-auto"
+                    />
+
+                    <img
+                      src="assets/images/Draft11.webp"
+                      alt=""
+                      class="absolute inset-0 w-full h-full object-cover"
+                      style="
+                        mask-image: url(&quot;assets/icons/Shape13.svg&quot;);
+                        mask-size: 100% 100%;
+                        mask-repeat: no-repeat;
+
+                        -webkit-mask-image: url(&quot;assets/icons/Shape13.svg&quot;);
+                        -webkit-mask-size: 100% 100%;
+                        -webkit-mask-repeat: no-repeat;
+                      "
+                    />
+                  </div>
+                  <div class="flex flex-col gap-16">
+                    <div class="relative inline-block">
+                      <img
+                        src="assets/icons/Shape14.svg"
+                        alt=""
+                        class="block w-full h-auto"
+                      />
+
+                      <img
+                        src="assets/images/Draft12.webp"
+                        alt=""
+                        class="absolute inset-0 w-full h-full object-cover"
+                        style="
+                          mask-image: url(&quot;assets/icons/Shape14.svg&quot;);
+                          mask-size: 100% 100%;
+                          mask-repeat: no-repeat;
+
+                          -webkit-mask-image: url(&quot;assets/icons/Shape14.svg&quot;);
+                          -webkit-mask-size: 100% 100%;
+                          -webkit-mask-repeat: no-repeat;
+                        "
+                      />
+                    </div>
+                    <div class="relative inline-block">
+                      <img
+                        src="assets/icons/Shape14.svg"
+                        alt=""
+                        class="block w-full h-auto"
+                      />
+
+                      <img
+                        src="assets/images/Draft13.webp"
+                        alt=""
+                        class="absolute inset-0 w-full h-full object-cover"
+                        style="
+                          mask-image: url(&quot;assets/icons/Shape14.svg&quot;);
+                          mask-size: 100% 100%;
+                          mask-repeat: no-repeat;
+
+                          -webkit-mask-image: url(&quot;assets/icons/Shape14.svg&quot;);
+                          -webkit-mask-size: 100% 100%;
+                          -webkit-mask-repeat: no-repeat;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="h-[clamp(7.1875rem,6.152rem+4.2484vw,11.25rem)] overflow-hidden absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
+                  >
+                    <img
+                      src="assets/icons/75years.svg"
+                      alt=""
+                      class="size-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sec-3 -->
+      <section class="py-sec ctm_sec overflow-visible bg-Backg">
+        <div class="container">
+          <div class="component">
+            <div class="col">
+              <div class="grid grid-cols-1 lg:grid-cols-7 row">
+                <div class="flex items-center lg:col-span-3">
+                  <div class="relative aspect-[694/615] w-full max-h-694">
+                    <!-- Back image -->
+                    <div
+                      class="absolute left-0 top-0 w-[42%] overflow-hidden border_rounded"
+                    >
+                      <img
+                        src="assets/images/Draft22.webp"
+                        alt="Architects working together"
+                        class="block aspect-[285/293] w-full object-cover object-center"
+                      />
+                    </div>
+
+                    <!-- Front image -->
+                    <div
+                      class="absolute bottom-0 right-0 z-10 w-[79%] overflow-hidden border_rounded"
+                    >
+                      <img
+                        src="assets/images/Draft21.webp"
+                        alt="Architects reviewing building plans"
+                        class="block aspect-[532/544] w-full object-cover object-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="lg:col-span-4 flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
+                >
+                  <div class="free_text gap-0!">
+                    <h3>Was kostet eine Bettwanzenbekämpfung?</h3>
+                  </div>
+                  <div class="flex flex-col gap-24">
+                    <div class="free_text gap-16!">
+                      <p>
+                        Die Kosten für eine Bettwanzenbekämpfung hängen stark
+                        von der Situation bei Ihnen vor Ort ab.
+                      </p>
+                      <p>
+                        Deshalb ist es unmöglich und absolut unseriös, einen
+                        Pauschalpreis für eine Bettwanzenbekämpfung zu nennen.
+                        Kein seriöser Schädlingsbekämpfer wird Ihnen einen Preis
+                        für eine Bettwanzenbekämpfung nennen, ohne den Befall
+                        vor Ort begutachtet zu haben.
+                      </p>
+                      <p>
+                        Unsere IHK-geprüften Servicetechniker schauen sich den
+                        Bettwanzenbefall bei Ihnen vor Ort an.
+                      </p>
+                      <p>
+                        Nur durch diese fachkundige Ortsbesichtigung können die
+                        geeigneten Maßnahmen gewählt und damit auch eine
+                        realistische Kalkulation der Kosten erfolgen.
+                      </p>
+                      <p>
+                        Wichtige Fragen, die unser IHK-geprüfter
+                        Schädlingsbekämpfer vor Ort klären wird, sind unter
+                        anderem:
+                      </p>
+                    </div>
+
+                    <ul class="space-y-24">
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span class="line-clamp-1">
+                          Handelt es sich bei Ihrem Befall tatsächlich um
+                          Bettwanzen oder liegt unter Umständen ein anderer
+                          Schädlingsbefall vor?
+                        </span>
+                      </li>
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span>Wie viele Räume sind betroffen?</span>
+                      </li>
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span>Wie sind die Räume ausgestattet?</span>
+                      </li>
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span>Wie groß sind die Räume?</span>
+                      </li>
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span
+                          >Wie groß ist die derzeitige
+                          Bettwanzenpopulation?</span
+                        >
+                      </li>
+                      <li class="flex items-center gap-8">
+                        <img
+                          src="assets/icons/Logo-icon.svg"
+                          alt=""
+                          class="w-24 h-24 shrink-0"
+                        />
+                        <span
+                          >Welche Bekämpfungsmethode ist für Ihren
+                          Bettwanzenbefall am besten geeignet?</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex not-lg:flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] items-center"
+              >
+                <div class="free_text">
+                  <p>
+                    Erst nach einer professionellen Untersuchung des Befalls
+                    kann unser Schädlingsbekämpfer Ihnen ein Angebot für eine
+                    Bettwanzenbekämpfung unterbreiten.
+                  </p>
+                  <p>
+                    Da Sie bei einem Wanzenbefall nach Möglichkeit unverzüglich
+                    handeln sollten, werden Ihnen die Schädlingsbekämpfer von
+                    Leeser & Will, in den meisten Fällen schon unmittelbar nach
+                    der fachkundigen Besichtigung ein verbindliches Angebot für
+                    eine professionelle und effektive Bettwanzenbekämpfung
+                    unterbreiten können.
+                  </p>
+                  <p>
+                    Wenn Sie diesem Angebot zustimmen, kann unser ausgebildeter
+                    Schädlingsbekämpfer sofort mit der Bettwanzenbekämpfung
+                    beginnen.
+                  </p>
+                </div>
+                <div
+                  class="rounded-full aspect-square overflow-hidden max-w-350"
+                >
+                  <img
+                    src="assets/images/Draft23.webp"
+                    alt=""
+                    class="object-center object-cover size-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SVG decoration above both images -->
+        <img
+          src="assets/icons/draft3_.svg"
+          alt=""
+          aria-hidden="true"
+          class="pointer-events-none absolute -z-20 h-[clamp(5.625rem,3.761rem+7.6471vw,12.9375rem)] -rotate-16 left-3/5 lg:left-1/3 -top-[1.5%] xl:-top-90"
+        />
+      </section>
+
+      <!-- Sec-4 -->
+      <section class="py-sec ctm_sec overflow-x-hidden">
+        <div class="container">
+          <div class="component">
+            <div class="grid grid-cols-1 lg:grid-cols-9 row">
+              <div
+                class="lg:col-span-5 flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
+              >
+                <div class="free_text gap-0!">
+                  <h3>100% diskrete Bettwanzenbekämpfung</h3>
+                </div>
+                <div class="flex flex-col gap-24">
+                  <div class="free_text gap-16!">
+                    <p>
+                      Manche unserer Kunden legen Wert darauf, dass wir die
+                      Schädlingsbekämpfungsmaßnahmen (Bettwanzen, Schaben,
+                      Wespen, Ameisen, Mäuse, …) diskret durchführen.
+                    </p>
+                    <p>
+                      Selbstverständlich nehmen wir diese Wünsche ernst und
+                      werden auf Wunsch mit einem neutralen Fahrzeug bei Ihnen
+                      vorfahren. So können wir die Bettwanzenbekämpfung diskret
+                      und für Ihre Gäste oder Nachbarn unbemerkt durchführen.
+                    </p>
+                    <p>
+                      Neben der fachlichen Qualifikation unserer Mitarbeiter
+                      legen wir größten Wert auf die Diskretion unserer
+                      IHK-geprüften Schädlingsbekämpfer. Deshalb ist es unnötig,
+                      extra zu erwähnen, dass unsere Diskretion weit über
+                      neutrale Fahrzeuge hinausgeht.
+                    </p>
+                    <p>
+                      Ihr Ruf oder der Ruf Ihres Unternehmens bleibt also
+                      gewahrt. Durch Ihr schnelles und beherztes
+                      Handeln schaffen auch Sie gute Voraussetzungen dafür, dass
+                      ein Bettwanzenbefall auch von Ihren Gästen unbemerkt
+                      bleibt. Eine zeitnahe Bettwanzenbekämpfung schützt Sie
+                      zudem auch vor eventuellen Schadenersatzansprüchen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="lg:col-span-4 flex flex-col items-end justify-center gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] w-full h-full"
+              >
+                <!-- Image composition wrapper -->
+                <div class="relative w-full max-w-694">
+                  <!-- Two overlapping images -->
+                  <div class="relative w-full aspect-[694/490]">
+                    <!-- Back image -->
+                    <div
+                      class="absolute top-0 left-0 w-[48%] h-[68%] overflow-hidden rounded-[clamp(1rem,3vw,2rem)]"
+                    >
+                      <img
+                        src="assets/images/Draft31.webp"
+                        alt="Architects working together"
+                        class="block w-full h-full object-cover object-center"
+                      />
+                    </div>
+
+                    <!-- Front image -->
+                    <div
+                      class="absolute bottom-0 right-0 z-10 w-[41%] h-[60%] overflow-hidden rounded-[clamp(1rem,3vw,2rem)]"
+                    >
+                      <img
+                        src="assets/images/Draft32.webp"
+                        alt="Architects reviewing building plans"
+                        class="block w-full h-full object-cover object-center"
+                      />
+                    </div>
+
+                    <!-- SVG decoration above both images -->
+
+                    <div
+                      class="absolute rotate-17 h-[clamp(6.5rem,5.098rem+5.7516vw,12rem)] -top-[6%] right-[8%]"
+                    >
+                      <img
+                        src="assets/icons/Draft34_.svg"
+                        alt=""
+                        class="size-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CTA button -->
+                <a href="" class="btn btn-primary mr-0">
+                  Senden Sie uns Ihre unverbindliche Anfrage!
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-5 -->
+      <section class="py-sec ctm_sec bg-Backg">
+        <div class="container">
+          <div class="flex flex-col gap-40 mt-30 xl:absolute relative z-10">
+            <div class="free_text">
+              <span class="badge">So funktioniert es</span>
+              <h4 class="text-3xl md:text-5xl max-w-500!">
+                Unser konzipiertes Schritt-für-Schritt-Verfahren zur
+                Insektenbekämpfung
+              </h4>
+            </div>
+            <a href="" class="btn btn-primary">Loslegen</a>
+          </div>
+          <!-- desktop view -->
+          <div class="relative min-h-800 not-xl:hidden">
+            <!-- Timeline SVG -->
+            <svg
+              width="1340"
+              height="556"
+              viewBox="0 0 1340 556"
+              fill="none"
+              class="absolute top-80"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_2015_5446)">
+                <path
+                  d="M50.0791 479.358C144.579 474.358 178.646 492.818 280.079 412.358C413.079 306.858 511.579 331.358 691.579 287.358C922.858 230.823 937.579 -15.7195 1289.08 32.7804"
+                  stroke="#FF6000"
+                  stroke-width="3"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_2015_5446"
+                  x="0"
+                  y="0"
+                  width="1339.28"
+                  height="555.856"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="25" />
+                  <feGaussianBlur stdDeviation="25" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_2015_5446"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_2015_5446"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+
+            <article class="absolute left-[1%] bottom-[0.5%] z-20 w-330">
+              <div
+                class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+              >
+                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+              </div>
+
+              <span
+                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+              >
+                1
+              </span>
+              <div class="free_text gap-16">
+                <h4>Standortbesichtigung</h4>
+
+                <p class="mt-4">
+                  Lorem ipsum blandit blandit odio tellus fringilla eget
+                  elementum sollicitudin tortor est libero nec suspendisse purus
+                  est malesuada quam faucibus.
+                </p>
+              </div>
+            </article>
+            <article class="absolute left-[28%] bottom-[20%] z-20 w-330">
+              <div
+                class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+              >
+                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+              </div>
+
+              <span
+                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+              >
+                2
+              </span>
+              <div class="free_text gap-16">
+                <h4>Standortbesichtigung</h4>
+
+                <p class="mt-4">
+                  Lorem ipsum blandit blandit odio tellus fringilla eget
+                  elementum sollicitudin tortor est libero nec suspendisse purus
+                  est malesuada quam faucibus.
+                </p>
+              </div>
+            </article>
+            <article class="absolute left-[53%] top-[20%] z-20 w-330">
+              <div
+                class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+              >
+                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+              </div>
+
+              <span
+                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+              >
+                3
+              </span>
+              <div class="free_text gap-16">
+                <h4>Standortbesichtigung</h4>
+
+                <p class="mt-4">
+                  Lorem ipsum blandit blandit odio tellus fringilla eget
+                  elementum sollicitudin tortor est libero nec suspendisse purus
+                  est malesuada quam faucibus.
+                </p>
+              </div>
+            </article>
+            <article class="absolute right-80 top-75 z-20 w-330">
+              <div
+                class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+              >
+                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+              </div>
+
+              <span
+                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+              >
+                4
+              </span>
+              <div class="free_text gap-16">
+                <h4>Standortbesichtigung</h4>
+
+                <p class="mt-4">
+                  Lorem ipsum blandit blandit odio tellus fringilla eget
+                  elementum sollicitudin tortor est libero nec suspendisse purus
+                  est malesuada quam faucibus.
+                </p>
+              </div>
+            </article>
+          </div>
+          <!-- MObaile View -->
+          <div class="xl:hidden grid md:grid-cols-2 gap-40 mt-50">
+            <article class="relative">
+              <div
+                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+              >
+                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+              </div>
+
+              <span
+                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+              >
+                1
+              </span>
+              <div class="free_text gap-16">
+                <h4>Standortbesichtigung</h4>
+
+                <p class="mt-4">
+                  Lorem ipsum blandit blandit odio tellus fringilla eget
+                  elementum sollicitudin tortor est libero nec suspendisse purus
+                  est malesuada quam faucibus.
+                </p>
+              </div>
+            </article>
+            <article class="relative">
+              <div
+                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+              >
+                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+              </div>
+
+              <span
+                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+              >
+                2
+              </span>
+              <div class="free_text gap-16">
+                <h4>Standortbesichtigung</h4>
+
+                <p class="mt-4">
+                  Lorem ipsum blandit blandit odio tellus fringilla eget
+                  elementum sollicitudin tortor est libero nec suspendisse purus
+                  est malesuada quam faucibus.
+                </p>
+              </div>
+            </article>
+            <article class="relative">
+              <div
+                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+              >
+                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+              </div>
+
+              <span
+                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+              >
+                3
+              </span>
+              <div class="free_text gap-16">
+                <h4>Standortbesichtigung</h4>
+
+                <p class="mt-4 text-[18px] leading-[1.6] text-[#666666]">
+                  Lorem ipsum blandit blandit odio tellus fringilla eget
+                  elementum sollicitudin tortor est libero nec suspendisse purus
+                  est malesuada quam faucibus.
+                </p>
+              </div>
+            </article>
+            <article class="relative">
+              <div
+                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+              >
+                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+              </div>
+
+              <span
+                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+              >
+                4
+              </span>
+              <div class="free_text gap-16">
+                <h4>Standortbesichtigung</h4>
+
+                <p class="mt-4 text-[18px] leading-[1.6] text-[#666666]">
+                  Lorem ipsum blandit blandit odio tellus fringilla eget
+                  elementum sollicitudin tortor est libero nec suspendisse purus
+                  est malesuada quam faucibus.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div
+            class="absolute h-[clamp(6.375rem,3.826rem+10.4575vw,16.375rem)] not-xl:top-[16%] xl:bottom-0 right-[4%] md:right-[8%] -z-1"
+          >
+            <img
+              src="assets/icons/Homesvg3.svg"
+              alt=""
+              class="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-6 -->
+      <section>
+        <div
+          class="min-h-600 py-sec bg-cover bg-center relative flex flex-col items-center justify-center gap-40 md:gap-80 text-Invert-subheading"
+          style="background-image: url(&quot;assets/images/BgImg.webp&quot;)"
+        >
+          <div class="free_text text-center relative z-20 container">
+            <h3 class="text-white!">
+              Lassen Sie nicht zu, dass Schädlinge Ihr Grundstück übernehmen.
+            </h3>
+            <p class="max-w-1200 mx-auto">
+              Ganz gleich, ob Sie mit einem akuten Schädlingsbefall zu kämpfen
+              haben oder einen zuverlässigen Partner für die langfristige
+              Schädlingsbekämpfung suchen – unsere zertifizierten Experten
+              stehen Ihnen zur Seite. Kontaktieren Sie Leeser & Will noch heute
+              und erhalten Sie eine professionelle, auf Ihre Bedürfnisse
+              zugeschnittene Beratung.
+            </p>
+          </div>
+          <div
+            class="flex flex-col lg:flex-row gap-24 lg:gap-40 relative z-20 items-center"
+          >
+            <a href="" class="btn btn-secondary"
+              >Sprechen Sie mit einem Experten</a
+            >
+            <a href="" class="btn btn-primary"
+              >Vereinbaren Sie einen Inspektionstermin</a
+            >
+          </div>
+          <div class="overlay-dark"></div>
+        </div>
+      </section>
+
+      <!-- sec-7 -->
+      <section class="py-sec">
+        <div class="container">
+          <div class="component">
+            <div class="flex flex-col xl:flex-row row">
+              <div class="xl:w-[37.5%] col">
+                <div class="flex flex-col xl:flex-col-reverse gap-40 relative">
+                  <div class="free_text">
+                    <h3>Wieso habe ich Bettwanzen?</h3>
+                  </div>
+                  <div class="h-282 border_rounded overflow-hidden">
+                    <img
+                      src="assets/images/Draft71.webp"
+                      alt=""
+                      class="size-full object-center object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div class="free_text">
+                  <p>
+                    Ein Bettwanzenbefall ist kein Anzeichen für mangelnde
+                    Hygiene.
+                  </p>
+                  <p>
+                    Bei Kopfläusen wissen aufgeklärte Mitmenschen bereits, dass
+                    jeder sie bekommen kann.
+                  </p>
+                  <p>
+                    Noch vor einem Jahrzehnt wurde darüber ganz anders gedacht.
+                    Damals herrschte die Meinung vor, dass nur ungepflegte und
+                    unhygienische Menschen von Kopfläusen befallen werden. Hier
+                    hat also ein Prozess des Umdenkens stattgefunden.
+                  </p>
+                  <p>
+                    Dieses Umdenken findet heute auch in anderen Bereichen des
+                    Schädlingsbefalls statt. Der Prozess vollzieht sich langsam.
+                    Aber er ist ins Rollen gekommen.
+                  </p>
+                  <p>
+                    Bei Bettwanzen verhält es sich so, wie bei den Kopfläusen.
+                    Jeder kann sie bekommen
+                  </p>
+                </div>
+              </div>
+              <div class="xl:w-[25%] free_text gap-40 justify-center">
+                <div class="space-y-24">
+                  <p>Aus Sicht der Unternehmen ist es ein</p>
+                  <ul class="space-y-16">
+                    <li class="flex items-center gap-8">
+                      <img
+                        src="assets/icons/Logo-icon.svg"
+                        alt=""
+                        class="w-24 h-24 shrink-0"
+                      />
+                      <span class="line-clamp-1"> Hotelgast </span>
+                    </li>
+                    <li class="flex items-center gap-8">
+                      <img
+                        src="assets/icons/Logo-icon.svg"
+                        alt=""
+                        class="w-24 h-24 shrink-0"
+                      />
+                      <span>Fahrgast</span>
+                    </li>
+                    <li class="flex items-center gap-8">
+                      <img
+                        src="assets/icons/Logo-icon.svg"
+                        alt=""
+                        class="w-24 h-24 shrink-0"
+                      />
+                      <span>Theaterbesucher</span>
+                    </li>
+                  </ul>
+                  <p>der die Bettwanzen einschleppt.</p>
+                </div>
+                <div class="h-464 border_rounded overflow-hidden">
+                  <img
+                    src="assets/images/Draft72.webp"
+                    alt=""
+                    class="size-full object-center object-cover"
+                  />
+                </div>
+                <div class="space-y-24">
+                  <p>Aus Sicht der Unternehmen ist es ein</p>
+                  <ul class="space-y-16">
+                    <li class="flex items-center gap-8">
+                      <img
+                        src="assets/icons/Logo-icon.svg"
+                        alt=""
+                        class="w-24 h-24 shrink-0"
+                      />
+                      <span class="line-clamp-1"> eine Hotelübernachtung </span>
+                    </li>
+                    <li class="flex items-center gap-8">
+                      <img
+                        src="assets/icons/Logo-icon.svg"
+                        alt=""
+                        class="w-24 h-24 shrink-0"
+                      />
+                      <span>eine Taxifahrt</span>
+                    </li>
+                    <li class="flex items-center gap-8">
+                      <img
+                        src="assets/icons/Logo-icon.svg"
+                        alt=""
+                        class="w-24 h-24 shrink-0"
+                      />
+                      <span>ein Theaterbesuch</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="xl:w-[37.5%] free_text gap-40 justify-end">
+                <div class="free_text">
+                  <p>
+                    Sie sehen, wie schnell Sie daheim oder auf Reisen mit
+                    Bettwanzen in Berührung kommen können. Zu vielfältig sind
+                    die Möglichkeiten, sich diese kleinen und unangenehmen
+                    Tierchen vollkommen unverschuldet einzufangen.
+                  </p>
+                  <p>
+                    Selbst beste hygienische Voraussetzungen können nicht
+                    verhindern, dass Wanzen durch Gäste, Patienten oder
+                    Fahrgäste verbreitet und eingeschleppt werden.
+                  </p>
+                  <p>
+                    Sind die Wanzen erst einmal in die eigenen vier Wände oder
+                    beispielsweise auch in ein Hotelzimmer gelangt, suchen sie
+                    sich einen geeigneten Unterschlupf. Ist dieser gefunden,
+                    beginnt das große Krabbeln.
+                  </p>
+                  <p>
+                    Eine sofortige Bettwanzenbekämpfung durch professionelle
+                    Schädlingsbekämpfer ist dringend angeraten.
+                  </p>
+                </div>
+                <div class="h-282 border_rounded overflow-hidden">
+                  <img
+                    src="assets/images/Draft73.webp"
+                    alt=""
+                    class="size-full object-center object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-8 -->
+      <section class="py-sec bg-Backg">
+        <div class="container">
+          <div class="component">
+            <div class="grid grid-cols-1 lg:grid-cols-2 row">
+              <div class="w-full overflow-hidden">
+                <div class="relative mx-auto aspect-[784/825] w-full max-w-784">
+                  <!-- Image 1: Top -->
+                  <div
+                    class="absolute left-[18%] top-0 z-10 w-[50.5%] overflow-hidden border_rounded"
+                  >
+                    <img
+                      src="assets/images/Draft81.webp"
+                      alt="Brown mushrooms growing on a tree"
+                      class="block aspect-[302/401] w-full object-cover"
+                    />
+                  </div>
+
+                  <!-- Image 2: Left -->
+                  <div
+                    class="absolute left-0 top-[45%] z-20 w-[39%] overflow-hidden border_rounded"
+                  >
+                    <img
+                      src="assets/images/Draft82.webp"
+                      alt="Oyster mushrooms growing on a tree trunk"
+                      class="block aspect-[394/528] w-full object-cover"
+                    />
+                  </div>
+
+                  <!-- Image 3: Right foreground -->
+                  <div
+                    class="absolute right-0 bottom-0 z-30 w-[51.5%] overflow-hidden border_rounded"
+                  >
+                    <img
+                      src="assets/images/Draft83.webp"
+                      alt="White mushrooms growing on a tree"
+                      class="block aspect-[401/583] w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              >
+                <h3>
+                  Weshalb Sie bei einem Wanzenbefall schnell handeln sollten!
+                </h3>
+                <div class="free_text gap-24">
+                  <p>
+                    Die meisten Schädlinge haben die unangenehme Eigenschaft,
+                    dass sie sich rasend schnell vermehren. Schon bald kommt es
+                    zu einer Explosion der Population. Scheinbar
+                    „urplötzlich“ treten diese Schädlinge dann an
+                    unterschiedlichen Stellen im Hotelzimmer oder in Ihrer
+                    Wohnung auf.
+                  </p>
+                  <p>
+                    Spätestens jetzt ist sofortiges Handeln gefragt. Unsere
+                    IHK-geprüften Schädlingsbekämpfer ergreifen in akuten
+                    Fällen Sofortmaßnahmen, damit die Bettwanzenbekämpfung
+                    schnell und effektiv erfolgen kann.
+                  </p>
+                  <p>Dabei haben Sie stets die Wahl!</p>
+                  <p>
+                    Sie entscheiden, ob wir die Wanzenbekämpfung diskret und
+                    unauffällig durchführen.
+                  </p>
+
+                  <p>
+                    Oder möchten Sie Ihren Kunden lieber offensiv und
+                    aktiv zeigen, dass sie sich bei Ihnen wohlfühlen können,
+                    weil hohe Hygienestandards in Ihrem Haus praktiziert werden.
+                  </p>
+                  <p>
+                    Wenn Sie die Aufmerksamkeit Ihrer Gäste und Kunden gezielt
+                    auf Ihre Präventionsmaßnahmen und Schädlingsbekämpfung
+                    gelenkt wird, werden Ihre Bemühungen umso positiver
+                    wahrgenommen.
+                  </p>
+                  <p>
+                    Untersuchungen zeigen, dass Kunden, deren Wohlbefinden aktiv
+                    gefördert wird, ein Unternehmen öfter weiterempfehlen und
+                    gerne wiederkommen.
+                  </p>
+                  <a href="" class="btn btn-primary mt-8"
+                    >Senden Sie uns Ihre unverbindliche Anfrage an
+                    buero@leeser-will.de!</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-9 -->
+      <section class="py-sec">
+        <div class="container">
+          <div class="component">
+            <div class="col">
+              <div class="grid grid-cols-1 lg:grid-cols-4 row">
+                <div class="lg:col-span-3">
+                  <div class="col">
+                    <div class="free_text">
+                      <h3>
+                        Diskretion? Wir sind stolz auf unseren Hygienestandard
+                      </h3>
+                    </div>
+                    <div class="free_text">
+                      <p>
+                        Seit jeher kämpft die Schädlingsbekämpfung mit einem
+                        zweifelhaften Image. Zu Unrecht!
+                      </p>
+                      <p>
+                        Denn moderne Schädlingsbekämpfung beginnt schon lange
+                        vor dem Befall. Nämlich bei der Prävention.
+                      </p>
+                      <p>
+                        Deshalb zeichnet es sich seit einiger Zeit ab, dass
+                        immer mehr Unternehmen dazu übergehen, ihre
+                        Schädlingsbekämpfungsmaßnahmen als Teil der
+                        Hygienemaßnahmen zu verstehen.
+                      </p>
+                      <p>
+                        Ganz bewusst zeigen diese Unternehmen ihren Kunden, dass
+                        sie nicht erst dann etwas unternehmen, wenn Schädlinge
+                        sich schon breit gemacht haben.
+                      </p>
+                      <p>
+                        Im Gegenteil: Selbstbewusst zeigen sie ihren Kunden,
+                        dass sie aktiv durch gezielte und professionelle
+                        Präventionsmaßnahmen ganz gezielt gegen die Schädlinge
+                        vorgehen, die in ihrer Branche besonders häufig
+                        vorkommen.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="border_rounded overflow-hidden h-[clamp(22.875rem,22.0784rem+3.268vw,26rem)]"
+                >
+                  <img
+                    src="assets/images/Draft9.webp"
+                    alt=""
+                    class="size-full object-cover object-center"
+                  />
+                </div>
+              </div>
+
+              <div class="free_text">
+                <p>
+                  In anderen Ländern ist es längst üblich, dass Unternehmen die
+                  Schädlingsbekämpfer, durch die sie betreut werden, öffentlich
+                  ausweisen. Vor allem im Gast- und Hotelgewerbe ist es dort
+                  nicht selten ein ausgezeichnetes Qualitätsmerkmal, von
+                  bestimmten Schädlingsbekämpfern betreut zu werden.
+                </p>
+                <p>
+                  Als 4-fach zertifiziertes Unternehmen aus der
+                  Schädlingsbekämpfung stellen wir unseren fortschrittlichen
+                  Kunden gerne das Leeser & Will Hygienezertifikat aus. So
+                  zeigen Sie Ihren Kunden, dass Ihnen neben den Hygienemaßnahmen
+                  auch die Gesundheit Ihrer Kunden sehr am Herzen liegt.
+                </p>
+
+                <p>
+                  Selbstverständlich bezieht sich unser Hygienezertifikat nicht
+                  nur auf unsere Bettwanzenbekämpfung.
+                </p>
+                <p>
+                  Lassen Sie sich von unseren Mitarbeitern kostenlos beraten!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-10 -->
+      <section class="py-sec bg-Backg">
+        <div class="container">
+          <div class="component">
+            <div class="col">
+              <div
+                class="flex items-center justify-center text-center free_text"
+              >
+                <h3>Leeser & Will ist gleich 4-fach zertifiziert.</h3>
+                <p>
+                  Neben unseren Zertifizierungen für ISO 9001, ISO 14001 und DIN
+                  EN 45001 sind wir besonders stolz auf unsere Zertifizierung
+                  DIN EN 16636.
+                </p>
+              </div>
+              <div class="grid xl:grid-cols-11 row">
+                <div class="xl:col-span-5 col">
+                  <div class="free_text">
+                    <p>
+                      Die DIN EN 16636 ist eine Norm für Schädlingsbekämpfer für
+                      die Bereiche Gesundheits- & Vorratsschutz sowie Holz- &
+                      Bautenschutz. Das Besondere an dieser Norm ist, dass in
+                      Deutschland bisher nur wenige
+                      Schädlingsbekämpfungsunternehmen nach dieser Norm
+                      zertifiziert sind. Leeser & Will war einer der ersten
+                      deutschen Schädlingsbekämpfer, die Anforderungen dieser
+                      Norm erfüllte und zertifiziert wurde.
+                    </p>
+                    <p>
+                      Unsere IHK-geprüften Service-Techniker erkennen schnell
+                      die Situation und gehen gezielt und angepasst an die
+                      individuellen Umstände gegen Ihre Schädlinge in
+                      Mönchengladbach vor.
+                    </p>
+                    <p>Gerade bei der Bettwanzenbekämpfung gilt:</p>
+                    <p>Handeln Sie schnell. Jeder Tag zählt!</p>
+                  </div>
+                  <div
+                    class="grid grid-cols-2 sm:grid-cols-4 gap-[clamp(1.5625rem,1.3235rem+0.9804vw,2.5rem)]"
+                  >
+                    <div
+                      class="p-[clamp(0rem,-0.3824rem+1.5686vw,1.5rem)] aspect-square border-1 border-bordercolor border_rounded overflow-hidden"
+                    >
+                      <img
+                        src="assets/icons/Certified1.svg"
+                        alt=""
+                        class="size-full object-fill object-center"
+                      />
+                    </div>
+                    <div
+                      class="p-[clamp(0rem,-0.3824rem+1.5686vw,1.5rem)] aspect-square border-1 border-bordercolor border_rounded overflow-hidden"
+                    >
+                      <img
+                        src="assets/icons/Certified2.svg"
+                        alt=""
+                        class="size-full object-fill object-center"
+                      />
+                    </div>
+                    <div
+                      class="p-[clamp(0rem,-0.3824rem+1.5686vw,1.5rem)] aspect-square border-1 border-bordercolor border_rounded overflow-hidden"
+                    >
+                      <img
+                        src="assets/icons/Certified3.svg"
+                        alt=""
+                        class="size-full object-fill object-center"
+                      />
+                    </div>
+                    <div
+                      class="p-[clamp(0rem,-0.3824rem+1.5686vw,1.5rem)] aspect-square border-1 border-bordercolor border_rounded overflow-hidden"
+                    >
+                      <img
+                        src="assets/icons/Certified4.svg"
+                        alt=""
+                        class="size-full object-fill object-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="xl:col-span-6 h-[clamp(18.75rem,14.6716rem+16.732vw,34.75rem)] border_rounded overflow-hidden"
+                >
+                  <img
+                    src="assets/images/Draft-10.webp"
+                    alt=""
+                    class="size-full object-center object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- sec-11 -->
+      <section class="py-sec">
+        <div class="container">
+          <div class="component">
+            <div class="grid lg:grid-cols-2 row">
+              <div class="col">
+                <div class="free_text">
+                  <h3>Immediate contact for fast help with bed bugs:</h3>
+                </div>
+                <div class="free_text gap-40">
+                  <div class="space-y-8">
+                    <p class="text-black">E-Mail:</p>
+                    <p>buero@leeser-will.de</p>
+                  </div>
+                  <div class="space-y-8">
+                    <p class="text-black">Telefon:</p>
+                    <p>0 21 66 – 67 000 60</p>
+                  </div>
+                  <div class="space-y-8">
+                    <p class="text-black">unsere Zentrale Service-Nummer:</p>
+                    <p>0800 33 04 286</p>
+                  </div>
+                  <div class="space-y-8">
+                    <p class="text-black">Adresse:</p>
+                    <p>
+                      Lorem ipsum pellentesque adipiscing non <br />
+                      eget lectus condimentum nullam morbi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="free_text gap-40">
+                <form
+                  action="https://api.web3forms.com/submit"
+                  method="POST"
+                  id="contactForm"
+                  class="grid grid-cols-1 md:grid-cols-2 gap-x-28 gap-y-28"
+                  novalidate
+                >
+                  <!-- Web3Forms Access Key -->
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="YOUR_WEB3FORMS_ACCESS_KEY"
+                  />
+
+                  <!-- Name -->
+                  <div class="flex flex-col gap-8">
+                    <label for="name" class="text-lg text-black">
+                      Ihr Name <span class="text-red-500">*</span>
+                    </label>
+
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Jon Snow"
+                      autocomplete="name"
+                      required
+                      class="w-full rounded-2xl border border-[#cbd8e8] p-12 text-lg text-gray-700 placeholder:text-gray-600 focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+                    />
+
+                    <span id="name-error" class="hidden text-sm text-red-500">
+                      Bitte geben Sie Ihren Namen ein.
+                    </span>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="flex flex-col gap-8">
+                    <label for="email" class="text-lg text-black">
+                      E-Mail-Adresse
+                    </label>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="johndoe@gmail.com"
+                      autocomplete="email"
+                      class="w-full rounded-2xl border border-[#cbd8e8] p-12 text-lg text-gray-700 placeholder:text-gray-600 focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+                    />
+
+                    <span id="email-error" class="hidden text-sm text-red-500">
+                      Bitte geben Sie eine gültige E-Mail-Adresse ein.
+                    </span>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="md:col-span-2 flex flex-col gap-8">
+                    <label for="message" class="text-lg text-black">
+                      Beschreiben Sie kurz Ihre Anforderungen
+                    </label>
+
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="6"
+                      placeholder="Beschreiben Sie kurz Ihre Anforderungen"
+                      class="w-full resize-y rounded-2xl border border-[#cbd8e8] p-12 text-lg text-gray-700 placeholder:text-gray-600 focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+                    ></textarea>
+
+                    <span
+                      id="message-error"
+                      class="hidden text-sm text-red-500"
+                    >
+                      Bitte beschreiben Sie kurz Ihre Anforderungen.
+                    </span>
+                  </div>
+
+                  <!-- Privacy Consent -->
+                  <div class="md:col-span-2">
+                    <label
+                      class="flex items-center gap-12 cursor-pointer text-lg text-gray-600"
+                    >
+                      <input
+                        type="checkbox"
+                        id="consent"
+                        name="consent"
+                        value="accepted"
+                        required
+                        class="mt-1 size-18 shrink-0 accent-brand-blue"
+                      />
+
+                      <span> Ich stimme der Datenverarbeitung zu. </span>
+                    </label>
+
+                    <span
+                      id="consent-error"
+                      class="mt-8 hidden text-sm text-red-500"
+                    >
+                      Bitte stimmen Sie der Datenverarbeitung zu.
+                    </span>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="md:col-span-2">
+                    <button type="submit" class="btn btn-primary w-full">
+                      Nachricht senden
+                      <span
+                        ><svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19 12H5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M14 17L19 12"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M14 7L19 12"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+
+                    <p
+                      id="form-status"
+                      class="mt-12 text-sm"
+                      aria-live="polite"
+                    ></p>
+                  </div>
+                </form>
+
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="sticky bottom-16 z-40 w-full px-24 my-40 w">
+      <div class="flex justify-center">
+        <div
+          class="p-24 not-sm:w-full flex justify-around gap-20 md:gap-40 bg-Invert rounded-full shadow-lg"
+        >
+          <a href="" class="btn btn-primary"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.8559 13.1444C9.6859 11.9744 8.8039 10.6644 8.2179 9.33536C8.0939 9.05436 8.1669 8.72536 8.3839 8.50836L9.2029 7.69036C9.8739 7.01936 9.8739 6.07036 9.2879 5.48436L8.1139 4.31036C7.3329 3.52936 6.0669 3.52936 5.2859 4.31036L4.6339 4.96236C3.8929 5.70336 3.5839 6.77236 3.7839 7.83236C4.2779 10.4454 5.7959 13.3064 8.2449 15.7554C10.6939 18.2044 13.5549 19.7224 16.1679 20.2164C17.2279 20.4164 18.2969 20.1074 19.0379 19.3664L19.6889 18.7154C20.4699 17.9344 20.4699 16.6684 19.6889 15.8874L18.5159 14.7144C17.9299 14.1284 16.9799 14.1284 16.3949 14.7144L15.4919 15.6184C15.2749 15.8354 14.9459 15.9084 14.6649 15.7844C13.3359 15.1974 12.0259 14.3144 10.8559 13.1444Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg> </span
+          ></a>
+          <a href="" class="btn btn-primary"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="md:hidden"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.99805 16.5022H10.9997"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5025 15.5635L15.6261 17.4399L14.5012 16.314"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <rect
+                  x="2.99634"
+                  y="2.99609"
+                  width="18.0075"
+                  height="18.0075"
+                  rx="3"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15.0014 13.0002H6.99805"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <rect
+                  x="6.99805"
+                  y="6.99805"
+                  width="3.50146"
+                  height="3.00125"
+                  rx="0.5"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg> </span
+          ></a>
+          <a href="" class="btn btn-primary"
+            ><span class="hidden sm:block">Telefon</span>
+            <span class="sm:hidden"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="md:hidden"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.99749 13.8391C7.95466 13.839 7.91358 13.8561 7.88348 13.8866C7.85339 13.9171 7.83679 13.9584 7.83743 14.0012C7.83776 14.0906 7.91013 14.1629 7.9995 14.1633C8.0574 14.1629 8.11071 14.1317 8.13935 14.0814C8.16799 14.031 8.16761 13.9693 8.13835 13.9193C8.10909 13.8693 8.0554 13.8388 7.99749 13.8391"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.99798 8.83717C8.95515 8.83706 8.91407 8.85417 8.88397 8.88464C8.85387 8.91512 8.83728 8.95641 8.83792 8.99923C8.83825 9.0886 8.91061 9.16097 8.99998 9.1613C9.08949 9.16075 9.1616 9.08774 9.16105 8.99823C9.1605 8.90873 9.08749 8.83661 8.99798 8.83717"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.9994 15.8401C12.9566 15.84 12.9155 15.8571 12.8854 15.8876C12.8553 15.918 12.8387 15.9593 12.8394 16.0022C12.8397 16.0915 12.9121 16.1639 13.0014 16.1642C13.091 16.1637 13.1631 16.0907 13.1625 16.0012C13.162 15.9117 13.089 15.8395 12.9994 15.8401"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.9992 11.8381C11.9564 11.838 11.9153 11.8551 11.8852 11.8856C11.8551 11.9161 11.8385 11.9574 11.8391 12.0002C11.8395 12.0896 11.9118 12.1619 12.0012 12.1623C12.0591 12.1619 12.1124 12.1307 12.1411 12.0804C12.1697 12.0301 12.1693 11.9683 12.1401 11.9183C12.1108 11.8683 12.0571 11.8378 11.9992 11.8381"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.0001 2.99609C12.0001 7.96873 16.0312 11.9998 21.0038 11.9998C21.0038 16.9725 16.9727 21.0036 12.0001 21.0036C7.02745 21.0036 2.99634 16.9725 2.99634 11.9998C2.99634 7.02721 7.02745 2.99609 12.0001 2.99609Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg> </span
+          ></a>
+        </div>
+      </div>
+    </div>
+    <footer class="p-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]">
+      <div
+        class="bg-primary text-Invert-subheading p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] border_rounded"
+      >
+        <div class="flex flex-col gap-30 md:gap-40 container px-0">
+          <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-x-24 xl:gap-x-40">
+            <div
+              class="md:col-span-2 xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-orange not-lg:pb-24 md:pr-40"
+            >
+              <a class="p-24 bg-white border_rounded md:not-xl:w-1/2">
+                <img src="assets/icons/HeadLogo.svg" alt="" class="w-full" />
+              </a>
+              <p>
+                Die Dienstleistungen von Insectra sind darauf ausgerichtet,
+                qualitativ hochwertige, individuelle und einfühlsame Betreuung
+                zu bieten.
+              </p>
+              <a href="" class="btn btn-primary bg-orange!"
+                >Termin vereinbaren</a
+              >
+            </div>
+            <div
+              class="py-24 not-md:border-b md:border-r border-orange flex flex-col gap-40 font-medium"
+            >
+              <span class="text-28 text-Invert">Company</span>
+              <ul class="ps-16 space-y-8">
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+              </ul>
+            </div>
+            <div
+              class="py-20 not-md:border-b xl:border-r border-orange flex flex-col gap-40 font-medium"
+            >
+              <span class="text-28 text-Invert">Services</span>
+              <ul class="ps-16 space-y-8">
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+                <li><a href="">Page Link</a></li>
+              </ul>
+            </div>
+            <div class="py-24 flex flex-col gap-40 free_text">
+              <div class="flex flex-col gap-40">
+                <span class="text-28 font-medium text-Invert">Address</span>
+                <p>
+                  Lorem ipsum gravida massa nunc accumsan gravida gravida sapien
+                  in eu nec
+                </p>
+              </div>
+              <div class="flex flex-col gap-40">
+                <span class="text-28 font-medium text-Invert"
+                  >Phone & Email</span
+                >
+                <div class="space-y-4">
+                  <p class="flex gap-8">
+                    <span
+                      ><svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M10.8559 13.1444C9.6859 11.9744 8.8039 10.6644 8.2179 9.33536C8.0939 9.05436 8.1669 8.72536 8.3839 8.50836L9.2029 7.69036C9.8739 7.01936 9.8739 6.07036 9.2879 5.48436L8.1139 4.31036C7.3329 3.52936 6.0669 3.52936 5.2859 4.31036L4.6339 4.96236C3.8929 5.70336 3.5839 6.77236 3.7839 7.83236C4.2779 10.4454 5.7959 13.3064 8.2449 15.7554C10.6939 18.2044 13.5549 19.7224 16.1679 20.2164C17.2279 20.4164 18.2969 20.1074 19.0379 19.3664L19.6889 18.7154C20.4699 17.9344 20.4699 16.6684 19.6889 15.8874L18.5159 14.7144C17.9299 14.1284 16.9799 14.1284 16.3949 14.7144L15.4919 15.6184C15.2749 15.8354 14.9459 15.9084 14.6649 15.7844C13.3359 15.1974 12.0259 14.3144 10.8559 13.1444Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg> </span
+                    >+00 1234567890
+                  </p>
+                  <p class="flex gap-8">
+                    <span
+                      ><svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M3 6.8V6.8C3 7.4 3.3 7.9 3.8 8.3L9.8 12.4C11.2 13.3 12.9 13.3 14.3 12.4L20.3 8.4C20.7 7.9 21 7.4 21 6.8V6.8C21 5.8 20.2 5 19.2 5H4.8C3.8 5 3 5.8 3 6.8Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M3 7V17C3 18.1 3.9 19 5 19H19C20.1 19 21 18.1 21 17V7"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M3.58789 18.4124L9.68189 12.3184"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M14.3601 12.3604L20.4121 18.4124"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg> </span
+                    >company@abc.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col xl:flex-row gap-30 md:gap-40">
+            <div
+              class="xl:w-3/4 border_rounded not-xl:h-180 border_rounded relative object-cover object-center overflow-hidden"
+            >
+              <img
+                src="assets/images/Map.webp"
+                alt=""
+                class="absolute inset-0 h-full w-full"
+              />
+            </div>
+            <div
+              class="xl:w-1/4 border_rounded grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-2 gap-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]"
+            >
+              <div
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
+              >
+                <img
+                  src="assets/icons/Certified1.svg"
+                  alt=""
+                  class="w-fit h-fit object-contain"
+                />
+              </div>
+              <div
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
+              >
+                <img
+                  src="assets/icons/Certified2.svg"
+                  alt=""
+                  class="w-fit h-fit object-contain"
+                />
+              </div>
+              <div
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
+              >
+                <img
+                  src="assets/icons/Certified3.svg"
+                  alt=""
+                  class="w-fit h-fit object-contain"
+                />
+              </div>
+              <div
+                class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
+              >
+                <img
+                  src="assets/icons/Certified4.svg"
+                  alt=""
+                  class="w-fit h-fit object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex not-lg:flex-col-reverse flex-wrap gap-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)] justify-between w-full border-t border-orange pt-24"
+          >
+            <p>© Copyright 2026 by Leeser und Will</p>
+            <ul
+              class="flex flex-wrap gap-y-8 gap-x-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]"
+            >
+              <a href="">Impressum</a>
+              <a href="">AGB</a>
+              <a href="">Datenschutz</a>
+              <a href="">Cookie-Richtlinie (EU)</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

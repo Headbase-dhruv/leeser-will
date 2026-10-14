@@ -310,10 +310,10 @@
   transition: all 0.3s ease;
 }
 @utility btn {
-  @apply py-12 px-20 xsm:px-24 rounded-full font-medium flex gap-8 items-center w-fit text-16;
+  @apply py-12 px-20 xsm:px-24 rounded-full font-medium flex gap-8 items-center w-fit text-16 text-center justify-center ;
 }
 @utility btn-primary {
-  @apply bg-primary text-white hover:bg-orange transition-slow;
+  @apply bg-primary text-white hover:bg-orange transition-slow ;
 }
 @utility btn-secondary {
   @apply text-white hover:text-primary border border-white hover:bg-white transition-slow;

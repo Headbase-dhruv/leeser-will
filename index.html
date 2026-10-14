@@ -249,6 +249,8 @@
               alt=""
               class="absolute inset-0 size-full object-cover"
             />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/30  to-transparent"></div>
+
 
             <div class="relative z-10 free_text max-w-700 gap-18 lg:gap-24">
               <h2 class="text-white!">
@@ -488,27 +490,9 @@
                   </div>
                 </div>
               </div>
-              <div class="relative">
-                <img
-                  src="assets/icons/Home_about.svg"
-                  alt=""
-                  class="block w-full h-full"
-                />
+              <div class="h-[clamp(17.5rem,10.8088rem+27.451vw,43.75rem)] border_rounded overflow-hidden">
+                <img src="assets/images/about.webp" alt="" class="size-full object-cover object-center">
 
-                <img
-                  src="assets/images/about.webp"
-                  alt=""
-                  class="absolute inset-0 w-full h-full object-cover"
-                  style="
-                    mask-image: url(&quot;assets/icons/Home_about.svg&quot;);
-                    mask-size: 100% 100%;
-                    mask-repeat: no-repeat;
-
-                    -webkit-mask-image: url(&quot;assets/icons/Home_about.svg&quot;);
-                    -webkit-mask-size: 100% 100%;
-                    -webkit-mask-repeat: no-repeat;
-                  "
-                />
               </div>
             </div>
           </div>
@@ -2524,10 +2508,10 @@
           <div
             class="flex flex-col lg:flex-row gap-24 lg:gap-40 relative z-20 items-center"
           >
-            <a href="" class="btn btn-secondary"
+            <a href="" class="btn btn-secondary not-sm:w-full"
               >Sprechen Sie mit einem Experten</a
             >
-            <a href="" class="btn btn-primary"
+            <a href="" class="btn btn-primary not-sm:w-full"
               >Vereinbaren Sie einen Inspektionstermin</a
             >
           </div>
