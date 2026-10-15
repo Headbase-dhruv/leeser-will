@@ -1647,6 +1647,10 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
+  .rounded-t-2xl {
+    border-top-left-radius: var(--radius-2xl);
+    border-top-right-radius: var(--radius-2xl);
+  }
   .rounded-r-full {
     border-top-right-radius: calc(infinity * 1px);
     border-bottom-right-radius: calc(infinity * 1px);
@@ -1683,6 +1687,10 @@
   .border-\[1\.5px\] {
     border-style: var(--tw-border-style);
     border-width: 1.5px;
+  }
+  .border-x {
+    border-inline-style: var(--tw-border-style);
+    border-inline-width: 1px;
   }
   .border-t {
     border-top-style: var(--tw-border-style);
@@ -2440,8 +2448,14 @@
     .sm\:col-span-2 {
       grid-column: span 2 / span 2;
     }
+    .sm\:col-span-4 {
+      grid-column: span 4 / span 4;
+    }
     .sm\:block {
       display: block;
+    }
+    .sm\:grid {
+      display: grid;
     }
     .sm\:hidden {
       display: none;
@@ -2593,6 +2607,9 @@
     }
     .md\:mt-60 {
       margin-top: calc(var(--spacing) * 60);
+    }
+    .md\:grid {
+      display: grid;
     }
     .md\:hidden {
       display: none;

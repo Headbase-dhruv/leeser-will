@@ -41,68 +41,69 @@
 
           <!-- Desktop Navigation -->
           <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
-            <div
-              x-data="{ open: false }"
-              @mouseenter="open = true"
-              @mouseleave="open = false"
-              class="relative"
-            >
-              <a href="#" class="flex items-center gap-4">
-                Schädlingsbekämpfung
-
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="shrink-0 transition duration-300"
-                  :class="{ 'rotate-180': open }"
-                >
-                  <path
-                    d="M8 10L12 14L16 10"
-                    stroke="#111"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-
-              <!-- Dropdown -->
-              <div
-                x-show="open"
-                x-transition
-                class="absolute top-full left-0 pt-12 min-w-[220px]"
-                x-cloak
+            <ul class="flex items-center gap-24 2xl:gap-40">
+              <!-- Schädlingsbekämpfung Dropdown -->
+              <li
+                x-data="{ open: false }"
+                @mouseenter="open = true"
+                @mouseleave="open = false"
+                class="relative"
               >
-                <div
-                  class="bg-white rounded-2xl overflow-hidden shadow-lg border border-black/10"
+                
+
+                <!-- Dropdown -->
+                <ul
+                  x-show="open"
+                  x-transition
+                  x-cloak
+                  class="absolute top-full left-0 pt-12 min-w-[220px]"
                 >
-                  <a
-                    href="private_customers.html"
-                    class="block px-16 py-12 hover:bg-Backg"
+                  <li
+                    class="bg-white rounded-t-2xl overflow-hidden shadow-lg border border-black/10"
                   >
-                    Privatkunden
-                  </a>
+                    <a
+                      href="private_customers.html"
+                      class="block px-16 py-12 hover:bg-Backg"
+                    >
+                      Privatkunden
+                    </a>
+                  </li>
 
-                  <a
-                    href="forBusinesses.html"
-                    class="block px-16 py-12 hover:bg-Backg"
+                  <li
+                    class="bg-white overflow-hidden shadow-lg border-x border-black/10"
                   >
-                    Geschäftskunden
-                  </a>
-                </div>
-              </div>
-            </div>
+                    <a
+                      href="forBusinesses.html"
+                      class="block px-16 py-12 hover:bg-Backg"
+                    >
+                      Geschäftskunden
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-            <a href="service.html" class="active:text-orange">Service</a>
-            <a href="Prevention.html">Prävention</a>
-            <a href="über_uns.html">Über uns</a>
-            <a href="kontakt.html">Kontakt</a>
-            <a href="karriere.html">Karriere</a>
+              <!-- Main Navigation -->
+              <li>
+                <a href="service.html" class="active:text-orange">Service</a>
+              </li>
+
+              <li>
+                <a href="Prevention.html">Prävention</a>
+              </li>
+
+              <li>
+                <a href="über_uns.html">Über uns</a>
+              </li>
+
+              <li>
+                <a href="kontakt.html">Kontakt</a>
+              </li>
+
+              <li>
+                <a href="karriere.html">Karriere</a>
+              </li>
+            </ul>
           </nav>
-
           <!-- Right Side -->
           <div class="flex items-center gap-12">
             <!-- Desktop Button -->
@@ -2669,7 +2670,9 @@
         class="bg-primary text-Invert-subheading p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] border_rounded"
       >
         <div class="flex flex-col gap-30 md:gap-40 container px-0">
-          <div class="grid md:grid-cols-4 xl:grid-cols-4 gap-x-24 md:gap-x-40">
+          <div
+            class="md:grid md:grid-cols-4 xl:grid-cols-4 gap-x-24 md:gap-x-40"
+          >
             <div
               class="md:col-span-4 xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-orange not-lg:pb-24 md:pr-40"
             >
@@ -2801,7 +2804,7 @@
               />
             </div>
             <div
-              class=" border_rounded grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]"
+              class="border_rounded grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-[clamp(1rem,0.6176rem+1.5686vw,2.5rem)]"
             >
               <div
                 class="relative aspect-square border_rounded overflow-hidden bg-white flex items-center justify-center"
