@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const lenis = new Lenis({
     autoRaf: true,
-    duration: 5,
+    duration: 2,
     smoothWheel: true,
     wheelMultiplier: 0.8,
     touchMultiplier: 1.2,
