@@ -327,6 +327,9 @@
   .top-23 {
     top: calc(var(--spacing) * 23);
   }
+  .top-60 {
+    top: calc(var(--spacing) * 60);
+  }
   .top-75 {
     top: calc(var(--spacing) * 75);
   }
@@ -335,6 +338,9 @@
   }
   .top-90 {
     top: calc(var(--spacing) * 90);
+  }
+  .top-200 {
+    top: calc(var(--spacing) * 200);
   }
   .top-\[\%\] {
     top: %;
@@ -1171,6 +1177,12 @@
   }
   .aspect-\[1340\] {
     aspect-ratio: 1340;
+  }
+  .aspect-\[1920\/0\] {
+    aspect-ratio: 1920/0;
+  }
+  .aspect-\[1920\/80\] {
+    aspect-ratio: 1920/80;
   }
   .aspect-\[1920\/800\] {
     aspect-ratio: 1920/800;
