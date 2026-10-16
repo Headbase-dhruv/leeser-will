@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <title>404 Page Not Found</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <script defer src="assets/js/alpine.js"></script>
+    <script defer src="assets/js/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.css"
+    />
+    <title>Document 1</title>
+  </head>
+  <body>
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+      <div class="container">
+        <div class="flex items-center justify-between py-16 lg:py-24">
+          <!-- Logo -->
+          <a href="/" aria-label="TENSORIS" class="shrink-0">
+            <img
+              src="assets/icons/HeadLogo.svg"
+              alt="TENSORIS"
+              class="h-35 md:h-48 lg:h-auto w-auto"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
+            <ul class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
+              <!-- Schädlingsbekämpfung Dropdown -->
+              <li
+                x-data="{ open: false }"
+                @mouseenter="open = true"
+                @mouseleave="open = false"
+                class="relative"
+              >
+                <a href="#" class="flex items-center gap-4">
+                  Schädlingsbekämpfung
+
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="shrink-0 transition duration-300"
+                    :class="{ 'rotate-180': open }"
+                  >
+                    <path
+                      d="M8 10L12 14L16 10"
+                      stroke="#111"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+
+                <!-- Dropdown -->
+                <div
+                  x-show="open"
+                  x-transition
+                  class="absolute top-full left-0 pt-12 min-w-[220px]"
+                  x-cloak
+                >
+                  <ul
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg border border-black/10"
+                  >
+                    <li>
+                      <a
+                        href="private_customers.html"
+                        class="block px-16 py-12 hover:bg-Backg"
+                      >
+                        Privatkunden
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        href="forBusinesses.html"
+                        class="block px-16 py-12 hover:bg-Backg"
+                      >
+                        Geschäftskunden
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="service.html" class="active:text-orange">Service</a>
+              </li>
+
+              <li>
+                <a href="Prevention.html">Prävention</a>
+              </li>
+
+              <li>
+                <a href="über_uns.html">Über uns</a>
+              </li>
+
+              <li>
+                <a href="kontakt.html">Kontakt</a>
+              </li>
+
+              <li>
+                <a href="karriere.html">Karriere</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- Right Side -->
+          <div class="flex items-center gap-12">
+            <!-- Desktop Button -->
+            <a href="Draft.html" class="hidden sm:inline-flex btn btn-primary">
+              Kunden-Login
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button
+              type="button"
+              @click="mobileMenu = true"
+              class="xl:hidden flex items-center justify-center size-24"
+              aria-label="Open Menu"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2 5.36667C2 5.0042 2.14399 4.65659 2.40029 4.40029C2.65659 4.14399 3.0042 4 3.36667 4H19.7667C20.1291 4 20.4767 4.14399 20.733 4.40029C20.9893 4.65659 21.1333 5.0042 21.1333 5.36667C21.1333 5.72913 20.9893 6.07675 20.733 6.33305C20.4767 6.58935 20.1291 6.73333 19.7667 6.73333H3.36667C3.0042 6.73333 2.65659 6.58935 2.40029 6.33305C2.14399 6.07675 2 5.72913 2 5.36667ZM2 12.2C2 11.8375 2.14399 11.4899 2.40029 11.2336C2.65659 10.9773 3.0042 10.8333 3.36667 10.8333H11.5667C11.9291 10.8333 12.2767 10.9773 12.533 11.2336C12.7893 11.4899 12.9333 11.8375 12.9333 12.2C12.9333 12.5625 12.7893 12.9101 12.533 13.1664C12.2767 13.4227 11.9291 13.5667 11.5667 13.5667H3.36667C3.0042 13.5667 2.65659 13.4227 2.40029 13.1664C2.14399 12.9101 2 12.5625 2 12.2ZM2 19.0333C2 18.6709 2.14399 18.3233 2.40029 18.067C2.65659 17.8107 3.0042 17.6667 3.36667 17.6667H19.7667C20.1291 17.6667 20.4767 17.8107 20.733 18.067C20.9893 18.3233 21.1333 18.6709 21.1333 19.0333C21.1333 19.3958 20.9893 19.7434 20.733 19.9997C20.4767 20.256 20.1291 20.4 19.7667 20.4H3.36667C3.0042 20.4 2.65659 20.256 2.40029 19.9997C2.14399 19.7434 2 19.3958 2 19.0333Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Overlay -->
+      <div
+        x-show="mobileMenu"
+        x-transition.opacity
+        @click="mobileMenu = false"
+        class="fixed inset-0 bg-black/50 z-50 xl:hidden"
+      ></div>
+
+      <!-- Mobile Menu -->
+      <div
+        x-show="mobileMenu"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[65%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 sm:p-24 relative"
+      >
+        <!-- Header -->
+        <div class="flex items-center justify-between py-16">
+          <div class="free_text">
+            <h3>Speisekarte</h3>
+          </div>
+
+          <button
+            @click="mobileMenu = false"
+            class="size-40 flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex flex-col gap-24 mt-40 relative z-10">
+          <div x-data="{ open: false }" class="xl:hidden">
+            <button
+              type="button"
+              @click="open = !open"
+              :class="{ 'text-orange': open }"
+              class="flex w-full items-center gap-8 text-left"
+            >
+              <span>Schädlingsbekämpfung</span>
+
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="shrink-0 transition-transform duration-300"
+                :class="{ 'rotate-180 text-orange': open }"
+              >
+                <path
+                  d="M8 10L12 14L16 10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div
+              x-ref="content"
+              x-init="$el.style.height = '0px'"
+              x-effect="$el.style.height = open ? $refs.content.scrollHeight + 'px' : '0px'"
+              class="overflow-hidden transition-all duration-300"
+            >
+              <div class="pl-16 pt-16 flex flex-col gap-16">
+                <a href="private_customers.html">Privatkunden</a>
+                <a href="forBusinesses.html">Geschäftskunden</a>
+              </div>
+            </div>
+          </div>
+          <a href="service.html">Service</a>
+          <a href="Prevention.html">Prävention</a>
+          <a href="über_uns.html">Über uns</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="karriere.html">Karriere</a>
+
+          <a href="#" class="btn btn-primary justify-center"> Kunden-Login </a>
+        </nav>
+        <img
+          src="assets/icons/HamburgerIcon.svg"
+          alt=""
+          class="absolute right-0 top-[22%]"
+        />
+        <img
+          src="assets/icons/HamburgerIcon2.svg"
+          alt=""
+          class="absolute left-0 bottom-0 z-0"
+        />
+      </div>
+    </header>
+    <main>
+      <section class="ctm_sec">
+        <div
+          class="container h-screen flex flex-col items-center justify-center text-center gap-40 relative z-10"
+        >
+          <div class="free_text gap-16!">
+            <span class="text-orange max-w-1200"
+              >404 · Seite Nicht Gefunden</span
+            >
+            <h3>Hier sind wir leider nicht zu finden.</h3>
+            <p class="max-w-1200">
+              Die gesuchte Seite ist möglicherweise umgezogen, nicht mehr
+              verfügbar oder die Adresse wurde falsch eingegeben. Wir helfen
+              Ihnen gerne, den richtigen Weg zu finden.
+            </p>
+          </div>
+          <a href="" class="btn btn-primary"
+            >Zur Startseite
+            <span
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12H5"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14 17L19 12"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14 7L19 12"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg> </span
+          ></a>
+        </div>
+        <img
+          src="assets/images/404BG.webp"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover object-center opacity-17"
+        />
+        
+      </section>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <script src="js/lenis.js"></script>
+  </body>
+</html>

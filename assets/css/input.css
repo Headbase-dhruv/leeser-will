@@ -34,13 +34,13 @@
     ======================================== */
 
   --breakpoint-xsm: 450px;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --breakpoint-2xl: 1400px;
-    --breakpoint-3xl: 1620px;
-    --breakpoint-4xl: 1920px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+  --breakpoint-3xl: 1620px;
+  --breakpoint-4xl: 1920px;
 
   /* ========================================
        CUSTOM container
@@ -175,18 +175,17 @@
   --text-32: clamp(1.75rem, 1.6863rem + 0.2614vw, 2rem);
   --text-32--font-weight: 600;
   --text-h4--line-height: 1.3;
-  
+
   --text-16: 16px;
   --text-28: 28px;
-
 }
 
 @layer base {
   * {
-    @apply scrollbar-thin ;
+    @apply scrollbar-thin;
   }
   html {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
   body {
     @apply font-Manrope text-body text-txt-body font-medium;
@@ -227,7 +226,7 @@
   }
 
   .free_text {
-    @apply flex flex-col gap-16;
+    @apply flex flex-col gap-24;
   }
   .free_text h1 {
     @apply text-h1 text-heading;
@@ -241,6 +240,12 @@
   .free_text h4 {
     @apply text-h4 text-heading;
   }
+  .free_text a {
+    @apply underline duration-300 transition-all;
+  }
+  .free_text ul {
+    @apply list-disc pl-34 space-y-8;
+  }
   .heading_h1 {
     @apply text-h1;
   }
@@ -253,12 +258,18 @@
   .heading_h4 {
     @apply text-h4;
   }
+  .paragraph {
+    @apply flex flex-col gap-18;
+  }
+  .paragraph a:not(.btn) {
+    @apply underline;
+  }
   ul a {
     @apply hover:underline;
   }
   nav ul a {
-  @apply hover:no-underline;
-}
+    @apply hover:no-underline;
+  }
 
   .ctm_sec {
     @apply relative z-1 overflow-hidden;
@@ -280,11 +291,19 @@
   }
   .clip-image {
     clip-path: polygon(30% 0%, 70% 0%, 100% 18%, 100% 100%, 0% 100%, 0% 18%);
-
-   
   }
   [x-cloak] {
     display: none !important;
+  }
+  .demo_page {
+  }
+
+  .demo_page.col {
+    @apply flex flex-col gap-40;
+  }
+
+  .demo_page .free_text {
+    @apply flex flex-col gap-24;
   }
 }
 
@@ -292,10 +311,10 @@
   transition: all 0.3s ease;
 }
 @utility btn {
-  @apply py-12 px-20 xsm:px-24 rounded-full font-medium flex gap-8 items-center w-fit text-16 text-center justify-center ;
+  @apply py-12 px-20 xsm:px-24 rounded-full font-medium flex gap-8 items-center w-fit text-16 text-center justify-center;
 }
 @utility btn-primary {
-  @apply bg-primary text-white hover:bg-orange transition-slow ;
+  @apply bg-primary text-white hover:bg-orange transition-slow;
 }
 @utility btn-secondary {
   @apply text-white hover:text-primary border border-white hover:bg-white transition-slow;
@@ -322,7 +341,6 @@
     transform: translateY(-50%);
   }
 }
-
 
 /* Philosophy cards */
 .philosophie-card {
@@ -389,7 +407,9 @@
   border-radius: 9999px;
   background: #cbd5ff;
   cursor: pointer;
-  transition: width 0.3s ease, background-color 0.3s ease;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .philosophie-bullet-active {
@@ -408,7 +428,6 @@
     min-height: 155px;
   }
 }
-
 
 .philosophie-mobile .philosophieSwiper {
   width: 100%;
