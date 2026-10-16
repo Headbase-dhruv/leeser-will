@@ -41,7 +41,7 @@
 
           <!-- Desktop Navigation -->
           <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
-            <ul class="flex items-center gap-24 2xl:gap-40">
+            <ul class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
               <!-- Schädlingsbekämpfung Dropdown -->
               <li
                 x-data="{ open: false }"
@@ -49,40 +49,59 @@
                 @mouseleave="open = false"
                 class="relative"
               >
-                
+                <a href="#" class="flex items-center gap-4">
+                  Schädlingsbekämpfung
+
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="shrink-0 transition duration-300"
+                    :class="{ 'rotate-180': open }"
+                  >
+                    <path
+                      d="M8 10L12 14L16 10"
+                      stroke="#111"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
 
                 <!-- Dropdown -->
-                <ul
+                <div
                   x-show="open"
                   x-transition
-                  x-cloak
                   class="absolute top-full left-0 pt-12 min-w-[220px]"
+                  x-cloak
                 >
-                  <li
-                    class="bg-white rounded-t-2xl overflow-hidden shadow-lg border border-black/10"
+                  <ul
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg border border-black/10"
                   >
-                    <a
-                      href="private_customers.html"
-                      class="block px-16 py-12 hover:bg-Backg"
-                    >
-                      Privatkunden
-                    </a>
-                  </li>
+                    <li>
+                      <a
+                        href="private_customers.html"
+                        class="block px-16 py-12 hover:bg-Backg"
+                      >
+                        Privatkunden
+                      </a>
+                    </li>
 
-                  <li
-                    class="bg-white overflow-hidden shadow-lg border-x border-black/10"
-                  >
-                    <a
-                      href="forBusinesses.html"
-                      class="block px-16 py-12 hover:bg-Backg"
-                    >
-                      Geschäftskunden
-                    </a>
-                  </li>
-                </ul>
+                    <li>
+                      <a
+                        href="forBusinesses.html"
+                        class="block px-16 py-12 hover:bg-Backg"
+                      >
+                        Geschäftskunden
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </li>
 
-              <!-- Main Navigation -->
               <li>
                 <a href="service.html" class="active:text-orange">Service</a>
               </li>
@@ -1047,7 +1066,7 @@
             <span class="badge">Interaktiver Immobilienratgeber</span>
             <div class="free_text max-w-800">
               <h3>Schützen Sie jeden Bereich Ihres Grundstücks.</h3>
-              <p class="not-md:hidden max-w-520">
+              <p class="not-md:hidden max-w-500">
                 Verschiedene Bereiche ziehen unterschiedliche Schädlinge an.
                 Klicken Sie auf einen beliebigen Bereich des Grundstücks, um
                 mehr über häufige Risiken und unsere professionellen Lösungen zu
@@ -1056,13 +1075,18 @@
             </div>
             <div class="not-xl:relative">
               <div
-                class="xl:absolute top-1/2 xl:-translate-y-1/2 right-20 h-fit w-fit"
+                class="xl:absolute top-1/2 top xl:translate-y-[-50%]   right-20 h-fit w-fit"
               >
                 <img
                   src="assets/images/HomeLayout.png"
                   alt=""
-                  class="size-fit xl:relative xl:w-[clamp(37.5rem,-38.0208rem+100.6944vw,82.8125rem)]"
+                  class="size-fit xl:relative xl:max-w-680 2xl:max-w-850 3xl:max-w-1060 4xl:max-w-none"
                 />
+                <!-- <img
+                  src="assets/images/HomeLayout.png"
+                  alt=""
+                  class="size-fit xl:relative xl:w-[clamp(37.5rem,-38.0208rem+100.6944vw,82.8125rem)]"
+                /> -->
                 <button
                   @click="active='Dach'"
                   aria-label="Dach"
@@ -1230,7 +1254,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 3xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Garten</span
                     >
@@ -1252,7 +1276,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 3xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Garten</span
                     >
@@ -1398,162 +1422,167 @@
       </section>
 
       <section class="my-sec ctm_sec">
-        <div class="container">
+        <div class="container ">
           <div class="flex flex-col gap-40 mt-30 xl:absolute relative z-10">
             <div class="free_text">
               <span class="badge">So funktioniert es</span>
-              <h3 class="max-w-500!">
-                Unser konzipiertes Schritt-für-Schritt-Verfahren zur
-                Insektenbekämpfung
+              <h3 class="max-w-500! xl:not-4xl:text-4xl!">
+                Unser konzipiertes Schritt-für-Schritt-Verfahren zur Insektenbekämpfung
               </h3>
             </div>
             <a href="" class="btn btn-primary">Loslegen</a>
           </div>
-          <!-- desktop view -->
-          <div class="relative min-h-800 not-xl:hidden w-full">
-            <!-- Timeline SVG -->
-            <svg
-              width="1340"
-              height="556"
-              viewBox="0 0 1340 556"
-              fill="none"
-              class="absolute top-80"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g filter="url(#filter0_d_2015_5446)">
-                <path
-                  d="M50.0791 479.358C144.579 474.358 178.646 492.818 280.079 412.358C413.079 306.858 511.579 331.358 691.579 287.358C922.858 230.823 937.579 -15.7195 1289.08 32.7804"
-                  stroke="#FF6000"
-                  stroke-width="3"
-                />
-              </g>
-              <defs>
-                <filter
-                  id="filter0_d_2015_5446"
-                  x="0"
-                  y="0"
-                  width="1339.28"
-                  height="555.856"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dy="25" />
-                  <feGaussianBlur stdDeviation="25" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_2015_5446"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_2015_5446"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
+         
+ <!-- desktop view -->
+<div
+  class="@container relative w-full aspect-[1920/900] overflow-clip max-[1199px]:hidden"
+  style="--stage-w: 1920px;"
+>
+  <!-- Fixed 1920×800 design stage, uniformly scaled to the wrapper width -->
+  <div
+    class="absolute left-0 top-0 h-[900px] w-[1920px] origin-top-left "
+    style="transform: scale(tan(atan2(100cqw, var(--stage-w))));"
+  >
+    <!-- Timeline SVG: moved to left 190px / top 80px so the path starts at the 1st icon and ends behind the 4th -->
+    <svg
+      width="1340"
+      height="556"
+      viewBox="0 0 1340 556"
+      fill="none"
+      class="absolute left-50 top-80"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter="url(#filter0_d_2015_5446)">
+        <path
+          d="M50.0791 479.358C144.579 474.358 178.646 492.818 280.079 412.358C413.079 306.858 511.579 331.358 691.579 287.358C922.858 230.823 937.579 -15.7195 1289.08 32.7804"
+          stroke="#FF6000"
+          stroke-width="3"
+        />
+      </g>
+      <defs>
+        <filter
+          id="filter0_d_2015_5446"
+          x="0"
+          y="0"
+          width="1339.28"
+          height="555.856"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy="25" />
+          <feGaussianBlur stdDeviation="25" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_2015_5446"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_2015_5446"
+            result="shape"
+          />
+        </filter>
+      </defs>
+    </svg>
 
-            <article class="absolute left-[1%] bottom-[0.5%] z-20 w-330">
-              <div
-                class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
-              >
-                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
-              </div>
+    <!-- Step 1 -->
+    <article class="absolute left-50 top-[514px] z-20 w-350">
+      <div
+        class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+      >
+        <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+      </div>
 
-              <span
-                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
-              >
-                1
-              </span>
-              <div class="free_text gap-16">
-                <h4>Standortbesichtigung</h4>
+      <span class="absolute right-85 top-23 z-[-1] ">
+        <img src="assets/icons/1.svg" alt="">
+      </span>
+      <img src="" alt="">
+      <div class="free_text gap-16">
+        <h4>Standortbesichtigung</h4>
+        <p class="mt-4">
+          Lorem ipsum blandit blandit odio tellus fringilla eget
+          elementum sollicitudin tortor est libero nec suspendisse purus
+          est malesuada quam faucibus.
+        </p>
+      </div>
+    </article>
 
-                <p class="mt-4">
-                  Lorem ipsum blandit blandit odio tellus fringilla eget
-                  elementum sollicitudin tortor est libero nec suspendisse purus
-                  est malesuada quam faucibus.
-                </p>
-              </div>
-            </article>
-            <article class="absolute left-[28%] bottom-[20%] z-20 w-330">
-              <div
-                class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
-              >
-                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
-              </div>
+    <!-- Step 2 -->
+    <article class="absolute left-[490px] top-[362px] z-20 w-330">
+      <div
+        class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+      >
+        <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+      </div>
 
-              <span
-                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
-              >
-                2
-              </span>
-              <div class="free_text gap-16">
-                <h4>Standortbesichtigung</h4>
+      <span class="absolute right-85 top-23 z-[-1] ">
+        <img src="assets/icons/2.svg" alt="">
+      </span>
+      <div class="free_text gap-16">
+        <h4>Standortbesichtigung</h4>
+        <p class="mt-4">
+          Lorem ipsum blandit blandit odio tellus fringilla eget
+          elementum sollicitudin tortor est libero nec suspendisse purus
+          est malesuada quam faucibus.
+        </p>
+      </div>
+    </article>
 
-                <p class="mt-4">
-                  Lorem ipsum blandit blandit odio tellus fringilla eget
-                  elementum sollicitudin tortor est libero nec suspendisse purus
-                  est malesuada quam faucibus.
-                </p>
-              </div>
-            </article>
-            <article class="absolute left-[53%] bottom-[46%] z-20 w-330">
-              <div
-                class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
-              >
-                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
-              </div>
+    <!-- Step 3 -->
+    <article class="absolute left-[910px] top-[189px] z-20 w-330">
+      <div
+        class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+      >
+        <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+      </div>
 
-              <span
-                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
-              >
-                3
-              </span>
-              <div class="free_text gap-16">
-                <h4>Standortbesichtigung</h4>
+      <span class="absolute right-85 top-23 z-[-1] ">
+        <img src="assets/icons/3.svg" alt="">
+      </span>
+      <div class="free_text gap-16">
+        <h4>Standortbesichtigung</h4>
+        <p class="mt-4">
+          Lorem ipsum blandit blandit odio tellus fringilla eget
+          elementum sollicitudin tortor est libero nec suspendisse purus
+          est malesuada quam faucibus.
+        </p>
+      </div>
+    </article>
 
-                <p class="mt-4">
-                  Lorem ipsum blandit blandit odio tellus fringilla eget
-                  elementum sollicitudin tortor est libero nec suspendisse purus
-                  est malesuada quam faucibus.
-                </p>
-              </div>
-            </article>
-            <article class="absolute right-80 top-75 z-20 w-330">
-              <div
-                class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
-              >
-                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
-              </div>
+    <!-- Step 4 -->
+    <article class="absolute left-[1330px] top-[72px] z-20 w-330">
+      <div
+        class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+      >
+        <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+      </div>
 
-              <span
-                class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
-              >
-                4
-              </span>
-              <div class="free_text gap-16">
-                <h4>Standortbesichtigung</h4>
-
-                <p class="mt-4">
-                  Lorem ipsum blandit blandit odio tellus fringilla eget
-                  elementum sollicitudin tortor est libero nec suspendisse purus
-                  est malesuada quam faucibus.
-                </p>
-              </div>
-            </article>
-          </div>
+      <span class="absolute right-85 top-23 z-[-1] ">
+        <img src="assets/icons/4.svg" alt="">
+      </span>
+      <div class="free_text gap-16">
+        <h4>Standortbesichtigung</h4>
+        <p class="mt-4">
+          Lorem ipsum blandit blandit odio tellus fringilla eget
+          elementum sollicitudin tortor est libero nec suspendisse purus
+          est malesuada quam faucibus.
+        </p>
+      </div>
+    </article>
+  </div>
+</div>
           <!-- MObaile View -->
           <div class="xl:hidden grid md:grid-cols-2 gap-40 mt-50">
             <article class="relative">
@@ -2684,7 +2713,9 @@
                 qualitativ hochwertige, individuelle und einfühlsame Betreuung
                 zu bieten.
               </p>
-              <a href="" class="btn btn-primary bg-orange!"
+              <a
+                href=""
+                class="btn btn-primary bg-orange! hover:bg-transparent! border border-transparent hover: border-white! transition-all duration-300"
                 >Termin vereinbaren</a
               >
             </div>

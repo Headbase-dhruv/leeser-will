@@ -256,6 +256,9 @@
   ul a {
     @apply hover:underline;
   }
+  nav ul a {
+  @apply hover:no-underline;
+}
 
   .ctm_sec {
     @apply relative z-1 overflow-hidden;
