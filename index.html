@@ -1435,12 +1435,11 @@
          
  <!-- desktop view -->
 <div
-  class="@container relative w-full aspect-[1920/900] overflow-clip max-[1199px]:hidden"
-  style="--stage-w: 1920px;"
+  class="@container relative w-full aspect-[1710/900] overflow-clip max-[1199px]:hidden"
+  style="--stage-w: 1710px;"
 >
-  <!-- Fixed 1920×800 design stage, uniformly scaled to the wrapper width -->
   <div
-    class="absolute left-0 top-60 h-[900px] w-[1920px] origin-top-left  overflow-visible"
+    class="absolute left-0 top-30 h-[900px] w-[1710px] origin-top-left overflow-visible"
     style="transform: scale(tan(atan2(100cqw, var(--stage-w))));"
   >
     <!-- Timeline SVG: moved to left 190px / top 80px so the path starts at the 1st icon and ends behind the 4th -->
@@ -2756,7 +2755,7 @@
                   >Phone & Email</span
                 >
                 <div class="space-y-4">
-                  <p class="flex gap-8">
+                  <a href="" class="flex gap-8">
                     <span
                       ><svg
                         width="24"
@@ -2776,8 +2775,8 @@
                         />
                       </svg> </span
                     >+00 1234567890
-                  </p>
-                  <p class="flex gap-8">
+                  </a>
+                  <a href="" class="flex gap-8">
                     <span
                       ><svg
                         width="24"
@@ -2818,7 +2817,7 @@
                         />
                       </svg> </span
                     >company@abc.com
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>

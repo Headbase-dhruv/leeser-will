@@ -324,8 +324,14 @@
   .top-2\/3 {
     top: calc(2 / 3 * 100%);
   }
+  .top-20 {
+    top: calc(var(--spacing) * 20);
+  }
   .top-23 {
     top: calc(var(--spacing) * 23);
+  }
+  .top-30 {
+    top: calc(var(--spacing) * 30);
   }
   .top-60 {
     top: calc(var(--spacing) * 60);
@@ -1178,6 +1184,9 @@
   .aspect-\[1340\] {
     aspect-ratio: 1340;
   }
+  .aspect-\[1710\/900\] {
+    aspect-ratio: 1710/900;
+  }
   .aspect-\[1920\/0\] {
     aspect-ratio: 1920/0;
   }
@@ -1521,6 +1530,9 @@
   .w-\[350px\] {
     width: 350px;
   }
+  .w-\[1710px\] {
+    width: 1710px;
+  }
   .w-\[1920px\] {
     width: 1920px;
   }
@@ -1541,6 +1553,9 @@
   }
   .max-w-0 {
     max-width: 0px;
+  }
+  .max-w-19 {
+    max-width: calc(var(--spacing) * 19);
   }
   .max-w-340 {
     max-width: calc(var(--spacing) * 340);
@@ -1583,6 +1598,9 @@
   }
   .max-w-1200 {
     max-width: calc(var(--spacing) * 1200);
+  }
+  .max-w-1920 {
+    max-width: calc(var(--spacing) * 1920);
   }
   .max-w-\[95\%\] {
     max-width: 95%;
