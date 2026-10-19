@@ -243,11 +243,18 @@
   .free_text .paragraph a {
     @apply underline duration-300 transition-all;
   }
-  .free_text ul {
+  /* .free_text ul {
+    @apply list-disc pl-34 space-y-8;
+  } */
+  .ctm_list
+  {
     @apply list-disc pl-34 space-y-8;
   }
   .free_text.no-disc ul {
-    @apply list-none ;
+    @apply list-none pl-0 ;
+  }
+  .no-disc ul {
+    @apply list-none pl-0
   }
   .heading_h1 {
     @apply text-h1;

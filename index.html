@@ -343,7 +343,7 @@
                   </div>
 
                   <!-- Content -->
-                  <div class="flex flex-col gap-40">
+                  <div class="flex flex-col gap-40 no-disc!">
                     <ul class="space-y-16">
                       <li class="flex items-center gap-8">
                         <img
@@ -1745,7 +1745,7 @@
                 <template x-for="(p, i) in people" :key="i">
                   <li class="flex items-center">
                     <button
-                      @mouseenter="active = i + 1"
+                      @click="active = i + 1"
                       @focus="active = i + 1"
                       class="size-40 sm:size-50 shrink-0 overflow-hidden rounded-full border-2 border-orange"
                     >
@@ -2517,7 +2517,7 @@
           <div
             class="flex flex-col lg:flex-row gap-24 lg:gap-40 relative z-20 items-center"
           >
-            <a href="" class="btn btn-secondary not-sm:w-full"
+            <a href="" class="btn btn-secondary not-lg:w-full"
               >Sprechen Sie mit einem Experten</a
             >
             <a href="" class="btn btn-primary not-sm:w-full"
