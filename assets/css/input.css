@@ -240,7 +240,7 @@
   .free_text h4 {
     @apply text-h4 text-heading;
   }
-  .free_text a {
+  .free_text .paragraph a {
     @apply underline duration-300 transition-all;
   }
   .free_text ul {
