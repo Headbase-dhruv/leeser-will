@@ -246,6 +246,9 @@
   .free_text ul {
     @apply list-disc pl-34 space-y-8;
   }
+  .free_text.no-disc ul {
+    @apply list-none ;
+  }
   .heading_h1 {
     @apply text-h1;
   }

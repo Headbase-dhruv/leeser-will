@@ -1352,7 +1352,7 @@
               </div>
             </div>
             <div
-              class="lg:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-40 items-start"
+              class="xl:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-40 items-start"
             >
               <div class="bg-orange p-8 rounded-lg">
                 <img
@@ -1706,100 +1706,98 @@
               </h4>
               <ul
                 x-data="{ active: 1 }"
-                class="flex flex-wrap gap-8 text-start"
+                class="flex sm:flex-wrap gap-8 text-start overflow-hidden space-y-0!"
               >
                 <li class="flex items-center">
                   <button
                     @mouseenter="active = 1"
                     @mouseleave="active = 1"
-                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden"
+                    class="size-40 shrink-0 overflow-hidden rounded-full border-2 border-orange sm:size-50"
                   >
-                    <img src="assets/icons/Person.svg" alt="" />
+                    <img
+                      src="assets/icons/Person.svg"
+                      alt=""
+                      class="size-full object-cover"
+                    />
                   </button>
                   <div
-                    x-show="active === 1"
-                    x-transition:enter="transition-all duration-500 ease-out"
-                    x-transition:enter-start="opacity-0 max-w-0"
-                    x-transition:enter-end="opacity-100 max-w-[200px]"
-                    x-transition:leave="transition-all duration-300 ease-in"
-                    x-transition:leave-start="opacity-100 max-w-[200px]"
-                    x-transition:leave-end="opacity-0 max-w-0"
-                    class="mx-8 flex flex-col overflow-hidden whitespace-nowrap"
+                    :class="active ===  1 ? 'grid-cols-[1fr] opacity-100' : 'grid-cols-[0fr] opacity-0'"
+                    class="grid transition-[grid-template-columns,opacity] duration-500 ease-in-out"
                   >
-                    <span class="text-primary text-lg">Thomas Becker</span>
-                    <span class="text-xs">Homeowner</span>
+                    <div class="overflow-hidden min-w-0">
+                      <div class="px-8 flex flex-col whitespace-nowrap">
+                        <span class="text-primary">Thomas Becker</span>
+                        <span class="text-xs">Homeowner</span>
+                      </div>
+                    </div>
                   </div>
                 </li>
                 <li class="flex items-center">
                   <button
                     @mouseenter="active = 2"
                     @mouseleave="active = 2"
-                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden"
+                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden shrink-0"
                   >
                     <img src="assets/icons/Person2.svg" alt="" />
                   </button>
 
                   <div
-                    x-show="active === 2"
-                    x-transition:enter="transition-all duration-500 ease-out"
-                    x-transition:enter-start="opacity-0 max-w-0"
-                    x-transition:enter-end="opacity-100 max-w-[200px]"
-                    x-transition:leave="transition-all duration-300 ease-in"
-                    x-transition:leave-start="opacity-100 max-w-[200px]"
-                    x-transition:leave-end="opacity-0 max-w-0"
-                    class="mx-8 flex flex-col overflow-hidden whitespace-nowrap"
+                    :class="active ===  2 ? 'grid-cols-[1fr] opacity-100' : 'grid-cols-[0fr] opacity-0'"
+                    class="grid transition-[grid-template-columns,opacity] duration-500 ease-in-out"
                   >
-                    <span class="text-primary text-lg">Thomas Becker</span>
-                    <span class="text-xs">Homeowner</span>
+                    <div class="overflow-hidden min-w-0">
+                      <div class="px-8 flex flex-col whitespace-nowrap">
+                        <span class="text-primary">Thomas Becker</span>
+                        <span class="text-xs">Homeowner</span>
+                      </div>
+                    </div>
                   </div>
                 </li>
                 <li class="flex items-center">
                   <button
                     @mouseenter="active = 3"
                     @mouseleave="active = 3"
-                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden"
+                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden shrink-0"
                   >
                     <img src="assets/icons/Person3.svg" alt="" />
                   </button>
 
                   <div
-                    x-show="active === 3"
-                    x-transition:enter="transition-all duration-500 ease-out"
-                    x-transition:enter-start="opacity-0 max-w-0"
-                    x-transition:enter-end="opacity-100 max-w-[200px]"
-                    x-transition:leave="transition-all duration-300 ease-in"
-                    x-transition:leave-start="opacity-100 max-w-[200px]"
-                    x-transition:leave-end="opacity-0 max-w-0"
-                    class="mx-8 flex flex-col overflow-hidden whitespace-nowrap"
+                    :class="active ===  3 ? 'grid-cols-[1fr] opacity-100' : 'grid-cols-[0fr] opacity-0'"
+                    class="grid transition-[grid-template-columns,opacity] duration-500 ease-in-out"
                   >
-                    <span class="text-primary text-lg">Thomas Becker</span>
-                    <span class="text-xs">Homeowner</span>
+                    <div class="overflow-hidden min-w-0">
+                      <div class="px-8 flex flex-col whitespace-nowrap">
+                        <span class="text-primary">Thomas Becker</span>
+                        <span class="text-xs">Homeowner</span>
+                      </div>
+                    </div>
                   </div>
                 </li>
                 <li class="flex items-center">
                   <button
                     @mouseenter="active = 4"
                     @mouseleave="active = 4"
-                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden"
+                    class="size-40 sm:size-50 border-2 border-orange rounded-full overflow-hidden shrink-0"
                   >
                     <img src="assets/icons/Person4.svg" alt="" />
                   </button>
 
                   <div
-                    x-show="active === 4"
-                    x-transition:enter="transition-all duration-500 ease-out"
-                    x-transition:enter-start="opacity-0 max-w-0"
-                    x-transition:enter-end="opacity-100 max-w-[200px]"
-                    x-transition:leave="transition-all duration-300 ease-in"
-                    x-transition:leave-start="opacity-100 max-w-[200px]"
-                    x-transition:leave-end="opacity-0 max-w-0"
-                    class="mx-8 flex flex-col overflow-hidden whitespace-nowrap"
+                    :class="active ===  4 ? 'grid-cols-[1fr] opacity-100' : 'grid-cols-[0fr] opacity-0'"
+                    class="grid transition-[grid-template-columns,opacity] duration-500 ease-in-out"
                   >
-                    <span class="text-primary text-lg">Thomas Becker</span>
-                    <span class="text-xs">Homeowner</span>
+                    <div class="overflow-hidden min-w-0">
+                      <div class="px-8 flex flex-col whitespace-nowrap">
+                        <span class="text-primary">Thomas Becker</span>
+                        <span class="text-xs">Homeowner</span>
+                      </div>
+                    </div>
                   </div>
                 </li>
               </ul>
+
+              
             </div>
           </div>
         </div>
@@ -1922,8 +1920,8 @@
                 />
               </div>
             </div>
-            <div class="free_text">
-              <ul x-data="{ active: 1 }" class="flex flex-col gap-24 md:gap-40">
+            <div class="free_text no-disc">
+              <ul x-data="{ active: 1 }" class="flex flex-col gap-24 md:gap-40 ">
                 <li class="border-b pb-24">
                   <button
                     @click="active = active === 1 ? 0 : 1"
@@ -2730,7 +2728,7 @@
               </div>
               <a
                 href=""
-                class="btn btn-primary bg-orange! hover:bg-transparent! border border-transparent hover: border-white! transition-all duration-300"
+                class="btn btn-primary bg-orange! hover:bg-transparent! border border-transparent hover:border-white! transition-all duration-300"
                 >Termin vereinbaren</a
               >
             </div>
