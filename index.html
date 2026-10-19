@@ -1687,91 +1687,93 @@
       </section>
 
       <section class="py-sec bg-[#F8FAFC]">
-  <div class="container">
-    <div class="col">
-      <div class="free_text text-center">
-        <h3>Kunden in ganz Deutschland vertrauen uns.</h3>
-      </div>
+        <div class="container">
+          <div class="col">
+            <div class="free_text text-center">
+              <h3>Kunden in ganz Deutschland vertrauen uns.</h3>
+            </div>
 
-      <!-- x-data lives here so the h4 and the avatars share "active" -->
-      <div
-        x-data="{
-          active: 1,
-          people: [
-            {
-              img: 'Person.svg',
-              name: 'Thomas Becker',
-              role: 'Homeowner',
-              quote: 'Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt. Ihr Programm zur vorbeugenden Überwachung hat uns dabei geholfen, höchste Hygienestandards zu wahren und gleichzeitig die HACCP-Anforderungen zu erfüllen. Wir sehen in ihnen mehr als nur einen Dienstleister – wir schätzen sie als langfristigen Partner.'
-            },
-            {
-               img: 'Person2.svg',
-              name: 'Thomas Becker',
-              role: 'Homeowner',
-              quote: 'Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt.'
-            },
-            {
-               img: 'Person3.svg',
-              name: 'Thomas Becker',
-              role: 'Homeowner',
-              quote: 'Ihr Programm zur vorbeugenden Überwachung hat uns dabei geholfen, höchste Hygienestandards zu wahren und gleichzeitig die HACCP-Anforderungen zu erfüllen. Wir sehen in ihnen mehr als nur einen Dienstleister – wir schätzen sie als langfristigen Partner.'
-            },
-            {
-               img: 'Person4.svg',
-              name: 'Thomas Becker',
-              role: 'Homeowner',
-              quote: 'Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt.Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt.'
-            }
-          ]
-        }"
-        class="max-w-1200 text-center mx-auto free_text flex flex-col gap-40 items-center justify-center"
-      >
-        <!-- All quotes are stacked in one grid cell and cross-fade.
+            <!-- x-data lives here so the h4 and the avatars share "active" -->
+            <div
+              x-data="{
+                active: 1,
+                people: [
+                  {
+                    img: 'Person.svg',
+                    name: 'Thomas Becker',
+                    role: 'Homeowner',
+                    quote: 'Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt. Ihr Programm zur vorbeugenden Überwachung hat uns dabei geholfen, höchste Hygienestandards zu wahren und gleichzeitig die HACCP-Anforderungen zu erfüllen. Wir sehen in ihnen mehr als nur einen Dienstleister – wir schätzen sie als langfristigen Partner.'
+                  },
+                  {
+                    img: 'Person2.svg',
+                    name: 'Thomas Becker',
+                    role: 'Homeowner',
+                    quote: 'Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt.'
+                  },
+                  {
+                    img: 'Person3.svg',
+                    name: 'Thomas Becker',
+                    role: 'Homeowner',
+                    quote: 'Ihr Programm zur vorbeugenden Überwachung hat uns dabei geholfen, höchste Hygienestandards zu wahren und gleichzeitig die HACCP-Anforderungen zu erfüllen. Wir sehen in ihnen mehr als nur einen Dienstleister – wir schätzen sie als langfristigen Partner.'
+                  },
+                  {
+                    img: 'Person4.svg',
+                    name: 'Thomas Becker',
+                    role: 'Homeowner',
+                    quote: 'Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt.Leeser & Will haben uns durch schnelle Reaktionszeiten, klare Kommunikation und eine sorgfältige Dokumentation überzeugt.'
+                  }
+                ]
+              }"
+              class="max-w-1200 text-center mx-auto free_text flex flex-col gap-40 items-center justify-center"
+            >
+              <!-- All quotes are stacked in one grid cell and cross-fade.
              The cell is as tall as the longest quote, so nothing jumps. -->
-        <div class="grid">
-          <template x-for="(p, i) in people" :key="i">
-            <h4
-              x-html="p.quote"
-              :aria-hidden="active !== i + 1"
-              :class="active === i + 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'"
-              class="col-start-1 row-start-1 text-heading! not-md:text-base transition-opacity duration-500 ease-in-out"
-            ></h4>
-          </template>
-        </div>
-
-        <ul class="flex sm:flex-wrap gap-8 text-start overflow-hidden space-y-0!">
-          <template x-for="(p, i) in people" :key="i">
-            <li class="flex items-center">
-              <button
-                @mouseenter="active = i + 1"
-                @focus="active = i + 1"
-                class="size-40 sm:size-50 shrink-0 overflow-hidden rounded-full border-2 border-orange"
-              >
-                <img
-                  :src="'assets/icons/' + p.img"
-                  alt=""
-                  class="size-full object-cover"
-                />
-              </button>
-
-              <div
-                :class="active === i + 1 ? 'grid-cols-[1fr] opacity-100' : 'grid-cols-[0fr] opacity-0'"
-                class="grid transition-[grid-template-columns,opacity] duration-500 ease-in-out"
-              >
-                <div class="overflow-hidden min-w-0">
-                  <div class="px-8 flex flex-col whitespace-nowrap">
-                    <span class="text-primary" x-text="p.name"></span>
-                    <span class="text-xs" x-text="p.role"></span>
-                  </div>
-                </div>
+              <div class="grid">
+                <template x-for="(p, i) in people" :key="i">
+                  <h4
+                    x-html="p.quote"
+                    :aria-hidden="active !== i + 1"
+                    :class="active === i + 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                    class="col-start-1 row-start-1 text-heading! not-md:text-base transition-opacity duration-500 ease-in-out"
+                  ></h4>
+                </template>
               </div>
-            </li>
-          </template>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+
+              <ul
+                class="flex sm:flex-wrap gap-8 text-start overflow-hidden space-y-0!"
+              >
+                <template x-for="(p, i) in people" :key="i">
+                  <li class="flex items-center">
+                    <button
+                      @mouseenter="active = i + 1"
+                      @focus="active = i + 1"
+                      class="size-40 sm:size-50 shrink-0 overflow-hidden rounded-full border-2 border-orange"
+                    >
+                      <img
+                        :src="'assets/icons/' + p.img"
+                        alt=""
+                        class="size-full object-cover"
+                      />
+                    </button>
+
+                    <div
+                      :class="active === i + 1 ? 'grid-cols-[1fr] opacity-100' : 'grid-cols-[0fr] opacity-0'"
+                      class="grid transition-[grid-template-columns,opacity] duration-500 ease-in-out"
+                    >
+                      <div class="overflow-hidden min-w-0">
+                        <div class="px-8 flex flex-col whitespace-nowrap">
+                          <span class="text-primary" x-text="p.name"></span>
+                          <span class="text-xs" x-text="p.role"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="py-sec">
         <div class="container">
@@ -1891,7 +1893,7 @@
               </div>
             </div>
             <div class="free_text no-disc">
-              <ul x-data="{ active: 1 }" class="flex flex-col gap-24 md:gap-40 ">
+              <ul x-data="{ active: 1 }" class="flex flex-col gap-24 md:gap-40">
                 <li class="border-b pb-24">
                   <button
                     @click="active = active === 1 ? 0 : 1"
