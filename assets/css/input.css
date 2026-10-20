@@ -243,18 +243,17 @@
   .free_text .paragraph a {
     @apply underline duration-300 transition-all;
   }
-  /* .free_text ul {
+  .free_text.disc-list1 ul {
     @apply list-disc pl-34 space-y-8;
-  } */
-  .ctm_list
-  {
+  }
+  .ctm_list {
     @apply list-disc pl-34 space-y-8;
   }
   .free_text.no-disc ul {
-    @apply list-none pl-0 ;
+    @apply list-none pl-0;
   }
   .no-disc ul {
-    @apply list-none pl-0
+    @apply list-none pl-0;
   }
   .heading_h1 {
     @apply text-h1;
@@ -314,6 +313,25 @@
 
   .demo_page .free_text {
     @apply flex flex-col gap-24;
+  }
+  label {
+    @apply text-[#111111];
+  }
+
+  /* NEW CSS */ 
+  .ctm-list ul {
+    @apply space-y-16;
+  }
+
+  .ctm-list li {
+    @apply flex gap-8 items-start;
+  }
+
+  .ctm-list li img {
+    @apply w-24 h-21 shrink-0;
+  }
+  .disc-list ul {
+    @apply list-disc pl-34 space-y-8;
   }
 }
 

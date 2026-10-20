@@ -170,3 +170,41 @@ document.addEventListener("DOMContentLoaded", () => {
     status.className = "mt-12 text-sm text-gray-600";
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".reviewSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      speed: 600,
+      loop: true,
+      grabCursor: true,
+
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+
+      pagination: {
+        el: ".review-pagination",
+        clickable: true,
+      },
+
+      breakpoints: {
+        576: {
+          slidesPerView: 1,
+          spaceBetween: 24,
+        },
+
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+      },
+    });
+  });

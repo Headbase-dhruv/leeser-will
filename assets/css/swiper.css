@@ -58,3 +58,32 @@
   width: 34px;
   background: var(--color-primary);
 }
+
+
+.review-pagination {
+  position: relative !important;
+  inset: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.review-pagination .swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  margin: 0 !important;
+  border-radius: 999px;
+  background: #CDDAFF;
+  opacity: 1;
+  display: inline-block;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.review-pagination .swiper-pagination-bullet-active {
+  width: 34px;
+  background: var(--color-primary);
+}
