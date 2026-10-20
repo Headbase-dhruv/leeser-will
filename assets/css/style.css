@@ -1052,6 +1052,9 @@
   .h-35 {
     height: calc(var(--spacing) * 35);
   }
+  .h-100 {
+    height: calc(var(--spacing) * 100);
+  }
   .h-280 {
     height: calc(var(--spacing) * 280);
   }
@@ -1093,6 +1096,12 @@
   }
   .h-\[79\%\] {
     height: 79%;
+  }
+  .h-\[100\%\] {
+    height: 100%;
+  }
+  .h-\[100\] {
+    height: 100;
   }
   .h-\[900px\] {
     height: 900px;
@@ -1282,6 +1291,9 @@
   }
   .w-\[79\%\] {
     width: 79%;
+  }
+  .w-\[100\%\] {
+    width: 100%;
   }
   .w-\[1710px\] {
     width: 1710px;
