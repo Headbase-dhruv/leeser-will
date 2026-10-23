@@ -283,8 +283,8 @@ $("#folders").innerHTML = categories
 
         <!-- label -->
         <span class="absolute inset-x-[6%] bottom-[8%] block sm:inset-x-[6%] lg:inset-x-[7%]">
-          <span class="block text-[11px] text-body/80 sm:text-xs">${pad(c.files.length)} Dateien</span>
-          <span class="mt-0.5 block hyphens-auto break-words text-[1px] font-medium leading-tight sm:text-base lg:text-sm xl:text-base 2xl:text-lg text-heading">${c.title}</span>
+          <span class="block text-[11px] sm:text-body/80 sm:text-xs">${pad(c.files.length)} Dateien</span>
+          <span class="mt-0.5 block hyphens-auto break-words text-[13px] font-medium leading-tight sm:text-base lg:text-sm xl:text-base 2xl:text-lg text-heading">${c.title}</span>
         </span>
       </button>`,
   )

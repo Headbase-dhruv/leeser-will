@@ -2412,6 +2412,14 @@
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
   }
+  .text-body\/5 {
+    font-size: var(--text-body);
+    line-height: calc(var(--spacing) * 5);
+  }
+  .text-body\/20 {
+    font-size: var(--text-body);
+    line-height: calc(var(--spacing) * 20);
+  }
   .text-body\/80 {
     font-size: var(--text-body);
     line-height: calc(var(--spacing) * 80);
@@ -3145,6 +3153,10 @@
     .sm\:text-base {
       font-size: var(--text-base);
       line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+    .sm\:text-body\/80 {
+      font-size: var(--text-body);
+      line-height: calc(var(--spacing) * 80);
     }
     .sm\:text-lg {
       font-size: var(--text-lg);
