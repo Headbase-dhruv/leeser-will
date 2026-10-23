@@ -124,57 +124,44 @@
        HEADING H1
     ======================================== */
 
-  /* Main Page Heading */
-  --text-h1: clamp(3rem, 2.7451rem + 1.0458vw, 4rem);
+  /* Section Heading */
+  --text-h1: clamp(2.5rem, 2.2451rem + 1.0458vw, 3.5rem);
 
-  /* H1 Line Height */
+  /* H2 Line Height */
   --text-h1--line-height: 1.2;
 
-  /* H1 Font Weight */
+  /* H2 Font Weight */
   --text-h1--font-weight: 700;
 
   /* ========================================
        HEADING H2 (STANDARD)
     ======================================== */
 
-  /* Section Heading */
-  --text-h2: clamp(2.5rem, 2.2451rem + 1.0458vw, 3.5rem);
+  /* Sub Section Heading */
+  --text-h2: clamp(2rem, 1.8725rem + 0.5229vw, 2.5rem);
 
-  /* H2 Line Height */
+  /* H3 Line Height */
   --text-h2--line-height: 1.2;
 
-  /* H2 Font Weight */
-  --text-h2--font-weight: 700;
+  /* H3 Font Weight */
+  --text-h2--font-weight: 600;
 
   /* ========================================
        HEADING H3
     ======================================== */
 
-  /* Sub Section Heading */
-  --text-h3: clamp(2rem, 1.8725rem + 0.5229vw, 2.5rem);
-
-  /* H3 Line Height */
-  --text-h3--line-height: 1.2;
-
-  /* H3 Font Weight */
-  --text-h3--font-weight: 600;
-
-  /* ========================================
-       HEADING H4
-    ======================================== */
-
   /* Card / Component Heading */
-  --text-h4: clamp(1.5rem, 1.4363rem + 0.2614vw, 1.75rem);
+  --text-h3: clamp(1.5rem, 1.4363rem + 0.2614vw, 1.75rem);
 
   /* H4 Line Height */
-  --text-h4--line-height: 1.5;
+  --text-h3--line-height: 1.5;
 
   /* H4 Font Weight */
-  --text-h4--font-weight: 500;
+  --text-h3--font-weight: 500;
 
   --text-32: clamp(1.75rem, 1.6863rem + 0.2614vw, 2rem);
   --text-32--font-weight: 600;
-  --text-h4--line-height: 1.3;
+  --text-32--line-height: 1.3;
 
   --text-16: 16px;
   --text-28: 28px;
@@ -191,6 +178,8 @@
     @apply font-Manrope text-body text-txt-body font-medium;
     -webkit-hyphens: auto;
     hyphens: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
@@ -226,32 +215,23 @@
   }
 
   .free_text {
-    @apply flex flex-col gap-24;
+    @apply flex flex-col gap-16;
   }
-  .free_text h1 {
+  h1 {
     @apply text-h1 text-heading;
   }
-  .free_text h2 {
+   h2 {
     @apply text-h2 text-heading;
   }
-  .free_text h3 {
+   h3 {
     @apply text-h3 text-heading;
   }
-  .free_text h4 {
-    @apply text-h4 text-heading;
+  .free_text a:not(.btn) {
+    @apply underline;
   }
-  .free_text .paragraph a {
-    @apply underline duration-300 transition-all;
-  }
-  .free_text.disc-list1 ul {
-    @apply list-disc pl-34 space-y-8;
-  }
-  .ctm_list {
-    @apply list-disc pl-34 space-y-8;
-  }
-  .free_text.no-disc ul {
-    @apply list-none pl-0;
-  }
+.free_text ul {
+  @apply list-disc pl-28;
+}
   .no-disc ul {
     @apply list-none pl-0;
   }
@@ -264,20 +244,30 @@
   .heading_h3 {
     @apply text-h3;
   }
-  .heading_h4 {
-    @apply text-h4;
-  }
+
   .paragraph {
     @apply flex flex-col gap-18;
   }
+
   .paragraph a:not(.btn) {
+    @apply underline;
+  }
+
+  .paragraph ul {
+    @apply list-disc pl-28;
+  }
+
+  .paragraph a {
     @apply underline;
   }
   ul a {
     @apply hover:underline;
   }
   nav ul a {
-    @apply hover:no-underline;
+    @apply hover:no-underline text-heading;
+  }
+  nav a {
+    @apply hover:no-underline text-heading;
   }
 
   .ctm_sec {
@@ -304,23 +294,22 @@
   [x-cloak] {
     display: none !important;
   }
-  .demo_page {
+  .demo_page h2,
+  .demo_page h3,
+  .demo_page h4 {
+    @apply mb-24 mt-40;
   }
 
-  .demo_page.col {
-    @apply flex flex-col gap-40;
-  }
-
-  .demo_page .free_text {
-    @apply flex flex-col gap-24;
+  .demo_page p:not(:last-child) {
+    @apply mb-18;
   }
   label {
     @apply text-[#111111];
   }
 
-  /* NEW CSS */ 
+  /* NEW CSS */
   .ctm-list ul {
-    @apply space-y-16;
+    @apply space-y-16 pl-0! text-lg ;
   }
 
   .ctm-list li {
@@ -333,6 +322,67 @@
   .disc-list ul {
     @apply list-disc pl-34 space-y-8;
   }
+
+  /* contact Form */
+  .contact-form {
+    @apply flex flex-col gap-24;
+  }
+  .contact-form .form-group {
+    @apply flex flex-col gap-8;
+  }
+  .contact-form label {
+    @apply block text-heading;
+  }
+  .contact-form label span {
+    @apply text-[#BE2F33];
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="tel"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    @apply w-full px-14 py-12 rounded-xl border-[1.5px]
+      border-bordercolor bg-white outline-none
+      focus:border-primary focus:ring-0 transition;
+  }
+  .contact-form textarea {
+    @apply resize-none;
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    @apply text-txt-body;
+  }
+  .contact-form .form-checkbox {
+    @apply flex items-center gap-8;
+  }
+  .contact-form .form-checkbox .wpcf7-form-control-wrap {
+    @apply inline-flex items-center;
+  }
+  .contact-form .form-checkbox input[type="checkbox"] {
+    @apply size-18 rounded border border-bordercolor
+      accent-primary cursor-pointer;
+  }
+  .contact-form .form-checkbox .wpcf7-list-item {
+    @apply m-0;
+  }
+  .contact-form .form-checkbox .wpcf7-list-item-label {
+    @apply text-txt-body;
+  }
+  .contact-form input[type="submit"] {
+    @apply btn btn-primary flex w-full justify-center cursor-pointer;
+  }
+  .contact-form .form-features {
+    @apply flex flex-col sm:flex-row items-center
+      justify-center gap-16 sm:gap-28 pt-2 text-neutral-600;
+  }
+  .contact-form .form-feature {
+    @apply flex items-center gap-8;
+  }
+  .contact-form .form-feature svg {
+    @apply shrink-0;
+  }
+footer a {
+  @apply no-underline hover:underline transition-all duration-300;
+}
 }
 
 @utility transition-slow {
@@ -485,3 +535,5 @@
 .philosophie-mobile .swiper-pagination-bullet-active {
   opacity: 1;
 }
+
+

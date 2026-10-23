@@ -27,7 +27,7 @@
     <title>Document 1</title>
   </head>
   <body>
-    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white ">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -40,7 +40,7 @@
           </a>
 
           <!-- Desktop Navigation -->
-          <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
+          <nav class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link text-heading!">
             <ul class="hidden xl:flex items-center gap-24 2xl:gap-40 nav_link">
               <!-- Schädlingsbekämpfung Dropdown -->
               <li
@@ -177,7 +177,7 @@
         <!-- Header -->
         <div class="flex items-center justify-between py-16">
           <div class="free_text">
-            <h3>Speisekarte</h3>
+            <h2>Speisekarte</h2>
           </div>
 
           <button
@@ -280,31 +280,27 @@
             <div
               class="relative z-10 free_text disc-list1 max-w-700 gap-18 lg:gap-24"
             >
-              <h2 class="text-white!">
+              <h1
+                class="text-white! text-[clamp(2.5rem,2.2451rem+1.0458vw,3.5rem)]"
+              >
                 Schädlingsfrei. <br />
                 Sicher. Entspannt.
-              </h2>
+              </h1>
               <div class="paragraph">
                 <p class="text-Invert-subheading">
                   Wir sind Ihr freundlicher, professioneller und diskreter
                   Partner für moderne Schädlingsbekämpfung. Für Ihr Zuhause und
                   Ihr Unternehmen.
                 </p>
-                <p class="text-Invert-subheading">
-                  Wir sind Ihr freundlicher, professioneller und diskreter
-                  Partner für moderne Schädlingsbekämpfung. Für Ihr Zuhause und
-                  Ihr Unternehmen.
-                </p>
-                <ul class="text-white">
-                  <li>sdsd</li>
-                  <li>sdsd</li>
-                  <li>sdsd</li>
-                </ul>
               </div>
             </div>
             <div class="relative z-10 free_text gap-18! lg:gap-24 max-w-340">
               <span class="badge">Schnelle Hilfe in ganz Deutschland</span>
-              <h1 class="text-white!">70+ Jahre</h1>
+              <h1
+                class="text-white! text-[clamp(3rem,2.7451rem+1.0458vw,4rem)]"
+              >
+                70+ Jahre
+              </h1>
               <a href="" class="btn btn-primary">Jetzt Kontaktieren</a>
             </div>
           </div>
@@ -317,20 +313,23 @@
             <div
               class="grid xl:grid-cols-[1fr_40.5%] 3xl:grid-cols-[1fr_35%] row relative z-1"
             >
-              <div class="flex flex-col gap-40 justify-center free_text">
+              <div class="flex flex-col gap-40 justify-center ">
                 <span class="badge">Über uns</span>
                 <div class="space-y-16">
-                  <h3>
+                  <h2>
                     Schutz von Menschen, Eigentum und Unternehmen seit 1951.
-                  </h3>
-                  <p>
-                    Lokaler Service mit sorgfältiger Behandlung und klarer
-                    Kommunikation. Wir helfen Familien und Unternehmen dabei,
-                    Schädlingsprobleme unkompliziert zu lösen. Unser Team
-                    begutachtet das Problem, erläutert die Behandlung und gibt
-                    Tipps zur Vorbeugung – so wissen Sie genau, was vor, während
-                    und nach dem Einsatz geschieht.
-                  </p>
+                  </h2>
+                  <div class="free_text">
+                    <p>
+                      Lokaler Service mit sorgfältiger Behandlung und klarer
+                      Kommunikation. Wir helfen Familien und Unternehmen dabei,
+                      Schädlingsprobleme unkompliziert zu lösen. Unser Team
+                      begutachtet das Problem, erläutert die Behandlung und gibt
+                      Tipps zur Vorbeugung – so wissen Sie genau, was vor,
+                      während und nach dem Einsatz geschieht.
+                    </p>
+                    
+                  </div>
                 </div>
 
                 <div
@@ -554,7 +553,7 @@
         <div class="container">
           <div class="col">
             <div class="free_text text-center">
-              <h3>Lösungen zur Schädlingsbekämpfung aus einer Hand</h3>
+              <h2>Lösungen zur Schädlingsbekämpfung aus einer Hand</h2>
             </div>
             <div
               class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-40"
@@ -569,7 +568,7 @@
                   class="flex flex-col gap-[clamp(1rem,0.6814rem+1.3072vw,2.25rem)] flex-1"
                 >
                   <div class="free_text h-full">
-                    <h4>Wechselservice</h4>
+                    <h3>Wechselservice</h3>
                     <p>
                       Ein Wechsel zu Leeser & Will ist vollkommen nahtlos und
                       bequem möglich. Zu Ihrem Wunschtermin _
@@ -621,7 +620,7 @@
                   class="flex flex-col gap-[clamp(1rem,0.6814rem+1.3072vw,2.25rem)] flex-1"
                 >
                   <div class="free_text h-full">
-                    <h4>Kontakt</h4>
+                    <h3>Kontakt</h3>
                     <p>
                       Wir sind für Sie da_ Schnell, zuverlässig diskret. Rufen
                       Sie uns an Oder schicken Sie uns eine Mail
@@ -673,7 +672,7 @@
                   class="flex flex-col gap-[clamp(1rem,0.6814rem+1.3072vw,2.25rem)] flex-1"
                 >
                   <div class="free_text h-full">
-                    <h4>Präventionsmaßnahmen</h4>
+                    <h3>Präventionsmaßnahmen</h3>
                     <p>
                       Hohe Reproduktionsraten vieler Schädlinge machen es
                       schwierig, einen Befall nach Ausbruch in den Griff
@@ -725,7 +724,7 @@
                   class="flex flex-col gap-[clamp(1rem,0.6814rem+1.3072vw,2.25rem)] flex-1"
                 >
                   <div class="free_text h-full">
-                    <h4>Ursachenforschung</h4>
+                    <h3>Ursachenforschung</h3>
                     <p>
                       Wenn Schädlinge vermehrt auftreten, so hat dies Ursachen-
                       Werden diese rofessionell identifiziert, kann der
@@ -777,7 +776,7 @@
                   class="flex flex-col gap-[clamp(1rem,0.6814rem+1.3072vw,2.25rem)] flex-1"
                 >
                   <div class="free_text h-full">
-                    <h4>Individuelle Bedarfsanalysen</h4>
+                    <h3>Individuelle Bedarfsanalysen</h3>
                     <p>
                       ein Objekt gleicht dem anderen. eshalb gleicht auch kein
                       ädlingsbefall dem anderen
@@ -829,7 +828,7 @@
                   class="flex flex-col gap-[clamp(1rem,0.6814rem+1.3072vw,2.25rem)] flex-1"
                 >
                   <div class="free_text h-full">
-                    <h4>Monitoring</h4>
+                    <h3>Monitoring</h3>
                     <p>
                       Langfristige Konzepte zur Schädlingsbekämpfung greifen
                       nicht ohne ein sorgfältiges Monitoring
@@ -881,7 +880,7 @@
                   class="flex flex-col gap-[clamp(1rem,0.6814rem+1.3072vw,2.25rem)] flex-1"
                 >
                   <div class="free_text h-full">
-                    <h4>Dokumentation</h4>
+                    <h3>Dokumentation</h3>
                     <p>
                       Eine lückenlose Dokumentation ist fur manche Branchen
                       elemantar wichtig. Deshalb legen wir bei Leeser & Will .
@@ -933,7 +932,7 @@
                   class="flex flex-col gap-[clamp(1rem,0.6814rem+1.3072vw,2.25rem)] flex-1"
                 >
                   <div class="free_text h-full">
-                    <h4>Diskreter Service</h4>
+                    <h3>Diskreter Service</h3>
                     <p>
                       Manche Kunden befürchten einen Imageschaden, wenn sie
                       einen professionellen Schädlingsbekämpfer
@@ -990,10 +989,10 @@
               <span class="badge"
                 >Warum Sie sich für uns entscheiden sollten</span
               >
-              <div class="free_text">
-                <h3>
+              <div class="free_text gap-16!">
+                <h2>
                   Warum Unternehmen und Hausbesitzer Leeser & Will vertrauen
-                </h3>
+                </h2>
                 <p>
                   Seit mehr als 75 Jahren unterstützt Leeser & Will
                   Hausbesitzer, Unternehmen und öffentliche Einrichtungen dabei,
@@ -1006,7 +1005,7 @@
                 >
                   <img src="assets/icons/Children.svg" alt="" class="h-32" />
                   <div class="free_text">
-                    <h4 class="text-2xl md:text-28">Sicher für Kinder</h4>
+                    <h3 class="text-2xl md:text-28">Sicher für Kinder</h3>
                     <p>
                       Unsere Schädlingsbekämpfung ist so konzipiert, dass sie
                       für Kinder sicher ist.
@@ -1018,9 +1017,9 @@
                 >
                   <img src="assets/icons/Children.svg" alt="" class="h-32" />
                   <div class="free_text">
-                    <h4 class="text-2xl md:text-28">
+                    <h3 class="text-2xl md:text-28">
                       Transparente Preisgestaltung
-                    </h4>
+                    </h3>
                     <p>
                       Unsere Schädlingsbekämpfung ist so konzipiert, dass sie
                       für Kinder sicher ist.
@@ -1075,7 +1074,7 @@
           <div class="flex flex-col gap-40">
             <span class="badge">Interaktiver Immobilienratgeber</span>
             <div class="free_text max-w-800">
-              <h3>Schützen Sie jeden Bereich Ihres Grundstücks.</h3>
+              <h2>Schützen Sie jeden Bereich Ihres Grundstücks.</h2>
               <p class="not-md:hidden max-w-500">
                 Verschiedene Bereiche ziehen unterschiedliche Schädlinge an.
                 Klicken Sie auf einen beliebigen Bereich des Grundstücks, um
@@ -1386,7 +1385,7 @@
                 />
               </div>
               <div class="free_text gap-8">
-                <h4 x-text="active"></h4>
+                <h3 x-text="active"></h3>
                 <p>
                   Professionelle Wespennestentfernung und vorbeugender Schutz
                   für Außenbereiche.
@@ -1436,10 +1435,10 @@
           <div class="flex flex-col gap-40 mt-30 xl:absolute relative z-10">
             <div class="free_text">
               <span class="badge">So funktioniert es</span>
-              <h3 class="max-w-500! xl:not-4xl:text-4xl!">
+              <h2 class="max-w-500! xl:not-4xl:text-4xl!">
                 Unser konzipiertes Schritt-für-Schritt-Verfahren zur
                 Insektenbekämpfung
-              </h3>
+              </h2>
             </div>
             <a href="" class="btn btn-primary">Loslegen</a>
           </div>
@@ -1520,7 +1519,7 @@
                 </span>
                 <img src="" alt="" />
                 <div class="free_text gap-16">
-                  <h4>Standortbesichtigung</h4>
+                  <h3>Standortbesichtigung</h3>
                   <p class="mt-4">
                     Lorem ipsum blandit blandit odio tellus fringilla eget
                     elementum sollicitudin tortor est libero nec suspendisse
@@ -1541,7 +1540,7 @@
                   <img src="assets/icons/2.svg" alt="" />
                 </span>
                 <div class="free_text gap-16">
-                  <h4>Standortbesichtigung</h4>
+                  <h3>Standortbesichtigung</h3>
                   <p class="mt-4">
                     Lorem ipsum blandit blandit odio tellus fringilla eget
                     elementum sollicitudin tortor est libero nec suspendisse
@@ -1562,7 +1561,7 @@
                   <img src="assets/icons/3.svg" alt="" />
                 </span>
                 <div class="free_text gap-16">
-                  <h4>Standortbesichtigung</h4>
+                  <h3>Standortbesichtigung</h3>
                   <p class="mt-4">
                     Lorem ipsum blandit blandit odio tellus fringilla eget
                     elementum sollicitudin tortor est libero nec suspendisse
@@ -1583,7 +1582,7 @@
                   <img src="assets/icons/4.svg" alt="" />
                 </span>
                 <div class="free_text gap-16">
-                  <h4>Standortbesichtigung</h4>
+                  <h3>Standortbesichtigung</h3>
                   <p class="mt-4">
                     Lorem ipsum blandit blandit odio tellus fringilla eget
                     elementum sollicitudin tortor est libero nec suspendisse
@@ -1597,9 +1596,13 @@
           <div class="xl:hidden grid md:grid-cols-2 gap-40 mt-50">
             <article class="relative">
               <div
-                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] sm:rounded-2xl bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
               >
-                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                <img
+                  src="assets/icons/Logo-icon.svg"
+                  alt=""
+                  class="h-[clamp(1.75rem,1.6399rem+0.4516vw,2.1875rem)]"
+                />
               </div>
 
               <span
@@ -1608,7 +1611,7 @@
                 1
               </span>
               <div class="free_text gap-16">
-                <h4>Standortbesichtigung</h4>
+                <h3>Standortbesichtigung</h3>
 
                 <p class="mt-4">
                   Lorem ipsum blandit blandit odio tellus fringilla eget
@@ -1619,9 +1622,13 @@
             </article>
             <article class="relative">
               <div
-                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] sm:rounded-2xl bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
               >
-                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                <img
+                  src="assets/icons/Logo-icon.svg"
+                  alt=""
+                  class="h-[clamp(1.75rem,1.6399rem+0.4516vw,2.1875rem)]"
+                />
               </div>
 
               <span
@@ -1630,7 +1637,7 @@
                 2
               </span>
               <div class="free_text gap-16">
-                <h4>Standortbesichtigung</h4>
+                <h3>Standortbesichtigung</h3>
 
                 <p class="mt-4">
                   Lorem ipsum blandit blandit odio tellus fringilla eget
@@ -1641,9 +1648,13 @@
             </article>
             <article class="relative">
               <div
-                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] sm:rounded-2xl bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
               >
-                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                <img
+                  src="assets/icons/Logo-icon.svg"
+                  alt=""
+                  class="h-[clamp(1.75rem,1.6399rem+0.4516vw,2.1875rem)]"
+                />
               </div>
 
               <span
@@ -1652,7 +1663,7 @@
                 3
               </span>
               <div class="free_text gap-16">
-                <h4>Standortbesichtigung</h4>
+                <h3>Standortbesichtigung</h3>
 
                 <p class="mt-4 text-[18px] leading-[1.6] text-[#666666]">
                   Lorem ipsum blandit blandit odio tellus fringilla eget
@@ -1663,9 +1674,13 @@
             </article>
             <article class="relative">
               <div
-                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                class="relative mb-32 flex size-60 items-center justify-center rounded-[28px] sm:rounded-2xl bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
               >
-                <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                <img
+                  src="assets/icons/Logo-icon.svg"
+                  alt=""
+                  class="h-[clamp(1.75rem,1.6399rem+0.4516vw,2.1875rem)]"
+                />
               </div>
 
               <span
@@ -1674,7 +1689,7 @@
                 4
               </span>
               <div class="free_text gap-16">
-                <h4>Standortbesichtigung</h4>
+                <h3>Standortbesichtigung</h3>
 
                 <p class="mt-4 text-[18px] leading-[1.6] text-[#666666]">
                   Lorem ipsum blandit blandit odio tellus fringilla eget
@@ -1700,7 +1715,7 @@
         <div class="container">
           <div class="col">
             <div class="free_text text-center">
-              <h3>Kunden in ganz Deutschland vertrauen uns.</h3>
+              <h2>Kunden in ganz Deutschland vertrauen uns.</h2>
             </div>
 
             <!-- x-data lives here so the h4 and the avatars share "active" -->
@@ -1740,12 +1755,12 @@
              The cell is as tall as the longest quote, so nothing jumps. -->
               <div class="grid">
                 <template x-for="(p, i) in people" :key="i">
-                  <h4
+                  <h3
                     x-html="p.quote"
                     :aria-hidden="active !== i + 1"
                     :class="active === i + 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     class="col-start-1 row-start-1 text-heading! not-md:text-base transition-opacity duration-500 ease-in-out"
-                  ></h4>
+                  ></h3>
                 </template>
               </div>
 
@@ -1789,7 +1804,7 @@
         <div class="container">
           <div class="col">
             <div class="free_text gap-16! items-center text-center">
-              <h3>Zertifizierte Expertise. Anerkannte Qualität.</h3>
+              <h2>Zertifizierte Expertise. Anerkannte Qualität.</h2>
               <p class="max-w-1200 mx-auto">
                 Professionelle Schädlingsbekämpfung erfordert mehr als nur
                 Erfahrung – sie verlangt nach zertifizierten Abläufen,
@@ -1809,7 +1824,7 @@
                   />
                 </div>
                 <div class="free_text">
-                  <h4>DIN EN 16636</h4>
+                  <h3>DIN EN 16636</h3>
                   <p>
                     Norm für Schädlings- bekämpfer für die Bereiche Gesundheits-
                     & Vorratsschutz sowie Holz- & Bautenschutz
@@ -1827,7 +1842,7 @@
                   />
                 </div>
                 <div class="free_text">
-                  <h4>ISO 9001</h4>
+                  <h3>ISO 9001</h3>
                   <p>
                     Norm für das Qualitätsmanagement. Sie regelt u.a. die
                     Qualitätspolitik und die Kundenorientierung.
@@ -1845,7 +1860,7 @@
                   />
                 </div>
                 <div class="free_text">
-                  <h4>DIN EN 45001</h4>
+                  <h3>DIN EN 45001</h3>
                   <p>
                     Zertifizierung für Arbeits- und Gesundheits-
                     schutzmanagement. Zur Sicherheit Ihrer & unserer
@@ -1864,7 +1879,7 @@
                   />
                 </div>
                 <div class="free_text">
-                  <h4>ISO 14001</h4>
+                  <h3>ISO 14001</h3>
                   <p>
                     Internationale Umwelt- managementnorm. Unser betriebliches
                     Umweltmanagement für eine saubere Zukunft.
@@ -1881,7 +1896,7 @@
           <div class="row xl:not-3xl:gap-40! grid xl:grid-cols-[1.1fr_1fr]">
             <div class="flex flex-col gap-40">
               <div class="free_text">
-                <h3>Häufige Fragen zur Schädlingsbekämpfung</h3>
+                <h2>Häufige Fragen zur Schädlingsbekämpfung</h2>
                 <p>
                   Haben Sie Fragen, bevor Sie einen Schädlingsbekämpfungsdienst
                   beauftragen? Hier finden Sie klare Antworten zu Sicherheit und
@@ -1907,10 +1922,10 @@
                     @click="active = active === 1 ? 0 : 1"
                     class="w-full flex items-center justify-between gap-16 text-left"
                   >
-                    <h4 class="text-primary! not-lg:text-2xl">
+                    <h3 class="text-primary! not-lg:text-2xl">
                       Wie schnell können Sie für eine Schädlingsbekämpfung
                       vorbeikommen?
-                    </h4>
+                    </h3>
 
                     <svg
                       class="shrink-0 transition-all duration-300"
@@ -1964,9 +1979,9 @@
                     @click="active = active === 2 ? 0 : 2"
                     class="w-full flex items-center justify-between gap-16 text-left"
                   >
-                    <h4 class="text-primary! not-lg:text-2xl">
+                    <h3 class="text-primary! not-lg:text-2xl">
                       Ist Schädlingsbekämpfung sicher für Kinder und Haustiere?
-                    </h4>
+                    </h3>
 
                     <svg
                       class="shrink-0 transition-all duration-300"
@@ -2006,9 +2021,9 @@
                     @click="active = active === 3 ? 0 : 3"
                     class="w-full flex items-center justify-between gap-16 text-left"
                   >
-                    <h4 class="text-primary! not-lg:text-2xl">
+                    <h3 class="text-primary! not-lg:text-2xl">
                       Muss ich während der Behandlung mein Zuhause verlassen?
-                    </h4>
+                    </h3>
 
                     <svg
                       class="shrink-0 transition-all duration-300"
@@ -2048,10 +2063,10 @@
                     @click="active = active === 4 ? 0 : 4"
                     class="w-full flex items-center justify-between gap-16 text-left"
                   >
-                    <h4 class="text-primary! not-lg:text-2xl">
+                    <h3 class="text-primary! not-lg:text-2xl">
                       Bieten Sie einmalige sowie wiederkehrende
                       Schädlingsbekämpfung an?
-                    </h4>
+                    </h3>
 
                     <svg
                       class="shrink-0 transition-all duration-300"
@@ -2091,9 +2106,9 @@
                     @click="active = active === 5 ? 0 : 5"
                     class="w-full flex items-center justify-between gap-16 text-left"
                   >
-                    <h4 class="text-primary! not-lg:text-2xl">
+                    <h3 class="text-primary! not-lg:text-2xl">
                       Wie viel kostet Schädlingsbekämpfung?
-                    </h4>
+                    </h3>
 
                     <svg
                       class="shrink-0 transition-all duration-300"
@@ -2133,9 +2148,9 @@
                     @click="active = active === 6 ? 0 : 6"
                     class="w-full flex items-center justify-between gap-16 text-left"
                   >
-                    <h4 class="text-primary! not-lg:text-2xl">
+                    <h3 class="text-primary! not-lg:text-2xl">
                       Was sollte ich tun, bevor der Techniker eintrifft?
-                    </h4>
+                    </h3>
 
                     <svg
                       class="shrink-0 transition-all duration-300"
@@ -2180,7 +2195,7 @@
         <div class="container">
           <div class="col">
             <div class="free_text text-center">
-              <h3>Über 10.000 zufriedene Kunden.</h3>
+              <h2>Über 10.000 zufriedene Kunden.</h2>
               <p>
                 Ihre Vorteile Wir sind stolz auf unsere 4.9 Sterne Bewertung bei
                 Google.auf einen Blick
@@ -2188,7 +2203,7 @@
             </div>
             <div class="">
               <div class="swiper reviewSwiper !px-10 !-mx-10">
-                <div class="swiper-wrapper h-auto! ">
+                <div class="swiper-wrapper h-auto!">
                   <!-- Review 1 -->
                   <div class="swiper-slide h-auto!">
                     <div
@@ -2196,7 +2211,7 @@
                     >
                       <div class="flex gap-24 justify-between items-start">
                         <div class="free_text gap-0!">
-                          <h4>Hasan Y.</h4>
+                          <h3>Hasan Y.</h3>
                           <span>05.09.2024</span>
                         </div>
                         <div class="flex items-center gap-10 shrink-0">
@@ -2314,7 +2329,7 @@
                     >
                       <div class="flex gap-24 justify-between items-start">
                         <div class="free_text gap-0!">
-                          <h4>Hasan Y.</h4>
+                          <h3>Hasan Y.</h3>
                           <span>05.09.2024</span>
                         </div>
                         <div class="flex items-center gap-10 shrink-0">
@@ -2425,7 +2440,7 @@
                     >
                       <div class="flex gap-24 justify-between items-start">
                         <div class="free_text gap-0!">
-                          <h4>Hasan Y.</h4>
+                          <h3>Hasan Y.</h3>
                           <span>05.09.2024</span>
                         </div>
                         <div class="flex items-center gap-10 shrink-0">
@@ -2532,117 +2547,6 @@
                   </div>
 
                   <!-- Review 4 -->
-                  <div class="swiper-slide h-auto!">
-                    <div
-                      class="shadow-lg shadow-o border_rounded p-24 flex flex-col gap-24 md:gap-40"
-                    >
-                      <div class="flex gap-24 justify-between items-start">
-                        <div class="free_text gap-0!">
-                          <h4>Hasan Y.</h4>
-                          <span>05.09.2024</span>
-                        </div>
-                        <div class="flex items-center gap-10 shrink-0">
-                          <div class="flex gap-4 text-[#EFB100]">
-                            <svg
-                              width="17"
-                              height="16"
-                              viewBox="0 0 17 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.35568 13.7673L12.3667 15.8752C13.1477 16.2852 14.0597 15.6223 13.9107 14.7533L13.1447 10.2873L16.3907 7.12625C17.0227 6.51025 16.6747 5.43725 15.8007 5.31025L11.3167 4.65825L9.31168 0.59325C8.92168 -0.19775 7.79268 -0.19775 7.40268 0.59325L5.39668 4.65825L0.912678 5.31025C0.0396779 5.43725 -0.309322 6.51025 0.322678 7.12625L3.56868 10.2873L2.80268 14.7533C2.65368 15.6223 3.56568 16.2862 4.34668 15.8752L8.35768 13.7673H8.35568Z"
-                                fill="#EFB100"
-                              />
-                            </svg>
-                            <svg
-                              width="17"
-                              height="16"
-                              viewBox="0 0 17 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.35568 13.7673L12.3667 15.8752C13.1477 16.2852 14.0597 15.6223 13.9107 14.7533L13.1447 10.2873L16.3907 7.12625C17.0227 6.51025 16.6747 5.43725 15.8007 5.31025L11.3167 4.65825L9.31168 0.59325C8.92168 -0.19775 7.79268 -0.19775 7.40268 0.59325L5.39668 4.65825L0.912678 5.31025C0.0396779 5.43725 -0.309322 6.51025 0.322678 7.12625L3.56868 10.2873L2.80268 14.7533C2.65368 15.6223 3.56568 16.2862 4.34668 15.8752L8.35768 13.7673H8.35568Z"
-                                fill="#EFB100"
-                              />
-                            </svg>
-                            <svg
-                              width="17"
-                              height="16"
-                              viewBox="0 0 17 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.35568 13.7673L12.3667 15.8752C13.1477 16.2852 14.0597 15.6223 13.9107 14.7533L13.1447 10.2873L16.3907 7.12625C17.0227 6.51025 16.6747 5.43725 15.8007 5.31025L11.3167 4.65825L9.31168 0.59325C8.92168 -0.19775 7.79268 -0.19775 7.40268 0.59325L5.39668 4.65825L0.912678 5.31025C0.0396779 5.43725 -0.309322 6.51025 0.322678 7.12625L3.56868 10.2873L2.80268 14.7533C2.65368 15.6223 3.56568 16.2862 4.34668 15.8752L8.35768 13.7673H8.35568Z"
-                                fill="#EFB100"
-                              />
-                            </svg>
-                            <svg
-                              width="17"
-                              height="16"
-                              viewBox="0 0 17 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.35568 13.7673L12.3667 15.8752C13.1477 16.2852 14.0597 15.6223 13.9107 14.7533L13.1447 10.2873L16.3907 7.12625C17.0227 6.51025 16.6747 5.43725 15.8007 5.31025L11.3167 4.65825L9.31168 0.59325C8.92168 -0.19775 7.79268 -0.19775 7.40268 0.59325L5.39668 4.65825L0.912678 5.31025C0.0396779 5.43725 -0.309322 6.51025 0.322678 7.12625L3.56868 10.2873L2.80268 14.7533C2.65368 15.6223 3.56568 16.2862 4.34668 15.8752L8.35768 13.7673H8.35568Z"
-                                fill="#EFB100"
-                              />
-                            </svg>
-                            <svg
-                              width="17"
-                              height="16"
-                              viewBox="0 0 17 16"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.35568 13.7673L12.3667 15.8752C13.1477 16.2852 14.0597 15.6223 13.9107 14.7533L13.1447 10.2873L16.3907 7.12625C17.0227 6.51025 16.6747 5.43725 15.8007 5.31025L11.3167 4.65825L9.31168 0.59325C8.92168 -0.19775 7.79268 -0.19775 7.40268 0.59325L5.39668 4.65825L0.912678 5.31025C0.0396779 5.43725 -0.309322 6.51025 0.322678 7.12625L3.56868 10.2873L2.80268 14.7533C2.65368 15.6223 3.56568 16.2862 4.34668 15.8752L8.35768 13.7673H8.35568Z"
-                                fill="#EFB100"
-                              />
-                            </svg>
-                          </div>
-                          <span>5/5</span>
-                        </div>
-                      </div>
-
-                      <svg
-                        width="27"
-                        height="24"
-                        viewBox="0 0 27 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          opacity="0.2"
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.2727 8.44264C12.2727 11.8376 11.39 14.8416 9.6244 17.4548C7.85885 20.068 5.49043 22.2457 2.51914 23.9878C2.38995 24.0325 2.18541 23.9543 1.9055 23.7533C1.6256 23.5523 1.39952 23.3401 1.22727 23.1168C1.05502 22.8934 0.904306 22.6142 0.77512 22.2792C0.645933 21.9442 0.645933 21.732 0.77512 21.6426C2.23923 20.6152 3.4988 19.5655 4.55383 18.4934C5.60885 17.4213 6.13636 15.7685 6.13636 13.535C6.13636 12.999 6.10407 12.6193 6.03947 12.3959C5.97488 12.1726 5.85646 12.0609 5.68421 12.0609C5.55502 12.0609 5.41507 12.0944 5.26435 12.1614C5.11364 12.2284 4.93062 12.2619 4.71531 12.2619C3.46651 12.2619 2.36842 11.8041 1.42105 10.8883C0.473684 9.97259 0 8.53198 0 6.5665C0 4.91371 0.549043 3.40609 1.64713 2.04365C2.74522 0.681218 4.1555 0 5.87799 0C7.81579 0 9.36603 0.804061 10.5287 2.41218C11.6914 4.0203 12.2727 6.03046 12.2727 8.44264ZM27 8.44264C27 11.8376 26.1172 14.8416 24.3517 17.4548C22.5861 20.068 20.2177 22.2457 17.2464 23.9878C17.1172 24.0325 16.9127 23.9543 16.6328 23.7533C16.3529 23.5523 16.1268 23.3401 15.9545 23.1168C15.7823 22.8934 15.6316 22.6142 15.5024 22.2792C15.3732 21.9442 15.3732 21.732 15.5024 21.6426C16.9665 20.6152 18.2261 19.5655 19.2811 18.4934C20.3361 17.4213 20.8636 15.7685 20.8636 13.535C20.8636 12.999 20.8313 12.6193 20.7667 12.3959C20.7022 12.1726 20.5837 12.0609 20.4115 12.0609C20.2823 12.0609 20.1423 12.0944 19.9916 12.1614C19.8409 12.2284 19.6579 12.2619 19.4426 12.2619C18.1938 12.2619 17.0957 11.8041 16.1483 10.8883C15.201 9.97259 14.7273 8.53198 14.7273 6.5665C14.7273 4.91371 15.2763 3.40609 16.3744 2.04365C17.4725 0.681218 18.8828 0 20.6053 0C22.5431 0 24.0933 0.804061 25.256 2.41218C26.4187 4.0203 27 6.03046 27 8.44264Z"
-                          fill="#FF6000"
-                        />
-                      </svg>
-
-                      <p class="line-clamp-5 md:not-xl:line-clamp-6">
-                        Lorem ipsum vitae vitae maecenas lacus in tristique
-                        pretium amet sit ut sapien ultrices elementum aliquet
-                        sem enim tincidunt semper senectus vulputate ut faucibus
-                        nunc feugiat a tellus rhoncus sit maecenas massa cras
-                        arcu massa tortor sed nullam at nunc
-                      </p>
-                    </div>
-                  </div>
                 </div>
 
                 <!-- Pagination -->
@@ -2658,10 +2562,12 @@
           class="min-h-600 py-sec bg-cover bg-center relative flex flex-col items-center justify-center gap-40 md:gap-80 text-Invert-subheading"
           style="background-image: url(&quot;assets/images/BgImg.webp&quot;)"
         >
-          <div class="free_text text-center relative z-20 container">
-            <h3 class="text-white!">
+          <div
+            class="free_text text-center justify-center items-center [&_ul>li]:text-left! relative z-20 container"
+          >
+            <h2 class="text-white!">
               Lassen Sie nicht zu, dass Schädlinge Ihr Grundstück übernehmen.
-            </h3>
+            </h2>
             <p class="max-w-1200 mx-auto">
               Ganz gleich, ob Sie mit einem akuten Schädlingsbefall zu kämpfen
               haben oder einen zuverlässigen Partner für die langfristige
@@ -2834,9 +2740,9 @@
         class="bg-primary text-Invert-subheading p-[clamp(1.5rem,0.6078rem+3.6601vw,5rem)] rounded-4xl sm:rounded-[64px]"
       >
         <div class="flex flex-col gap-30 md:gap-40 container px-0">
-          <div class="md:grid md:grid-cols-4 xl:grid-cols-4 gap-x-40">
+          <div class="md:grid md:grid-cols-3 xl:grid-cols-4 gap-x-40">
             <div
-              class="md:col-span-4 xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-orange not-lg:pb-24 md:pr-40"
+              class="md:col-span-4 xl:col-span-1 flex flex-col gap-40 not-md:border-b xl:border-r border-[#FF9232] not-md:pb-24 md:not-xl:mb-40 md:pr-40"
             >
               <a class="p-24 bg-white border_rounded md:not-xl:w-1/2">
                 <img src="assets/icons/HeadLogo.svg" alt="" class="w-full" />
@@ -2855,12 +2761,12 @@
               </div>
               <a
                 href=""
-                class="btn btn-primary bg-orange! hover:bg-transparent! border border-transparent hover:border-white! transition-all duration-300"
+                class="btn btn-secondary"
                 >Termin vereinbaren</a
               >
             </div>
             <div
-              class="py-24 not-md:border-b md:border-r border-orange flex flex-col gap-40 font-medium"
+              class="py-24 not-md:border-b md:border-r border-[#FF9232] flex flex-col gap-40 font-medium"
             >
               <span class="text-28 text-Invert">Company</span>
               <ul class="space-y-8">
@@ -2872,7 +2778,7 @@
               </ul>
             </div>
             <div
-              class="py-20 not-md:border-b md:border-r border-orange flex flex-col gap-40 font-medium"
+              class="py-20 not-md:border-b md:border-r border-[#FF9232] flex flex-col gap-40 font-medium"
             >
               <span class="text-28 text-Invert">Services</span>
               <ul class="space-y-8">

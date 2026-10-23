@@ -153,7 +153,7 @@
         <!-- Header -->
         <div class="flex items-center justify-between py-16">
           <div class="free_text">
-            <h3>Speisekarte</h3>
+            <h2>Speisekarte</h2>
           </div>
 
           <button
@@ -252,7 +252,7 @@
             />
             <div class="absolute inset-0 bg-primary/30"></div>
             <div class="relative z-10 free_text text-center">
-              <h2 class="text-white">Kontakt</h2>
+              <h1 class="text-white">Kontakt</h1>
 
               <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
                 <ol class="flex flex-wrap items-center gap-8 text-white">
@@ -294,7 +294,9 @@
         <div class="container">
           <div class="col">
             <div class="row grid xl:grid-cols-2">
-              <div class="relative order-2 xl:order-1 min-h-440 rounded-[28px] overflow-hidden">
+              <div
+                class="relative order-2 xl:order-1 min-h-440 rounded-[28px] overflow-hidden"
+              >
                 <img
                   src="assets/images/Map2.webp"
                   alt=""
@@ -302,80 +304,59 @@
                 />
               </div>
               <div class="free_text gap-40 order-1 xl:order-2">
-                <h4>Ihre individuelle Lösung beginnt hier</h4>
-                <form class="space-y-24 sm:space-y-30">
-                  <!-- Name -->
-                  <div class="flex flex-col gap-8">
-                    <label for="name">
-                      Ihr Name <span class="text-[#BE2F33]">*</span>
-                    </label>
+                <h3>Ihre individuelle Lösung beginnt hier</h3>
 
+                <div class="contact-form">
+                  <div class="form-group">
+                    <label for="your-name">Ihr Name test <span>*</span></label>
                     <input
                       type="text"
-                      id="name"
-                      placeholder="Jon Snow"
-                      class="w-full px-14 py-12 rounded-xl border-[1.5px] border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
+                      name="your-name"
+                      placeholder="jon snow"
+                      required
                     />
                   </div>
 
-                  <!-- Phone -->
-                  <div class="flex flex-col gap-8">
-                    <label for="phone">
-                      Telefonnummer <span class="text-[#BE2F33]">*</span>
-                    </label>
-
+                  <div class="form-group">
+                    <label for="your-phone">Telefonnummer <span>*</span></label>
                     <input
                       type="tel"
-                      id="phone"
+                      name="your-phone"
                       placeholder="1234 – 567890"
-                      class="w-full px-14 py-12 rounded-xl border-[1.5px] border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
+                      required
                     />
                   </div>
 
-                  <!-- Email -->
-                  <div class="flex flex-col gap-8">
-                    <label for="email" class="block text-base text-neutral-900">
-                      E-Mail-Adresse
-                    </label>
+                  <div class="form-group">
+                    <label for="your-email">E-Mail-Adresse</label>
 
                     <input
                       type="email"
-                      id="email"
+                      name="your-email"
                       placeholder="johndoe@gmail.com"
-                      class="w-full px-14 py-12 rounded-xl border-[1.5px] border-bordercolor bg-white outline-none focus:border-primary focus:ring-0 transition"
                     />
                   </div>
 
-                  <!-- Message -->
-                  <div class="flex flex-col gap-8">
-                    <label for="message">
-                      Beschreiben Sie kurz Ihre Anforderungen
-                    </label>
+                  <div class="form-group">
+                    <label for="your-message"
+                      >Beschreiben Sie kurz Ihre Anforderungen</label
+                    >
 
                     <textarea
-                      id="message"
+                      name="your-message"
+                      id="your-message"
                       rows="5"
                       placeholder="Beschreiben Sie kurz Ihre Anforderungen"
-                      class="w-full px-14 py-12 rounded-xl border-[1.5px] border-[#C9D5E6] bg-white resize-none outline-none focus:border-primary focus:ring-0 transition"
                     ></textarea>
                   </div>
 
-                  <!-- Checkbox -->
-                  <label class="flex items-center gap-8 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      class="size-18 rounded border border-bordercolor accent-primary"
-                    />
-
+                  <div class="form-checkbox">
+                    <input type="checkbox" name="privacy-consent" />
                     Ich stimme der Datenverarbeitung zu.
-                  </label>
+                  </div>
 
-                  <!-- Button -->
-                  <button
-                    type="submit"
-                    class="btn btn-primary flex w-full justify-center"
-                  >
-                    Nachricht senden
+                  <button type="submit" class="form-submit">
+                    <span>Nachricht senden</span>
 
                     <svg
                       width="24"
@@ -386,33 +367,29 @@
                     >
                       <path
                         d="M19 12H5"
+                        stroke="white"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke="white"
                       />
                       <path
                         d="M14 17L19 12"
+                        stroke="white"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke="white"
                       />
                       <path
                         d="M14 7L19 12"
+                        stroke="white"
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke="white"
                       />
                     </svg>
                   </button>
-
-                  <!-- Features -->
-                  <div
-                    class="flex flex-col sm:flex-row items-center justify-center gap-16 sm:gap-28 pt-2 text-neutral-600"
-                  >
-                    <div class="flex items-center gap-8">
+                  <div class="form-features">
+                    <div class="form-feature">
                       <svg
                         width="24"
                         height="24"
@@ -432,7 +409,7 @@
                       <span>Antwort innerhalb von 24h</span>
                     </div>
 
-                    <div class="flex items-center gap-8">
+                    <div class="form-feature">
                       <svg
                         width="24"
                         height="24"
@@ -452,16 +429,16 @@
                       <span>Vor-Ort-Beratung möglich</span>
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
             <div class="col row grid xl:grid-cols-2">
               <div class="free_text gap-40 order-3">
                 <div class="free_text gap-24!">
                   <span class="badge">Karriere</span>
-                  <h3>Leeser & Will Mönchengladbach</h3>
+                  <h2>Leeser & Will Mönchengladbach</h2>
                 </div>
-                <h4>Deutschlandweiter Service aus Mönchengladbach</h4>
+                <h3>Deutschlandweiter Service aus Mönchengladbach</h3>
                 <div class="space-y-8">
                   <p>
                     Seit nunmehr 75 Jahren lehrt Leeser & Will Mäusen, Ratten,
@@ -474,8 +451,8 @@
                   </p>
                 </div>
                 <div class="space-y-8">
-                  <h4>kostenlose, zentrale Service-Nummer:</h4>
-                  <h4 class="text-txt-body">0800.33 04 286</h4>
+                  <h3>kostenlose, zentrale Service-Nummer:</h3>
+                  <h3 class="text-txt-body">0800.33 04 286</h3>
                 </div>
               </div>
               <div class="grid md:grid-cols-2 gap-40 order-4">
@@ -484,7 +461,7 @@
                 >
                   <div class="grid md:grid-cols-2 gap-40">
                     <div class="free_text gap-8!">
-                      <h4 class="text-white!">Stammsitz & Verwaltung</h4>
+                      <h3 class="text-white!">Stammsitz & Verwaltung</h3>
                       <div class="space-y-3">
                         <p>Konstantinstraße 351</p>
                         <p>41238 Mönchengladbach</p>
@@ -603,7 +580,7 @@
                 <div
                   class="p-24 bg-Backg border border-bordercolor border_rounded free_text gap-16!"
                 >
-                  <h4>Leeser & Will München</h4>
+                  <h3>Leeser & Will München</h3>
                   <div class="flex flex-wrap gap-8 xl:justify-between">
                     <p class="flex gap-x-8">
                       <svg
@@ -688,7 +665,7 @@
                 <div
                   class="p-24 bg-Backg border border-bordercolor border_rounded free_text gap-16!"
                 >
-                  <h4>Leeser & Will München</h4>
+                  <h3>Leeser & Will München</h3>
                   <div class="flex flex-wrap gap-8 xl:justify-between">
                     <p class="flex gap-x-8">
                       <svg
@@ -773,7 +750,7 @@
                 <div
                   class="p-24 bg-Backg border border-bordercolor border_rounded free_text gap-16!"
                 >
-                  <h4>Leeser & Will München</h4>
+                  <h3>Leeser & Will München</h3>
                   <div class="flex flex-wrap gap-8 xl:justify-between">
                     <p class="flex gap-x-8">
                       <svg
@@ -858,7 +835,7 @@
                 <div
                   class="p-24 bg-Backg border border-bordercolor border_rounded free_text gap-16!"
                 >
-                  <h4>Leeser & Will München</h4>
+                  <h3>Leeser & Will München</h3>
                   <div class="flex flex-wrap gap-8 xl:justify-between">
                     <p class="flex gap-x-8">
                       <svg

@@ -153,7 +153,7 @@
         <!-- Header -->
         <div class="flex items-center justify-between py-16">
           <div class="free_text">
-            <h3>Speisekarte</h3>
+            <h2>Speisekarte</h2>
           </div>
 
           <button
@@ -253,9 +253,9 @@
             />
             <div class="absolute inset-0 bg-primary/30"></div>
             <div class="relative z-10 free_text text-center">
-              <h2 class="text-white">
+              <h1 class="text-white">
                 Schädlingsbekämpfung für jede Immobilie.
-              </h2>
+              </h1>
 
               <nav aria-label="Breadcrumb" class="mx-auto not-md:hidden">
                 <ol class="flex flex-wrap items-center gap-8 text-white">
@@ -296,10 +296,10 @@
       <section class="py-sec ctm_sec overflow-x-hidden ctm_sec">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-80">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-80">
               <div class="flex flex-col row justify-center">
                 <div class="free_text gap-0!">
-                  <h3>Wechselservice</h3>
+                  <h2>Wechselservice</h2>
                 </div>
                 <div class="flex flex-col gap-32">
                   <div class="free_text gap-16!">
@@ -330,27 +330,26 @@
                   <a href="" class="btn btn-primary">Zum Kontaktformular</a>
                 </div>
               </div>
-              <div class="relative inline-block">
-                <img
-                  src="assets/icons/Shape10.svg"
-                  alt=""
-                  class="block w-full h-full"
-                />
+              <div class="">
+                <div class="relative inline-block size-fit mx-auto ">
+                  <img
+                    src="assets/icons/Shape10.svg"
+                    alt=""
+                    class="block w-fit"
+                  />
 
-                <img
-                  src="assets/images/Service1.webp"
-                  alt=""
-                  class="absolute inset-0 w-full h-full object-cover"
-                  style="
-                    mask-image: url(&quot;assets/icons/Shape10.svg&quot;);
-                    mask-size: 100% 100%;
-                    mask-repeat: no-repeat;
-
-                    -webkit-mask-image: url(&quot;assets/icons/Shape10.svg&quot;);
-                    -webkit-mask-size: 100% 100%;
-                    -webkit-mask-repeat: no-repeat;
-                  "
-                />
+                  <img
+                    src="assets/images/Service1.webp"
+                    alt="Service"
+                    class="absolute inset-0 size-full object-cover"
+                    style="
+                      mask: url(&quot;assets/icons/Shape10.svg&quot;) center /
+                        100% 100% no-repeat;
+                      -webkit-mask: url(&quot;assets/icons/Shape10.svg&quot;)
+                        center / 100% 100% no-repeat;
+                    "
+                  />
+                </div>
               </div>
               <img
                 src="assets/icons/Service1_1.svg"
@@ -366,34 +365,35 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-3 row">
+            <div class="grid grid-cols-1 xl:grid-cols-3 row">
               <div class="flex flex-col items-center justify-center gap-40">
-                <div class="relative inline-block">
+                <div class="xl:hidden w-full">
+                  <h2>Präventionsmaßnahmen</h2>
+                </div>
+                <div class="relative inline-block size-fit">
                   <img
                     src="assets/icons/Shape9.svg"
                     alt=""
-                    class="block w-full h-full"
+                    class="block size-fit"
                   />
 
                   <img
                     src="assets/images/uber2.2.webp"
-                    alt=""
-                    class="absolute inset-0 w-full h-full object-cover"
+                    alt="Service"
+                    class="absolute inset-0 size-full object-cover"
                     style="
-                      mask-image: url(&quot;assets/icons/Shape9.svg&quot;);
-                      mask-size: 100% 100%;
-                      mask-repeat: no-repeat;
-
-                      -webkit-mask-image: url(&quot;assets/icons/Shape9.svg&quot;);
-                      -webkit-mask-size: 100% 100%;
-                      -webkit-mask-repeat: no-repeat;
+                      mask: url(&quot;assets/icons/Shape9.svg&quot;) center /
+                        100% 100% no-repeat;
+                      -webkit-mask: url(&quot;assets/icons/Shape9.svg&quot;)
+                        center / 100% 100% no-repeat;
                     "
                   />
                 </div>
               </div>
-              <div class="lg:col-span-2 free_text gap-0! justify-center">
-                <h3>Präventionsmaßnahmen</h3>
-                <div class="free_text mt-40 lg:mt-80 gap-24">
+              <div class="xl:col-span-2 free_text gap-0! justify-center">
+                <h2 class="not-xl:hidden">Präventionsmaßnahmen</h2>
+
+                <div class="free_text xl:mt-80 gap-24">
                   <div class="free_text">
                     <p>Die Natur ist einfallsreich!</p>
                     <div>
@@ -442,24 +442,12 @@
       <section class="py-sec bg-Backg">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-4 row">
-              <div class="free_text lg:hidden">
-                <h3>Ursachenforschung</h3>
-              </div>
-              <div class="flex justify-center items-center order-1 lg:order-2">
-                <div class="aspect-[1/1.4] overflow-hidden rounded-full">
-                  <img
-                    src="assets/images/Service3.webp"
-                    alt=""
-                    class="size-full object-cover"
-                  />
-                </div>
-              </div>
+            <div class="grid grid-cols-1 xl:grid-cols-4 row">
               <div
-                class="lg:col-span-3 order-2 lg:order-1 flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                class="xl:col-span-3 flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
               >
-                <div class="free_text not-lg:hidden">
-                  <h3>Ursachenforschung</h3>
+                <div class="free_text">
+                  <h2>Ursachenforschung</h2>
                 </div>
                 <div class="free_text">
                   <p>
@@ -509,6 +497,17 @@
                   </p>
                 </div>
               </div>
+              <div class="flex justify-center items-center">
+                <div
+                  class="aspect-[1/1.4] overflow-hidden rounded-full md:not-xl:w-1/2"
+                >
+                  <img
+                    src="assets/images/Service3.webp"
+                    alt=""
+                    class="size-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -518,15 +517,15 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 row not-lg:relative">
+            <div class="grid grid-cols-1 xl:grid-cols-2 row not-lg:relative">
               <div class="free_text lg:hidden">
-                <h3>Ursachenforschung</h3>
+                <h2>Individuelle Bedarfsanalysen</h2>
               </div>
               <div
                 class="flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center lg:relative"
               >
                 <div class="free_text not-lg:hidden">
-                  <h3>Individuelle Bedarfsanalysen</h3>
+                  <h2>Individuelle Bedarfsanalysen</h2>
                 </div>
                 <div
                   class="max-w-660 relative z-10 h-[clamp(16.875rem,13.2108rem+15.0327vw,31.25rem)] overflow-hidden rounded-r-full"
@@ -623,7 +622,7 @@
               <div class="order-1 lg:order-2">
                 <span class="badge">Verfahren</span>
                 <div class="free_text mt-40">
-                  <h3>Unser Verfahren zur Schädlingsbekämpfung</h3>
+                  <h2>Unser Verfahren zur Schädlingsbekämpfung</h2>
                   <p>
                     Wir verfolgen einen bewährten Schritt-für-Schritt-Ansatz, um
                     eine vollständige Schädlingsbeseitigung und einen
@@ -637,10 +636,10 @@
                 class="bg-white p-24 border_rounded border border-[#CAD5E2] space-y-40"
               >
                 <div class="free_text">
-                  <h2 class="text-orange">01</h2>
+                  <h1 class="text-orange">01</h1>
                 </div>
                 <div class="free_text gap-16!">
-                  <h4>Inspektionstermin vereinbaren</h4>
+                  <h3>Inspektionstermin vereinbaren</h3>
                   <p>
                     Teilen Sie uns Ihr Schädlingsproblem mit und wählen Sie
                     einen für Sie passenden Termin.
@@ -651,10 +650,10 @@
                 class="bg-white p-24 border_rounded border border-[#CAD5E2] space-y-40"
               >
                 <div class="free_text">
-                  <h2 class="text-orange">02</h2>
+                  <h1 class="text-orange">02</h1>
                 </div>
                 <div class="free_text gap-16!">
-                  <h4>Identifizieren Sie das Problem.</h4>
+                  <h3>Identifizieren Sie das Problem.</h3>
                   <p>
                     Wir inspizieren Ihre Immobilie sowie Anzeichen von
                     Schädlingsbefall, Eintrittspforten und Risikobereiche.
@@ -665,10 +664,10 @@
                 class="bg-white p-24 border_rounded border border-[#CAD5E2] space-y-40"
               >
                 <div class="free_text">
-                  <h2 class="text-orange">03</h2>
+                  <h1 class="text-orange">03</h1>
                 </div>
                 <div class="free_text gap-16!">
-                  <h4>Behandlung anwenden</h4>
+                  <h3>Behandlung anwenden</h3>
                   <p>
                     Unser Team wendet den passenden Behandlungsplan für Ihren
                     Schädlingsbefall und Ihre Immobilie an.
@@ -679,10 +678,10 @@
                 class="bg-white p-24 border_rounded border border-[#CAD5E2] space-y-40"
               >
                 <div class="free_text">
-                  <h2 class="text-orange">04</h2>
+                  <h1 class="text-orange">04</h1>
                 </div>
                 <div class="free_text gap-16!">
-                  <h4>Rückkehr verhindern</h4>
+                  <h3>Rückkehr verhindern</h3>
                   <p>
                     Wir vermitteln vorbeugende Maßnahmen und bieten bei Bedarf
                     weiterführende Unterstützung an.
@@ -704,15 +703,15 @@
         <div class="container">
           <div class="component">
             <div
-              class="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              class="grid grid-cols-1 xl:grid-cols-3 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
             >
-              <div class="free_text lg:hidden">
-                <h3>Monitoring</h3>
+              <div class="free_text xl:hidden block">
+                <h2>Monitoring</h2>
               </div>
               <div
-                class="lg:col-span-8 order-2 lg:order-1 free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
+                class="xl:col-span-2 order-2 xl:order-1 free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
               >
-                <h3 class="not-lg:hidden">Monitoring</h3>
+                <h2 class="not-xl:hidden">Monitoring</h2>
                 <div class="free_text gap-24">
                   <p>Wo sind bloß meine Schlüssel schon wieder?</p>
                   <p>
@@ -741,7 +740,7 @@
                 </div>
               </div>
               <div
-                class="lg:col-span-4 order-1 lg:order-2 flex flex-col items-center justify-center gap-40"
+                class="order-1 xl:order-2 flex flex-col items-center justify-center gap-40"
               >
                 <div class="relative inline-block">
                   <img
@@ -780,23 +779,27 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div class="flex flex-col gap-24 lg:gap-80">
-              <div class="free_text mb-16">
-                <h3 class="lg:hidden">Monitoring</h3>
+            <div class="flex flex-col gap-40 xl:gap-80">
+              <div class="free_text">
+                <h2 class="xl:hidden">Dokumentation</h2>
               </div>
               <div
-                class="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+                class="grid grid-cols-1 xl:grid-cols-12 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
               >
-                <div class="lg:col-span-5 flex items-center">
-                  <div class="border_rounded overflow-hidden w-full">
-                    <img src="assets/images/Service6.webp" alt="" class="" />
+                <div class="xl:col-span-5 flex items-center">
+                  <div class="border_rounded overflow-hidden w-full xl:h-full">
+                    <img
+                      src="assets/images/Service6.webp"
+                      alt=""
+                      class="xl:h-full object-cover"
+                    />
                   </div>
                 </div>
-                <div class="lg:col-span-7">
+                <div class="xl:col-span-7">
                   <div
                     class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
                   >
-                    <h3 class="not-lg:hidden">Monitoring</h3>
+                    <h2 class="not-xl:hidden">Dokumentation</h2>
                     <div class="free_text">
                       <p>
                         Für viele Unternehmen ist die gewissenhafte
@@ -867,12 +870,12 @@
         <div class="container">
           <div class="component">
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              class="grid grid-cols-1 xl:grid-cols-2 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
             >
               <div
                 class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
               >
-                <h3>Diskreter Service</h3>
+                <h2>Diskreter Service</h2>
                 <div class="free_text gap-24">
                   <p>
                     Leeser & Will steht für Professionalität, Effizienz &
@@ -914,10 +917,10 @@
               <div
                 class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
               >
-                <h3>
+                <h2>
                   Allianz Handwerker <br />
                   Service
-                </h3>
+                </h2>
                 <div class="free_text gap-24">
                   <p>Geprüfte Schädlingsbekämpfungs-Qualität</p>
                   <p>
@@ -951,14 +954,14 @@
       </section>
 
       <!-- sec-10 -->
-      <section class="py-sec">
+      <section class="py-sec ctm_sec">
         <div class="container">
           <div class="component">
             <div
               class="free_text flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] relative"
             >
-              <h3>Informationen & Downloads</h3>
-              <div class="free_text gap-24">
+              <h2>Informationen & Downloads</h2>
+              <div class="free_text gap-24 3xl:max-w-[90%] xl:max-w-[80%]">
                 <p>
                   In unserem Download-Center haben wir Ihnen wichtige Infos und
                   Übersichten zum schnellen Download zur Verfügung gestellt.
@@ -978,111 +981,36 @@
               </div>
 
               <!-- Folders Grid -->
-              <div
-                class="flex flex-wrap gap-[clamp(1rem,0.8725rem+0.5229vw,1.5rem)]"
+
+              <!-- <svg
+                viewBox="0 0 120 150"
+                fill="none"
+                stroke="#cdd3dd"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="pointer-events-none mx-auto -mb-14 mt-6 w-28 lg:absolute lg:right-[6%] lg:top-20 lg:m-0 lg:w-64"
+                aria-hidden="true"
               >
-                <!-- Folder 1 -->
-                <div
-                  class="relative w-full cursor-pointer sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(16.666%-1.25rem)]"
-                >
-                  <img
-                    src="assets/icons/FolderShape.svg"
-                    alt=""
-                    class="block w-full"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col justify-end gap-4 p-16"
-                  >
-                    <span class="text-xs">10 Dateien</span>
-                    <p class="text-black text-[clamp(0.75rem,0.6544rem+0.3922vw,1.125rem)]">Informationsbroschüren</p>
-                  </div>
-                </div>
+                <path
+                  d="M45 18C38 12 30 8 22 6M75 18C82 12 90 8 98 6M45 18C52 10 68 10 75 18"
+                />
+                <path
+                  d="M45 22C28 30 20 60 24 100c3 28 14 42 28 40 8-1 8-20 8-40V32C60 28 52 24 45 22Z"
+                />
+                <path
+                  d="M75 22c17 8 25 38 21 78-3 28-14 42-28 40-8-1-8-20-8-40V32c0-4 8-8 15-10Z"
+                />
+                <path
+                  d="M44 34c-8 20-10 50-2 80M76 34c8 20 10 50 2 80M14 52l14 8M106 52l-14 8M10 82l14 6M110 82l-14 6"
+                />
+              </svg> -->
 
-                <!-- Folder 2 -->
-                <div
-                  class="relative w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(16.666%-1.25rem)]"
-                >
-                  <img
-                    src="assets/icons/FolderShape.svg"
-                    alt=""
-                    class="block w-full"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col justify-end gap-4 p-16"
-                  >
-                    <span class="text-xs">10 Dateien</span>
-                    <p class="text-black">Informationsbroschüren</p>
-                  </div>
-                </div>
-
-                <!-- Folder 3 -->
-                <div
-                  class="relative w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(16.666%-1.25rem)]"
-                >
-                  <img
-                    src="assets/icons/FolderShape.svg"
-                    alt=""
-                    class="block w-full"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col justify-end gap-4 p-16"
-                  >
-                    <span class="text-xs">10 Dateien</span>
-                    <p class="text-black">Informationsbroschüren</p>
-                  </div>
-                </div>
-
-                <!-- Folder 4 -->
-                <div
-                  class="relative w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(16.666%-1.25rem)]"
-                >
-                  <img
-                    src="assets/icons/FolderShape.svg"
-                    alt=""
-                    class="block w-full"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col justify-end gap-4 p-16"
-                  >
-                    <span class="text-xs">10 Dateien</span>
-                    <p class="text-black">Informationsbroschüren</p>
-                  </div>
-                </div>
-
-                <!-- Folder 5 -->
-                <div
-                  class="relative w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(16.666%-1.25rem)]"
-                >
-                  <img
-                    src="assets/icons/FolderShape.svg"
-                    alt=""
-                    class="block w-full"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col justify-end gap-4 p-16"
-                  >
-                    <span class="text-xs">10 Dateien</span>
-                    <p class="text-black">Informationsbroschüren</p>
-                  </div>
-                </div>
-
-                <!-- Folder 6 -->
-                <div
-                  class="relative w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(16.666%-1.25rem)]"
-                >
-                  <img
-                    src="assets/icons/FolderShape.svg"
-                    alt=""
-                    class="block w-full"
-                  />
-                  <div
-                    class="absolute inset-0 flex flex-col justify-end gap-4 p-16"
-                  >
-                    <span class="text-xs">10 Dateien</span>
-                    <p class="text-black">Informationsbroschüren</p>
-                  </div>
-                </div>
-              </div>
+              <!-- Folder cards (rendered by JS) -->
+              <div
+                id="folders"
+                class="relative mt-10 lg:mt-24 grid grid-cols-2 gap-x-16 gap-y-24 sm:grid-cols-3 xl:grid-cols-6 lg:gap-24"
+              ></div>
 
               <!-- <div
                 class="bg-primary border_rounded py-100 w-[20%] relative z-0"
@@ -1101,6 +1029,59 @@
         </div>
       </section>
 
+      <!-- Popup -->
+      <div
+        id="modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/40 p-3 backdrop-blur-xs "
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <div
+          id="panel"
+          class="relative flex gap-24 md:gap-40 xl:gap-80 py-40 px-16 sm:p-40 xl:p-80 not-sm:h-fit not-lg:max-h-2/3 size-[90%] max-w-1920  flex-col bg-[#E4EBFFB2] border_rounded_lg border border-white"
+        >
+          <div class="flex items-center justify-between">
+            <h2 id="modal-title" class="heading_h3"></h2>
+            <button
+              id="close"
+              type="button"
+              aria-label="Schließen"
+              class="grid  place-items-center rounded-full transition hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-navy"
+            >
+              <svg
+                class="size-38 sm:size-48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 16L32 32"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="#323232"
+                />
+                <path
+                  d="M32 16L16 32"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="#323232"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="overflow-y-auto overscroll-contain "
+          >
+            <ul
+              id="files"
+              class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-10 gap-y-16 md:gap-40"
+            ></ul>
+          </div>
+        </div>
+      </div>
+
       <!-- sec-11 -->
       <section>
         <div
@@ -1108,9 +1089,9 @@
           style="background-image: url(&quot;assets/images/BgImg.webp&quot;)"
         >
           <div class="free_text text-center relative z-20 container">
-            <h3 class="text-white!">
+            <h2 class="text-white!">
               Lassen Sie nicht zu, dass Schädlinge Ihr Grundstück übernehmen.
-            </h3>
+            </h2>
             <p class="max-w-1200 mx-auto">
               Ganz gleich, ob Sie mit einem akuten Schädlingsbefall zu kämpfen
               haben oder einen zuverlässigen Partner für die langfristige
@@ -1138,12 +1119,13 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-2 row"
-            >
-              <div class="w-full overflow-hidden">
+            <div class="grid grid-cols-1 xl:grid-cols-2 row">
+              <div class="w-full flex flex-col gap-40 overflow-hidden">
+                <div class="free_text">
+                  <h2 class="xl:hidden">Dokumentation</h2>
+                </div>
                 <div
-                  class="relative mx-auto aspect-[820/735] w-full max-w-[820px]"
+                  class="relative mx-auto aspect-[820/735] w-full max-w-[820px] md:not-xl:max-w-2/3! not-xl:mx-auto"
                 >
                   <!-- Image 1: Top -->
                   <div
@@ -1182,7 +1164,7 @@
               <div
                 class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
               >
-                <h3>Schädlingslexikon</h3>
+                <h2 class="not-xl:hidden">Schädlingslexikon</h2>
                 <div class="free_text gap-24">
                   <p>Ungebetene Gäste und ungeliebte Mitbewohner</p>
                   <p>
@@ -1240,16 +1222,14 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-3 row"
-            >
-              <div class="free_text lg:hidden">
-                <h3>Rückrufservice</h3>
+            <div class="grid grid-cols-1 xl:grid-cols-3 row">
+              <div class="free_text xl:hidden">
+                <h2>Rückrufservice</h2>
               </div>
               <div
-                class="lg:col-span-2 free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
+                class="xl:col-span-2 free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
               >
-                <h3 class="not-lg:hidden">Rückrufservice</h3>
+                <h2 class="not-xl:hidden">Rückrufservice</h2>
                 <div class="free_text gap-24">
                   <p>Wo sind bloß meine Schlüssel schon wieder?</p>
                   <p>
@@ -1278,7 +1258,7 @@
                 </div>
               </div>
               <div
-                class=" flex flex-col items-center justify-center gap-40 relative"
+                class="flex flex-col items-center justify-center gap-40 relative w-fit mx-auto"
               >
                 <div class="relative inline-block">
                   <img
@@ -1306,7 +1286,7 @@
                 <img
                   src="assets/icons/Service8.1.svg"
                   alt=""
-                  class="absolute -rotate-50 h-[clamp(6.1875rem,5.136rem+4.3137vw,10.3125rem)] -top-[2%] lg:-top-[15%] left-0 "
+                  class="absolute -rotate-50 h-[clamp(6.1875rem,5.136rem+4.3137vw,10.3125rem)] -top-[2%] lg:-top-[15%] left-0"
                 />
               </div>
             </div>
@@ -1319,7 +1299,7 @@
         <div class="container">
           <div class="row cols_1">
             <div class="free_text text-center">
-              <h3>Über 10.000 zufriedene Kunden.</h3>
+              <h2>Über 10.000 zufriedene Kunden.</h2>
               <p>
                 Ihre Vorteile Wir sind stolz auf unsere 4.9 Sterne Bewertung bei
                 Google.auf einen Blick
@@ -1332,7 +1312,7 @@
               >
                 <div class="flex gap-24 justify-between">
                   <div class="free_text gap-0!">
-                    <h4>Hasan Y.</h4>
+                    <h3>Hasan Y.</h3>
                     <span>05.09.2024</span>
                   </div>
                   <div class="flex items-center gap-10 shrink-0">
@@ -1440,7 +1420,7 @@
               >
                 <div class="flex gap-24 justify-between">
                   <div class="free_text gap-0!">
-                    <h4>Hasan Y.</h4>
+                    <h3>Hasan Y.</h3>
                     <span>05.09.2024</span>
                   </div>
                   <div class="flex items-center gap-10 shrink-0">
@@ -1548,7 +1528,7 @@
               >
                 <div class="flex gap-24 justify-between">
                   <div class="free_text gap-0!">
-                    <h4>Hasan Y.</h4>
+                    <h3>Hasan Y.</h3>
                     <span>05.09.2024</span>
                   </div>
                   <div class="flex items-center gap-10 shrink-0">
@@ -1849,7 +1829,7 @@
                   >Phone & Email</span
                 >
                 <div class="space-y-4">
-                  <p class="flex gap-8">
+                  <a href="" class="flex gap-8">
                     <span
                       ><svg
                         width="24"
@@ -1869,8 +1849,8 @@
                         />
                       </svg> </span
                     >+00 1234567890
-                  </p>
-                  <p class="flex gap-8">
+                  </a>
+                  <a href="" class="flex gap-8">
                     <span
                       ><svg
                         width="24"
@@ -1911,7 +1891,7 @@
                         />
                       </svg> </span
                     >company@abc.com
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>
