@@ -220,18 +220,18 @@
   h1 {
     @apply text-h1 text-heading;
   }
-   h2 {
+  h2 {
     @apply text-h2 text-heading;
   }
-   h3 {
+  h3 {
     @apply text-h3 text-heading;
   }
   .free_text a:not(.btn) {
     @apply underline;
   }
-.free_text ul {
-  @apply list-disc pl-28;
-}
+  .free_text ul {
+    @apply list-disc pl-28;
+  }
   .no-disc ul {
     @apply list-none pl-0;
   }
@@ -309,7 +309,7 @@
 
   /* NEW CSS */
   .ctm-list ul {
-    @apply space-y-16 pl-0! text-lg ;
+    @apply space-y-16 pl-0! text-lg;
   }
 
   .ctm-list li {
@@ -380,9 +380,9 @@
   .contact-form .form-feature svg {
     @apply shrink-0;
   }
-footer a {
-  @apply no-underline hover:underline transition-all duration-300;
-}
+  footer a {
+    @apply no-underline hover:underline transition-all duration-300;
+  }
 }
 
 @utility transition-slow {
@@ -535,5 +535,3 @@ footer a {
 .philosophie-mobile .swiper-pagination-bullet-active {
   opacity: 1;
 }
-
-
