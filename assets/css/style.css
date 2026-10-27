@@ -350,6 +350,36 @@
   .top-\[-4\%\] {
     top: -4%;
   }
+  .top-\[-10px\] {
+    top: -10px;
+  }
+  .top-\[-20p\] {
+    top: -20p;
+  }
+  .top-\[-20px\] {
+    top: -20px;
+  }
+  .top-\[-40px\] {
+    top: -40px;
+  }
+  .top-\[-50px\] {
+    top: -50px;
+  }
+  .top-\[-60px\] {
+    top: -60px;
+  }
+  .top-\[-80px\] {
+    top: -80px;
+  }
+  .top-\[-120px\] {
+    top: -120px;
+  }
+  .top-\[-800px\] {
+    top: -800px;
+  }
+  .top-\[\/20\] {
+    top: /20;
+  }
   .top-\[2\%\] {
     top: 2%;
   }
@@ -509,6 +539,9 @@
   .right-85 {
     right: calc(var(--spacing) * 85);
   }
+  .right-\[-0px\] {
+    right: -0px;
+  }
   .right-\[-7\%\] {
     right: -7%;
   }
@@ -517,6 +550,12 @@
   }
   .right-\[-20px\] {
     right: -20px;
+  }
+  .right-\[-25px\] {
+    right: -25px;
+  }
+  .right-\[-30px\] {
+    right: -30px;
   }
   .right-\[-40px\] {
     right: -40px;
@@ -532,6 +571,15 @@
   }
   .right-\[-80px\] {
     right: -80px;
+  }
+  .right-\[-110px\] {
+    right: -110px;
+  }
+  .right-\[-150px\] {
+    right: -150px;
+  }
+  .right-\[-px\] {
+    right: -px;
   }
   .right-\[4\%\] {
     right: 4%;
@@ -566,11 +614,23 @@
   .bottom-16 {
     bottom: calc(var(--spacing) * 16);
   }
+  .bottom-25 {
+    bottom: calc(var(--spacing) * 25);
+  }
+  .bottom-30 {
+    bottom: calc(var(--spacing) * 30);
+  }
+  .bottom-\[-10px\] {
+    bottom: -10px;
+  }
   .bottom-\[0\.5\%\] {
     bottom: 0.5%;
   }
   .bottom-\[8\%\] {
     bottom: 8%;
+  }
+  .bottom-\[10px\] {
+    bottom: 10px;
   }
   .bottom-\[15\%\] {
     bottom: 15%;
@@ -604,6 +664,18 @@
   }
   .left-50 {
     left: calc(var(--spacing) * 50);
+  }
+  .left-\[-0px\] {
+    left: -0px;
+  }
+  .left-\[-30px\] {
+    left: -30px;
+  }
+  .left-\[-50px\] {
+    left: -50px;
+  }
+  .left-\[-70px\] {
+    left: -70px;
   }
   .left-\[1\%\] {
     left: 1%;
@@ -796,6 +868,9 @@
   }
   .row-start-1 {
     grid-row-start: 1;
+  }
+  .clear-both {
+    clear: both;
   }
   .container {
     width: 100%;
@@ -1198,6 +1273,9 @@
   .h-\[clamp\(6\.875rem\,4\.4056rem\+10\.1307vw\,16\.5625rem\)\] {
     height: clamp(6.875rem, 4.4056rem + 10.1307vw, 16.5625rem);
   }
+  .h-\[clamp\(6\.875rem\,5\.5527rem\+5\.4248vw\,12\.0625rem\)\] {
+    height: clamp(6.875rem, 5.5527rem + 5.4248vw, 12.0625rem);
+  }
   .h-\[clamp\(6\.1875rem\,5\.136rem\+4\.3137vw\,10\.3125rem\)\] {
     height: clamp(6.1875rem, 5.136rem + 4.3137vw, 10.3125rem);
   }
@@ -1565,8 +1643,17 @@
   .rotate-17 {
     rotate: 17deg;
   }
+  .rotate-19 {
+    rotate: 19deg;
+  }
+  .rotate-20 {
+    rotate: 20deg;
+  }
   .rotate-33 {
     rotate: 33deg;
+  }
+  .rotate-34 {
+    rotate: 34deg;
   }
   .rotate-35 {
     rotate: 35deg;
@@ -2947,6 +3034,9 @@
     .md\:top-3\/5 {
       top: calc(3 / 5 * 100%);
     }
+    .md\:top-\[-80px\] {
+      top: -80px;
+    }
     .md\:top-\[15\%\] {
       top: 15%;
     }
@@ -2964,6 +3054,12 @@
     }
     .md\:left-1\/3 {
       left: calc(1 / 3 * 100%);
+    }
+    .md\:left-\[-50px\] {
+      left: -50px;
+    }
+    .md\:left-\[-60px\] {
+      left: -60px;
     }
     .md\:col-span-2 {
       grid-column: span 2 / span 2;
@@ -3107,6 +3203,9 @@
     .lg\:top-20 {
       top: calc(var(--spacing) * 20);
     }
+    .lg\:top-\[-80px\] {
+      top: -80px;
+    }
     .lg\:top-\[5\%\] {
       top: 5%;
     }
@@ -3164,6 +3263,36 @@
     .lg\:right-2\/3 {
       right: calc(2 / 3 * 100%);
     }
+    .lg\:right-\[-10px\] {
+      right: -10px;
+    }
+    .lg\:right-\[-20px\] {
+      right: -20px;
+    }
+    .lg\:right-\[-60px\] {
+      right: -60px;
+    }
+    .lg\:right-\[-80px\] {
+      right: -80px;
+    }
+    .lg\:right-\[-120px\] {
+      right: -120px;
+    }
+    .lg\:right-\[-150px\] {
+      right: -150px;
+    }
+    .lg\:right-\[-160px\] {
+      right: -160px;
+    }
+    .lg\:right-\[-180px\] {
+      right: -180px;
+    }
+    .lg\:right-\[-220px\] {
+      right: -220px;
+    }
+    .lg\:right-\[-280px\] {
+      right: -280px;
+    }
     .lg\:right-\[6\%\] {
       right: 6%;
     }
@@ -3173,6 +3302,12 @@
     .lg\:bottom-0 {
       bottom: 0px;
     }
+    .lg\:bottom-30 {
+      bottom: calc(var(--spacing) * 30);
+    }
+    .lg\:bottom-\[-80px\] {
+      bottom: -80px;
+    }
     .lg\:bottom-\[2\%\] {
       bottom: 2%;
     }
@@ -3181,6 +3316,9 @@
     }
     .lg\:left-1\/3 {
       left: calc(1 / 3 * 100%);
+    }
+    .lg\:left-\[-60px\] {
+      left: -60px;
     }
     .lg\:left-\[7\%\] {
       left: 7%;
