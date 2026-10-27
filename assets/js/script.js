@@ -310,10 +310,10 @@ function openModal(id, trigger) {
         <li>
           <a href="#" download title="${name}"
              class="flex items-center gap-8 rounded-xl px-1 py-2 transition hover:bg-white/60 focus-visible:outline-2 focus-visible:outline-navy
-                    md:flex-col md:gap-8 md:px-9 md:py-8 md:text-center">
-            ${icon("size-24 shrink-0 md:h-[100px] md:w-[75px]")}
-            <span class="min-w-0 flex-1 truncate text-base font-medium md:line-clamp-2 md:w-full md:flex-none md:whitespace-normal md:break-words md:text-[18px] md:leading-snug md:font-normal text-heading">${name}</span>
-            <span class="text-xs text-body/80 md:text-[11px]">100kb</span>
+                    sm:flex-col sm:gap-8 sm:px-9 sm:py-8 sm:text-center">
+            ${icon("size-24 shrink-0 sm:h-[100px] sm:w-[75px]")}
+            <span class="min-w-0 flex-1 truncate text-base font-medium sm:line-clamp-2 sm:w-full sm:flex-none sm:whitespace-normal sm:break-words sm:text-[18px] sm:leading-snug sm:font-normal text-heading">${name}</span>
+            <span class="text-xs text-body/80 ">100kb</span>
           </a>
         </li>`,
     )

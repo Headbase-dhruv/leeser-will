@@ -331,7 +331,7 @@
                 </div>
               </div>
               <div class="">
-                <div class="relative inline-block size-fit mx-auto ">
+                <div class="relative inline-block size-fit mx-auto">
                   <img
                     src="assets/icons/Shape10.svg"
                     alt=""
@@ -709,7 +709,7 @@
                 <h2>Monitoring</h2>
               </div>
               <div
-                class="xl:col-span-2 order-2 xl:order-1 free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
+                class="xl:col-span-2 free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)] justify-center"
               >
                 <h2 class="not-xl:hidden">Monitoring</h2>
                 <div class="free_text gap-24">
@@ -739,9 +739,7 @@
                   </p>
                 </div>
               </div>
-              <div
-                class="order-1 xl:order-2 flex flex-col items-center justify-center gap-40"
-              >
+              <div class="flex flex-col items-center justify-center gap-40">
                 <div class="relative inline-block">
                   <img
                     src="assets/icons/Shape41.svg"
@@ -771,7 +769,7 @@
         <img
           src="assets/icons/Service5_1.svg"
           alt=""
-          class="aspect-square absolute h-[clamp(7.5rem,5.19rem+9.4771vw,16.5625rem)] -z-10 top-0 lg:-top-[15%] right-[10%] lg:left-[17%]"
+          class="aspect-square absolute h-[clamp(7.5rem,5.19rem+9.4771vw,16.5625rem)] -z-10 top-0 sm:top-[-8%] xl:-top-[15%] right-[10%] sm:left-[40%] xl:left-[17%]"
         />
       </section>
 
@@ -1022,7 +1020,7 @@
               <img
                 src="assets/icons/Service.svg"
                 alt=""
-                class="not-sm:hidden -z-10 absolute aspect-square top-0 right-0 h-[clamp(6.875rem,4.4056rem+10.1307vw,16.5625rem)]"
+                class="not-sm:hidden -z-10 absolute aspect-square top-0 right-0 h-60 md:h-100 xl:h-200"
               />
             </div>
           </div>
@@ -1032,51 +1030,55 @@
       <!-- Popup -->
       <div
         id="modal"
-        class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/40 p-3 backdrop-blur-xs "
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/40 p-3 backdrop-blur-xs"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
         <div
           id="panel"
-          class="relative flex gap-24 md:gap-40 xl:gap-80 py-40 px-16 sm:p-40 xl:p-80 not-sm:h-fit not-lg:max-h-2/3 size-[90%] max-w-1920  flex-col bg-[#E4EBFFB2] border_rounded_lg border border-white"
+          class="relative flex gap-24 md:gap-40 xl:gap-80 py-40 px-16 sm:p-40 xl:p-80 not-sm:h-fit not-lg:max-h-2/3 size-[90%] max-w-1920 flex-col bg-[#E4EBFFE6] border_rounded_lg border border-white"
         >
           <div class="flex items-center justify-between">
-            <h2 id="modal-title" class="heading_h3"></h2>
+            <h2
+              id="modal-title"
+              class="text-2xl md:text-[32px] xl:text-[40px]"
+            ></h2>
+
             <button
               id="close"
               type="button"
               aria-label="Schließen"
-              class="grid  place-items-center rounded-full transition hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-navy"
+              class="grid place-items-center rounded-full transition hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-navy"
             >
               <svg
                 class="size-38 sm:size-48"
+                viewBox="0 0 48 48"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M16 16L32 32"
+                  stroke="#323232"
                   stroke-width="3"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke="#323232"
                 />
                 <path
                   d="M32 16L16 32"
+                  stroke="#323232"
                   stroke-width="3"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke="#323232"
                 />
               </svg>
             </button>
           </div>
-          <div
-            class="overflow-y-auto overscroll-contain "
-          >
+          <div class="overflow-y-auto overscroll-contain">
             <ul
               id="files"
-              class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-10 gap-y-16 md:gap-40"
+              class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-10 gap-y-16 md:gap-40"
             ></ul>
           </div>
         </div>
@@ -1085,7 +1087,7 @@
       <!-- sec-11 -->
       <section>
         <div
-          class="min-h-600 py-sec bg-cover bg-center relative flex flex-col items-center justify-center gap-40 md:gap-80 text-Invert-subheading"
+          class="min-h-600 py-sec bg-cover bg-center relative flex flex-col items-center justify-center gap-40 xl:gap-80 text-Invert-subheading"
           style="background-image: url(&quot;assets/images/BgImg.webp&quot;)"
         >
           <div class="free_text text-center relative z-20 container">
@@ -1165,53 +1167,56 @@
                 class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
               >
                 <h2 class="not-xl:hidden">Schädlingslexikon</h2>
-                <div class="free_text gap-24">
-                  <p>Ungebetene Gäste und ungeliebte Mitbewohner</p>
-                  <p>
-                    In unserem Schädlingslexikon machen wir Sie mit den
-                    wichtigsten Schäd- und Lästlingen bekannt. Hier können Sie
-                    sich einen kleinen ersten Überblick verschaffen – für eine
-                    genaue Einschätzung der Situation kommen wir jedoch gerne zu
-                    Ihnen
-                  </p>
-                  <p>
-                    Wenn Sie Schädlinge in Ihrem Umfeld entdecken, sollten Sie
-                    natürlich am besten einen Profi hinzuziehen. Vor Ort machen
-                    wir uns ein konkretes Bild von Art und Ausmaß des Befalls.
-                  </p>
-                  <p>
-                    Schädlinge nennen wir Organismen, die das Wohlbefinden und
-                    die Gesundheit der Menschen oder der Haus- und Nutztiere
-                    beeinträchtigen, die die normale Entwicklung der
-                    Kulturpflanzen stören und wirtschaftliche Güter wertmindern
-                    oder unbrauchbar machen. Sie werden dabei in zwei
-                    Untergruppen aufgeteilt.
-                  </p>
-                  <p>
-                    Gesundheitsschädlinge sind alle Glieder- und Wirbeltiere,
-                    die direkt oder indirekt die Gesundheit, das
-                    Leistungsvermögen oder das Wohlbefinden der Menschen
-                    beeinträchtigen. Dazu gehören: Ständige Parasiten,
-                    zeitweilige Überträger (Vektoren) von Krankheitserregern und
-                    Lebensmittelvergiftern, freilebende Gliederfüßer und
-                    Gifttiere.
-                  </p>
-                  <p>
-                    Vorrats- und Materialschädlinge beschränken den Ver- oder
-                    Gebrauch pflanzlicher oder tierischer Produkte bzw. Stoffe
-                    sowie anderer Rohstoffe und Materialien, von denen sie sich
-                    ernähren, in denen sie sich entwickeln und die sie
-                    verunreinigen, unter Umständen bis zu ihrer Vernichtung oder
-                    Zerstörung
-                  </p>
-                  <p>
-                    Lästlinge sind Tiere, die im Wesentlichen keine
-                    Krankheitserreger übertragen. Doch durch Ihre Anwesenheit
-                    oder massenhaftes Auftreten beeinträchtigen sie das
-                    Wohlbefinden des Menschen.
-                  </p>
+                <div class="flex flex-col gap-40">
+                  <div class="free_text">
+                    <p>Ungebetene Gäste und ungeliebte Mitbewohner</p>
+                    <p>
+                      In unserem Schädlingslexikon machen wir Sie mit den
+                      wichtigsten Schäd- und Lästlingen bekannt. Hier können Sie
+                      sich einen kleinen ersten Überblick verschaffen – für eine
+                      genaue Einschätzung der Situation kommen wir jedoch gerne
+                      zu Ihnen
+                    </p>
+                    <p>
+                      Wenn Sie Schädlinge in Ihrem Umfeld entdecken, sollten Sie
+                      natürlich am besten einen Profi hinzuziehen. Vor Ort
+                      machen wir uns ein konkretes Bild von Art und Ausmaß des
+                      Befalls.
+                    </p>
+                    <p>
+                      Schädlinge nennen wir Organismen, die das Wohlbefinden und
+                      die Gesundheit der Menschen oder der Haus- und Nutztiere
+                      beeinträchtigen, die die normale Entwicklung der
+                      Kulturpflanzen stören und wirtschaftliche Güter
+                      wertmindern oder unbrauchbar machen. Sie werden dabei in
+                      zwei Untergruppen aufgeteilt.
+                    </p>
+                    <p>
+                      Gesundheitsschädlinge sind alle Glieder- und Wirbeltiere,
+                      die direkt oder indirekt die Gesundheit, das
+                      Leistungsvermögen oder das Wohlbefinden der Menschen
+                      beeinträchtigen. Dazu gehören: Ständige Parasiten,
+                      zeitweilige Überträger (Vektoren) von Krankheitserregern
+                      und Lebensmittelvergiftern, freilebende Gliederfüßer und
+                      Gifttiere.
+                    </p>
+                    <p>
+                      Vorrats- und Materialschädlinge beschränken den Ver- oder
+                      Gebrauch pflanzlicher oder tierischer Produkte bzw. Stoffe
+                      sowie anderer Rohstoffe und Materialien, von denen sie
+                      sich ernähren, in denen sie sich entwickeln und die sie
+                      verunreinigen, unter Umständen bis zu ihrer Vernichtung
+                      oder Zerstörung
+                    </p>
+                    <p>
+                      Lästlinge sind Tiere, die im Wesentlichen keine
+                      Krankheitserreger übertragen. Doch durch Ihre Anwesenheit
+                      oder massenhaftes Auftreten beeinträchtigen sie das
+                      Wohlbefinden des Menschen.
+                    </p>
+                  </div>
+                  <a href="" class="btn btn-primary">Zum Schädlingslexikon</a>
                 </div>
-                <a href="" class="btn btn-primary">Zum Schädlingslexikon</a>
               </div>
             </div>
           </div>

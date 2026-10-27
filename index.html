@@ -27,7 +27,10 @@
     <title>Document 1</title>
   </head>
   <body>
-    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white ">
+    <header x-data="{ mobileMenu: false }" x-effect="
+    document.documentElement.classList.toggle('overflow-hidden', mobileMenu);
+    document.body.classList.toggle('overflow-hidden', mobileMenu);
+  " class="sticky top-0 z-50 bg-white ">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -2782,7 +2785,7 @@
             >
               <span class="text-28 text-Invert">Services</span>
               <ul class="space-y-8">
-                <li><a href="">Page Link</a></li>
+                <li><a href="" class="text-white/80 no-underline transition-colors duration-200 hover:text-white hover:no-underline">Page Link</a></li>
                 <li><a href="">Page Link</a></li>
                 <li><a href="">Page Link</a></li>
                 <li><a href="">Page Link</a></li>

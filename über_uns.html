@@ -293,11 +293,11 @@
       </section>
 
       <!-- sec-2 -->
-      <section class="py-sec overflow-hidden">
+      <section class="py-sec overflow-hidden ctm_sec">
         <div class="container">
           <div class="component">
-            <div class="grid lg:grid-cols-2 row">
-              <div class="relative">
+            <div class="grid xl:grid-cols-2 row">
+              <div class="relative hidden xl:block">
                 <div class="relative inline-block">
                   <img
                     src="assets/icons/Shape11.svg"
@@ -326,8 +326,8 @@
                   class="absolute -bottom-[15%] right-0 h-[clamp(14.6875rem,11.1667rem+14.4444vw,28.5rem)]"
                 />
               </div>
-              <div class="free_text gap-40!">
-                <div class="free_text gap-40!">
+              <div class="flex flex-col gap-40">
+                <div class="flex flex-col gap-40">
                   <div class="free_text">
                     <span class="badge">uber uns</span>
                     <h2>75 Jahre Erfahrung</h2>
@@ -351,7 +351,36 @@
                     </p>
                   </div>
                 </div>
-                <div class="free_text gap-40!">
+                <div class="relative xl:hidden ">
+                <div class="relative inline-block">
+                  <img
+                    src="assets/icons/Shape11.svg"
+                    alt=""
+                    class="block not-sm:max-w-250 sm:w-full h-auto"
+                  />
+
+                  <img
+                    src="assets/images/Uber1.webp"
+                    alt=""
+                    class="absolute inset-0 w-full h-full object-cover"
+                    style="
+                      mask-image: url(&quot;assets/icons/Shape11.svg&quot;);
+                      mask-size: 100% 100%;
+                      mask-repeat: no-repeat;
+
+                      -webkit-mask-image: url(&quot;assets/icons/Shape11.svg&quot;);
+                      -webkit-mask-size: 100% 100%;
+                      -webkit-mask-repeat: no-repeat;
+                    "
+                  />
+                </div>
+                <img
+                  src="assets/images/uber1.1.webp"
+                  alt=""
+                  class="absolute -bottom-[15%] right-0 h-[clamp(14.6875rem,11.1667rem+14.4444vw,28.5rem)]"
+                />
+              </div>
+                <div class="flex flex-col gap-40">
                   <h3>Der Erfolg gab ihm Recht</h3>
 
                   <div
@@ -449,6 +478,7 @@
             </div>
           </div>
         </div>
+        <img src="assets/icons/über1.svg" alt="" class="absolute top-0 right-[-70px] md:right-[-50px] h-[clamp(11.75rem,9.6152rem+8.7582vw,20.125rem)] -rotate-34">
       </section>
 
       <!-- sec-3 -->
@@ -1215,7 +1245,7 @@
       <section class="py-sec">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 row">
+            <div class="grid grid-cols-1 xl:grid-cols-2 row">
               <div
                 class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
               >
@@ -1264,8 +1294,8 @@
         <div class="container">
           <div class="component">
             <div class="col">
-              <div class="grid lg:grid-cols-2 row">
-                <div class="flex flex-col gap-40 order-2 lg:order-1">
+              <div class="grid xl:grid-cols-2 row">
+                <div class="flex flex-col gap-40 order-2 xl:order-1">
                   <div class="free_text">
                     <h3>Geschäftsführung</h3>
                   </div>
@@ -1304,7 +1334,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-1 lg:order-2">
+                <div class="order-1 xl:order-2">
                   <div class="free_text"><h2>Das Team</h2></div>
                   <div
                     class="free_text gap-40! mt-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
@@ -1338,8 +1368,8 @@
                   </div>
                 </div>
               </div>
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-40">
-                <div class="lg:col-span-9 lg:col-start-4">
+              <div class="grid grid-cols-1 xl:grid-cols-12 gap-40">
+                <div class="xl:col-span-9 xl:col-start-4">
                   <div class="free_text">
                     <h3 class="mb-5">Innendienst</h3>
 
@@ -1445,7 +1475,7 @@
                   <h3>Servicetechniker</h3>
                 </div>
                 <div
-                  class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-40"
+                  class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-40"
                 >
                   <div class="free_text gap-24!">
                     <div
