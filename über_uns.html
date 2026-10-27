@@ -23,7 +23,7 @@
     <title>Document 1</title>
   </head>
   <body>
-   <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
+    <header x-data="{ mobileMenu: false }" class="sticky top-0 z-50 bg-white">
       <div class="container">
         <div class="flex items-center justify-between py-16 lg:py-24">
           <!-- Logo -->
@@ -351,35 +351,35 @@
                     </p>
                   </div>
                 </div>
-                <div class="relative xl:hidden ">
-                <div class="relative inline-block">
-                  <img
-                    src="assets/icons/Shape11.svg"
-                    alt=""
-                    class="block not-sm:max-w-250 sm:w-full h-auto"
-                  />
+                <div class="relative xl:hidden">
+                  <div class="relative inline-block">
+                    <img
+                      src="assets/icons/Shape11.svg"
+                      alt=""
+                      class="block not-sm:max-w-250 sm:w-full h-auto"
+                    />
 
-                  <img
-                    src="assets/images/Uber1.webp"
-                    alt=""
-                    class="absolute inset-0 w-full h-full object-cover"
-                    style="
-                      mask-image: url(&quot;assets/icons/Shape11.svg&quot;);
-                      mask-size: 100% 100%;
-                      mask-repeat: no-repeat;
+                    <img
+                      src="assets/images/Uber1.webp"
+                      alt=""
+                      class="absolute inset-0 w-full h-full object-cover"
+                      style="
+                        mask-image: url(&quot;assets/icons/Shape11.svg&quot;);
+                        mask-size: 100% 100%;
+                        mask-repeat: no-repeat;
 
-                      -webkit-mask-image: url(&quot;assets/icons/Shape11.svg&quot;);
-                      -webkit-mask-size: 100% 100%;
-                      -webkit-mask-repeat: no-repeat;
-                    "
+                        -webkit-mask-image: url(&quot;assets/icons/Shape11.svg&quot;);
+                        -webkit-mask-size: 100% 100%;
+                        -webkit-mask-repeat: no-repeat;
+                      "
+                    />
+                  </div>
+                  <img
+                    src="assets/images/uber1.1.webp"
+                    alt=""
+                    class="absolute -bottom-[15%] right-0 h-[clamp(14.6875rem,11.1667rem+14.4444vw,28.5rem)]"
                   />
                 </div>
-                <img
-                  src="assets/images/uber1.1.webp"
-                  alt=""
-                  class="absolute -bottom-[15%] right-0 h-[clamp(14.6875rem,11.1667rem+14.4444vw,28.5rem)]"
-                />
-              </div>
                 <div class="flex flex-col gap-40">
                   <h3>Der Erfolg gab ihm Recht</h3>
 
@@ -478,12 +478,16 @@
             </div>
           </div>
         </div>
-        <img src="assets/icons/über1.svg" alt="" class="absolute top-0 right-[-70px] md:right-[-50px] h-[clamp(11.75rem,9.6152rem+8.7582vw,20.125rem)] -rotate-34">
+        <img
+          src="assets/icons/über1.svg"
+          alt=""
+          class="absolute top-0 right-[-70px] md:right-[-50px] h-[clamp(11.75rem,9.6152rem+8.7582vw,20.125rem)] -rotate-34"
+        />
       </section>
 
       <!-- sec-3 -->
-     <section class="bg-Backg py-sec">
-        <div class="container not-sm:px-0 ">
+      <section class="bg-Backg py-sec">
+        <div class="container not-sm:px-0">
           <div class="component">
             <div class="not-sm:hidden space-y-24 sm:space-y-32 lg:space-y-40">
               <!-- First Row -->
@@ -564,87 +568,97 @@
                 </div>
               </div>
             </div>
-            
-<!-- Mobile Philosophy Swiper -->
-<div class="philosophie-mobile sm:hidden not-sm:flex flex-col">
 
-  <div class="free_text mb-24 px-gutter">
-    <h2>Philosophie</h2>
-  </div>
+            <!-- Mobile Philosophy Swiper -->
+            <div class="philosophie-mobile sm:hidden not-sm:flex flex-col">
+              <div class="free_text mb-24 px-gutter">
+                <h2>Philosophie</h2>
+              </div>
 
-  <div class="swiper philosophieSwiper overflow-hidden">
-    <div class="swiper-wrapper">
+              <div class="swiper philosophieSwiper overflow-hidden">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide h-auto">
+                    <div
+                      class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center"
+                    >
+                      <p>So einfach ist unsere Philosophie.</p>
+                    </div>
+                  </div>
 
-      <!-- Slide 1 -->
-      <div class="swiper-slide h-auto">
-        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
-          <p>So einfach ist unsere Philosophie.</p>
-        </div>
-      </div>
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide h-auto">
+                    <div
+                      class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center"
+                    >
+                      <p>
+                        Denn so zufrieden unsere privaten und gewerblichen
+                        Kunden auch mit uns sind, ist es ihnen doch meist am
+                        liebsten, wenn Sie uns gar nicht erst groß bemerken.
+                      </p>
+                    </div>
+                  </div>
 
-      <!-- Slide 2 -->
-      <div class="swiper-slide h-auto">
-        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
-          <p>
-            Denn so zufrieden unsere privaten und gewerblichen Kunden
-            auch mit uns sind, ist es ihnen doch meist am liebsten,
-            wenn Sie uns gar nicht erst groß bemerken.
-          </p>
-        </div>
-      </div>
+                  <!-- Slide 3 -->
+                  <div class="swiper-slide h-auto">
+                    <div
+                      class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center"
+                    >
+                      <p>
+                        Als Schädlingsbekämpfer rücken wir deshalb auf Wunsch
+                        gerne dann aus, wenn wir Ihre täglichen Abläufe nicht
+                        oder nur minimal stören. Dank unserer flexiblen
+                        Arbeitszeiten finden wir immer die für Sie passende
+                        Lösung.
+                      </p>
+                    </div>
+                  </div>
 
-      <!-- Slide 3 -->
-      <div class="swiper-slide h-auto">
-        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
-          <p>
-            Als Schädlingsbekämpfer rücken wir deshalb auf Wunsch
-            gerne dann aus, wenn wir Ihre täglichen Abläufe nicht oder
-            nur minimal stören. Dank unserer flexiblen Arbeitszeiten
-            finden wir immer die für Sie passende Lösung.
-          </p>
-        </div>
-      </div>
+                  <!-- Slide 4 -->
+                  <div class="swiper-slide h-auto">
+                    <div
+                      class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center"
+                    >
+                      <p>
+                        Bevor wir kommen, besprechen wir gemeinsam, was wir
+                        genau tun und was Sie während oder nach unserem Einsatz
+                        beachten müssen.
+                      </p>
+                    </div>
+                  </div>
 
-      <!-- Slide 4 -->
-      <div class="swiper-slide h-auto">
-        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
-          <p>
-            Bevor wir kommen, besprechen wir gemeinsam, was wir genau tun
-            und was Sie während oder nach unserem Einsatz beachten müssen.
-          </p>
-        </div>
-      </div>
+                  <!-- Slide 5 -->
+                  <div class="swiper-slide h-auto">
+                    <div
+                      class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center"
+                    >
+                      <p>
+                        Wenn wir wieder weg sind, sollen Sie am besten gar nicht
+                        merken, dass wir da waren. Deshalb stimmen wir unsere
+                        Maßnahmen und die eingesetzten Mittel auf jeden
+                        Schädling und jede Situation individuell ab. So werden
+                        Sie so wenig belästigt, wie nur irgend möglich.
+                      </p>
+                    </div>
+                  </div>
 
-      <!-- Slide 5 -->
-      <div class="swiper-slide h-auto">
-        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
-          <p>
-            Wenn wir wieder weg sind, sollen Sie am besten gar nicht merken,
-            dass wir da waren. Deshalb stimmen wir unsere Maßnahmen und
-            die eingesetzten Mittel auf jeden Schädling und jede Situation
-            individuell ab. So werden Sie so wenig belästigt, wie nur
-            irgend möglich.
-          </p>
-        </div>
-      </div>
+                  <!-- Slide 6 -->
+                  <div class="swiper-slide h-auto">
+                    <div
+                      class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center"
+                    >
+                      <p>
+                        Transparent, diskret & stets zu Ihrer Zufriedenheit – so
+                        ist der Service von Leeser & Will.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-      <!-- Slide 6 -->
-      <div class="swiper-slide h-auto">
-        <div class="flex h-full items-center justify-center border_rounded bg-[#E4EBFF] px-24 py-40 text-center">
-          <p>
-            Transparent, diskret & stets zu Ihrer Zufriedenheit –
-            so ist der Service von Leeser & Will.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Pagination -->
-    <div class="swiper-pagination philosophie-pagination"></div>
-  </div>
-
-</div>
+                <!-- Pagination -->
+                <div class="swiper-pagination philosophie-pagination"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1290,6 +1304,7 @@
         </div>
       </section>
 
+      <!-- sec-8 -->
       <section class="pt-sec">
         <div class="container">
           <div class="component">
@@ -1299,7 +1314,7 @@
                   <div class="free_text">
                     <h3>Geschäftsführung</h3>
                   </div>
-                  <div class="grid md:grid-cols-2 gap-40">
+                  <div class="grid grid-cols-2 gap-40">
                     <div class="free_text gap-24!">
                       <div
                         class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
@@ -1374,7 +1389,7 @@
                     <h3 class="mb-5">Innendienst</h3>
 
                     <div
-                      class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-40"
+                      class="grid grid-cols-2 xl:grid-cols-3 gap-40"
                     >
                       <div class="free_text gap-24!">
                         <div
@@ -1475,7 +1490,7 @@
                   <h3>Servicetechniker</h3>
                 </div>
                 <div
-                  class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-40"
+                  class="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-40"
                 >
                   <div class="free_text gap-24!">
                     <div
@@ -1499,7 +1514,7 @@
         </div>
       </section>
 
-      <!-- sec-8 -->
+      <!-- sec-9 -->
       <section class="py-sec">
         <div class="container">
           <div class="col">
@@ -1593,91 +1608,80 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- sec-9 -->
-      <section class="py-sec">
-        <div class="container">
-          <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 row">
-              <div
-                class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
-              >
-                <h2>Verbände</h2>
-                <div class="free_text gap-40!">
-                  <h3>
-                    Verbandsarbeit ist für Leeser & Will selbstverständlich!
-                  </h3>
-                  <div class="free_text">
-                    <p>
-                      Die Wichtigkeit dieser Arbeit wird uns nicht nur bei den
-                      Verbandstreffen immer wieder bewusst.
-                    </p>
-                    <p>
-                      So ist es gerade im Bereich der Schädlingsbekämpfung stets
-                      wichtig, aktuelle Informationen zeitnah zu erhalten. Die
-                      Natur war immer schneller als der Mensch. So wird es auch
-                      bleiben.
-                    </p>
-                    <p>
-                      Aktuelle Informationen, hochwertige Schulungen und nicht
-                      zuletzt der Austausch mit den Kollegen gewährleisten den
-                      extrem hohen Qualitätsanspruch, den wir an uns selbst
-                      haben und den Sie vonuns erwarten können.
-                    </p>
-                    <p>
-                      Deshalb sind wir froh darüber, in einer großen und
-                      namhaften Organisationen vertreten zu sein:
-                    </p>
-                  </div>
-                  <h3>Leeser & Will ist eingetragenes Mitglied</h3>
+          <div class="grid grid-cols-1 lg:grid-cols-2 row">
+            <div class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]">
+              <h2>Verbände</h2>
+              <div class="free_text gap-40!">
+                <h3>
+                  Verbandsarbeit ist für Leeser & Will selbstverständlich!
+                </h3>
+                <div class="free_text">
                   <p>
-                    im Verein zur Förderung ökologischer Schädlingsbekämpfung
-                    e.V.
+                    Die Wichtigkeit dieser Arbeit wird uns nicht nur bei den
+                    Verbandstreffen immer wieder bewusst.
+                  </p>
+                  <p>
+                    So ist es gerade im Bereich der Schädlingsbekämpfung stets
+                    wichtig, aktuelle Informationen zeitnah zu erhalten. Die
+                    Natur war immer schneller als der Mensch. So wird es auch
+                    bleiben.
+                  </p>
+                  <p>
+                    Aktuelle Informationen, hochwertige Schulungen und nicht
+                    zuletzt der Austausch mit den Kollegen gewährleisten den
+                    extrem hohen Qualitätsanspruch, den wir an uns selbst haben
+                    und den Sie vonuns erwarten können.
+                  </p>
+                  <p>
+                    Deshalb sind wir froh darüber, in einer großen und namhaften
+                    Organisationen vertreten zu sein:
                   </p>
                 </div>
+                <h3>Leeser & Will ist eingetragenes Mitglied</h3>
+                <p>
+                  im Verein zur Förderung ökologischer Schädlingsbekämpfung e.V.
+                </p>
               </div>
-              <div
-                class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
-              >
-                <h2>Zertifizierungen</h2>
-                <div class="free_text gap-40!">
-                  <div class="free_text">
-                    <p>
-                      Sie zeigen nicht nur Ihnen die hohe Qualität unserer
-                      Dienstleistungen.
-                    </p>
-                    <p>
-                      Auch wir messen unsere hohen Qualitätsansprüche an uns
-                      selbst daran!
-                    </p>
-                  </div>
-                  <h3>
-                    Unsere hohen Qualitätsansprüche allein nützen nichts, wenn
-                    wir sie nicht leben und dokumentieren können.
-                  </h3>
-                  <div class="free_text">
-                    <p>
-                      Aus diesem Grund ist Leeser & Will gleich vierfach
-                      Zertifiziert.
-                    </p>
-                    <p>
-                      Besonders stolz sind wir darauf, als eines der ersten
-                      deutschen Unternehmen aus der Schädlingsbekämpfung das
-                      Zertifikat DIN EN 16636 erhalten zu haben. Dies zeigt
-                      einmal mehr, dass Sie als Privatperson und vor allem Sie
-                      als Unternehmensverantwortlicher für den Bereich Hygiene
-                      bei uns in den allerbesten Händen sind.
-                    </p>
-                  </div>
+            </div>
+            <div class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]">
+              <h2>Zertifizierungen</h2>
+              <div class="free_text gap-40!">
+                <div class="free_text">
+                  <p>
+                    Sie zeigen nicht nur Ihnen die hohe Qualität unserer
+                    Dienstleistungen.
+                  </p>
+                  <p>
+                    Auch wir messen unsere hohen Qualitätsansprüche an uns
+                    selbst daran!
+                  </p>
+                </div>
+                <h3>
+                  Unsere hohen Qualitätsansprüche allein nützen nichts, wenn wir
+                  sie nicht leben und dokumentieren können.
+                </h3>
+                <div class="free_text">
+                  <p>
+                    Aus diesem Grund ist Leeser & Will gleich vierfach
+                    Zertifiziert.
+                  </p>
+                  <p>
+                    Besonders stolz sind wir darauf, als eines der ersten
+                    deutschen Unternehmen aus der Schädlingsbekämpfung das
+                    Zertifikat DIN EN 16636 erhalten zu haben. Dies zeigt einmal
+                    mehr, dass Sie als Privatperson und vor allem Sie als
+                    Unternehmensverantwortlicher für den Bereich Hygiene bei uns
+                    in den allerbesten Händen sind.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+          </div>
         </div>
       </section>
+
+      
 
       <!-- sec-10 -->
       <section class="py-sec ctm_sec">
