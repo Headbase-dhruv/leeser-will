@@ -717,7 +717,9 @@
                   >
                 </div>
               </div>
-              <div class="xl:col-span-5 flex items-center justify-center not-xl:md:w-2/3 mx-auto gap-16">
+              <div
+                class="xl:col-span-5 flex items-center justify-center not-xl:md:w-2/3 mx-auto gap-16"
+              >
                 <div class="w-1/3 h-fit border_rounded">
                   <div class="relative h-full">
                     <img
@@ -823,7 +825,7 @@
       </section>
 
       <!-- sec-4 -->
-      <section class="py-sec">
+      <section class="py-sec overflow-hidden">
         <div class="container">
           <div class="component">
             <div
@@ -859,7 +861,7 @@
                 </div>
               </div>
               <div
-                class="flex flex-col items-center justify-center gap-40 ctm_sec overflow-visible"
+                class="flex flex-col items-center justify-center gap-40 ctm_sec overflow-visible relative size-fit mx-auto mt-auto"
               >
                 <div class="relative inline-block">
                   <img
@@ -886,12 +888,12 @@
                 <img
                   src="assets/icons/Customer2.1.svg"
                   alt=""
-                  class="absolute -rotate-38 h-[clamp(1.8125rem,1.6373rem+0.719vw,2.5rem)] top-[15%] -left-[4%] size-fit"
+                  class="absolute -rotate-38 w-[38%] h-auto top-[-2%] left-[0%] pointer-events-none"
                 />
                 <img
                   src="assets/icons/Customer2.2.svg"
                   alt=""
-                  class="absolute not-sm:h-84 size-fit -bottom-[20%] lg:-right-[5%] right-1/2 translate-x-1/2"
+                  class="absolute w-[24%] h-auto not-xl:left-1/2 not-xl:-translate-x-1/2 -right-105 -bottom-110 not-xl:bottom-[-16%] pointer-events-none"
                 />
               </div>
             </div>
@@ -1001,7 +1003,7 @@
                   <img
                     src="assets/icons/Customer2.1.svg"
                     alt=""
-                    class="absolute h-[clamp(3.3125rem,3.1691rem+0.5882vw,3.875rem)] -top-60 -left-[4%] size-fit"
+                    class="absolute h-[clamp(3.3125rem,3.1691rem+0.5882vw,3.875rem)] -top-[clamp(3.3125rem,3.1691rem+0.5882vw,3.875rem)] not-md:-translate-x-1/2 not-md:left-1/2 xl:-left-[4%] size-fit"
                   />
                 </div>
               </div>
@@ -1157,75 +1159,93 @@
       <section class="py-sec bg-Backg ctm_sec">
         <div class="container">
           <div class="component">
-            <div class="grid grid-cols-1 lg:grid-cols-2 row">
-              <div class="w-full overflow-hidden sm:not-lg:px-24 xl:pr-48">
+            <div class="col">
+              <h2 class="xl:hidden">Pilze</h2>
+
+              <div class="grid grid-cols-1 xl:grid-cols-2 row">
                 <div
-                  class="relative mx-auto aspect-[820/735] w-full max-w-[820px]"
+                  class="w-full overflow-hidden sm:not-xl:px-24 xl:pr-48 not-xl:md:w-4/5 mx-auto"
                 >
-                  <!-- Image 1: Top -->
                   <div
-                    class="absolute left-[18%] top-0 z-10 w-[42%] overflow-hidden border_rounded"
+                    class="relative mx-auto aspect-[820/735] w-full max-w-[820px]"
                   >
-                    <img
-                      src="assets/images/Customer5.2.webp"
-                      alt="Brown mushrooms growing on a tree"
-                      class="block aspect-[332/442] w-full object-cover"
-                    />
-                  </div>
+                    <!-- Image 1: Top -->
+                    <div
+                      class="absolute left-[18%] top-0 z-10 w-[42%] overflow-hidden border_rounded"
+                    >
+                      <img
+                        src="assets/images/Customer5.2.webp"
+                        alt="Brown mushrooms growing on a tree"
+                        class="block aspect-[332/442] w-full object-cover"
+                      />
+                    </div>
 
-                  <!-- Image 2: Left -->
-                  <div
-                    class="absolute left-0 top-[28%] z-20 w-[30.5%] overflow-hidden border_rounded"
-                  >
-                    <img
-                      src="assets/images/Customer5.1.webp"
-                      alt="Oyster mushrooms growing on a tree trunk"
-                      class="block aspect-[250/333] w-full object-cover"
-                    />
-                  </div>
+                    <!-- Image 2: Left -->
+                    <div
+                      class="absolute left-0 top-[28%] z-20 w-[30.5%] overflow-hidden border_rounded"
+                    >
+                      <img
+                        src="assets/images/Customer5.1.webp"
+                        alt="Oyster mushrooms growing on a tree trunk"
+                        class="block aspect-[250/333] w-full object-cover"
+                      />
+                    </div>
 
-                  <!-- Image 3: Right foreground -->
-                  <div
-                    class="absolute right-0 top-[20%] z-30 w-[48%] overflow-hidden border_rounded"
-                  >
-                    <img
-                      src="assets/images/Customer5.3.webp"
-                      alt="White mushrooms growing on a tree"
-                      class="block aspect-[393/572] w-full object-cover"
-                    />
+                    <!-- Image 3: Right foreground -->
+                    <div
+                      class="absolute right-0 top-[20%] z-30 w-[48%] overflow-hidden border_rounded"
+                    >
+                      <img
+                        src="assets/images/Customer5.3.webp"
+                        alt="White mushrooms growing on a tree"
+                        class="block aspect-[393/572] w-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="free_text gap-16! mt-auto">
-                <h2 class="mb-80">Pilze</h2>
-                <p>
-                  Sie haben es sich in unserer Nähe sichtlich bequem gemacht.
-                  Nager wie Ratten, Mäuse und Marder haben sich mit uns neue
-                  Lebensräume erschlossen, wo andere Arten weichen mussten.
-                </p>
-                <p>
-                  Dabei können sie nicht nur im öffentlichen Raum, sondern auch
-                  in Heim und Garten große Schäden anrichten und gesundheitliche
-                  Schäden mit sich bringen.
-                </p>
-                <p>
-                  Ob Ratten im öffentlichen Raum oder Mäuse und Marder im
-                  eigenen Haus:
-                </p>
-                <p>
-                  Wir ermitteln fachkundig, wie der Befall entstehen konnte, wie
-                  man ihn beseitigt und vor allem, wie man ihn für die Zukunft
-                  ausschließt.
-                </p>
+                <div class="col mt-auto">
+                  <h2 class="not-xl:hidden">Pilze</h2>
+                  <div class="free_text gap-16!">
+                    <p>
+                      Sie haben es sich in unserer Nähe sichtlich bequem
+                      gemacht. Nager wie Ratten, Mäuse und Marder haben sich mit
+                      uns neue Lebensräume erschlossen, wo andere Arten weichen
+                      mussten.
+                    </p>
+
+                    <p>
+                      Dabei können sie nicht nur im öffentlichen Raum, sondern
+                      auch in Heim und Garten große Schäden anrichten und
+                      gesundheitliche Schäden mit sich bringen.
+                    </p>
+
+                    <p>
+                      Ob Ratten im öffentlichen Raum oder Mäuse und Marder im
+                      eigenen Haus:
+                    </p>
+
+                    <p>
+                      Wir ermitteln fachkundig, wie der Befall entstehen konnte,
+                      wie man ihn beseitigt und vor allem, wie man ihn für die
+                      Zukunft ausschließt.
+                    </p>
+                  </div>
+                </div>
+                <!-- free_text closed -->
               </div>
+              <!-- grid closed -->
             </div>
+            <!-- col closed -->
           </div>
+          <!-- component closed -->
         </div>
+        <!-- container closed -->
+
         <img
           src="assets/icons/mushroom.svg"
           alt=""
-          class="absolute h-[clamp(8.125rem,4.1422rem+16.3399vw,23.75rem)] right-0 lg:top-[10%] bottom-2/5 md:top-3/5"
+          class="absolute h-[clamp(6.75rem,2.4167rem+17.7778vw,23.75rem)] -z-10 right-0 top-16 xl:top-150 xl:opacity-50"
         />
       </section>
 
@@ -1236,7 +1256,7 @@
             <div
               class="grid xl:grid-cols-3 gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
             >
-              <div class="xl:col-span-2 free_text gap-0! justify-center ">
+              <div class="xl:col-span-2 free_text gap-0! justify-center">
                 <h2>Holz & Bautenschutz</h2>
                 <div class="free_text pt-40 md:pt-60 lg:pt-80">
                   <p>
@@ -1273,7 +1293,7 @@
               >
                 <div class="flex gap-24">
                   <div
-                    class="w-1/2 rounded-full h-full overflow-hidden min-h-400 lg:max-h-470 shrink"
+                    class="w-1/2 rounded-full h-full overflow-hidden min-h-280 sm:min-h-400 lg:max-h-470 shrink"
                   >
                     <img
                       src="assets/images/Customer6.1.webp"
@@ -1282,7 +1302,7 @@
                     />
                   </div>
                   <div
-                    class="w-1/2 rounded-full h-full overflow-hidden min-h-400 lg:max-h-470 shrink"
+                    class="w-1/2 rounded-full h-full overflow-hidden min-h-280 sm:min-h-400 lg:max-h-470 shrink"
                   >
                     <img
                       src="assets/images/Customer6.2.webp"
