@@ -3345,6 +3345,9 @@
     .md\:gap-6 {
       gap: calc(var(--spacing) * 6);
     }
+    .md\:gap-16 {
+      gap: calc(var(--spacing) * 16);
+    }
     .md\:gap-24 {
       gap: calc(var(--spacing) * 24);
     }
