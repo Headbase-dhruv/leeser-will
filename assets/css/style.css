@@ -1013,6 +1013,9 @@
   .aspect-\[1\/1\.4\] {
     aspect-ratio: 1/1.4;
   }
+  .aspect-\[56\/56\] {
+    aspect-ratio: 56/56;
+  }
   .aspect-\[250\/333\] {
     aspect-ratio: 250/333;
   }
