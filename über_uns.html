@@ -297,8 +297,8 @@
         <div class="container">
           <div class="component">
             <div class="grid xl:grid-cols-2 row">
-              <div class="relative hidden xl:block">
-                <div class="relative inline-block">
+              <div class="hidden xl:flex ">
+                <div class="relative inline-flex mx-auto ">
                   <img
                     src="assets/icons/Shape11.svg"
                     alt=""
@@ -319,12 +319,8 @@
                       -webkit-mask-repeat: no-repeat;
                     "
                   />
+                  
                 </div>
-                <img
-                  src="assets/images/uber1.1.webp"
-                  alt=""
-                  class="absolute -bottom-[15%] right-0 h-[clamp(14.6875rem,11.1667rem+14.4444vw,28.5rem)]"
-                />
               </div>
               <div class="flex flex-col gap-40">
                 <div class="flex flex-col gap-40">
@@ -351,12 +347,12 @@
                     </p>
                   </div>
                 </div>
-                <div class="relative xl:hidden">
-                  <div class="relative inline-block">
+                <div class=" xl:hidden md:not-xl:max-w-3/5 mx-auto">
+                  <div class="relative inline-block ">
                     <img
                       src="assets/icons/Shape11.svg"
                       alt=""
-                      class="block not-sm:max-w-250 sm:w-full h-auto"
+                      class="block w-full h-fit"
                     />
 
                     <img
@@ -373,12 +369,8 @@
                         -webkit-mask-repeat: no-repeat;
                       "
                     />
+                   
                   </div>
-                  <img
-                    src="assets/images/uber1.1.webp"
-                    alt=""
-                    class="absolute -bottom-[15%] right-0 h-[clamp(14.6875rem,11.1667rem+14.4444vw,28.5rem)]"
-                  />
                 </div>
                 <div class="flex flex-col gap-40">
                   <h3>Der Erfolg gab ihm Recht</h3>
@@ -678,126 +670,135 @@
               <a href="" class="btn btn-primary">Loslegen</a>
             </div>
             <!-- desktop view -->
-            <div class="relative min-h-800 not-xl:hidden">
-              <!-- Timeline SVG -->
-              <svg
-                width="1348"
-                height="611"
-                viewBox="0 0 1348 611"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="@container relative w-full aspect-[1500/800] overflow-clip not-xl:hidden"
+              style="--stage-w: 1710px"
+            >
+              <!-- Fixed 1710×900 design stage, uniformly scaled to the wrapper width -->
+              <div
+                class="absolute right-0 top-[8%] left-[3%] h-[800px] w-[1500px] origin-top-left overflow-visible"
+                style="transform: scale(tan(atan2(100cqw, var(--stage-w))))"
               >
-                <g filter="url(#filter0_d_3006_2232)">
-                  <path
-                    d="M50.7754 455.922C168.275 526.997 228.977 570.158 331.275 493.422C471.275 388.405 528.275 348.864 686.775 348.864C945.511 348.864 945.775 -17.5779 1297.28 30.9221"
-                    stroke-width="3"
-                    stroke="#FF6000"
-                  />
-                </g>
-                <defs>
-                  <filter
-                    id="filter0_d_3006_2232"
-                    x="0"
-                    y="0"
-                    width="1347.48"
-                    height="610.52"
-                    filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                <!-- Timeline SVG -->
+                <svg
+                  width="1348"
+                  height="611"
+                  viewBox="0 0 1348 611"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g filter="url(#filter0_d_3006_2232)">
+                    <path
+                      d="M50.7754 455.922C168.275 526.997 228.977 570.158 331.275 493.422C471.275 388.405 528.275 348.864 686.775 348.864C945.511 348.864 945.775 -17.5779 1297.28 30.9221"
+                      stroke-width="3"
+                      stroke="#FF6000"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_d_3006_2232"
+                      x="0"
+                      y="0"
+                      width="1347.48"
+                      height="610.52"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                      />
+                      <feOffset dy="25" />
+                      <feGaussianBlur stdDeviation="25" />
+                      <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow_3006_2232"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_3006_2232"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+
+                <article class="absolute left-[5%] top-[54%] z-30 w-330">
+                  <div
+                    class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                    <feColorMatrix
-                      in="SourceAlpha"
-                      type="matrix"
-                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      result="hardAlpha"
-                    />
-                    <feOffset dy="25" />
-                    <feGaussianBlur stdDeviation="25" />
-                    <feColorMatrix
-                      type="matrix"
-                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
-                    />
-                    <feBlend
-                      mode="normal"
-                      in2="BackgroundImageFix"
-                      result="effect1_dropShadow_3006_2232"
-                    />
-                    <feBlend
-                      mode="normal"
-                      in="SourceGraphic"
-                      in2="effect1_dropShadow_3006_2232"
-                      result="shape"
-                    />
-                  </filter>
-                </defs>
-              </svg>
+                    <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                  </div>
 
-              <article class="absolute left-[5%] top-[54%] z-20 w-330">
-                <div
-                  class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
-                >
-                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
-                </div>
+                  <span
+                    class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                  >
+                    1
+                  </span>
+                  <div class="free_text gap-16">
+                    <h3>Standortbesichtigung</h3>
 
-                <span
-                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
-                >
-                  1
-                </span>
-                <div class="free_text gap-16">
-                  <h3>Standortbesichtigung</h3>
+                    <p class="mt-4">
+                      Lorem ipsum blandit blandit odio tellus fringilla eget
+                      elementum sollicitudin tortor est libero nec suspendisse
+                      purus est malesuada quam faucibus.
+                    </p>
+                  </div>
+                </article>
+                <article class="absolute left-[40%] top-[35%] z-20 w-330">
+                  <div
+                    class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                  >
+                    <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                  </div>
 
-                  <p class="mt-4">
-                    Lorem ipsum blandit blandit odio tellus fringilla eget
-                    elementum sollicitudin tortor est libero nec suspendisse
-                    purus est malesuada quam faucibus.
-                  </p>
-                </div>
-              </article>
-              <article class="absolute left-[40%] top-[35%] z-20 w-330">
-                <div
-                  class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
-                >
-                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
-                </div>
+                  <span
+                    class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                  >
+                    2
+                  </span>
+                  <div class="free_text gap-16">
+                    <h3>Standortbesichtigung</h3>
 
-                <span
-                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
-                >
-                  2
-                </span>
-                <div class="free_text gap-16">
-                  <h3>Standortbesichtigung</h3>
+                    <p class="mt-4">
+                      Lorem ipsum blandit blandit odio tellus fringilla eget
+                      elementum sollicitudin tortor est libero nec suspendisse
+                      purus est malesuada quam faucibus.
+                    </p>
+                  </div>
+                </article>
+                <article class="absolute left-[70.5%] -top-[4.5%] z-20 w-330">
+                  <div
+                    class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+                  >
+                    <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
+                  </div>
 
-                  <p class="mt-4">
-                    Lorem ipsum blandit blandit odio tellus fringilla eget
-                    elementum sollicitudin tortor est libero nec suspendisse
-                    purus est malesuada quam faucibus.
-                  </p>
-                </div>
-              </article>
-              <article class="absolute left-[70.5%] -top-[4.5%] z-20 w-330">
-                <div
-                  class="relative mb-32 flex size-80 items-center justify-center rounded-[28px] bg-white shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
-                >
-                  <img src="assets/icons/Logo-icon.svg" alt="" class="h-35" />
-                </div>
+                  <span
+                    class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
+                  >
+                    3
+                  </span>
+                  <div class="free_text gap-16">
+                    <h3>Standortbesichtigung</h3>
 
-                <span
-                  class="absolute right-45 -top-12 z-[-1] text-[180px] font-black leading-none text-[#003E8A]/[0.05]"
-                >
-                  3
-                </span>
-                <div class="free_text gap-16">
-                  <h3>Standortbesichtigung</h3>
-
-                  <p class="mt-4">
-                    Lorem ipsum blandit blandit odio tellus fringilla eget
-                    elementum sollicitudin tortor est libero nec suspendisse
-                    purus est malesuada quam faucibus.
-                  </p>
-                </div>
-              </article>
+                    <p class="mt-4">
+                      Lorem ipsum blandit blandit odio tellus fringilla eget
+                      elementum sollicitudin tortor est libero nec suspendisse
+                      purus est malesuada quam faucibus.
+                    </p>
+                  </div>
+                </article>
+              </div>
             </div>
             <!-- MObaile View -->
             <div class="xl:hidden grid md:grid-cols-2 gap-40 mt-50">
@@ -1147,61 +1148,41 @@
                     Will entscheiden sollten:
                   </p>
                   <ul class="grid md:grid-cols-2 gap-16 md:gap-24">
-                    <li class="list-disc ml-34">
+                    <li>
                       Individuelle Lösungen, ausgerichtet auf Ihre Bedürfnisse
                     </li>
-                    <li class="list-disc ml-34">Vorsorge und Prävention</li>
-                    <li class="list-disc ml-34">Flexible Arbeitszeiten</li>
-                    <li class="list-disc ml-34">
-                      Schnelle Hilfe beim akuten Befall
-                    </li>
-                    <li class="list-disc ml-34">
-                      Hervorragendes Qualitätsmanagement nach ISO 9001
-                    </li>
-                    <li class="list-disc ml-34">
-                      Nachhaltige Lösungen & Konzepte für alle Branchen
-                    </li>
-                    <li class="list-disc ml-34">
+                    <li>Vorsorge und Prävention</li>
+                    <li>Flexible Arbeitszeiten</li>
+                    <li>Schnelle Hilfe beim akuten Befall</li>
+                    <li>Hervorragendes Qualitätsmanagement nach ISO 9001</li>
+                    <li>Nachhaltige Lösungen & Konzepte für alle Branchen</li>
+                    <li>
                       Zertifiziertes Unternehmen in der Schädlingsbekämpfung
                       nach DIN EN 16636
                     </li>
-                    <li class="list-disc ml-34">
-                      Auf Wunsch erfolgt eine diskrete Betreuung
-                    </li>
-                    <li class="list-disc ml-34">
+                    <li>Auf Wunsch erfolgt eine diskrete Betreuung</li>
+                    <li>
                       Zertifiziertes Unternehmen in der Schädlingsbekämpfung
                       nach DIN EN 16636
                     </li>
-                    <li class="list-disc ml-34">
+                    <li>
                       Unsere störungsfreie Abwicklung minimiert
                       Produktionsausfälle
                     </li>
-                    <li class="list-disc ml-34">
+                    <li>
                       Arbeits- und Gesundheitsschutzmanagement nach DIN EN 45001
                     </li>
-                    <li class="list-disc ml-34">Konsequente HACCP-Konzepte</li>
-                    <li class="list-disc ml-34">
-                      Umweltzertifizierung nach ISO 14001
-                    </li>
-                    <li class="list-disc ml-34">
-                      Effektive Bekämpfungs-Konzepte
-                    </li>
-                    <li class="list-disc ml-34">
+                    <li>Konsequente HACCP-Konzepte</li>
+                    <li>Umweltzertifizierung nach ISO 14001</li>
+                    <li>Effektive Bekämpfungs-Konzepte</li>
+                    <li>
                       Bestens geschulte und IHK-geprüfte Schädlingsbekämpfer
                     </li>
-                    <li class="list-disc ml-34">
-                      Regelmäßige Schulungen unserer Mitarbeiter
-                    </li>
-                    <li class="list-disc ml-34">
-                      Staatlich geprüfte Desinfektoren
-                    </li>
-                    <li class="list-disc ml-34">
-                      Bedarfsgerechte Serviceverträge
-                    </li>
-                    <li class="list-disc ml-34">
-                      Über 70-jährige Erfahrung und Wissen
-                    </li>
-                    <li class="list-disc ml-34">Monitoring & Dokumentation</li>
+                    <li>Regelmäßige Schulungen unserer Mitarbeiter</li>
+                    <li>Staatlich geprüfte Desinfektoren</li>
+                    <li>Bedarfsgerechte Serviceverträge</li>
+                    <li>Über 70-jährige Erfahrung und Wissen</li>
+                    <li>Monitoring & Dokumentation</li>
                   </ul>
                 </div>
               </div>
@@ -1388,9 +1369,7 @@
                   <div class="free_text">
                     <h3 class="mb-5">Innendienst</h3>
 
-                    <div
-                      class="grid grid-cols-2 xl:grid-cols-3 gap-40"
-                    >
+                    <div class="grid grid-cols-2 xl:grid-cols-3 gap-40">
                       <div class="free_text gap-24!">
                         <div
                           class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
@@ -1489,9 +1468,22 @@
                 <div class="free_text">
                   <h3>Servicetechniker</h3>
                 </div>
-                <div
-                  class="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-40"
-                >
+                <div class="grid grid-cols-2 xl:grid-cols-4 gap-40">
+                  <div class="free_text gap-24!">
+                    <div
+                      class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/Dummy_Person.png"
+                        alt=""
+                        class="size-full object-cover"
+                      />
+                    </div>
+                    <div class="free_text gap-8!">
+                      <h3>Volker Guske, Geschäftsführer Leeser & Will GmbH</h3>
+                      <p>Servicetechniker</p>
+                    </div>
+                  </div>
                   <div class="free_text gap-24!">
                     <div
                       class="bg-[#E4EBFF] aspect-square border_rounded overflow-hidden"
@@ -1608,80 +1600,83 @@
                 </div>
               </div>
             </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 row">
-            <div class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]">
-              <h2>Verbände</h2>
-              <div class="free_text gap-40!">
-                <h3>
-                  Verbandsarbeit ist für Leeser & Will selbstverständlich!
-                </h3>
-                <div class="free_text">
+            <div class="grid grid-cols-1 lg:grid-cols-2 row">
+              <div
+                class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              >
+                <h2>Verbände</h2>
+                <div class="free_text gap-40!">
+                  <h3>
+                    Verbandsarbeit ist für Leeser & Will selbstverständlich!
+                  </h3>
+                  <div class="free_text">
+                    <p>
+                      Die Wichtigkeit dieser Arbeit wird uns nicht nur bei den
+                      Verbandstreffen immer wieder bewusst.
+                    </p>
+                    <p>
+                      So ist es gerade im Bereich der Schädlingsbekämpfung stets
+                      wichtig, aktuelle Informationen zeitnah zu erhalten. Die
+                      Natur war immer schneller als der Mensch. So wird es auch
+                      bleiben.
+                    </p>
+                    <p>
+                      Aktuelle Informationen, hochwertige Schulungen und nicht
+                      zuletzt der Austausch mit den Kollegen gewährleisten den
+                      extrem hohen Qualitätsanspruch, den wir an uns selbst
+                      haben und den Sie vonuns erwarten können.
+                    </p>
+                    <p>
+                      Deshalb sind wir froh darüber, in einer großen und
+                      namhaften Organisationen vertreten zu sein:
+                    </p>
+                  </div>
+                  <h3>Leeser & Will ist eingetragenes Mitglied</h3>
                   <p>
-                    Die Wichtigkeit dieser Arbeit wird uns nicht nur bei den
-                    Verbandstreffen immer wieder bewusst.
-                  </p>
-                  <p>
-                    So ist es gerade im Bereich der Schädlingsbekämpfung stets
-                    wichtig, aktuelle Informationen zeitnah zu erhalten. Die
-                    Natur war immer schneller als der Mensch. So wird es auch
-                    bleiben.
-                  </p>
-                  <p>
-                    Aktuelle Informationen, hochwertige Schulungen und nicht
-                    zuletzt der Austausch mit den Kollegen gewährleisten den
-                    extrem hohen Qualitätsanspruch, den wir an uns selbst haben
-                    und den Sie vonuns erwarten können.
-                  </p>
-                  <p>
-                    Deshalb sind wir froh darüber, in einer großen und namhaften
-                    Organisationen vertreten zu sein:
-                  </p>
-                </div>
-                <h3>Leeser & Will ist eingetragenes Mitglied</h3>
-                <p>
-                  im Verein zur Förderung ökologischer Schädlingsbekämpfung e.V.
-                </p>
-              </div>
-            </div>
-            <div class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]">
-              <h2>Zertifizierungen</h2>
-              <div class="free_text gap-40!">
-                <div class="free_text">
-                  <p>
-                    Sie zeigen nicht nur Ihnen die hohe Qualität unserer
-                    Dienstleistungen.
-                  </p>
-                  <p>
-                    Auch wir messen unsere hohen Qualitätsansprüche an uns
-                    selbst daran!
-                  </p>
-                </div>
-                <h3>
-                  Unsere hohen Qualitätsansprüche allein nützen nichts, wenn wir
-                  sie nicht leben und dokumentieren können.
-                </h3>
-                <div class="free_text">
-                  <p>
-                    Aus diesem Grund ist Leeser & Will gleich vierfach
-                    Zertifiziert.
-                  </p>
-                  <p>
-                    Besonders stolz sind wir darauf, als eines der ersten
-                    deutschen Unternehmen aus der Schädlingsbekämpfung das
-                    Zertifikat DIN EN 16636 erhalten zu haben. Dies zeigt einmal
-                    mehr, dass Sie als Privatperson und vor allem Sie als
-                    Unternehmensverantwortlicher für den Bereich Hygiene bei uns
-                    in den allerbesten Händen sind.
+                    im Verein zur Förderung ökologischer Schädlingsbekämpfung
+                    e.V.
                   </p>
                 </div>
               </div>
+              <div
+                class="free_text gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)]"
+              >
+                <h2>Zertifizierungen</h2>
+                <div class="free_text gap-40!">
+                  <div class="free_text">
+                    <p>
+                      Sie zeigen nicht nur Ihnen die hohe Qualität unserer
+                      Dienstleistungen.
+                    </p>
+                    <p>
+                      Auch wir messen unsere hohen Qualitätsansprüche an uns
+                      selbst daran!
+                    </p>
+                  </div>
+                  <h3>
+                    Unsere hohen Qualitätsansprüche allein nützen nichts, wenn
+                    wir sie nicht leben und dokumentieren können.
+                  </h3>
+                  <div class="free_text">
+                    <p>
+                      Aus diesem Grund ist Leeser & Will gleich vierfach
+                      Zertifiziert.
+                    </p>
+                    <p>
+                      Besonders stolz sind wir darauf, als eines der ersten
+                      deutschen Unternehmen aus der Schädlingsbekämpfung das
+                      Zertifikat DIN EN 16636 erhalten zu haben. Dies zeigt
+                      einmal mehr, dass Sie als Privatperson und vor allem Sie
+                      als Unternehmensverantwortlicher für den Bereich Hygiene
+                      bei uns in den allerbesten Händen sind.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </section>
-
-      
 
       <!-- sec-10 -->
       <section class="py-sec ctm_sec">

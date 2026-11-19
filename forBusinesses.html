@@ -456,9 +456,7 @@
       <section class="bg-Backg py-sec ctm_sec">
         <div class="container">
           <div class="component">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-12 row"
-            >
+            <div class="grid grid-cols-1 lg:grid-cols-12 row">
               <div class="lg:col-span-7 flex flex-col justify-center">
                 <h2>Gast- und Hotelgewerbe</h2>
                 <div class="free_text pt-24 md:pt-60 lg:pt-80 gap-24">
@@ -1089,7 +1087,7 @@
                 class="xl:absolute top-1/2 top xl:translate-y-[-50%] right-20 h-fit w-fit"
               >
                 <img
-                  src="assets/images/MallLayout3.webp"
+                  src="assets/images/HotelLayout.webp"
                   alt=""
                   class="h-[100%] w-[100%] object-cover xl:relative xl:max-w-690 2xl:max-w-880 3xl:max-w-1080 4xl:max-w-1170"
                 />
@@ -1496,21 +1494,26 @@
       </section>
 
       <!-- sec-10 -->
-      <section class="py-sec">
+      <section class="py-sec overflow-hidden">
         <div class="container">
           <div class="component">
-            <div class="flex flex-col xl:flex-row gap-40">
-              <div class="xl:w-[37.5%]">
-                <div class="relative flex gap-24 not-md:flex-col md:items-end">
+            <div
+              class="flex flex-col xl:flex-row gap-40 xl:not-4xl:grid xl:not-4xl:grid-cols-3"
+            >
+              <!-- Left Column -->
+              <div class="4xl:w-[37.5%]">
+                <div
+                  class="relative flex gap-24 flex-col md:flex-row xl:not-4xl:flex-col md:not-xl:items-end 4xl:items-end"
+                >
                   <a
                     href=""
-                    class="btn btn-primary order-2 block h-fit shrink-0 md:order-1"
+                    class="btn btn-primary order-2 block h-fit shrink-0 md:not-xl:order-1 4xl:order-1"
                   >
                     Sprechen Sie uns an!
                   </a>
 
                   <div
-                    class="h-425 xl:max-h-425! w-full border_rounded border overflow-hidden md:order-2"
+                    class="h-425 xl:max-h-425! w-full border_rounded overflow-hidden md:not-xl:order-2 4xl:order-2"
                   >
                     <img
                       src="assets/images/business31.webp"
@@ -1520,12 +1523,12 @@
                   </div>
 
                   <div
-                    class="absolute w-fit -z-10 h-[clamp(5.625rem,3.2353rem+9.8039vw,15rem)] not-xl:md:h-238! not-md:bottom-[-8%] md:bottom-75 right-0 md:left-80"
+                    class="absolute -z-10 w-max! border not-md:-bottom-52 not-md:right-0 md:bottom-75 md:left-40 xl:bottom-75 xl:left-auto xl:-right-10 not-4xl:xl:-bottom-120 4xl:left-80"
                   >
                     <img
                       src="assets/icons/businessimgsvg5.svg"
                       alt=""
-                      class="w-full h-full object-contain object-center"
+                      class="h-105 md:h-287 xl:not-4xl:h-195! w-auto object-cover object-center"
                     />
                   </div>
                 </div>
@@ -1557,7 +1560,7 @@
                   </div>
                 </div>
               </div>
-              <div class="flex items-center justify-center xl:w-[25%]">
+              <div class="flex items-center justify-center 4xl:w-[25%] w-full">
                 <div class="relative w-full">
                   <div
                     class="h-390 md:h-464 xl:h-425 w-full border_rounded overflow-hidden relative"
@@ -1579,11 +1582,11 @@
                   </div>
                 </div>
               </div>
-              <div class="xl:w-[37.5%]">
+              <div class="4xl:w-[37.5%]">
                 <div class="free_text">
                   <h2>Privatkunden</h2>
                 </div>
-                <div class="free_text mt-24 md:mt-60 lg:mt-80">
+                <div class="free_text mt-24 md:mt-60 xl:mt-80">
                   <p>
                     Wer weiß, was er macht, muss keine astronomischen Kosten
                     verursachen. Deshalb ist unsere Dienstleistung absolut
@@ -1603,11 +1606,11 @@
                     möglich macht:
                   </p>
                   <p>
-                    Die wichtigste Waffe des Schädlingsbekämpfers ist sein
+                    Die wichtigste Waffe des <br />Schädlingsbekämpfers ist sein
                     Wissen.
                   </p>
                 </div>
-                <div class="flex flex-col gap-40 mt-40">
+                <div class="flex flex-col gap-40 mt-24 sm:mt-40">
                   <a
                     href=""
                     class="btn btn-primary h-fit not-xsm:px-16! not-xsm:w-full!"
@@ -1646,7 +1649,7 @@
                       />
                     </div>
                     <div
-                      class="absolute w-fit -rotate-35 -z-10 h-[clamp(9.6875rem,6.6304rem+12.2283vw,12.5rem)] not-md:-top-150 -right-50 not-md:xl:-top-180 md:right-40 xl:bottom-50 xl:-left-150"
+                      class="absolute w-fit -rotate-35 -z-10 h-[clamp(9.6875rem,6.6304rem+12.2283vw,12.5rem)] not-xl:-top-150 not-xl:-right-57 not-xl:md:-top-180 not-xl:md:right-40 xl:bottom-50 xl:-left-150"
                     >
                       <img
                         src="assets/icons/businessimgsvg7.svg"
@@ -1655,6 +1658,96 @@
                       />
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- sec-10 -->
+      <section class="py-sec">
+        <div class="container">
+          <div class="component">
+            <div class="flex flex-col xl:grid xl:grid-cols-3 gap-40 items-stretch">
+              <!-- Left Image -->
+              <div class="xl:sticky xl:top-100 xl:self-start">
+                <div class="border_rounded overflow-hidden h-390 md:h-464 xl:h-500 w-full">
+                  <img
+                    src="assets/images/business31.webp"
+                    alt=""
+                    class="size-full object-cover object-center "
+                  />
+                </div>
+              </div>
+
+              <!-- Center Content -->
+              <div class="col">
+                <div class="free_text">
+                  <h2>Lager & Logistik</h2>
+                </div>
+
+                <div class="flex flex-col gap-40 relative">
+                  <div class="free_text relative">
+                    <p>
+                      Für Schädlinge gibt es wohl kaum etwas Herrlicheres, als
+                      ein gut gefülltes Warenlager: Es bietet vor allem Ratten
+                      und Mäusen einen reichhaltigen Unterschlupf.
+                    </p>
+                    <p>
+                      Daraus entstehende Material- und Warenschäden kosten Zeit,
+                      Geld und Nerven. Im schlimmsten Fall: sogar das Vertrauen
+                      Ihrer Kunden.
+                    </p>
+                    <p>
+                      Da heißt es im Fall des Falles schnell zu reagieren – oder
+                      besser noch: ein kompromissloses Vorsorgekonzept
+                      entwickeln zu lassen, das Ihre Lager und Fahrzeuge vor
+                      unangenehmen Überraschungen bewahrt.
+                    </p>
+                    <p>
+                      Ihre zertifizierten Schädlingsbekämpfer von Leeser & Will
+                      beraten Sie gern.
+                    </p>
+                    <p>
+                      Da heißt es im Fall des Falles schnell zu reagieren – oder
+                      besser noch: ein kompromissloses Vorsorgekonzept
+                      entwickeln zu lassen, das Ihre Lager und Fahrzeuge vor
+                      unangenehmen Überraschungen bewahrt.
+                    </p>
+                    <p>
+                      Ihre zertifizierten Schädlingsbekämpfer von Leeser & Will
+                      beraten Sie gern.
+                    </p>
+                    <div
+                      class="absolute w-fit -z-10 h-70 md:h-112 right-0 -top-70 md:-top-112"
+                    >
+                      <img
+                        src="assets/icons/businessimgsvg6.svg"
+                        alt=""
+                        class="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <a
+                    href="https://happy42day.de/kontakt/"
+                    target="_self"
+                    class="btn btn-primary h-fit not-xsm:px-16! not-xsm:w-full!"
+                  >
+                    Sprechen Sie uns an!
+                  </a>
+                 
+                </div>
+              </div>
+
+              <!-- Right Image -->
+              <div class="xl:sticky xl:top-100 xl:self-start">
+                <div class="border_rounded overflow-hidden h-390 md:h-464 xl:h-500 w-full">
+                  <img
+                    src="assets/images/business32.webp"
+                    alt=""
+                    class="size-full object-cover object-center "
+                  />
                 </div>
               </div>
             </div>
@@ -1686,7 +1779,7 @@
                 <img
                   src="assets/images/businessimg1.webp"
                   alt=""
-                  class="h-[100%] w-[100%] object-cover xl:relative xl:max-w-690 2xl:max-w-880 3xl:max-w-1080 4xl:max-w-none"
+                  class="h-[100%] w-[100%] object-cover xl:relative xl:max-w-690 2xl:max-w-880 3xl:max-w-1080 4xl:max-w-1170"
                 />
                 <button
                   @click="active='Produktionsbereich Fliegenkontrolle'"
@@ -2476,6 +2569,12 @@
               <a href="" class="btn btn-primary bg-orange!"
                 >Termin vereinbaren</a
               >
+              <div
+                class="bg-linear-to-l from-white/15 to-white/5 hover:from-white/5 hover:to-white/15 transition-discrete duration-800 ease-in-out backdrop-blur-xl border border-white/20 rounded-2xl p-24 shadow-2xl"
+              >
+                <h2 class="text-2xl font-bold text-white">Glass Card</h2>
+                <p class="text-white/70">Advanced Tailwind design</p>
+              </div>
             </div>
             <div
               class="py-24 not-md:border-b md:border-r border-orange flex flex-col gap-40 font-medium"

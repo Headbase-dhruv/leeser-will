@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 1,
     spaceBetween: 20,
     speed: 600,
-    loop: totalSlides > 3,
+    loop: totalSlides > 4,
     watchOverflow: true,
     grabCursor: true,
 
@@ -266,7 +266,7 @@ $("#folders").innerHTML = categories
         class="group relative block aspect-[263/191] w-full text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy">
 
         <!-- back panel -->
-        <span class="absolute inset-0  bg-primary rounded-[18px] sm:rounded-[28px] xl:not-3xl:rounded-[20px]"></span>
+        <span class="absolute inset-0  bg-primary rounded-[18px] sm:rounded-[24px] xl:not-3xl:rounded-[20px] mb-0.5"></span>
 
         <!-- document icons -->
         <span class="absolute left-[47%] top-[-4%] w-[21.8%] transition-transform duration-300 group-hover:-translate-y-3">${icon("block w-full h-auto")}</span>
@@ -274,11 +274,28 @@ $("#folders").innerHTML = categories
 
 
         <!-- front folder (tab + body as one shape) -->
-        <svg class="absolute inset-x-0 top-[19%] bottom-0 h-[81%] w-full"
-             viewBox="0 0 263 155" preserveAspectRatio="none" aria-hidden="true">
-          <path fill="#E4EBFF"
-            d="M0 28C0 12.536 12.536 0 28 0H116.007C125.387 0 133.845 5.64535 137.443 14.3077C141.042 22.97 149.5 28.6154 158.88 28.6154H241.936C253.569 28.6154 263 38.0461 263 49.6795V127C263 142.464 250.464 155 235 155H28C12.536 155 0 142.464 0 127V28Z"/>
+       
+        <svg
+          class="absolute inset-x-0 top-[19%] bottom-0 h-[81%] w-full"
+          viewBox="0 0 263 155"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            fill="#E4EBFF"
+            d="M0 24
+              C0 10.745 10.745 0 24 0
+              H116.007
+              C125.387 0 133.845 5.64535 137.443 14.3077
+              C141.042 22.97 149.5 24 158.88 24
+              H239C253 24 265 35 265 48
+        V131C265 144 253 155 239 155
+              H24
+              C10.745 155 0 144.255 0 131
+              V24Z"
+          />
         </svg>
+
 
         <!-- label -->
         <span class="absolute inset-x-[6%] bottom-[8%] block sm:inset-x-[6%] lg:inset-x-[7%]">
