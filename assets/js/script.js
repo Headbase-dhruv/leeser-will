@@ -5,14 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const buttons = [...document.querySelectorAll("[data-open-lightbox]")];
+  if (!buttons.length) return;
+
+  // One slide per card, in page order, so next/prev walks through all images
   const lightbox = GLightbox({
-    elements: [
-      {
-        href: "assets/images/Draft71.webp",
-        type: "image",
-        title: "Lorem ipsum leo",
-      },
-    ],
+    elements: buttons.map((button) => ({
+      href: button.parentElement.querySelector("img").getAttribute("src"),
+      type: "image",
+    })),
     touchNavigation: true,
     zoomable: true,
     draggable: true,
@@ -21,12 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
     closeOnOutsideClick: true,
   });
 
-  document.querySelectorAll("[data-open-lightbox]").forEach((button) => {
+  // GLightbox reads node.getAttribute() when sizing captioned slides; config
+  // elements have no node, which throws and leaves the slide invisible
+  lightbox.elements.forEach((element, index) => {
+    element.node = buttons[index];
+  });
+
+  buttons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      lightbox.openAt(Number(button.dataset.openLightbox));
+      button.blur();
+      lightbox.openAt(index);
     });
   });
 });
+
 
 // -----------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
