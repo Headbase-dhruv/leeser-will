@@ -1,3 +1,34 @@
+// GLightbox
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof GLightbox === "undefined") {
+    console.error("GLightbox library is not loaded.");
+    return;
+  }
+
+  const lightbox = GLightbox({
+    elements: [
+      {
+        href: "assets/images/Draft71.webp",
+        type: "image",
+        title: "Lorem ipsum leo",
+      },
+    ],
+    touchNavigation: true,
+    zoomable: true,
+    draggable: true,
+    openEffect: "zoom",
+    closeEffect: "fade",
+    closeOnOutsideClick: true,
+  });
+
+  document.querySelectorAll("[data-open-lightbox]").forEach((button) => {
+    button.addEventListener("click", () => {
+      lightbox.openAt(Number(button.dataset.openLightbox));
+    });
+  });
+});
+
+// -----------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const swiperElement = document.querySelector(".advantages-swiper");
 
