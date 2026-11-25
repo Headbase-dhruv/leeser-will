@@ -1,0 +1,140 @@
+/* Visual hotspot picker (ACF admin) */
+.hs-picker {
+	margin: 0 0 16px;
+	padding: 12px;
+	border: 1px solid #ccd0d4;
+	background: #f6f7f7;
+}
+
+.hs-picker__bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.hs-picker__modes {
+	display: flex;
+	gap: 4px;
+}
+
+.hs-picker__help {
+	margin: 6px 0 12px;
+	color: #646970;
+}
+
+.hs-picker__stage {
+	display: none;
+	overflow: auto;
+}
+
+.hs-picker.has-image .hs-picker__stage {
+	display: block;
+}
+
+.hs-picker.has-image .hs-picker__empty {
+	display: none;
+}
+
+.hs-picker__canvas {
+	position: relative;
+	max-width: 850px;
+	margin: 0 auto;
+	cursor: crosshair;
+	user-select: none;
+}
+
+/* Preview at phone width so marker sizes roughly match the real mobile layout */
+.hs-picker.is-mobile .hs-picker__canvas {
+	max-width: 375px;
+}
+
+.hs-picker__canvas > img {
+	display: block;
+	width: 100%;
+	height: auto;
+	pointer-events: none;
+}
+
+/* Marker's top-left corner = saved position, same as the frontend button */
+.hs-marker {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+	cursor: grab;
+	touch-action: none;
+	white-space: nowrap;
+}
+
+.hs-marker:active {
+	cursor: grabbing;
+}
+
+.hs-marker__icon {
+	display: grid;
+	place-items: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	background: #0b3a7a;
+	color: #fff;
+	font-weight: 600;
+}
+
+.hs-marker__icon img {
+	width: 24px;
+	height: 24px;
+}
+
+.hs-marker__label {
+	padding-right: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.hs-marker.is-active {
+	z-index: 2;
+	outline: 2px solid #f26a1b;
+}
+
+.hs-marker.is-active .hs-marker__icon {
+	background: #f26a1b;
+}
+
+.hs-picker.is-mobile .hs-marker {
+	padding: 2px;
+	border-radius: 8px;
+}
+
+.hs-picker.is-mobile .hs-marker__icon {
+	width: 28px;
+	height: 28px;
+}
+
+.hs-picker.is-mobile .hs-marker__icon img {
+	width: 20px;
+	height: 20px;
+}
+
+.hs-picker.is-mobile .hs-marker__label {
+	display: none;
+}
+
+.acf-field[data-name="hotspots"] .acf-row.hs-row--active > .acf-row-handle {
+	background: #f26a1b;
+	color: #fff;
+}
+
+/* The picker replaces the raw % inputs (they stay in the DOM so values save) */
+.acf-field[data-name="hotspots"] .acf-field[data-name="top_mobile"],
+.acf-field[data-name="hotspots"] .acf-field[data-name="left_mobile"],
+.acf-field[data-name="hotspots"] .acf-field[data-name="top_desktop"],
+.acf-field[data-name="hotspots"] .acf-field[data-name="left_desktop"] {
+	display: none !important;
+}
