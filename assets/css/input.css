@@ -70,12 +70,6 @@
   /* Ultra Wide Screens */
   --container-4xl: 1920px;
 
-  /* Large Ultra Wide */
-  /* --breakpoint-5xl: 1800px; */
-
-  /* Design Max Width */
-  /* --breakpoint-6xl: 1940px; */
-
   /* ========================================
        BRAND COLORS
     ======================================== */
@@ -194,7 +188,7 @@
   }
 
   .col {
-    @apply flex flex-col gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)];
+    @apply flex flex-col gap-40;
   }
   .row {
     @apply grid gap-[clamp(2.5rem,1.8627rem+2.6144vw,5rem)];
@@ -217,21 +211,61 @@
   .free_text {
     @apply flex flex-col gap-16;
   }
-  h1 {
+  .pl-40 {
+    @apply pl-40;
+  }
+  .free_text h1 {
     @apply text-h1 text-heading;
   }
-  h2 {
+  .free_text h2 {
     @apply text-h2 text-heading;
   }
-  h3 {
+  .free_text h3 {
     @apply text-h3 text-heading;
+  }
+  /* Restore list markers removed by Tailwind preflight (WYSIWYG content) */
+  .free_text.disc-list1 ul {
+    @apply list-disc pl-24 space-y-8;
+  }
+  .free_text.no-disc ul {
+    @apply list-none pl-0;
+  }
+  .free_text ol {
+    @apply list-decimal pl-24 space-y-8;
+  }
+  .free_text ul ul {
+    @apply list-[circle] mt-8;
+  }
+ .long .free_text :is(p, h2, h3, h4, h5, h6):has(+ ul) {
+  clear: both;
+}
+
+.free_text ul {
+  clear: none;
+}
+  .free_text ol ol {
+    @apply mt-8;
+  }
+  /* Navigation lists (e.g. breadcrumbs) keep their own layout */
+  .free_text nav :is(ul, ol) {
+    @apply list-none pl-0;
+  }
+  .free_text nav li {
+    @apply m-0;
   }
   .free_text a:not(.btn) {
     @apply no-underline hover:underline!;
   }
-  .free_text ul li:not(:has(img)) {
-    @apply list-disc ml-28;
+  .free_text ul {
+    @apply list-disc pl-28;
   }
+  .free_text ul img {
+    @apply pt-5;
+  }
+  
+  .free_text strong {
+  color: #174c85;
+}
   .Karriere .free_text a[href^="mailto:"]::before {
     content: "";
     display: inline-block;
@@ -255,10 +289,7 @@
     background-position: center;
     background-size: contain;
     vertical-align: middle;
-  }
-  .no-disc ul {
-    @apply list-none pl-0;
-  }
+  } 
   .heading_h1 {
     @apply text-h1;
   }
@@ -268,32 +299,21 @@
   .heading_h3 {
     @apply text-h3;
   }
-
-  .paragraph {
-    @apply flex flex-col gap-18;
+  h1 {
+    @apply text-h1;
   }
-
-  .paragraph a:not(.btn) {
-    @apply underline;
+  h2 {
+    @apply text-h2;
   }
-
-  .paragraph ul {
-    @apply list-disc pl-28;
-  }
-
-  .paragraph a {
-    @apply underline;
+  h3 {
+    @apply text-h3;
   }
   ul a {
     @apply hover:underline;
   }
-  nav ul a {
-    @apply hover:no-underline text-heading;
+  footer ul a {
+    @apply text-white/80 no-underline transition-colors duration-200 hover:text-white hover:no-underline;
   }
-  nav a {
-    @apply hover:no-underline text-heading;
-  }
-
   .ctm_sec {
     @apply relative z-1 overflow-hidden;
   }
@@ -310,14 +330,95 @@
     @apply absolute inset-0 h-full w-full bg-black/50;
   }
   .nav_link a {
-    @apply hover:text-orange transition-slow flex gap-8 items-center;
+    @apply text-heading hover:text-primary hover:no-underline transition-slow flex gap-8 items-center;
   }
+
+  .main-menu {
+    @apply flex items-center gap-24;
+  }
+  .main-menu li {
+    @apply relative;
+  }
+  .main-menu .current-menu-item > a,
+  .main-menu .current-menu-parent > a,
+  .main-menu .current-menu-ancestor > a {
+    @apply text-primary bg-white! flex;
+  }
+  .main-menu .menu-item-has-children > a {
+    @apply gap-4;
+  }
+  .main-menu .menu-item-has-children > a::after {
+    content: "";
+    @apply size-24 shrink-0 bg-current transition-slow;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      no-repeat center / contain;
+  }
+  .main-menu .menu-item-has-children:hover > a::after,
+  .main-menu .menu-item-has-children:focus-within > a::after {
+    @apply rotate-180;
+  }
+  .main-menu .sub-menu {
+    @apply absolute top-[calc(100%+12px)] left-0 z-50 min-w-[220px] bg-white rounded-2xl shadow-lg border border-black/10 opacity-0 invisible translate-y-8 transition-slow;
+  }
+  /* hover bridge across the 12px gap */
+  .main-menu .sub-menu::before {
+    content: "";
+    @apply absolute bottom-full inset-x-0 h-12;
+  }
+  .main-menu .menu-item-has-children:hover > .sub-menu,
+  .main-menu .menu-item-has-children:focus-within > .sub-menu {
+    @apply opacity-100 visible translate-y-0;
+  }
+  .main-menu .sub-menu a {
+    @apply block px-16 py-12 hover:bg-Backg;
+  }
+  .main-menu .sub-menu li:first-child > a {
+    @apply rounded-t-2xl;
+  }
+  .main-menu .sub-menu li:last-child > a {
+    @apply rounded-b-2xl;
+  }
+
+  /* WordPress wp_nav_menu – mobile accordion */
+  .mobile-menu {
+    @apply flex flex-col gap-24;
+  }
+  .mobile-menu a {
+    @apply hover:text-primary hover:no-underline transition-slow;
+  }
+  .mobile-menu .current-menu-item > a,
+  .mobile-menu .current-menu-parent > a,
+  .mobile-menu .current-menu-ancestor > a,
+  .mobile-menu .menu-item-has-children.is-open > a {
+    @apply text-primary;
+  }
+  .mobile-menu .menu-item-has-children > a {
+    @apply flex items-center gap-8;
+  }
+  .mobile-menu .menu-item-has-children > a::after {
+    content: "";
+    @apply size-24 shrink-0 bg-current transition-transform duration-300;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      no-repeat center / contain;
+  }
+  .mobile-menu .menu-item-has-children.is-open > a::after {
+    @apply rotate-180;
+  }
+  .mobile-menu .sub-menu {
+    @apply flex flex-col gap-16 pl-16 h-0 overflow-hidden transition-[height] duration-300 ease-in-out;
+  }
+  .mobile-menu .sub-menu > li:first-child {
+    @apply pt-16;
+  }
+
   .clip-image {
     clip-path: polygon(30% 0%, 70% 0%, 100% 18%, 100% 100%, 0% 100%, 0% 18%);
   }
-  [x-cloak] {
-    display: none !important;
+
+  .demo_page h2 {
+    @apply text-h3;
   }
+
   .demo_page h2,
   .demo_page h3,
   .demo_page h4 {
@@ -328,90 +429,36 @@
     @apply mb-18;
   }
   .demo_page ul {
-    @apply list-disc pl-28;
-  }
-  label {
-    @apply text-[#111111];
+    @apply list-disc pl-28 space-y-8;
   }
 
-  /* NEW CSS */
+  label {
+    @apply text-[#111111]!;
+  }
+
   .ctm-list ul {
-    @apply space-y-16 pl-0! text-lg;
+    @apply space-y-16 text-lg;
   }
 
   .ctm-list li {
-    @apply flex gap-8 items-start;
+    @apply flex items-start gap-8;
   }
 
   .ctm-list li img {
-    @apply w-24 h-21 shrink-0 mt-5;
+    @apply h-21 w-24 shrink-0;
   }
-  .disc-list ul {
-    @apply list-disc pl-34 space-y-8;
+  .paragraph {
+    @apply flex flex-col gap-18;
   }
-
-  /* contact Form */
-  .contact-form {
-    @apply flex flex-col gap-24;
-  }
-  .contact-form .form-group {
-    @apply flex flex-col gap-8;
-  }
-  .contact-form label {
-    @apply block text-heading;
-  }
-  .contact-form label span {
-    @apply text-[#BE2F33];
-  }
-  .contact-form input[type="text"],
-  .contact-form input[type="tel"],
-  .contact-form input[type="email"],
-  .contact-form textarea {
-    @apply w-full px-14 py-12 rounded-xl border-[1.5px]
-      border-bordercolor bg-white outline-none
-      focus:border-primary focus:ring-0 transition;
-  }
-  .contact-form textarea {
-    @apply resize-none;
-  }
-  .contact-form input::placeholder,
-  .contact-form textarea::placeholder {
-    @apply text-txt-body;
-  }
-  .contact-form .form-checkbox {
-    @apply flex items-center gap-8;
-  }
-  .contact-form .form-checkbox .wpcf7-form-control-wrap {
-    @apply inline-flex items-center;
-  }
-  .contact-form .form-checkbox input[type="checkbox"] {
-    @apply size-18 rounded border border-bordercolor
-      accent-primary cursor-pointer;
-  }
-  .contact-form .form-checkbox .wpcf7-list-item {
-    @apply m-0;
-  }
-  .contact-form .form-checkbox .wpcf7-list-item-label {
-    @apply text-txt-body;
-  }
-  .contact-form input[type="submit"] {
-    @apply btn btn-primary flex w-full justify-center cursor-pointer;
-  }
-  .contact-form .form-features {
-    @apply flex flex-col sm:flex-row items-center
-      justify-center gap-16 sm:gap-28 pt-2 text-neutral-600;
-  }
-  .contact-form .form-feature {
-    @apply flex items-center gap-8;
-  }
-  .contact-form .form-feature svg {
-    @apply shrink-0;
-  }
-  footer a {
-    @apply no-underline hover:underline transition-all duration-300;
+  .paragraph a:not(.btn) {
+    @apply underline;
   }
   .wm_wrapper {
     @apply absolute bottom-20 right-20 z-10;
+  }
+  
+  [x-cloak] {
+    display: none !important;
   }
 }
 
@@ -428,7 +475,7 @@
   @apply text-white hover:text-primary border border-white hover:bg-white transition-slow;
 }
 @utility btn-link {
-  @apply inline-flex font-semibold items-center gap-8 py-12 text-primary hover:text-orange transition-slow w-fit;
+  @apply inline-flex font-semibold items-center gap-8 py-12 text-primary hover:text-orange transition-slow;
 }
 
 @utility btn-link-arrow {
@@ -565,7 +612,303 @@
 .philosophie-mobile .swiper-pagination-bullet-active {
   opacity: 1;
 }
-/* --------------------------------------------- */
+
+/* Contact Form */
+.contact-form {
+  @apply flex flex-col gap-24;
+}
+.contact-form .form-group {
+  @apply flex flex-col gap-8;
+}
+.contact-form label {
+  @apply block text-heading;
+}
+.contact-form label span {
+  @apply text-[#BE2F33];
+}
+
+/* CF7 wraps every control in a span */
+.contact-form .wpcf7-form-control-wrap {
+  @apply block w-full;
+}
+
+/* Inputs & textarea */
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  @apply w-full px-14 py-12 rounded-xl border-[1.5px]
+    border-bordercolor bg-white outline-none
+    hover:border-primary
+    focus:border-primary focus:ring-0 transition;
+}
+.contact-form textarea {
+  @apply resize-none min-h-[130px];
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  @apply text-txt-body opacity-70;
+}
+
+/* Checkbox / acceptance */
+.contact-form .form-checkbox {
+  @apply flex items-center gap-8;
+}
+.contact-form .form-checkbox .wpcf7-form-control-wrap {
+  @apply inline-flex items-center w-auto;
+}
+.contact-form .form-checkbox .wpcf7-list-item {
+  @apply m-0;
+}
+/* the global "label { block }" would break the checkbox row, so override it */
+.contact-form .form-checkbox .wpcf7-list-item label {
+  @apply flex items-center gap-8 cursor-pointer;
+}
+.contact-form .form-checkbox input[type="checkbox"] {
+  @apply size-18 shrink-0 rounded border border-bordercolor
+    accent-primary cursor-pointer;
+}
+.contact-form .form-checkbox .wpcf7-list-item-label {
+  @apply text-txt-body;
+}
+
+/* Submit */
+.contact-form input[type="submit"] {
+  @apply btn btn-primary mt-16 flex w-full cursor-pointer items-center justify-center gap-8
+    disabled:cursor-not-allowed disabled:opacity-60
+    disabled:hover:bg-primary;
+  /* Spinner background is positioned up front so the transition only fades it in, instead of sliding it from the corner */
+  @apply bg-no-repeat bg-center bg-size-[24px_24px];
+}
+
+/* Feature list */
+.contact-form .form-features {
+  @apply flex flex-col sm:flex-row items-center
+    justify-center gap-16 sm:gap-28 pt-2 text-neutral-600;
+}
+.contact-form .form-feature {
+  @apply flex items-center gap-8;
+}
+.contact-form .form-feature svg {
+  @apply shrink-0;
+}
+
+/* CF7 validation & response messages */
+.contact-form .wpcf7-not-valid {
+  @apply border-[#BE2F33];
+}
+.contact-form .wpcf7-not-valid-tip {
+  @apply block mt-4 text-[12px] text-[#BE2F33];
+}
+.contact-form .wpcf7-response-output {
+  @apply m-0! px-14 py-12 rounded-xl border-[1.5px]
+    border-bordercolor text-txt-body;
+}
+/* No separate spinner row under the button - the spinner is shown inside the button instead */
+.contact-form .wpcf7-spinner {
+  @apply hidden;
+}
+/* <input> can't hold an element, so the spinner is an animated SVG background */
+.wpcf7-form.submitting .contact-form input[type="submit"] {
+  @apply cursor-wait text-transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9' stroke-opacity='.3'/%3E%3Cpath d='M21 12a9 9 0 0 0-9-9'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='.8s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E");
+}
+.contact-form .cf7ic-style1 {
+  padding: 0 !important;
+}
+
+/* Draft Form */
+.draft-form {
+  @apply flex flex-col gap-24;
+}
+
+/* Form Groups */
+.draft-form > div {
+  @apply flex flex-col gap-8;
+}
+/* Form Groups */
+.draft-form .form-grid {
+   @apply grid grid-cols-1 md:grid-cols-2 gap-x-28 gap-y-28;
+}
+.draft-form .form-grid > div {
+   @apply flex flex-col gap-8;
+}
+
+/* Labels */
+.draft-form label {
+  @apply block text-heading;
+}
+.draft-form .form-group label span {
+  color: #BE2F33 !important;
+}
+
+/* Inputs & Textarea */
+.draft-form input[type="text"],
+.draft-form input[type="tel"],
+.draft-form input[type="email"],
+.draft-form textarea {
+  @apply w-full px-14 py-12 rounded-xl border-[1.5px]
+    border-bordercolor bg-white outline-none
+    hover:border-primary
+    focus:border-primary focus:ring-0 transition;
+}
+
+/* Textarea */
+.draft-form textarea {
+  @apply resize-none min-h-[130px];
+}
+
+/* Placeholder */
+.draft-form input::placeholder,
+.draft-form textarea::placeholder {
+  @apply text-txt-body opacity-70;
+}
+
+/* Checkbox */
+.draft-form input[type="checkbox"] {
+  @apply size-18 shrink-0 rounded border border-bordercolor
+    accent-primary cursor-pointer;
+}
+
+/* Checkbox Label */
+.draft-form label:has(input[type="checkbox"]) {
+  @apply flex items-center gap-8 cursor-pointer;
+}
+
+/* Validation Messages */
+.draft-form > div > span {
+  @apply block mt-4 ;
+}
+
+/* Hide validation messages by default */
+.draft-form .hidden {
+  @apply hidden;
+}
+
+/* CF7 validation & response messages */
+.draft-form .wpcf7-not-valid {
+  @apply border-[#BE2F33];
+}
+.draft-form .wpcf7-not-valid-tip {
+  @apply block mt-4 text-[12px] text-[#BE2F33];
+}
+.draft-form .error {
+  @apply block mt-4 text-[12px] text-[#BE2F33];
+}
+.draft-form .wpcf7-response-output {
+  @apply m-0! px-14 py-12 border-[1.5px]
+    border-bordercolor text-txt-body;
+}
+
+/* Submit Button */
+.draft-form input[type="submit"] {
+  @apply btn btn-primary mt-16 flex w-full cursor-pointer
+    items-center justify-center gap-8
+    disabled:cursor-not-allowed disabled:opacity-60
+    disabled:hover:bg-primary;
+  /* Spinner background is positioned up front so the transition only fades it in, instead of sliding it from the corner */
+  @apply bg-no-repeat bg-center bg-size-[24px_24px];
+}
+/* No separate spinner row under the button - the spinner is shown inside the button instead */
+.draft-form .wpcf7-spinner {
+  @apply hidden;
+}
+/* <input> can't hold an element, so the spinner is an animated SVG background */
+.wpcf7-form.submitting .draft-form input[type="submit"] {
+  @apply cursor-wait text-transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9' stroke-opacity='.3'/%3E%3Cpath d='M21 12a9 9 0 0 0-9-9'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='.8s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Form Status */
+.draft-form #form-status {
+  @apply mt-12 text-sm;
+}
+
+.draft-form .cf7ic-style1 {
+  padding: 0 !important;
+}
+.draft-form .form-checkbox .wpcf7-list-item {
+  @apply m-0;
+}
+
+.draft-form .wpcf7-form-control-wrap {
+  @apply block w-full;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+  border-color: #BE2F33 !important;
+}
+
+
+
+
+
+
+
+/* ========================================
+   404 PAGE - SEARCH
+======================================== */
+
+/* "Zur Startseite" button + search form in one row */
+.error404-actions {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-16 w-full;
+}
+/* Keep "Zur Startseite" on one line - the search form shrinks instead */
+.error404-actions > .btn {
+  @apply shrink-0 whitespace-nowrap hyphens-none;
+}
+
+.error404-search {
+  @apply flex items-center gap-8 w-full sm:flex-1 sm:min-w-0 sm:max-w-[420px] p-4 pl-20 rounded-full
+    border-[1.5px] border-bordercolor bg-white
+    hover:border-primary focus-within:border-primary transition;
+}
+.error404-search input {
+  @apply flex-1 min-w-0 w-full bg-transparent outline-none text-16 text-heading
+    placeholder:text-txt-body placeholder:opacity-70;
+}
+/* Hide the browser's own clear (x) icon */
+.error404-search input::-webkit-search-cancel-button {
+  @apply appearance-none;
+}
+.error404-search button {
+  @apply shrink-0 py-10 px-16 cursor-pointer disabled:cursor-wait disabled:opacity-60;
+}
+.error404-search button span {
+  @apply hidden xsm:inline;
+}
+
+/* Results box */
+.error404-results {
+  @apply w-full max-w-[760px] p-16 sm:p-24 rounded-2xl border border-bordercolor
+    bg-white/95 shadow-lg text-left;
+}
+.error404-results[hidden] {
+  @apply hidden;
+}
+.error404-results-count,
+.error404-results-empty {
+  @apply text-txt-body text-16;
+}
+.error404-results-count {
+  @apply mb-12;
+}
+.error404-results-list {
+  @apply flex flex-col gap-8 max-h-[360px] overflow-y-auto pr-4;
+}
+.error404-result {
+  @apply flex flex-col gap-4 p-16 rounded-xl bg-Backg border border-transparent
+    hover:border-primary transition;
+}
+.error404-result-type {
+  @apply text-[12px] font-semibold uppercase tracking-wide text-orange;
+}
+.error404-result-title {
+  @apply text-[18px] font-semibold text-heading;
+}
+.error404-result-excerpt {
+  @apply text-[14px] text-txt-body;
+}
 /* Make GLightbox immune to Preflight / global img rules */
 .glightbox-container .gslide.current {
   opacity: 1;
@@ -585,9 +928,13 @@
 
 /* Popup image size + space above/below the image */
 body .glightbox-container .gslide-image img {
-  max-width: 90vw;
-  max-height: calc(100vh - 160px);
-  margin: 80px auto;
+  /* Fixed 3:2 frame so small and large images all open at the same size */
+  width: min(90vw, calc((100vh - 80px) * 1.5));
+  height: auto;
+  max-width: none;
+  max-height: none;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 
 /* iPad + mobile: square image and visible prev/next arrows */
@@ -627,12 +974,4 @@ body .glightbox-container .gslide-image img {
     height: min(calc(100vw - 32px), calc(100vh - 120px));
     margin: 60px auto;
   }
-}
-
-.free_text strong {
-  color: #174c85;
-}
-
-.free_text ul {
-  clear: both;
 }
