@@ -27,7 +27,10 @@
     <title>Document 1</title>
   </head>
   <body>
-    <header x-data="{ mobileMenu: false }" x-effect="
+    <header  x-data="{
+    mobileMenu: false,
+    currentPage: window.location.pathname.split('/').pop().toLowerCase()
+  }" x-effect="
     document.documentElement.classList.toggle('overflow-hidden', mobileMenu);
     document.body.classList.toggle('overflow-hidden', mobileMenu);
   " class="sticky top-0 z-50 bg-white ">
@@ -106,23 +109,23 @@
               </li>
 
               <li>
-                <a href="./service.html" class="active:text-orange">Service</a>
+                <a href="./service.html" :class="{ 'text-orange': currentPage === 'service.html' }">Service</a>
               </li>
 
               <li>
-                <a href="./Prevention.html">Prävention</a>
+                <a href="./Prevention.html" :class="{ 'text-orange': currentPage === 'Prevention.html' }">Prävention</a>
               </li>
 
               <li>
-                <a href="./über_uns.html">Über uns</a>
+                <a href="./über_uns.html" Prevention:class="{ 'text-orange': currentPage === 'über_uns.html' }">Über uns</a>
               </li>
 
               <li>
-                <a href="./kontakt.html">Kontakt</a>
+                <a href="./kontakt.html" :class="{ 'text-orange': currentPage === 'kontakt.html' }">Kontakt</a>
               </li>
 
               <li>
-                <a href="./karriere.html">Karriere</a>
+                <a href="./karriere.html" :class="{ 'text-orange': currentPage === 'karriere.html' }">Karriere</a>
               </li>
             </ul>
           </nav>

@@ -325,7 +325,7 @@
             <span class="badge">Interaktiver Immobilienratgeber</span>
             <div class="free_text max-w-800">
               <h2>Schützen Sie jeden Bereich Ihres Grundstücks.</h2>
-              <p class="not-xl:hidden xl:max-w-520">
+              <p class="not-md:hidden max-w-500">
                 Verschiedene Bereiche ziehen unterschiedliche Schädlinge an.
                 Klicken Sie auf einen beliebigen Bereich des Grundstücks, um
                 mehr über häufige Risiken und unsere professionellen Lösungen zu
@@ -333,28 +333,35 @@
               </p>
             </div>
             <div class="not-xl:relative">
-              <div class="xl:absolute top-0 right-20 h-fit w-fit">
+              <div
+                class="xl:absolute top-1/2 top xl:translate-y-[-50%] right-20 h-fit w-fit"
+              >
                 <img
                   src="assets/images/HomeLayout.png"
                   alt=""
-                  class="size-fit relative"
+                  class="h-[100%] w-[100%] object-cover xl:relative xl:max-w-680 2xl:max-w-850 3xl:max-w-1060 4xl:max-w-none"
                 />
+                <!-- <img
+                  src="assets/images/HomeLayout.png"
+                  alt=""
+                  class="size-fit xl:relative xl:w-[clamp(37.5rem,-38.0208rem+100.6944vw,82.8125rem)]"
+                /> -->
                 <button
                   @click="active='Dach'"
                   aria-label="Dach"
-                  class="absolute top-[3.8%] left-[46%] lg:top-[6.2%] lg:left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[3.8%] left-[46%] lg:top-[6.2%] lg:left-[46%] bg-Invert p-2 sm:p-4 4xl:p-8 4xl:pr-16 rounded-lg sm:rounded-xl 4xl:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Dach' ? 'bg-orange' : 'bg-primary'"
-                    class="p-4 md:p-8 group-hover:bg-orange rounded-lg"
+                    class="p-4 md:p-8 group-hover:bg-orange rounded-md sm:rounded-lg"
                   >
                     <img
                       src="assets/icons/bird.svg"
                       alt=""
-                      class="size-20 md:size-32"
+                      class="size-20 sm:size-24 4xl:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold">Dach</span>
                     <span class="text-xs">Vogelschutz</span>
                   </div>
@@ -362,7 +369,7 @@
                 <button
                   @click="active='Dachboden'"
                   aria-label="Dachboden"
-                  class="absolute top-[12.8%] left-[23.8%] lg:top-[18%] lg:left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[12.8%] left-[23.8%] lg:top-[18%] lg:left-[28%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Dachboden' ? 'bg-orange' : 'bg-primary'"
@@ -374,7 +381,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="xl:flex flex-col gap-2 text-start hidden">
+                  <div class="4xl:flex flex-col gap-2 text-start hidden">
                     <span class="text-black text-base font-semibold"
                       >Dachboden</span
                     >
@@ -384,7 +391,7 @@
                 <button
                   @click="active='Küche'"
                   aria-label="Küche"
-                  class="absolute top-[26%] left-[43.5%] lg:top-[34%] lg:left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[26%] left-[43.5%] lg:top-[34%] lg:left-[46%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Küche' ? 'bg-orange' : 'bg-primary'"
@@ -396,7 +403,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Küche</span
                     >
@@ -406,7 +413,7 @@
                 <button
                   @click="active='Schlafzimmer'"
                   aria-label="Schlafzimmer"
-                  class="absolute top-[24%] lg:top-[30%] left-[67%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[24%] lg:top-[30%] left-[67%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Schlafzimmer' ? 'bg-orange' : 'bg-primary'"
@@ -418,7 +425,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Schlafzimmer</span
                     >
@@ -428,7 +435,7 @@
                 <button
                   @click="active='Ess-/Wohnbereich'"
                   aria-label="Ess-/Wohnbereich"
-                  class="absolute top-[49%] left-[46%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[49%] left-[46%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Ess-/Wohnbereich' ? 'bg-orange' : 'bg-primary'"
@@ -440,7 +447,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Ess-/Wohnbereich</span
                     >
@@ -450,7 +457,7 @@
                 <button
                   @click="active='Badezimmer'"
                   aria-label="Badezimmer"
-                  class="absolute top-[61%] left-[70.5%] lg:top-[56%] lg:left-[64.5%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[61%] left-[70.5%] lg:top-[56%] lg:left-[64.5%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Badezimmer' ? 'bg-orange' : 'bg-primary'"
@@ -462,7 +469,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Badezimmer</span
                     >
@@ -472,7 +479,7 @@
                 <button
                   @click="active='Keller'"
                   aria-label="Keller"
-                  class="absolute top-[78%] left-[48.5%] lg:top-[85%] lg:left-[50%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[78%] left-[48.5%] lg:top-[85%] lg:left-[50%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Keller' ? 'bg-orange' : 'bg-primary'"
@@ -484,7 +491,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Keller</span
                     >
@@ -494,7 +501,7 @@
                 <button
                   @click="active='Garten'"
                   aria-label="Garten"
-                  class="absolute top-[80%] left-[83%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[80%] left-[83%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Garten' ? 'bg-orange' : 'bg-primary'"
@@ -506,7 +513,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 3xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Garten</span
                     >
@@ -516,7 +523,7 @@
                 <button
                   @click="active='Garten1'"
                   aria-label="Garten"
-                  class="absolute top-[40%] left-[88%] lg:top-[48%] lg:left-[84%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[40%] left-[88%] lg:top-[48%] lg:left-[84%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Garten1' ? 'bg-orange' : 'bg-primary'"
@@ -528,7 +535,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 3xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Garten</span
                     >
@@ -538,7 +545,7 @@
                 <button
                   @click="active='Kanalisation'"
                   aria-label="Kanalisation"
-                  class="absolute top-[80%] left-[28%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[80%] left-[28%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Kanalisation' ? 'bg-orange' : 'bg-primary'"
@@ -550,7 +557,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Kanalisation</span
                     >
@@ -560,7 +567,7 @@
                 <button
                   @click="active='Entsorgungsbereich'"
                   aria-label="Entsorgungsbereich"
-                  class="absolute top-[70%] left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[70%] left-[16%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Entsorgungsbereich' ? 'bg-orange' : 'bg-primary'"
@@ -572,7 +579,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold"
                       >Entsorgungsbereich</span
                     >
@@ -582,7 +589,7 @@
                 <button
                   @click="active='Garten2'"
                   aria-label="Garten"
-                  class="absolute top-[53%] left-[10%] lg:top-[44%] lg:left-[16%] bg-Invert p-2 md:p-8 xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
+                  class="absolute top-[53%] left-[10%] lg:top-[44%] lg:left-[16%] bg-Invert p-2 md:p-8 4xl:pr-16 rounded-lg md:rounded-2xl group flex gap-16"
                 >
                   <div
                     :class="active==='Garten2' ? 'bg-orange' : 'bg-primary'"
@@ -594,7 +601,7 @@
                       class="size-20 md:size-32"
                     />
                   </div>
-                  <div class="hidden xl:flex flex-col gap-2 text-start">
+                  <div class="hidden 4xl:flex flex-col gap-2 text-start">
                     <span class="text-black text-base font-semibold">
                       Garten</span
                     >
