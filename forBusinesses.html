@@ -69,7 +69,7 @@
               <div
                 x-show="open"
                 x-transition
-                class="absolute top-full left-0 pt-12 min-w-[220px]"
+                class="absolute top-full left-0 pt-12 min-w-220"
                 x-cloak
               >
                 <div
@@ -148,7 +148,7 @@
         x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
-        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[65%] max-w-full bg-white text-heading z-[60] xl:hidden overflow-y-auto p-16 sm:p-24 relative"
+        class="not-xl:fixed top-0 right-0 h-screen not-sm:w-[83.5%] sm:w-[65%] max-w-full bg-white text-heading z-60 xl:hidden overflow-y-auto p-16 sm:p-24 relative"
       >
         <!-- Header -->
         <div class="flex items-center justify-between py-16">
@@ -758,7 +758,7 @@
               </div>
             </div>
             <div
-              class="xl:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-40 items-start"
+              class="xl:w-400 bg-Backg border border-bordercolor border_rounded p-24 flex flex-col gap-40 items-start"
             >
               <div class="bg-orange p-8 rounded-lg">
                 <img
@@ -902,7 +902,7 @@
                   <img
                     src="assets/images/business3.webp"
                     alt=""
-                    class="absolute inset-0 w-full h-full object-cover [object-position:80%_85%]"
+                    class="absolute inset-0 w-full h-full object-cover [object-80%_85%]"
                     style="
                       mask-image: url(&quot;assets/icons/Shape2.svg&quot;);
                       mask-size: 100% 100%;
@@ -919,7 +919,7 @@
           </div>
         </div>
         <div
-          class="absolute -z-10 -rotate-37 h-[clamp(8.125rem,5.576rem+10.4575vw,18.125rem)] -top-[2%] lg:-translate-y-1/2 right-0 lg:right-1/2 lg:translate-x-1/2"
+          class="absolute -z-10 -rotate-37 h-[clamp(8.125rem,5.576rem+10.4575vw,18.125rem)] top-[-2%] lg:-translate-y-1/2 right-0 lg:right-1/2 lg:translate-x-1/2"
         >
           <img
             src="assets/icons/businessimgsvg2.svg"
@@ -939,7 +939,7 @@
             <h2 class="text-white!">
               Lassen Sie nicht zu, dass Schädlinge Ihr Grundstück übernehmen.
             </h2>
-            <p class="max-w-1200 mx-auto">
+            <p class="max-w-xl mx-auto">
               Ganz gleich, ob Sie mit einem akuten Schädlingsbefall zu kämpfen
               haben oder einen zuverlässigen Partner für die langfristige
               Schädlingsbekämpfung suchen – unsere zertifizierten Experten
@@ -1033,7 +1033,7 @@
       </section>
 
       <!-- sec-8 -->
-      <section class="py-sec bg-[#F8FAFC]">
+      <section class="py-sec bg-Backg">
         <div class="container">
           <div class="col">
             <div class="free_text text-center">
@@ -1313,7 +1313,7 @@
               </div>
             </div>
             <div
-              class="xl:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-40 items-start"
+              class="xl:w-400 bg-Backg border border-bordercolor border_rounded p-24 flex flex-col gap-40 items-start"
             >
               <div class="bg-orange p-8 rounded-lg">
                 <img
@@ -1390,7 +1390,7 @@
             <!-- TOP GRID: image + text -->
             <div class="grid grid-cols-1 xl:grid-cols-2 items-stretch row">
               <div
-                class="order-2 xl:order-1 relative border_rounded overflow-hidden min-h-[clamp(17.5rem,12.402rem+20.915vw,37.5rem)] 2xl:min-h-[clamp(26rem,31vw,37.5rem)] 2xl:mb-[calc(var(--overlap)*-1)]"
+                class="order-2 xl:order-1 relative border_rounded overflow-hidden min-h-[clamp(17.5rem,12.402rem+20.915vw,37.5rem)] 2xl:min-h-[clamp(26rem,31vw,37.5rem)] 2xl:-mb-(--overlap)"
               >
                 <img
                   src="assets/images/VerfahrenImg.webp"
@@ -1400,7 +1400,7 @@
               </div>
               <!-- TEXT: if you add more content here, the image and cards move down automatically -->
               <div class="order-1 xl:order-2 min-w-0 xl:pb-40">
-                <div class="col break-words hyphens-auto">
+                <div class="col wrap-break-word hyphens-auto">
                   <span class="badge">Verfahren</span>
                     <h2>Unser Verfahren zur Schädlingsbekämpfung</h2>
                     <p>
@@ -1414,7 +1414,7 @@
             </div>
             <div class="process-cards relative z-10 grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-40 mt-40 2xl:mt-0">
               <div
-                class="bg-white p-24 border_rounded border border-[#CAD5E2] space-y-40"
+                class="bg-white p-24 border_rounded border border-bordercolor space-y-40"
               >
                 <div class="free_text">
                   <h1 class="text-orange font-medium">01</h1>
@@ -1428,7 +1428,7 @@
                 </div>
               </div>
               <div
-                class="bg-white p-24 border_rounded border border-[#CAD5E2] space-y-40"
+                class="bg-white p-24 border_rounded border border-bordercolor space-y-40"
               >
                 <div class="free_text">
                   <h1 class="text-orange font-medium">02</h1>
@@ -1442,7 +1442,7 @@
                 </div>
               </div>
               <div
-                class="bg-white p-24 border_rounded border border-[#CAD5E2] space-y-40"
+                class="bg-white p-24 border_rounded border border-bordercolor space-y-40"
               >
                 <div class="free_text">
                   <h1 class="text-orange font-medium">03</h1>
@@ -1456,7 +1456,7 @@
                 </div>
               </div>
               <div
-                class="bg-white p-24 border_rounded border border-[#CAD5E2] space-y-40"
+                class="bg-white p-24 border_rounded border border-bordercolor space-y-40"
               >
                 <div class="free_text">
                   <h1 class="text-orange font-medium">04</h1>
@@ -1987,7 +1987,7 @@
               </div>
             </div>
             <div
-              class="xl:w-400 bg-[#F8FAFC] border border-[#CAD5E2] border_rounded p-24 flex flex-col gap-40 items-start"
+              class="xl:w-400 bg-Backg border border-bordercolor border_rounded p-24 flex flex-col gap-40 items-start"
             >
               <div class="bg-orange p-8 rounded-lg">
                 <img

@@ -262,6 +262,9 @@
   .free_text ul img {
     @apply pt-5;
   }
+ img {
+  @apply pointer-events-none select-none;
+}
   
   .free_text strong {
   color: #174c85;
@@ -318,7 +321,7 @@
     @apply relative z-1 overflow-hidden;
   }
   .border_rounded_sm {
-    @apply rounded-[16px];
+    @apply rounded-16px;
   }
   .border_rounded {
     @apply rounded-[clamp(1rem,0.8088rem+0.7843vw,1.75rem)];
@@ -358,7 +361,7 @@
     @apply rotate-180;
   }
   .main-menu .sub-menu {
-    @apply absolute top-[calc(100%+12px)] left-0 z-50 min-w-[220px] bg-white rounded-2xl shadow-lg border border-black/10 opacity-0 invisible translate-y-8 transition-slow;
+    @apply absolute top-[calc(100%+12px)] left-0 z-50 min-w-220 bg-white rounded-2xl shadow-lg border border-black/10 opacity-0 invisible translate-y-8 transition-slow;
   }
   /* hover bridge across the 12px gap */
   .main-menu .sub-menu::before {
@@ -433,7 +436,7 @@
   }
 
   label {
-    @apply text-[#111111]!;
+    @apply text-heading!;
   }
 
   .ctm-list ul {
@@ -643,7 +646,7 @@
     focus:border-primary focus:ring-0 transition;
 }
 .contact-form textarea {
-  @apply resize-none min-h-[130px];
+  @apply resize-none min-h-130;
 }
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
@@ -755,7 +758,7 @@
 
 /* Textarea */
 .draft-form textarea {
-  @apply resize-none min-h-[130px];
+  @apply resize-none min-h-130;
 }
 
 /* Placeholder */
@@ -859,7 +862,7 @@
 }
 
 .error404-search {
-  @apply flex items-center gap-8 w-full sm:flex-1 sm:min-w-0 sm:max-w-[420px] p-4 pl-20 rounded-full
+  @apply flex items-center gap-8 w-full sm:flex-1 sm:min-w-0 sm:max-w-420 p-4 pl-20 rounded-full
     border-[1.5px] border-bordercolor bg-white
     hover:border-primary focus-within:border-primary transition;
 }
@@ -880,7 +883,7 @@
 
 /* Results box */
 .error404-results {
-  @apply w-full max-w-[760px] p-16 sm:p-24 rounded-2xl border border-bordercolor
+  @apply w-full max-w-760 p-16 sm:p-24 rounded-2xl border border-bordercolor
     bg-white/95 shadow-lg text-left;
 }
 .error404-results[hidden] {
@@ -894,7 +897,7 @@
   @apply mb-12;
 }
 .error404-results-list {
-  @apply flex flex-col gap-8 max-h-[360px] overflow-y-auto pr-4;
+  @apply flex flex-col gap-8 max-h-360 overflow-y-auto pr-4;
 }
 .error404-result {
   @apply flex flex-col gap-4 p-16 rounded-xl bg-Backg border border-transparent
