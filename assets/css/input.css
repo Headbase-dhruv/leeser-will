@@ -320,9 +320,9 @@
   .ctm_sec {
     @apply relative z-1 overflow-hidden;
   }
-  .border_rounded_sm {
+  /* .border_rounded_sm {
     @apply rounded-16px;
-  }
+  } */
   .border_rounded {
     @apply rounded-[clamp(1rem,0.8088rem+0.7843vw,1.75rem)];
   }
